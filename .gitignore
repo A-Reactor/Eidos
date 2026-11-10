@@ -1,0 +1,62 @@
+# env files (never commit real keys)
+.env*
+!.env.example
+
+# Claude Code local config
+.claude/
+
+# Codex local state and visual brainstorming sessions
+.codex/
+**/.superpowers/
+
+# dependencies and framework caches
+**/node_modules/
+**/.next/
+**/.pytest_cache/
+**/coverage/
+**/out/
+**/build/
+
+# native build products
+**/src-tauri/target/
+**/src-tauri/gen/
+
+# generated media, logs, and model caches
+eidos/public/generated/
+eidos/output/
+eidos/logs/
+eidos/cache/
+eidos/models/
+**/.cache/huggingface/
+**/huggingface/hub/
+**/diffusers-cache/
+*.safetensors
+*.ckpt
+*.pt
+*.pth
+*.onnx
+*.gguf
+
+# Python bytecode
+/.venv-voice/
+**/__pycache__/
+**/*.py[cod]
+
+# local archives and historical working copies
+backups/
+eidos_current_backup/
+.worktrees/
+
+# Local gameplay exports may contain personal content.
+/*.eidos/
+
+# external research papers are referenced, not vendored
+**/docs/papers/*.pdf
+
+# local compiler state
+**/*.tsbuildinfo
+**/next-env.d.ts
+
+# OS
+.DS_Store
+*.command

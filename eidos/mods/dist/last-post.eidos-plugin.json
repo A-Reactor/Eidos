@@ -1,0 +1,358 @@
+{
+  "format": "eidos-gameplay-plugin",
+  "version": 1,
+  "id": "last-post",
+  "name": "预写剧情与 AI 即兴",
+  "release": "0.3.0",
+  "stateVersion": 1,
+  "description": "阅读作者写定的信件与对白，选择代寄或暂留；也可自由调查和行动，由 AI 承接人物反应。正文、决定和回溯使用原游戏流程。",
+  "tags": [
+    "预写剧情",
+    "分支选择",
+    "AI 即兴"
+  ],
+  "prompts": {
+    "creation": "玩家选择本包时采用 data.story 的原创旧港邮局素材，或将它自然适配到玩家已有世界。作者确定信件及人物过去，玩家身份和行动自由，不要求按按钮或固定步骤推进。",
+    "action": "承接 last-post 的正式 facts 和已经展示的作者正文。data.story.canon 是作者确定的过去，不得改写真相、原信或已接受决定；尚未公开的信息不是主角知识。玩家可以调查、离开或用自己的方法处理，不强拉回预定路线。按钮只结算已经提交的局部决定，自由输入仍按当前世界合理产生后果。补写请求负责人物反应与环境细节，不重写原句、不撤销决定、不重复寄信。没有结算的剧情允许即兴；不暗示本模组能保证模型每句话都遵循设定。\n使用宿主原有正文、推荐行动和自由输入。没有独立面板、证据架、进度条或专用阅读界面。推荐操作与自由行动共用规则和正式事实；涉及已声明规则时只提议本轮实际满足前提的事件，不提前宣称结算成功。",
+    "review": "核对作者确定过去、已经确认的 facts、玩家实际行动和已展示正文是否一致。未读信件不能成为主角已知内容。保留玩家偏离作者路线的空间，不要求把所有自由行动改为固定事件。"
+  },
+  "rules": [
+    {
+      "id": "n-begin",
+      "description": "旅客来到将关门的旧港邮局，白槿递来未寄出的信。",
+      "requires": {
+        "n-started": false,
+        "n-resolved": false
+      },
+      "sets": {
+        "n-started": true
+      },
+      "once": true,
+      "effects": {
+        "state": [
+          {
+            "op": "add",
+            "path": "/started",
+            "value": true
+          },
+          {
+            "op": "add",
+            "path": "/passage",
+            "value": "arrival"
+          }
+        ],
+        "facts": [
+          {
+            "op": "add",
+            "path": "/nativeLastResult",
+            "value": "旅客来到将关门的旧港邮局，白槿递来未寄出的信。"
+          },
+          {
+            "op": "add",
+            "path": "/arrived",
+            "value": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "n-inspect",
+      "description": "旅客读了阿澄留下的原信，确认她没有许诺归期。",
+      "requires": {
+        "n-started": true,
+        "n-resolved": false,
+        "n-read": false
+      },
+      "sets": {
+        "n-started": true,
+        "n-read": true
+      },
+      "once": true,
+      "effects": {
+        "state": [
+          {
+            "op": "add",
+            "path": "/started",
+            "value": true
+          },
+          {
+            "op": "add",
+            "path": "/passage",
+            "value": "inspect"
+          },
+          {
+            "op": "add",
+            "path": "/examined",
+            "value": true
+          }
+        ],
+        "facts": [
+          {
+            "op": "add",
+            "path": "/nativeLastResult",
+            "value": "旅客读了阿澄留下的原信，确认她没有许诺归期。"
+          },
+          {
+            "op": "add",
+            "path": "/arrived",
+            "value": true
+          },
+          {
+            "op": "add",
+            "path": "/letterRead",
+            "value": true
+          },
+          {
+            "op": "add",
+            "path": "/letterContent",
+            "value": "信没有封口。纸上只有两句话，最后一笔在停顿中洇开：我会继续往前走。请别把等候当成你必须替我做完的事。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "n-send",
+      "description": "旅客选择代寄原信，白槿将它放入清晨第一班邮袋。",
+      "requires": {
+        "n-started": true,
+        "n-resolved": false
+      },
+      "sets": {
+        "n-started": true,
+        "n-resolved": true
+      },
+      "once": true,
+      "effects": {
+        "state": [
+          {
+            "op": "add",
+            "path": "/started",
+            "value": true
+          },
+          {
+            "op": "add",
+            "path": "/passage",
+            "value": "send"
+          },
+          {
+            "op": "add",
+            "path": "/resolution",
+            "value": "send"
+          }
+        ],
+        "facts": [
+          {
+            "op": "add",
+            "path": "/nativeLastResult",
+            "value": "旅客选择代寄原信，白槿将它放入清晨第一班邮袋。"
+          },
+          {
+            "op": "add",
+            "path": "/arrived",
+            "value": true
+          },
+          {
+            "op": "add",
+            "path": "/decision",
+            "value": "send"
+          }
+        ]
+      }
+    },
+    {
+      "id": "n-hold",
+      "description": "旅客暂时保留原信，没有承诺代寄，也没有替收信人作出回答。",
+      "requires": {
+        "n-started": true,
+        "n-resolved": false
+      },
+      "sets": {
+        "n-started": true,
+        "n-resolved": true
+      },
+      "once": true,
+      "effects": {
+        "state": [
+          {
+            "op": "add",
+            "path": "/started",
+            "value": true
+          },
+          {
+            "op": "add",
+            "path": "/passage",
+            "value": "hold"
+          },
+          {
+            "op": "add",
+            "path": "/resolution",
+            "value": "hold"
+          }
+        ],
+        "facts": [
+          {
+            "op": "add",
+            "path": "/nativeLastResult",
+            "value": "旅客暂时保留原信，没有承诺代寄，也没有替收信人作出回答。"
+          },
+          {
+            "op": "add",
+            "path": "/arrived",
+            "value": true
+          },
+          {
+            "op": "add",
+            "path": "/decision",
+            "value": "hold"
+          }
+        ]
+      }
+    }
+  ],
+  "ui": {
+    "reading": "inherit",
+    "initialState": {
+      "started": false,
+      "examined": false,
+      "passage": "arrival",
+      "resolution": null
+    },
+    "presentation": "native",
+    "html": "<!doctype html><html data-eidos-workbench lang=\"zh-CN\"><head><meta charset=\"utf-8\"><style>\n*{box-sizing:border-box}body{margin:0;background:#eee8db;color:#2b302e;font:16px/1.85 system-ui}main{max-width:900px;margin:auto;padding:28px 34px}header{border-bottom:1px solid #7f8e83;padding-bottom:12px}small{letter-spacing:.15em;color:#586a61}h1{font:30px/1.4 Georgia,serif;margin:8px 0}p{white-space:pre-wrap;margin:18px 0}.speaker{font-size:12px;color:#577565}button{cursor:pointer;background:#365c50;color:#fff;border:0;padding:10px 16px;margin:5px 8px 5px 0;font:inherit;font-size:14px}button:disabled{opacity:.5;cursor:default}.quiet{background:transparent;border:1px solid #8c9e95;color:#365c50}textarea{width:100%;padding:10px;background:#faf7ee;border:1px solid #a3afa8;font:inherit;font-size:14px}#error{color:#9b3530}#world{border-top:1px solid #abb4aa;margin-top:24px}footer{border-top:1px solid #abb4aa;padding-top:12px;margin-top:24px;font-size:12px;color:#586a61}\n</style><style data-eidos-workbench-theme>/* Shared author/tool presentation. The host supplies these tokens in either theme. */\nhtml[data-eidos-workbench] {\n  --wb-paper: var(--eidos-paper, #faf9f6);\n  --wb-surface: var(--eidos-surface, #ffffff);\n  --wb-ink: var(--eidos-ink, #202124);\n  --wb-accent: var(--eidos-accent, #9e0000);\n  --wb-muted: color-mix(in srgb, var(--wb-ink) 65%, var(--wb-paper));\n  --wb-line: color-mix(in srgb, var(--wb-ink) 16%, var(--wb-paper));\n  --wb-quiet: color-mix(in srgb, var(--wb-ink) 3%, var(--wb-paper));\n  --wb-highlight: color-mix(in srgb, var(--wb-accent) 7%, var(--wb-paper));\n  --bg: var(--wb-paper); --panel: var(--wb-surface); --panel2: var(--wb-quiet);\n  --paper: var(--wb-paper); --ink: var(--wb-ink); --accent: var(--wb-accent);\n  --muted: var(--wb-muted); --line: var(--wb-line); --quiet: var(--wb-quiet);\n  --highlight: var(--wb-highlight); --sea: var(--wb-accent); --amber: var(--wb-accent); --red: var(--wb-accent); --shadow: none;\n  color-scheme: light dark; color: var(--wb-ink); background: var(--wb-paper);\n  font-family: var(--font-geist-sans, ui-sans-serif, -apple-system, \"PingFang SC\", \"Microsoft YaHei\", sans-serif);\n  font-size: 14px; line-height: 1.8; font-synthesis: none;\n}\nhtml[data-eidos-workbench] body { min-width: 0; margin: 0; background: var(--wb-paper); color: var(--wb-ink); font: inherit; }\nhtml[data-eidos-workbench] :is(main, .shell, #mod-root) { width: 100%; max-width: 1080px; margin-inline: auto; padding: 24px clamp(18px, 3vw, 32px) 32px; }\nhtml[data-eidos-workbench] #mod-root { --ink: var(--wb-ink); --paper: var(--wb-paper); --muted: var(--wb-muted); --line: var(--wb-line); }\nhtml[data-eidos-workbench] :is(header, .mast, .masthead) { background: transparent; border-color: var(--wb-line); box-shadow: none; padding: 0 0 18px; gap: 18px; }\nhtml[data-eidos-workbench] :is(h1, h2, h3, h4) { color: var(--wb-ink); font-family: inherit; letter-spacing: -.015em; font-weight: 600; overflow-wrap: anywhere; }\nhtml[data-eidos-workbench] h1 { font-size: 22px; line-height: 1.4; margin: 0 0 8px; }\nhtml[data-eidos-workbench] h2 { font-size: 18px; line-height: 1.5; }\nhtml[data-eidos-workbench] h3 { font-size: 15px; }\nhtml[data-eidos-workbench] :is(p, blockquote, pre) { overflow-wrap: anywhere; }\nhtml[data-eidos-workbench] :is(.intro, .subtitle, .scene, .hint, .micro, .eyebrow, .small-note, .mast-note, .footer, footer, small, label, .subject, .story-meta, .reader-status, .action-caption, .choice-caption, .world-mark, .person p, .person-row p) { color: var(--wb-muted); font-family: inherit; font-size: 12px; line-height: 1.8; letter-spacing: .02em; }\nhtml[data-eidos-workbench] :is(.brand-mark, .done-mark) { display: none; }\nhtml[data-eidos-workbench] :is(.layout, .columns) { gap: 24px; grid-template-columns: minmax(0, 1.3fr) minmax(250px, 1fr); align-items: start; }\nhtml[data-eidos-workbench] :is(.layout, .columns, .body-grid) > * { min-width: 0; }\nhtml[data-eidos-workbench] :is(.panel, .card, .story:not(main), .replay-card, .rail, .choice-box, .action-area) { background: var(--wb-surface); color: var(--wb-ink); border: 1px solid var(--wb-line); border-radius: 4px; box-shadow: none; }\nhtml[data-eidos-workbench] :is(.panel-head, .story-head, .actions, .columns > section, .person, .log p, .evidence-item, footer, #world) { border-color: var(--wb-line); }\nhtml[data-eidos-workbench] :is(.panel-title, .story-label, .world-mark strong, .speaker, .progress, #ending) { color: var(--wb-accent); }\nhtml[data-eidos-workbench] :is(.world-mark, .tag) { background: transparent; border-color: var(--wb-line); border-radius: 3px; }\nhtml[data-eidos-workbench] :is(.statement blockquote, .testimony-text, .stage-line, .story p, #passage p, #continuation p) { color: var(--wb-ink); font-size: 16px; line-height: 1.95; letter-spacing: 0; }\nhtml[data-eidos-workbench] :is(.story-text, .reading-strip p, .replay-card pre, .evidence span, .empty, .empty strong, .done p, .status, .narration, .log) { color: var(--wb-ink); font-size: 13px; line-height: 1.85; }\nhtml[data-eidos-workbench] .reading-strip { background: var(--wb-quiet); border-color: var(--wb-accent); }\nhtml[data-eidos-workbench] .log { max-height: 22rem; }\nhtml[data-eidos-workbench] button { min-height: 36px; max-width: 100%; padding: 8px 12px; border: 1px solid var(--wb-line); border-radius: 3px; background: var(--wb-surface); color: var(--wb-ink); font-size: 13px; font-weight: 500; line-height: 1.6; font-family: inherit; letter-spacing: 0; white-space: normal; text-align: start; box-shadow: none; transition: background-color .15s, border-color .15s; }\nhtml[data-eidos-workbench] button:hover:not(:disabled) { background: var(--wb-highlight); color: var(--wb-ink); border-color: var(--wb-accent); transform: none; }\nhtml[data-eidos-workbench] :is(button.primary, .action.primary, .control--accent, [aria-pressed=\"true\"], [aria-current=\"page\"]) { color: var(--wb-accent); background: var(--wb-highlight); border-color: var(--wb-accent); box-shadow: none; }\nhtml[data-eidos-workbench] button:disabled { opacity: .45; cursor: default; }\nhtml[data-eidos-workbench] :is(button, input, select, textarea, summary):focus-visible { outline: 2px solid var(--wb-accent); outline-offset: 3px; }\nhtml[data-eidos-workbench] :is(input:not([type=\"checkbox\"]):not([type=\"file\"]), select, textarea) { min-width: 0; max-width: 100%; background: var(--wb-paper); color: var(--wb-ink); border: 1px solid var(--wb-line); border-radius: 3px; padding: 9px 11px; font: inherit; }\nhtml[data-eidos-workbench] textarea { line-height: 1.8; min-height: 120px; resize: vertical; }\nhtml[data-eidos-workbench] .row { flex-wrap: wrap; }\nhtml[data-eidos-workbench] :is(.evidence, .testimony, .clue-card, .person-card, .person-row) { background: var(--wb-quiet); color: var(--wb-ink); border-color: var(--wb-line); border-radius: 3px; box-shadow: none; }\nhtml[data-eidos-workbench] :is(.feedback, .feedback.good, .feedback.bad, #confirm, .confirm) { color: var(--wb-ink); background: var(--wb-quiet); border-color: var(--wb-accent); }\nhtml[data-eidos-workbench] :is([role=\"alert\"], .story-error, #error, [data-error]) { color: var(--wb-accent); }\nhtml[data-eidos-workbench] :is(.replay, .modal) { background: color-mix(in srgb, var(--wb-ink) 24%, transparent); }\nhtml[data-eidos-workbench] .controls { background: var(--wb-paper); border-color: var(--wb-line); }\nhtml[data-eidos-workbench] .novel { padding: 24px clamp(18px, 3vw, 32px); gap: 16px; }\nhtml[data-eidos-workbench] .novel main.story { margin: 0; padding: 8px 18px; }\nhtml[data-eidos-workbench] details { border-color: var(--wb-line); }\nhtml[data-eidos-workbench] summary { color: var(--wb-muted); font-size: 13px; }\nhtml[data-eidos-workbench] [hidden] { display: none !important; }\n@media (max-width: 900px) { html[data-eidos-workbench] :is(.layout, .columns, .body-grid) { grid-template-columns: minmax(0, 1fr); } }\n@media (prefers-reduced-motion: reduce) { html[data-eidos-workbench] button { transition: none; } }\n\nhtml[data-eidos-workbench] :is(.character-card, .ability-card, .clue-item, .testimony-card, .result-card, .callout, .status-line, .decision-record, .private-reveal, .scene-intro) { background: var(--wb-quiet); color: var(--wb-ink); border-color: var(--wb-line); border-radius: 3px; box-shadow: none; }\nhtml[data-eidos-workbench] :is(.scene-intro p, .scene-copy, .character-card p, .ability-card p, .testimony-card blockquote, .clue-item strong, .clue-item .detail, .result-card p, .person-line strong, .line, .line[data-type=\"dialogue\"], .rail li) { color: var(--wb-ink); font-family: inherit; font-size: 14px; line-height: 1.9; }\nhtml[data-eidos-workbench] :is(.page-heading, .section-label, .character-card .role, .character-card .daily, .testimony-card .challenge-note, .evidence-count, .clue-item small, .binding-row, .footnote, .empty-note, .rail .muted) { color: var(--wb-muted); font-size: 12px; line-height: 1.8; }\nhtml[data-eidos-workbench] .ability-label { color: var(--wb-accent) !important; }\nhtml[data-eidos-workbench] .private-reveal { color: var(--wb-ink) !important; }\nhtml[data-eidos-workbench] :is(.panel-head h2, .panel-head h3, .result-card h3, .character-card h4, .ability-card h4, .rail h2) { color: var(--wb-ink); font-family: inherit; font-weight: 600; letter-spacing: 0; }\nhtml[data-eidos-workbench] .choice-button::before { content: none; }\nhtml[data-eidos-workbench] .stage-line.size-small { font-size: 13px; }\nhtml[data-eidos-workbench] .stage-line.size-large { font-size: 22px; }\nhtml[data-eidos-workbench] .stage-line.size-huge { font-size: 28px; }\nhtml[data-eidos-workbench] .stage-line.color-accent { color: var(--wb-accent); }\nhtml[data-eidos-workbench] .stage-line.color-muted { color: var(--wb-muted); }\nhtml[data-eidos-workbench] .stage-line.color-ink { color: var(--wb-ink); }\nhtml[data-eidos-workbench] .stage-line.color-blood { color: color-mix(in srgb, var(--wb-accent) 70%, #a22d36); }\n\nhtml[data-eidos-workbench] .masthead::after { display: none; }\nhtml[data-eidos-workbench] .actions button { flex: 0 1 auto; }\n</style></head><body><main><header><small>旧港邮局 · 作者片段与自由即兴</small><h1 id=\"title\">最后一班邮车</h1><div id=\"place\"></div></header><article id=\"passage\" aria-label=\"作者正文\"></article><div id=\"choices\"></div><div id=\"world\" hidden><small>世界正文</small><article id=\"continuation\"></article></div><p id=\"error\" role=\"status\"></p><button id=\"improvise\" class=\"quiet\">请 AI 写现场反应</button><textarea id=\"action\" aria-label=\"自由行动\" placeholder=\"也可以离开、追问，或做你自己的决定。\"></textarea><button id=\"submit\">自由行动</button><footer>作者原句和决定随世界线保存。AI 即兴会调用玩家配置的模型；离线实验室只记录请求。</footer></main><script>/* Shared by the real author frame and offline tests; no engine-owned state mutation. */\nglobalThis.LastPost = Object.freeze({\n  decide(story, state, action) {\n    if (!['begin', 'inspect', 'send', 'hold'].includes(action)) throw new Error('未知片段');\n    if (state.resolution) throw new Error('这个局部决定已经完成，可以继续自由行动或回溯');\n    if (action === 'begin' && state.started || action === 'inspect' && state.examined) throw new Error('这个片段已经读过');\n    const passage = action === 'begin' ? 'arrival' : action, authored = story.passages[passage];\n    if (!authored?.segments?.length) throw new Error('作者片段缺失');\n    const next = { ...state, started: true, examined: state.examined === true || action === 'inspect', passage, resolution: ['send', 'hold'].includes(action) ? action : null };\n    return { summary: authored.summary, segments: authored.segments, state: next,\n      facts: { arrived: true, letterRead: next.examined, ...(next.examined ? { letterContent: story.passages.inspect.segments[0].text } : {}), decision: next.resolution, event: authored.summary } };\n  }\n});\n</script><script>\nlet context, busy=false;\nconst el=id=>document.getElementById(id), state=()=>context?.state||{};\nfunction paragraphs(target,segments){target.replaceChildren();for(const s of segments){const p=document.createElement('p');if(s.speaker){const speaker=document.createElement('span');speaker.className='speaker';speaker.textContent=s.speaker+'　';p.append(speaker)}p.append(document.createTextNode(s.text));target.append(p)}}\nfunction render(){if(!context)return;const story=context.plugin.data.story,s=state();el('title').textContent=story.title;el('place').textContent=context.world.sceneName+' / '+(s.resolution?'这一段已收束，仍可继续行动':'邮局尚未落锁');const authored=story.passages[s.passage||'arrival'];paragraphs(el('passage'),authored.segments);el('choices').replaceChildren();\n const choices=s.resolution?[]:!s.started?[['begin','走进邮局']]:[...(!s.examined?[['inspect','读一读信']]:[]),['send','交给白槿代寄'],['hold','暂时保留这封信']];\n for(const [action,label] of choices){const button=document.createElement('button');button.textContent=label;button.disabled=busy||context.reading.loading;button.onclick=()=>choose(action);el('choices').append(button)}\n const lines=context.reading.segments||[],own=authored.segments.map(s=>s.text).join('');const extra=lines.length&&lines.map(s=>s.text).join('')!==own;el('world').hidden=!extra;if(extra)paragraphs(el('continuation'),lines);\n el('improvise').disabled=el('submit').disabled=busy||context.reading.loading;\n}\nasync function choose(action){if(busy)return;busy=true;el('error').textContent='';render();try{const result=await Eidos.gameplay.commit(LastPost.decide(context.plugin.data.story,state(),action));if(result.persistence==='pending')el('error').textContent='决定已接受，请先重试本地保存。'}catch(e){el('error').textContent=e.message}finally{busy=false;render()}}\nEidos.onContext(c=>{context=c;render()});\nel('improvise').onclick=async()=>{try{const last=state()._eidosGameplay?.last;if(last)await Eidos.gameplay.narrate(last.id);else Eidos.narrate({kind:'continue'});}catch(e){el('error').textContent=e.message}};\nel('submit').onclick=()=>{const action=el('action').value.trim();if(action){Eidos.submit(action);el('action').value=''}};\n</script></body></html>\n",
+    "actions": [
+      {
+        "ruleId": "n-begin",
+        "label": "走进旧港邮局",
+        "segments": [
+          {
+            "type": "narration",
+            "text": "邮车的尾灯转过街角，旧港只剩一扇还亮着的窗。白槿没有急着落锁。她将一封信推到柜台边，信封上的墨已经干了。"
+          },
+          {
+            "type": "dialogue",
+            "speaker": "白槿",
+            "text": "她说，如果有人愿意，就请替她走完最后一段。不愿意也没关系。"
+          }
+        ]
+      },
+      {
+        "ruleId": "n-inspect",
+        "label": "阅读柜台上的原信",
+        "segments": [
+          {
+            "type": "narration",
+            "text": "信没有封口。纸上只有两句话，最后一笔在停顿中洇开：我会继续往前走。请别把等候当成你必须替我做完的事。"
+          },
+          {
+            "type": "dialogue",
+            "speaker": "白槿",
+            "text": "她改过很多次，最后把归期划掉了。我想，她至少没有留下一个自己做不到的承诺。"
+          }
+        ]
+      },
+      {
+        "ruleId": "n-send",
+        "label": "请白槿代寄原信",
+        "segments": [
+          {
+            "type": "narration",
+            "text": "你把信交回柜台。白槿在邮袋边签下日期，没有替纸上的两句话添上一个更圆满的结尾。清晨的第一班车会带它离开。"
+          },
+          {
+            "type": "dialogue",
+            "speaker": "白槿",
+            "text": "那就让它抵达吧。至于收到以后怎么办，该由那个人自己决定。"
+          }
+        ]
+      },
+      {
+        "ruleId": "n-hold",
+        "label": "暂时保留原信",
+        "segments": [
+          {
+            "type": "narration",
+            "text": "你将信收好。白槿熄掉柜台的灯，留下一盏照着门口的。今夜没有最后的答案，明天也不因此被取消。"
+          },
+          {
+            "type": "dialogue",
+            "speaker": "白槿",
+            "text": "如果明天还想谈，就来敲门。我们不用今晚把所有事情讲完。"
+          }
+        ]
+      }
+    ]
+  },
+  "introduction": {
+    "impacts": [
+      "gameplay",
+      "narrative",
+      "tools"
+    ],
+    "images": []
+  },
+  "data": {
+    "story": {
+      "title": "最后一班邮车",
+      "premise": "旧港邮局即将关门。一封没有寄出的信躺在柜台，写信的人已经离开这座城；收信的人仍在明早的渡口等一个回答。",
+      "canon": "阿澄昨夜亲手写信，今晨已经乘船离港。信不是伪造的，也没有诅咒。值班员白槿受托等到今晚，之后由旅客自己决定是否代寄。收信人尚未得到承诺；不寄信也不等于有人必然死亡。主角未读信前不知道信的内容。",
+      "passages": {
+        "arrival": {
+          "summary": "旅客来到将关门的旧港邮局，白槿递来未寄出的信。",
+          "segments": [
+            {
+              "type": "narration",
+              "text": "邮车的尾灯转过街角，旧港只剩一扇还亮着的窗。白槿没有急着落锁。她将一封信推到柜台边，信封上的墨已经干了。"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "白槿",
+              "text": "她说，如果有人愿意，就请替她走完最后一段。不愿意也没关系。"
+            }
+          ]
+        },
+        "inspect": {
+          "summary": "旅客读了阿澄留下的原信，确认她没有许诺归期。",
+          "segments": [
+            {
+              "type": "narration",
+              "text": "信没有封口。纸上只有两句话，最后一笔在停顿中洇开：我会继续往前走。请别把等候当成你必须替我做完的事。"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "白槿",
+              "text": "她改过很多次，最后把归期划掉了。我想，她至少没有留下一个自己做不到的承诺。"
+            }
+          ]
+        },
+        "send": {
+          "summary": "旅客选择代寄原信，白槿将它放入清晨第一班邮袋。",
+          "segments": [
+            {
+              "type": "narration",
+              "text": "你把信交回柜台。白槿在邮袋边签下日期，没有替纸上的两句话添上一个更圆满的结尾。清晨的第一班车会带它离开。"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "白槿",
+              "text": "那就让它抵达吧。至于收到以后怎么办，该由那个人自己决定。"
+            }
+          ]
+        },
+        "hold": {
+          "summary": "旅客暂时保留原信，没有承诺代寄，也没有替收信人作出回答。",
+          "segments": [
+            {
+              "type": "narration",
+              "text": "你将信收好。白槿熄掉柜台的灯，留下一盏照着门口的。今夜没有最后的答案，明天也不因此被取消。"
+            },
+            {
+              "type": "dialogue",
+              "speaker": "白槿",
+              "text": "如果明天还想谈，就来敲门。我们不用今晚把所有事情讲完。"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

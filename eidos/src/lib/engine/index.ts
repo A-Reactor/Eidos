@@ -1,0 +1,13 @@
+export type * from './types';
+export { EngineError } from './validation';
+export { parseEngineWorld, applyEngineChanges, diffEngineWorld } from './world';
+export { buildEngineContext, ENGINE_RECEIPT_NARRATION_INPUT } from './context';
+export type { EngineContextOptions } from './context';
+export { createEngineSession, restoreEngineSession, EngineSession } from './session';
+export type { EngineSessionOptions } from './session';
+export { encodeEngineCheckpoint, encodeEngineHostSnapshot } from './save-encoding';
+export { EngineHost, createEngineHost, restoreEngineHost } from './host';
+export type * from './host-types';
+export { createHttpNarrator, EngineHttpError } from './http';
+export type { HttpNarratorOptions } from './http';
+export { parseEngineNarrationInput } from './transport';

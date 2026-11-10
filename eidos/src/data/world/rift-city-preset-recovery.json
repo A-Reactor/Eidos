@@ -1,0 +1,3686 @@
+{
+  "version": "eidos_archive_v1",
+  "playthroughs": [
+    {
+      "id": "pt_1794323842958_q5nwuv",
+      "worldId": "player_b613c99b-4ae3-4b9c-9a54-04237c627f79",
+      "name": "世界树 #1",
+      "createdAt": 1794323842958,
+      "updatedAt": 1794323920183,
+      "playerName": "阿萤",
+      "actionCount": 1,
+      "gameTime": {
+        "day": 0,
+        "hour": 8,
+        "minute": 15
+      },
+      "currentSceneName": "观渊档案厅",
+      "totalPlayDuration": 0,
+      "worldLineId": "worldline_1794323842978_md14b3",
+      "worldTreeSizeBytes": 2733
+    }
+  ],
+  "saves": [
+    {
+      "meta": {
+        "id": "autosave_pt_1794323842958_q5nwuv",
+        "name": "[自动存档] 裂隙之城 · 阿萤",
+        "createdAt": 1794323920183,
+        "updatedAt": 1794323920183,
+        "gameTime": {
+          "day": 0,
+          "hour": 8,
+          "minute": 15
+        },
+        "worldId": "player_b613c99b-4ae3-4b9c-9a54-04237c627f79",
+        "worldName": "裂隙之城",
+        "playthroughId": "pt_1794323842958_q5nwuv",
+        "playerName": "阿萤",
+        "currentSceneName": "观渊档案厅",
+        "actionCount": 1,
+        "preview": "阿萤 选择身份：寡梯长大的盲视者，观渊档案厅的跑腿杂役。。起点：观渊档案厅。该身份开场：你抱着一摞刚归架的卷宗走上档案厅的旋梯，粉笔灰从袖口扑下来。窗外的雾今天升得高，一直漫到第七层。你停下，照例往雾里看了一眼——什么都没有，干干净净的空。你早就习惯这种空，却从没习惯别人听说你什么也看不见时那种表情。楼下有人喊你的名字，声音急。你把卷宗换到另一只手，往下走。；晨读散场，岑望舒在梯下叫住阿萤，要她去取近三十日的读数原本。",
+        "playDuration": 0,
+        "type": "autosave",
+        "sizeBytes": 2779666
+      },
+      "state": {
+        "gameTime": {
+          "day": 0,
+          "hour": 8,
+          "minute": 15
+        },
+        "playerName": "阿萤",
+        "entryContext": {
+          "version": 1,
+          "worldId": "player_b613c99b-4ae3-4b9c-9a54-04237c627f79",
+          "source": "preset",
+          "identityId": "identity_ying",
+          "canonicalName": "阿萤",
+          "playerName": "阿萤",
+          "identityDescription": "寡梯长大的盲视者，观渊档案厅的跑腿杂役。",
+          "startingSceneId": "hall_of_records",
+          "openingNarrative": "你抱着一摞刚归架的卷宗走上档案厅的旋梯，粉笔灰从袖口扑下来。窗外的雾今天升得高，一直漫到第七层。你停下，照例往雾里看了一眼——什么都没有，干干净净的空。你早就习惯这种空，却从没习惯别人听说你什么也看不见时那种表情。楼下有人喊你的名字，声音急。你把卷宗换到另一只手，往下走。"
+        },
+        "currentSceneId": "hall_of_records",
+        "sceneNarrative": "旋梯是铁的，每一级都窄，走快了鞋跟会磕出连串的响。你下到第五层时，晨读刚散——三十几个持牌人正顺着底层的门往外走，袍角擦过铜夹架，带起一股墨和樟脑混在一起的味道。有人边走边把手里的小抄折起来，有人回头看台上，像还想再问一句。梯脚的地面上用粉笔写着今日的日期，字迹是管理员的，横歪得很稳。你踩过它的时候，粉笔灰从袖口又落了一层，细细地铺在铁板上。窗外那片雾比早上更高了，漫到第七层窗沿，白得很安静。\n\n「岑望舒：阿萤。」\n\n她站在最后一级梯子底下，灰头发挽得极紧，一只手撑在桌沿上，拇指那道深痕压在木纹里。散场的人从她两边绕过去，没人敢从正中间走。她看了你一眼，视线在你袖口的灰上停了一下，又抬回来。\n\n「岑望舒：第三层，东侧第七格。近三十日的读数原本，整批抱下来，放到我桌上。别按年份理，按夹子上写的先后排。」\n\n「岑望舒：刚才有人在台下问，为什么这两天读数一模一样。我答了误差。这个答案只够撑到今天下午。」\n\n她把撑在桌沿的手收回去，指腹在木头上留下一小片干净的痕。楼上有人挪动梯子，铁脚刮着地面，刺耳地滑过去半尺。她没有再看你，转身去收台面上的几张纸，动作很慢，像怕把哪一张的顺序弄乱。",
+        "worldLineNodeId": "wl_ef604e9f-1ea2-4327-9bff-05cf903ea141",
+        "playbackPosition": {
+          "nodeId": "wl_ef604e9f-1ea2-4327-9bff-05cf903ea141",
+          "index": 0,
+          "showing": false
+        },
+        "readingView": null,
+        "history": [
+          {
+            "id": "458972d6-980e-48b7-8005-0ead3d791ce6",
+            "timestamp": 1794323876338,
+            "gameTime": {
+              "day": 0,
+              "hour": 8,
+              "minute": 0
+            },
+            "sceneId": "hall_of_records",
+            "sceneName": "观渊档案厅",
+            "playerInput": "成为：阿萤",
+            "aiResponse": "你抱着一摞刚归架的卷宗走上档案厅的旋梯，粉笔灰从袖口扑下来。窗外的雾今天升得高，一直漫到第七层。你停下，照例往雾里看了一眼——什么都没有，干干净净的空。你早就习惯这种空，却从没习惯别人听说你什么也看不见时那种表情。楼下有人喊你的名字，声音急。你把卷宗换到另一只手，往下走。",
+            "summary": "阿萤 选择身份：寡梯长大的盲视者，观渊档案厅的跑腿杂役。。起点：观渊档案厅。该身份开场：你抱着一摞刚归架的卷宗走上档案厅的旋梯，粉笔灰从袖口扑下来。窗外的雾今天升得高，一直漫到第七层。你停下，照例往雾里看了一眼——什么都没有，干干净净的空。你早就习惯这种空，却从没习惯别人听说你什么也看不见时那种表情。楼下有人喊你的名字，声音急。你把卷宗换到另一只手，往下走。",
+            "timeSpent": {
+              "day": 0,
+              "hour": 0,
+              "minute": 0
+            },
+            "worldImpacts": [],
+            "snapshot": null
+          },
+          {
+            "id": "cfbe4421-c13e-4f36-8767-92f92eb16980",
+            "timestamp": 1794323897034,
+            "gameTime": {
+              "day": 0,
+              "hour": 8,
+              "minute": 15
+            },
+            "sceneId": "hall_of_records",
+            "sceneName": "观渊档案厅",
+            "playerInput": "（进入世界，观察周围）",
+            "aiResponse": "旋梯是铁的，每一级都窄，走快了鞋跟会磕出连串的响。你下到第五层时，晨读刚散——三十几个持牌人正顺着底层的门往外走，袍角擦过铜夹架，带起一股墨和樟脑混在一起的味道。有人边走边把手里的小抄折起来，有人回头看台上，像还想再问一句。梯脚的地面上用粉笔写着今日的日期，字迹是管理员的，横歪得很稳。你踩过它的时候，粉笔灰从袖口又落了一层，细细地铺在铁板上。窗外那片雾比早上更高了，漫到第七层窗沿，白得很安静。\n\n「岑望舒：阿萤。」\n\n她站在最后一级梯子底下，灰头发挽得极紧，一只手撑在桌沿上，拇指那道深痕压在木纹里。散场的人从她两边绕过去，没人敢从正中间走。她看了你一眼，视线在你袖口的灰上停了一下，又抬回来。\n\n「岑望舒：第三层，东侧第七格。近三十日的读数原本，整批抱下来，放到我桌上。别按年份理，按夹子上写的先后排。」\n\n「岑望舒：刚才有人在台下问，为什么这两天读数一模一样。我答了误差。这个答案只够撑到今天下午。」\n\n她把撑在桌沿的手收回去，指腹在木头上留下一小片干净的痕。楼上有人挪动梯子，铁脚刮着地面，刺耳地滑过去半尺。她没有再看你，转身去收台面上的几张纸，动作很慢，像怕把哪一张的顺序弄乱。",
+            "summary": "晨读散场，岑望舒在梯下叫住阿萤，要她去取近三十日的读数原本。",
+            "timeSpent": {
+              "day": 0,
+              "hour": 0,
+              "minute": 15
+            },
+            "worldImpacts": [
+              "岑望舒把「误差」这个说法又推给了一个人去验证，她自己则留着真实数列没有交出去。"
+            ],
+            "availableActions": [
+              "上第三层东侧第七格，把那批读数原本抱下来",
+              "追问她：两天读数一样，误差是怎么算的",
+              "告诉她今早在雾前站过，什么也没看见",
+              "先去收拾散在铜夹架旁没人归的几卷卷宗"
+            ],
+            "snapshot": {
+              "worldId": "player_b613c99b-4ae3-4b9c-9a54-04237c627f79",
+              "mapState": {
+                "places": {},
+                "routes": []
+              },
+              "currentSceneId": "hall_of_records",
+              "currentGameTime": {
+                "day": 0,
+                "hour": 8,
+                "minute": 0
+              },
+              "playerName": "阿萤",
+              "entryContext": {
+                "version": 1,
+                "worldId": "player_b613c99b-4ae3-4b9c-9a54-04237c627f79",
+                "source": "preset",
+                "identityId": "identity_ying",
+                "canonicalName": "阿萤",
+                "playerName": "阿萤",
+                "identityDescription": "寡梯长大的盲视者，观渊档案厅的跑腿杂役。",
+                "startingSceneId": "hall_of_records",
+                "openingNarrative": "你抱着一摞刚归架的卷宗走上档案厅的旋梯，粉笔灰从袖口扑下来。窗外的雾今天升得高，一直漫到第七层。你停下，照例往雾里看了一眼——什么都没有，干干净净的空。你早就习惯这种空，却从没习惯别人听说你什么也看不见时那种表情。楼下有人喊你的名字，声音急。你把卷宗换到另一只手，往下走。"
+              },
+              "sceneNarrative": "你抱着一摞刚归架的卷宗走上档案厅的旋梯，粉笔灰从袖口扑下来。窗外的雾今天升得高，一直漫到第七层。你停下，照例往雾里看了一眼——什么都没有，干干净净的空。你早就习惯这种空，却从没习惯别人听说你什么也看不见时那种表情。楼下有人喊你的名字，声音急。你把卷宗换到另一只手，往下走。",
+              "historyLength": 1,
+              "discoveredSecrets": {},
+              "worldFlags": {},
+              "gameplayResources": {},
+              "gameplayModState": {},
+              "documentHeads": [],
+              "workspaceState": {},
+              "midoriAssetRegistry": {
+                "version": 1,
+                "bindings": {}
+              },
+              "narrativeProgress": null,
+              "chapterState": null,
+              "rewindMemory": null,
+              "sceneDetailLevels": {},
+              "visitedScenes": [
+                "scene_dorm_room",
+                "scene_hall",
+                "scene_archive",
+                "scene_dining_hall",
+                "test_scene_001",
+                "test_start",
+                "scene_console",
+                "console_room",
+                "hall_of_records"
+              ],
+              "resolvedTimelineEvents": [],
+              "deviatedEvents": {},
+              "inventory": [],
+              "clues": [
+                {
+                  "id": "clue_001",
+                  "name": "刻度环外的私刻划痕",
+                  "description": "青霭台的黄铜刻度环外侧，有几道用硬物刻的斜线，位置与官方刻度错开半格。刻痕很旧，边缘已被手掌磨钝——有人在官方刻度之外，自己记过数。",
+                  "sceneId": "azure_terrace",
+                  "detailThreshold": 25,
+                  "prerequisiteClues": [],
+                  "relatedContradiction": "披露与秩序",
+                  "unlocksClues": [
+                    "clue_002"
+                  ],
+                  "discovered": false,
+                  "discoveredAt": null
+                },
+                {
+                  "id": "clue_002",
+                  "name": "黑石镜的倾角",
+                  "description": "黑石镜底座的三个定位楔中，东侧那个被磨薄了一层，使镜面略微向雾中压低。按旧匠人的说法，这个角度能让人「看见更近、更清楚的东西」——也更难看出视距其实在缩短。",
+                  "sceneId": "azure_terrace",
+                  "detailThreshold": 35,
+                  "prerequisiteClues": [
+                    "clue_001"
+                  ],
+                  "relatedContradiction": "披露与秩序",
+                  "unlocksClues": [
+                    "clue_003"
+                  ],
+                  "discovered": false,
+                  "discoveredAt": null
+                },
+                {
+                  "id": "clue_003",
+                  "name": "汇总表右下角的小字",
+                  "description": "观渊档案厅里历年视距汇总明卷的右下角，有一列用极细笔迹写的数字，与正文相差十至五十日不等，越到近年差得越多。写它们的笔压很稳，只有一个人的手。",
+                  "sceneId": "hall_of_records",
+                  "detailThreshold": 40,
+                  "prerequisiteClues": [
+                    "clue_002"
+                  ],
+                  "relatedContradiction": "披露与秩序",
+                  "unlocksClues": [
+                    "clue_004",
+                    "clue_022"
+                  ],
+                  "discovered": false,
+                  "discoveredAt": null
+                },
+                {
+                  "id": "clue_004",
+                  "name": "没有编号的私人册子",
+                  "description": "岑望舒的抽屉里有一本素封小册，不编档号，不入明卷。里面记着她自己几十次私读，其中一次写着某年某街的火，日期在两日后，而她当日并不在场，事后记载吻合。末页只有一句：「若是照此，则我不该在那条街上。」",
+                  "sceneId": "hall_of_records",
+                  "detailThreshold": 55,
+                  "prerequisiteClues": [
+                    "clue_003"
+                  ],
+                  "relatedContradiction": "看见与成为",
+                  "unlocksClues": [],
+                  "discovered": false,
+                  "discoveredAt": null
+                },
+                {
+                  "id": "clue_022",
+                  "name": "盲视者的编号册",
+                  "description": "档案厅底层一册灰皮簿，按年份登记盲视者，姓名、住处、编号，用途一栏一律写「不祥，宜录」。阿萤的名字在窥历二百零九年那页，后面还有一行小字：「视距读数对其无效，宜留在厅内。」",
+                  "sceneId": "hall_of_records",
+                  "detailThreshold": 45,
+                  "prerequisiteClues": [
+                    "clue_003"
+                  ],
+                  "relatedContradiction": "被记录与被抹除",
+                  "unlocksClues": [
+                    "clue_020"
+                  ],
+                  "discovered": false,
+                  "discoveredAt": null
+                },
+                {
+                  "id": "clue_005",
+                  "name": "调查报告的末页",
+                  "description": "议事厅书库的《灰烬之年调查》装订完好，唯独末页被整齐裁去，剩下的纸边还能看见半个「十」字。裁口平直，用的是锋利的裁纸刀，不是虫蛀也不是撕的。",
+                  "sceneId": "council_hall",
+                  "detailThreshold": 30,
+                  "prerequisiteClues": [],
+                  "relatedContradiction": "填平与栖居",
+                  "unlocksClues": [
+                    "clue_009"
+                  ],
+                  "discovered": false,
+                  "discoveredAt": null
+                },
+                {
+                  "id": "clue_007",
+                  "name": "桥南第三道石缝里的旧记录",
+                  "description": "第一桥南端第三道石缝塞着一卷油布，里面是修桥匠人自己记的工账：姓名、工期、出事那天在哪个桥墩。字歪，纸张发黄，一栏一栏填得很认真。",
+                  "sceneId": "first_bridge",
+                  "detailThreshold": 30,
+                  "prerequisiteClues": [],
+                  "relatedContradiction": "填平与栖居",
+                  "unlocksClues": [
+                    "clue_008"
+                  ],
+                  "discovered": false,
+                  "discoveredAt": null
+                },
+                {
+                  "id": "clue_008",
+                  "name": "被改过的水位刻记",
+                  "description": "桥墩上的历年水位横记，最近几十道中有几道明显重刻过，刀口比周围的浅，方向也不对——按那些刻记的位置，那几年裂隙的水位与实际雨季对不上。",
+                  "sceneId": "first_bridge",
+                  "detailThreshold": 40,
+                  "prerequisiteClues": [
+                    "clue_007"
+                  ],
+                  "relatedContradiction": "看见与成为",
+                  "unlocksClues": [
+                    "clue_015"
+                  ],
+                  "discovered": false,
+                  "discoveredAt": null
+                },
+                {
+                  "id": "clue_009",
+                  "name": "砖缝里的旧告示",
+                  "description": "韩固铺子后墙的砖缝压着一张旧告示，字迹被汗手摸得发亮：「灰烬之年重桥，殁者十七，名具于下。」名册与议事厅那册工账上的名字能对上，只少了两个。",
+                  "sceneId": "forge_row",
+                  "detailThreshold": 35,
+                  "prerequisiteClues": [
+                    "clue_005"
+                  ],
+                  "relatedContradiction": "填平与栖居",
+                  "unlocksClues": [
+                    "clue_010"
+                  ],
+                  "discovered": false,
+                  "discoveredAt": null
+                },
+                {
+                  "id": "clue_010",
+                  "name": "街尾的撬棍",
+                  "description": "锻脊街尾一间空铺堆着几十根撬棍，木柄上没有铺号，铁头打得比市面上厚。它们不是用来修桥的，是用来从桥面上把东西撬开的。",
+                  "sceneId": "forge_row",
+                  "detailThreshold": 25,
+                  "prerequisiteClues": [],
+                  "relatedContradiction": "填平与栖居",
+                  "unlocksClues": [],
+                  "discovered": false,
+                  "discoveredAt": null
+                },
+                {
+                  "id": "clue_011",
+                  "name": "三成抄本的同一底稿",
+                  "description": "灯市抄本摊兜售的预言里，约有三成句子结构相同，只换了人名与日期。比对纸张和折角，它们来自同一份底稿——有人一直在批量改写同一份「未来」。",
+                  "sceneId": "lantern_market",
+                  "detailThreshold": 30,
+                  "prerequisiteClues": [],
+                  "relatedContradiction": "看见与成为",
+                  "unlocksClues": [
+                    "clue_012"
+                  ],
+                  "discovered": false,
+                  "discoveredAt": null
+                },
+                {
+                  "id": "clue_012",
+                  "name": "桌底的执事名单",
+                  "description": "苏爻第七盏灯下的摊桌底面，用炭写着半张名单：灯市执事、两名观渊会杂务、一名议员助理。名字旁有数目，像是分成，也像是欠账。",
+                  "sceneId": "lantern_market",
+                  "detailThreshold": 50,
+                  "prerequisiteClues": [
+                    "clue_011"
+                  ],
+                  "relatedContradiction": "披露与秩序",
+                  "unlocksClues": [],
+                  "discovered": false,
+                  "discoveredAt": null
+                },
+                {
+                  "id": "clue_013",
+                  "name": "粉笔画的断口",
+                  "description": "寡梯中段墙上的粉笔画，一笔一划画着一座没有雾的城。画的断口位置，与镜跨南柱底部那道斜裂几乎完全吻合——画它的人看过那道裂，而且知道它在哪里。",
+                  "sceneId": "widow_stair",
+                  "detailThreshold": 35,
+                  "prerequisiteClues": [],
+                  "relatedContradiction": "填平与栖居",
+                  "unlocksClues": [
+                    "clue_014",
+                    "clue_015"
+                  ],
+                  "discovered": false,
+                  "discoveredAt": null
+                },
+                {
+                  "id": "clue_014",
+                  "name": "灶房的长期住户",
+                  "description": "寡梯最下面那间灶房，锅底有多年积炭，床铺叠得整齐，却从没人在白天见过住客。墙缝里塞着十几张纸条，写的都是同一个日期和同一个地点：「南柱，第三夜」。",
+                  "sceneId": "widow_stair",
+                  "detailThreshold": 45,
+                  "prerequisiteClues": [
+                    "clue_013"
+                  ],
+                  "relatedContradiction": "被记录与被抹除",
+                  "unlocksClues": [
+                    "clue_016"
+                  ],
+                  "discovered": false,
+                  "discoveredAt": null
+                },
+                {
+                  "id": "clue_015",
+                  "name": "南柱底部的斜裂",
+                  "description": "镜跨南柱根部有一道斜裂，从石基伸进铸铁包皮，缝隙里渗出红褐色的锈水。敲上去声音发空。桥上每天走过上千人，裂口被收费口的灯挡着，从桥面看不见。",
+                  "sceneId": "mirror_span",
+                  "detailThreshold": 30,
+                  "prerequisiteClues": [
+                    "clue_013"
+                  ],
+                  "relatedContradiction": "填平与栖居",
+                  "unlocksClues": [
+                    "clue_016"
+                  ],
+                  "discovered": false,
+                  "discoveredAt": null
+                },
+                {
+                  "id": "clue_016",
+                  "name": "被补铸覆盖的捐资名录",
+                  "description": "南柱柱身的捐资者名字，最上几行是新铸的，铸口还留着一圈浅边。旧字迹从边缘透出来，其中一个名字是某位早年被登记为盲视者的石匠——他捐了柱基，后来被从名录上抹掉。",
+                  "sceneId": "mirror_span",
+                  "detailThreshold": 50,
+                  "prerequisiteClues": [
+                    "clue_015",
+                    "clue_014"
+                  ],
+                  "relatedContradiction": "被记录与被抹除",
+                  "unlocksClues": [],
+                  "discovered": false,
+                  "discoveredAt": null
+                },
+                {
+                  "id": "clue_017",
+                  "name": "西侧岩缝的新支流",
+                  "description": "底栈西段岩壁上有一道新开的缝，里头日夜渗水，水在栈道下方积成一小摊。壁上历年水位木牌最新几块字迹很新，写着半个月内涨了三寸——渊底在变。",
+                  "sceneId": "lower_walk",
+                  "detailThreshold": 30,
+                  "prerequisiteClues": [],
+                  "relatedContradiction": "看见与成为",
+                  "unlocksClues": [
+                    "clue_018"
+                  ],
+                  "discovered": false,
+                  "discoveredAt": null
+                },
+                {
+                  "id": "clue_018",
+                  "name": "炭画的底栈图",
+                  "description": "老渡的木板背面用炭画着底栈全图：四十三户人家的位置、哪几块板子软了、哪几段雾最厚，还有一条没标终点的虚线，从沉档后壁往岩层里拐。",
+                  "sceneId": "lower_walk",
+                  "detailThreshold": 40,
+                  "prerequisiteClues": [
+                    "clue_017"
+                  ],
+                  "relatedContradiction": "填平与栖居",
+                  "unlocksClues": [
+                    "clue_019"
+                  ],
+                  "discovered": false,
+                  "discoveredAt": null
+                },
+                {
+                  "id": "clue_019",
+                  "name": "铁箱里的旧读数原本",
+                  "description": "沉档最里面四只铁箱，压着石头。箱里是百年间的读数原本，手写，附注日期与误差，与明卷上的改写版相差极大。有一只箱子的登记年份，早于观渊会自称成立之年。",
+                  "sceneId": "dark_archive",
+                  "detailThreshold": 60,
+                  "prerequisiteClues": [
+                    "clue_018"
+                  ],
+                  "relatedContradiction": "看见与成为",
+                  "unlocksClues": [
+                    "clue_020",
+                    "clue_021"
+                  ],
+                  "discovered": false,
+                  "discoveredAt": null
+                },
+                {
+                  "id": "clue_020",
+                  "name": "无影者名录",
+                  "description": "第三只箱子里不是读数，是一份名录，题「无影者」，列着二十几个名字与住处，其中一人的姓名、生辰与岑望舒完全一致，旁注：「其视不入雾，雾不录其形。」",
+                  "sceneId": "dark_archive",
+                  "detailThreshold": 65,
+                  "prerequisiteClues": [
+                    "clue_019",
+                    "clue_022"
+                  ],
+                  "relatedContradiction": "被记录与被抹除",
+                  "unlocksClues": [],
+                  "discovered": false,
+                  "discoveredAt": null
+                },
+                {
+                  "id": "clue_021",
+                  "name": "洞壁上的划道",
+                  "description": "沉档洞壁上的旧刻痕不是字，是划道，一道一道排得极为整齐，每四道一组、每组之间留空。数下来共二百一十二组，与窥历纪年数相同——有人在用划道记年，而且记在官方档案之外。",
+                  "sceneId": "dark_archive",
+                  "detailThreshold": 50,
+                  "prerequisiteClues": [
+                    "clue_019"
+                  ],
+                  "relatedContradiction": "看见与成为",
+                  "unlocksClues": [],
+                  "discovered": false,
+                  "discoveredAt": null
+                },
+                {
+                  "id": "clue_006",
+                  "name": "被改装的沙漏",
+                  "description": "议事厅角上那架限制发言的沙漏，内胆比外框新，颈口被收窄过，同样的沙量如今流得更慢。有人悄悄把发言时间拉长了一截——为了让自己人说完，还是为了让对手露底，说不清。",
+                  "sceneId": "council_hall",
+                  "detailThreshold": 25,
+                  "prerequisiteClues": [],
+                  "relatedContradiction": "披露与秩序",
+                  "unlocksClues": [],
+                  "discovered": false,
+                  "discoveredAt": null
+                }
+              ],
+              "encyclopedia": [],
+              "availableActions": [],
+              "questLog": [],
+              "criticalFacts": [],
+              "npcMemory": {
+                "version": "npc_memory_v1",
+                "records": {
+                  "阿萤": {
+                    "name": "阿萤",
+                    "behavior": {
+                      "currentScene": "hall_of_records",
+                      "currentActivity": "在附近走动",
+                      "currentMood": "平静",
+                      "interactingWith": [],
+                      "lastObserved": {
+                        "day": 0,
+                        "hour": 8,
+                        "minute": 0
+                      },
+                      "source": "default"
+                    },
+                    "personality": {
+                      "npcId": "阿萤",
+                      "archive": {
+                        "coreDesires": [
+                          "过好自己的生活",
+                          "维持现状"
+                        ],
+                        "fearsAndTaboos": [
+                          "未知的威胁",
+                          "失去重要之物"
+                        ],
+                        "valuePriorities": [
+                          "安全",
+                          "连接",
+                          "自由"
+                        ],
+                        "cognitiveStyle": "intuitive",
+                        "emotionalRegulation": "suppression",
+                        "socialStrategy": "negotiation",
+                        "boundarySensitivity": 15,
+                        "metacognition": 10
+                      },
+                      "speechProfile": {
+                        "version": 1,
+                        "baseline": "一个被登记在册却从不看册子的人，说话靠追问推进：她相信问题是拿来用的，不是拿来客气的。",
+                        "wording": [
+                          "把「看见」和「知道」分得极清，别人混用她会当场纠正",
+                          "喜欢具体的东西：粉笔、台阶、几点钟、谁的手",
+                          "不叫官称，管岑望舒叫「先生」，管议员叫「那位坐门口的大人」"
+                        ],
+                        "rhythm": "常是一串问题连着抛，中间没有停顿，抛完就闭嘴听，听的时候一动不动。",
+                        "relationships": [
+                          {
+                            "audience": "档案厅的上司和同事",
+                            "style": "先问再做事，问得让人烦，但从不撒谎"
+                          },
+                          {
+                            "audience": "寡梯的住户",
+                            "style": "放低声音，同一句话会重复第二遍"
+                          },
+                          {
+                            "audience": "穿好衣服的北岸人",
+                            "style": "故意问得很直接，看对方怎么躲"
+                          }
+                        ],
+                        "emotions": [
+                          {
+                            "state": "被当成不祥或被轻视",
+                            "style": "声音抬高，语速加快，一句接一句顶回去"
+                          },
+                          {
+                            "state": "真的害怕",
+                            "style": "反而安静，只问一句，然后等对方答"
+                          }
+                        ],
+                        "examples": [
+                          {
+                            "situation": "有人让她别在档案厅乱翻",
+                            "text": "乱翻？我按号归的架，第七层第三格我昨天才理过。你们说底下封着不能看，可你们自己一天上去三回。上面写了什么？我不识字也听得出来，你别把话咽回去。"
+                          },
+                          {
+                            "situation": "深夜在石阶上，同伴问她怕不怕",
+                            "text": "雾我不怕，雾里什么都没有，我看得清清楚楚——什么都没有。我怕的是有人跟我说他看见了。看见的那个人，说话的时候脸是软的。"
+                          }
+                        ]
+                      },
+                      "awareness": 0,
+                      "lastUpdated": 1794323876338,
+                      "isImportant": false
+                    }
+                  },
+                  "岑望舒": {
+                    "name": "岑望舒",
+                    "behavior": {
+                      "currentScene": "hall_of_records",
+                      "currentActivity": "在附近走动",
+                      "currentMood": "平静",
+                      "interactingWith": [],
+                      "lastObserved": {
+                        "day": 0,
+                        "hour": 8,
+                        "minute": 0
+                      },
+                      "source": "default"
+                    },
+                    "personality": {
+                      "npcId": "岑望舒",
+                      "archive": {
+                        "coreDesires": [
+                          "过好自己的生活",
+                          "维持现状"
+                        ],
+                        "fearsAndTaboos": [
+                          "未知的威胁",
+                          "失去重要之物"
+                        ],
+                        "valuePriorities": [
+                          "安全",
+                          "连接",
+                          "自由"
+                        ],
+                        "cognitiveStyle": "intuitive",
+                        "emotionalRegulation": "suppression",
+                        "socialStrategy": "negotiation",
+                        "boundarySensitivity": 15,
+                        "metacognition": 10
+                      },
+                      "speechProfile": {
+                        "version": 1,
+                        "baseline": "职业训练出的精确与克制：她习惯把世界折成可读的数目，再把数目折回一句陈述。不修饰，不抒情，语气像在誊抄。",
+                        "wording": [
+                          "爱用「读数」「刻度」「记录」「偏差」这类工作词，连私下也改不掉",
+                          "极少用形容词；评价一件事时给数字，不给感受",
+                          "称呼陌生人用「持牌人」或干脆省略主语；对上不谄，对下不软"
+                        ],
+                        "rhythm": "句子短，一句一断，很少用连词把两句并起来。越是要紧的话，她说得越慢越长。",
+                        "relationships": [
+                          {
+                            "audience": "会里的下属与学徒",
+                            "style": "命令句，省略客气，直接给步骤"
+                          },
+                          {
+                            "audience": "议员与外人",
+                            "style": "先报数，再给结论，最后才说自己怎么看"
+                          },
+                          {
+                            "audience": "阿萤",
+                            "style": "会多一句解释，语气松半度，然后立刻收回"
+                          }
+                        ],
+                        "emotions": [
+                          {
+                            "state": "焦虑或被人逼近真相",
+                            "style": "开始报数，用数字压住手上的抖，句子变得更干"
+                          },
+                          {
+                            "state": "被问到私事",
+                            "style": "停两秒，反问一个技术性问题，把话头挪走"
+                          }
+                        ],
+                        "examples": [
+                          {
+                            "situation": "有持牌人质疑今天的读数和昨天对不上",
+                            "text": "昨天三十九，今天四十。差一格不叫对不上，叫误差。你要我给你个保证，我给不了；我能给的是昨天的记录、今天的记录，还有我的名字压在下面。不满意的话，去议事厅提，别在台上吵。"
+                          },
+                          {
+                            "situation": "亲近的人问她累不累",
+                            "text": "……你今天问了几个人这句话。算了。」她把手从镜沿收回来，指腹留下一道灰。「我睡四个钟头。四十年都是四个钟头。这个数字不用你操心。"
+                          }
+                        ]
+                      },
+                      "awareness": 0,
+                      "lastUpdated": 1794323876338,
+                      "isImportant": false
+                    }
+                  }
+                }
+              },
+              "weather": "晴",
+              "protagonistState": {
+                "health": "良好",
+                "mood": "平静",
+                "statusEffects": [],
+                "notes": ""
+              },
+              "notebookEvents": [],
+              "causalProjections": [],
+              "historyEpochPlan": null,
+              "promptContextScope": {
+                "worldId": "player_b613c99b-4ae3-4b9c-9a54-04237c627f79",
+                "playthroughId": "pt_1794323842958_q5nwuv",
+                "archiveScope": "ordinary"
+              },
+              "directorAdviceOrigin": null,
+              "directorCueCandidate": null,
+              "lastDirectorFrame": null,
+              "diary": []
+            },
+            "inputIdentity": "（进入世界，观察周围）",
+            "inputDocuments": [],
+            "outputDocuments": [],
+            "workspaceEffects": []
+          }
+        ],
+        "availableActions": [
+          "上第三层东侧第七格，把那批读数原本抱下来",
+          "追问她：两天读数一样，误差是怎么算的",
+          "告诉她今早在雾前站过，什么也没看见",
+          "先去收拾散在铜夹架旁没人归的几卷卷宗"
+        ],
+        "sceneDetailLevels": {
+          "hall_of_records": 15
+        },
+        "discoveredSecrets": {},
+        "worldFlags": {
+          "视距四十日": true,
+          "公会内部核查": true
+        },
+        "gameplayResources": {},
+        "gameplayModState": {},
+        "documentHeads": [],
+        "workspaceState": {},
+        "narrativeProgress": null,
+        "chapterState": null,
+        "lastDirectorFrame": null,
+        "directorAdviceOrigin": null,
+        "historyEpochPlan": {
+          "id": "history_86124c02",
+          "rendererVersion": 1,
+          "scope": {
+            "worldId": "player_b613c99b-4ae3-4b9c-9a54-04237c627f79",
+            "playthroughId": "pt_1794323842958_q5nwuv",
+            "archiveScope": "ordinary"
+          },
+          "retained": [
+            {
+              "actionId": "458972d6-980e-48b7-8005-0ead3d791ce6",
+              "sourceRevision": "336:4130b82f:66e45a57",
+              "mode": "full"
+            }
+          ],
+          "policy": "[1000000,15,35,8000]",
+          "through": {
+            "actionId": "458972d6-980e-48b7-8005-0ead3d791ce6",
+            "sourceRevision": "336:4130b82f:66e45a57"
+          }
+        },
+        "rewindMemory": null,
+        "resolvedTimelineEvents": [
+          "wt_0001"
+        ],
+        "deviatedEvents": {},
+        "visitedScenes": [
+          "scene_dorm_room",
+          "scene_hall",
+          "scene_archive",
+          "scene_dining_hall",
+          "test_scene_001",
+          "test_start",
+          "scene_console",
+          "console_room",
+          "hall_of_records"
+        ],
+        "mapState": {
+          "places": {},
+          "routes": []
+        },
+        "inventory": [
+          {
+            "id": "3c1f2a70-9e41-4a2b-8a3e-0d5b7c9f2e10",
+            "name": "半截粉笔",
+            "description": "跑腿杂役的老伙计，用到只剩两指长，一头磨圆了。管理员在梯脚写日期也借它。",
+            "category": "misc",
+            "consumable": true,
+            "quantity": 1,
+            "acquiredFrom": "hall_of_records",
+            "acquiredAt": {
+              "day": 0,
+              "hour": 8,
+              "minute": 15
+            },
+            "value": 0
+          },
+          {
+            "id": "7b8d4e21-3f5c-4c9a-b1d8-6e2f0a3c5d47",
+            "name": "铜钥匙环",
+            "description": "两枚薄铜钥匙串在一圈旧皮绳上，只开明卷层西侧的两道侧门和杂物间。",
+            "category": "misc",
+            "consumable": false,
+            "quantity": 1,
+            "acquiredFrom": "hall_of_records",
+            "acquiredAt": {
+              "day": 0,
+              "hour": 8,
+              "minute": 15
+            },
+            "value": 0
+          },
+          {
+            "id": "e5a02b93-6c17-4d38-9f52-14c8b7a9d603",
+            "name": "硬面饼",
+            "description": "寡梯那边烙的，冷了以后能敲响，泡在水里才咬得动。",
+            "category": "misc",
+            "consumable": true,
+            "quantity": 1,
+            "acquiredFrom": "hall_of_records",
+            "acquiredAt": {
+              "day": 0,
+              "hour": 8,
+              "minute": 15
+            },
+            "value": 0
+          }
+        ],
+        "clues": [
+          {
+            "id": "clue_001",
+            "name": "刻度环外的私刻划痕",
+            "description": "青霭台的黄铜刻度环外侧，有几道用硬物刻的斜线，位置与官方刻度错开半格。刻痕很旧，边缘已被手掌磨钝——有人在官方刻度之外，自己记过数。",
+            "sceneId": "azure_terrace",
+            "detailThreshold": 25,
+            "prerequisiteClues": [],
+            "relatedContradiction": "披露与秩序",
+            "unlocksClues": [
+              "clue_002"
+            ],
+            "discovered": false,
+            "discoveredAt": null
+          },
+          {
+            "id": "clue_002",
+            "name": "黑石镜的倾角",
+            "description": "黑石镜底座的三个定位楔中，东侧那个被磨薄了一层，使镜面略微向雾中压低。按旧匠人的说法，这个角度能让人「看见更近、更清楚的东西」——也更难看出视距其实在缩短。",
+            "sceneId": "azure_terrace",
+            "detailThreshold": 35,
+            "prerequisiteClues": [
+              "clue_001"
+            ],
+            "relatedContradiction": "披露与秩序",
+            "unlocksClues": [
+              "clue_003"
+            ],
+            "discovered": false,
+            "discoveredAt": null
+          },
+          {
+            "id": "clue_003",
+            "name": "汇总表右下角的小字",
+            "description": "观渊档案厅里历年视距汇总明卷的右下角，有一列用极细笔迹写的数字，与正文相差十至五十日不等，越到近年差得越多。写它们的笔压很稳，只有一个人的手。",
+            "sceneId": "hall_of_records",
+            "detailThreshold": 40,
+            "prerequisiteClues": [
+              "clue_002"
+            ],
+            "relatedContradiction": "披露与秩序",
+            "unlocksClues": [
+              "clue_004",
+              "clue_022"
+            ],
+            "discovered": false,
+            "discoveredAt": null
+          },
+          {
+            "id": "clue_004",
+            "name": "没有编号的私人册子",
+            "description": "岑望舒的抽屉里有一本素封小册，不编档号，不入明卷。里面记着她自己几十次私读，其中一次写着某年某街的火，日期在两日后，而她当日并不在场，事后记载吻合。末页只有一句：「若是照此，则我不该在那条街上。」",
+            "sceneId": "hall_of_records",
+            "detailThreshold": 55,
+            "prerequisiteClues": [
+              "clue_003"
+            ],
+            "relatedContradiction": "看见与成为",
+            "unlocksClues": [],
+            "discovered": false,
+            "discoveredAt": null
+          },
+          {
+            "id": "clue_022",
+            "name": "盲视者的编号册",
+            "description": "档案厅底层一册灰皮簿，按年份登记盲视者，姓名、住处、编号，用途一栏一律写「不祥，宜录」。阿萤的名字在窥历二百零九年那页，后面还有一行小字：「视距读数对其无效，宜留在厅内。」",
+            "sceneId": "hall_of_records",
+            "detailThreshold": 45,
+            "prerequisiteClues": [
+              "clue_003"
+            ],
+            "relatedContradiction": "被记录与被抹除",
+            "unlocksClues": [
+              "clue_020"
+            ],
+            "discovered": false,
+            "discoveredAt": null
+          },
+          {
+            "id": "clue_005",
+            "name": "调查报告的末页",
+            "description": "议事厅书库的《灰烬之年调查》装订完好，唯独末页被整齐裁去，剩下的纸边还能看见半个「十」字。裁口平直，用的是锋利的裁纸刀，不是虫蛀也不是撕的。",
+            "sceneId": "council_hall",
+            "detailThreshold": 30,
+            "prerequisiteClues": [],
+            "relatedContradiction": "填平与栖居",
+            "unlocksClues": [
+              "clue_009"
+            ],
+            "discovered": false,
+            "discoveredAt": null
+          },
+          {
+            "id": "clue_007",
+            "name": "桥南第三道石缝里的旧记录",
+            "description": "第一桥南端第三道石缝塞着一卷油布，里面是修桥匠人自己记的工账：姓名、工期、出事那天在哪个桥墩。字歪，纸张发黄，一栏一栏填得很认真。",
+            "sceneId": "first_bridge",
+            "detailThreshold": 30,
+            "prerequisiteClues": [],
+            "relatedContradiction": "填平与栖居",
+            "unlocksClues": [
+              "clue_008"
+            ],
+            "discovered": false,
+            "discoveredAt": null
+          },
+          {
+            "id": "clue_008",
+            "name": "被改过的水位刻记",
+            "description": "桥墩上的历年水位横记，最近几十道中有几道明显重刻过，刀口比周围的浅，方向也不对——按那些刻记的位置，那几年裂隙的水位与实际雨季对不上。",
+            "sceneId": "first_bridge",
+            "detailThreshold": 40,
+            "prerequisiteClues": [
+              "clue_007"
+            ],
+            "relatedContradiction": "看见与成为",
+            "unlocksClues": [
+              "clue_015"
+            ],
+            "discovered": false,
+            "discoveredAt": null
+          },
+          {
+            "id": "clue_009",
+            "name": "砖缝里的旧告示",
+            "description": "韩固铺子后墙的砖缝压着一张旧告示，字迹被汗手摸得发亮：「灰烬之年重桥，殁者十七，名具于下。」名册与议事厅那册工账上的名字能对上，只少了两个。",
+            "sceneId": "forge_row",
+            "detailThreshold": 35,
+            "prerequisiteClues": [
+              "clue_005"
+            ],
+            "relatedContradiction": "填平与栖居",
+            "unlocksClues": [
+              "clue_010"
+            ],
+            "discovered": false,
+            "discoveredAt": null
+          },
+          {
+            "id": "clue_010",
+            "name": "街尾的撬棍",
+            "description": "锻脊街尾一间空铺堆着几十根撬棍，木柄上没有铺号，铁头打得比市面上厚。它们不是用来修桥的，是用来从桥面上把东西撬开的。",
+            "sceneId": "forge_row",
+            "detailThreshold": 25,
+            "prerequisiteClues": [],
+            "relatedContradiction": "填平与栖居",
+            "unlocksClues": [],
+            "discovered": false,
+            "discoveredAt": null
+          },
+          {
+            "id": "clue_011",
+            "name": "三成抄本的同一底稿",
+            "description": "灯市抄本摊兜售的预言里，约有三成句子结构相同，只换了人名与日期。比对纸张和折角，它们来自同一份底稿——有人一直在批量改写同一份「未来」。",
+            "sceneId": "lantern_market",
+            "detailThreshold": 30,
+            "prerequisiteClues": [],
+            "relatedContradiction": "看见与成为",
+            "unlocksClues": [
+              "clue_012"
+            ],
+            "discovered": false,
+            "discoveredAt": null
+          },
+          {
+            "id": "clue_012",
+            "name": "桌底的执事名单",
+            "description": "苏爻第七盏灯下的摊桌底面，用炭写着半张名单：灯市执事、两名观渊会杂务、一名议员助理。名字旁有数目，像是分成，也像是欠账。",
+            "sceneId": "lantern_market",
+            "detailThreshold": 50,
+            "prerequisiteClues": [
+              "clue_011"
+            ],
+            "relatedContradiction": "披露与秩序",
+            "unlocksClues": [],
+            "discovered": false,
+            "discoveredAt": null
+          },
+          {
+            "id": "clue_013",
+            "name": "粉笔画的断口",
+            "description": "寡梯中段墙上的粉笔画，一笔一划画着一座没有雾的城。画的断口位置，与镜跨南柱底部那道斜裂几乎完全吻合——画它的人看过那道裂，而且知道它在哪里。",
+            "sceneId": "widow_stair",
+            "detailThreshold": 35,
+            "prerequisiteClues": [],
+            "relatedContradiction": "填平与栖居",
+            "unlocksClues": [
+              "clue_014",
+              "clue_015"
+            ],
+            "discovered": false,
+            "discoveredAt": null
+          },
+          {
+            "id": "clue_014",
+            "name": "灶房的长期住户",
+            "description": "寡梯最下面那间灶房，锅底有多年积炭，床铺叠得整齐，却从没人在白天见过住客。墙缝里塞着十几张纸条，写的都是同一个日期和同一个地点：「南柱，第三夜」。",
+            "sceneId": "widow_stair",
+            "detailThreshold": 45,
+            "prerequisiteClues": [
+              "clue_013"
+            ],
+            "relatedContradiction": "被记录与被抹除",
+            "unlocksClues": [
+              "clue_016"
+            ],
+            "discovered": false,
+            "discoveredAt": null
+          },
+          {
+            "id": "clue_015",
+            "name": "南柱底部的斜裂",
+            "description": "镜跨南柱根部有一道斜裂，从石基伸进铸铁包皮，缝隙里渗出红褐色的锈水。敲上去声音发空。桥上每天走过上千人，裂口被收费口的灯挡着，从桥面看不见。",
+            "sceneId": "mirror_span",
+            "detailThreshold": 30,
+            "prerequisiteClues": [
+              "clue_013"
+            ],
+            "relatedContradiction": "填平与栖居",
+            "unlocksClues": [
+              "clue_016"
+            ],
+            "discovered": false,
+            "discoveredAt": null
+          },
+          {
+            "id": "clue_016",
+            "name": "被补铸覆盖的捐资名录",
+            "description": "南柱柱身的捐资者名字，最上几行是新铸的，铸口还留着一圈浅边。旧字迹从边缘透出来，其中一个名字是某位早年被登记为盲视者的石匠——他捐了柱基，后来被从名录上抹掉。",
+            "sceneId": "mirror_span",
+            "detailThreshold": 50,
+            "prerequisiteClues": [
+              "clue_015",
+              "clue_014"
+            ],
+            "relatedContradiction": "被记录与被抹除",
+            "unlocksClues": [],
+            "discovered": false,
+            "discoveredAt": null
+          },
+          {
+            "id": "clue_017",
+            "name": "西侧岩缝的新支流",
+            "description": "底栈西段岩壁上有一道新开的缝，里头日夜渗水，水在栈道下方积成一小摊。壁上历年水位木牌最新几块字迹很新，写着半个月内涨了三寸——渊底在变。",
+            "sceneId": "lower_walk",
+            "detailThreshold": 30,
+            "prerequisiteClues": [],
+            "relatedContradiction": "看见与成为",
+            "unlocksClues": [
+              "clue_018"
+            ],
+            "discovered": false,
+            "discoveredAt": null
+          },
+          {
+            "id": "clue_018",
+            "name": "炭画的底栈图",
+            "description": "老渡的木板背面用炭画着底栈全图：四十三户人家的位置、哪几块板子软了、哪几段雾最厚，还有一条没标终点的虚线，从沉档后壁往岩层里拐。",
+            "sceneId": "lower_walk",
+            "detailThreshold": 40,
+            "prerequisiteClues": [
+              "clue_017"
+            ],
+            "relatedContradiction": "填平与栖居",
+            "unlocksClues": [
+              "clue_019"
+            ],
+            "discovered": false,
+            "discoveredAt": null
+          },
+          {
+            "id": "clue_019",
+            "name": "铁箱里的旧读数原本",
+            "description": "沉档最里面四只铁箱，压着石头。箱里是百年间的读数原本，手写，附注日期与误差，与明卷上的改写版相差极大。有一只箱子的登记年份，早于观渊会自称成立之年。",
+            "sceneId": "dark_archive",
+            "detailThreshold": 60,
+            "prerequisiteClues": [
+              "clue_018"
+            ],
+            "relatedContradiction": "看见与成为",
+            "unlocksClues": [
+              "clue_020",
+              "clue_021"
+            ],
+            "discovered": false,
+            "discoveredAt": null
+          },
+          {
+            "id": "clue_020",
+            "name": "无影者名录",
+            "description": "第三只箱子里不是读数，是一份名录，题「无影者」，列着二十几个名字与住处，其中一人的姓名、生辰与岑望舒完全一致，旁注：「其视不入雾，雾不录其形。」",
+            "sceneId": "dark_archive",
+            "detailThreshold": 65,
+            "prerequisiteClues": [
+              "clue_019",
+              "clue_022"
+            ],
+            "relatedContradiction": "被记录与被抹除",
+            "unlocksClues": [],
+            "discovered": false,
+            "discoveredAt": null
+          },
+          {
+            "id": "clue_021",
+            "name": "洞壁上的划道",
+            "description": "沉档洞壁上的旧刻痕不是字，是划道，一道一道排得极为整齐，每四道一组、每组之间留空。数下来共二百一十二组，与窥历纪年数相同——有人在用划道记年，而且记在官方档案之外。",
+            "sceneId": "dark_archive",
+            "detailThreshold": 50,
+            "prerequisiteClues": [
+              "clue_019"
+            ],
+            "relatedContradiction": "看见与成为",
+            "unlocksClues": [],
+            "discovered": false,
+            "discoveredAt": null
+          },
+          {
+            "id": "clue_006",
+            "name": "被改装的沙漏",
+            "description": "议事厅角上那架限制发言的沙漏，内胆比外框新，颈口被收窄过，同样的沙量如今流得更慢。有人悄悄把发言时间拉长了一截——为了让自己人说完，还是为了让对手露底，说不清。",
+            "sceneId": "council_hall",
+            "detailThreshold": 25,
+            "prerequisiteClues": [],
+            "relatedContradiction": "披露与秩序",
+            "unlocksClues": [],
+            "discovered": false,
+            "discoveredAt": null
+          }
+        ],
+        "encyclopedia": [
+          {
+            "id": "cfbe4421-c13e-4f36-8767-92f92eb16980:encyclopedia:0",
+            "type": "location",
+            "name": "观渊档案厅",
+            "description": "环形塔楼，内壁一圈一圈叠着卷宗格。底层是「明卷」，任何持牌人都能查；往上十二层是「密卷」，钥匙在首席读渊师和三名议员手里。气味是墨、樟脑和一丝潮意。梯子是活动的，管理员用粉笔在梯脚写日期。每份卷宗旁夹",
+            "knowledge": [
+              {
+                "text": "晨读散场时底层最挤，梯脚有管理员用粉笔写的日期。",
+                "source": "ai",
+                "addedAt": {
+                  "day": 0,
+                  "hour": 8,
+                  "minute": 15
+                },
+                "importance": 50
+              }
+            ],
+            "firstEncountered": {
+              "day": 0,
+              "hour": 8,
+              "minute": 15
+            },
+            "lastUpdated": {
+              "day": 0,
+              "hour": 8,
+              "minute": 15
+            },
+            "relatedEntries": []
+          }
+        ],
+        "criticalFacts": [],
+        "questLog": [],
+        "npcMemory": {
+          "version": "npc_memory_v1",
+          "records": {
+            "阿萤": {
+              "name": "阿萤",
+              "behavior": {
+                "currentScene": "hall_of_records",
+                "currentActivity": "在附近走动",
+                "currentMood": "平静",
+                "interactingWith": [],
+                "lastObserved": {
+                  "day": 0,
+                  "hour": 8,
+                  "minute": 15
+                },
+                "source": "default"
+              },
+              "personality": {
+                "npcId": "阿萤",
+                "archive": {
+                  "coreDesires": [
+                    "过好自己的生活",
+                    "维持现状"
+                  ],
+                  "fearsAndTaboos": [
+                    "未知的威胁",
+                    "失去重要之物"
+                  ],
+                  "valuePriorities": [
+                    "安全",
+                    "连接",
+                    "自由"
+                  ],
+                  "cognitiveStyle": "intuitive",
+                  "emotionalRegulation": "suppression",
+                  "socialStrategy": "negotiation",
+                  "boundarySensitivity": 15,
+                  "metacognition": 10
+                },
+                "speechProfile": {
+                  "version": 1,
+                  "baseline": "一个被登记在册却从不看册子的人，说话靠追问推进：她相信问题是拿来用的，不是拿来客气的。",
+                  "wording": [
+                    "把「看见」和「知道」分得极清，别人混用她会当场纠正",
+                    "喜欢具体的东西：粉笔、台阶、几点钟、谁的手",
+                    "不叫官称，管岑望舒叫「先生」，管议员叫「那位坐门口的大人」"
+                  ],
+                  "rhythm": "常是一串问题连着抛，中间没有停顿，抛完就闭嘴听，听的时候一动不动。",
+                  "relationships": [
+                    {
+                      "audience": "档案厅的上司和同事",
+                      "style": "先问再做事，问得让人烦，但从不撒谎"
+                    },
+                    {
+                      "audience": "寡梯的住户",
+                      "style": "放低声音，同一句话会重复第二遍"
+                    },
+                    {
+                      "audience": "穿好衣服的北岸人",
+                      "style": "故意问得很直接，看对方怎么躲"
+                    }
+                  ],
+                  "emotions": [
+                    {
+                      "state": "被当成不祥或被轻视",
+                      "style": "声音抬高，语速加快，一句接一句顶回去"
+                    },
+                    {
+                      "state": "真的害怕",
+                      "style": "反而安静，只问一句，然后等对方答"
+                    }
+                  ],
+                  "examples": [
+                    {
+                      "situation": "有人让她别在档案厅乱翻",
+                      "text": "乱翻？我按号归的架，第七层第三格我昨天才理过。你们说底下封着不能看，可你们自己一天上去三回。上面写了什么？我不识字也听得出来，你别把话咽回去。"
+                    },
+                    {
+                      "situation": "深夜在石阶上，同伴问她怕不怕",
+                      "text": "雾我不怕，雾里什么都没有，我看得清清楚楚——什么都没有。我怕的是有人跟我说他看见了。看见的那个人，说话的时候脸是软的。"
+                    }
+                  ]
+                },
+                "awareness": 0,
+                "lastUpdated": 1794323876338,
+                "isImportant": false
+              }
+            },
+            "岑望舒": {
+              "name": "岑望舒",
+              "state": "reacted",
+              "relationship": {
+                "npcName": "岑望舒",
+                "affinity": 2,
+                "trust": 1,
+                "tags": [],
+                "firstMet": {
+                  "day": 0,
+                  "hour": 8,
+                  "minute": 15
+                },
+                "lastInteraction": {
+                  "day": 0,
+                  "hour": 8,
+                  "minute": 15
+                },
+                "notes": ""
+              },
+              "behavior": {
+                "currentScene": "hall_of_records",
+                "currentActivity": "在附近走动",
+                "currentMood": "平静",
+                "interactingWith": [],
+                "lastObserved": {
+                  "day": 0,
+                  "hour": 8,
+                  "minute": 15
+                },
+                "source": "default"
+              },
+              "personality": {
+                "npcId": "岑望舒",
+                "archive": {
+                  "coreDesires": [
+                    "过好自己的生活",
+                    "维持现状"
+                  ],
+                  "fearsAndTaboos": [
+                    "未知的威胁",
+                    "失去重要之物"
+                  ],
+                  "valuePriorities": [
+                    "安全",
+                    "连接",
+                    "自由"
+                  ],
+                  "cognitiveStyle": "intuitive",
+                  "emotionalRegulation": "suppression",
+                  "socialStrategy": "negotiation",
+                  "boundarySensitivity": 15,
+                  "metacognition": 10
+                },
+                "speechProfile": {
+                  "version": 1,
+                  "baseline": "职业训练出的精确与克制：她习惯把世界折成可读的数目，再把数目折回一句陈述。不修饰，不抒情，语气像在誊抄。",
+                  "wording": [
+                    "爱用「读数」「刻度」「记录」「偏差」这类工作词，连私下也改不掉",
+                    "极少用形容词；评价一件事时给数字，不给感受",
+                    "称呼陌生人用「持牌人」或干脆省略主语；对上不谄，对下不软"
+                  ],
+                  "rhythm": "句子短，一句一断，很少用连词把两句并起来。越是要紧的话，她说得越慢越长。",
+                  "relationships": [
+                    {
+                      "audience": "会里的下属与学徒",
+                      "style": "命令句，省略客气，直接给步骤"
+                    },
+                    {
+                      "audience": "议员与外人",
+                      "style": "先报数，再给结论，最后才说自己怎么看"
+                    },
+                    {
+                      "audience": "阿萤",
+                      "style": "会多一句解释，语气松半度，然后立刻收回"
+                    }
+                  ],
+                  "emotions": [
+                    {
+                      "state": "焦虑或被人逼近真相",
+                      "style": "开始报数，用数字压住手上的抖，句子变得更干"
+                    },
+                    {
+                      "state": "被问到私事",
+                      "style": "停两秒，反问一个技术性问题，把话头挪走"
+                    }
+                  ],
+                  "examples": [
+                    {
+                      "situation": "有持牌人质疑今天的读数和昨天对不上",
+                      "text": "昨天三十九，今天四十。差一格不叫对不上，叫误差。你要我给你个保证，我给不了；我能给的是昨天的记录、今天的记录，还有我的名字压在下面。不满意的话，去议事厅提，别在台上吵。"
+                    },
+                    {
+                      "situation": "亲近的人问她累不累",
+                      "text": "……你今天问了几个人这句话。算了。」她把手从镜沿收回来，指腹留下一道灰。「我睡四个钟头。四十年都是四个钟头。这个数字不用你操心。"
+                    }
+                  ]
+                },
+                "awareness": 0,
+                "lastUpdated": 1794323876338,
+                "isImportant": false
+              },
+              "playerKnowledge": {
+                "entryId": "cfbe4421-c13e-4f36-8767-92f92eb16980:encyclopedia:1",
+                "description": "",
+                "knowledge": [],
+                "firstEncountered": {
+                  "day": 0,
+                  "hour": 8,
+                  "minute": 15
+                },
+                "lastUpdated": {
+                  "day": 0,
+                  "hour": 8,
+                  "minute": 15
+                },
+                "relatedEntries": []
+              }
+            }
+          }
+        },
+        "diary": [],
+        "weather": "多云",
+        "protagonistState": {
+          "health": "良好",
+          "mood": "专注",
+          "statusEffects": [],
+          "notes": ""
+        },
+        "notebookEvents": [],
+        "causalProjections": [],
+        "sandboxToolAudit": [],
+        "sandboxSaveMarks": [],
+        "sandboxActionLock": null,
+        "realityArtifacts": [],
+        "boundaryEvents": [],
+        "metaChannelManifest": null,
+        "midoriSettings": {
+          "enabled": false,
+          "model": "pixel-art-xl",
+          "pixelate": true,
+          "autoGenerate": false
+        },
+        "midoriAssetRegistry": {
+          "version": 1,
+          "bindings": {}
+        },
+        "voiceAssets": {}
+      }
+    },
+    {
+      "meta": {
+        "id": "autosave_prev_pt_1794323842958_q5nwuv",
+        "name": "[上一步存档] 裂隙之城 · 阿萤",
+        "createdAt": 1794323902854,
+        "updatedAt": 1794323902854,
+        "gameTime": {
+          "day": 0,
+          "hour": 8,
+          "minute": 15
+        },
+        "worldId": "player_b613c99b-4ae3-4b9c-9a54-04237c627f79",
+        "worldName": "裂隙之城",
+        "playthroughId": "pt_1794323842958_q5nwuv",
+        "playerName": "阿萤",
+        "currentSceneName": "观渊档案厅",
+        "actionCount": 1,
+        "preview": "阿萤 选择身份：寡梯长大的盲视者，观渊档案厅的跑腿杂役。。起点：观渊档案厅。该身份开场：你抱着一摞刚归架的卷宗走上档案厅的旋梯，粉笔灰从袖口扑下来。窗外的雾今天升得高，一直漫到第七层。你停下，照例往雾里看了一眼——什么都没有，干干净净的空。你早就习惯这种空，却从没习惯别人听说你什么也看不见时那种表情。楼下有人喊你的名字，声音急。你把卷宗换到另一只手，往下走。；晨读散场，岑望舒在梯下叫住阿萤，要她去取近三十日的读数原本。",
+        "playDuration": 0,
+        "type": "autosave_prev",
+        "sizeBytes": 2779664
+      },
+      "state": {
+        "gameTime": {
+          "day": 0,
+          "hour": 8,
+          "minute": 15
+        },
+        "playerName": "阿萤",
+        "entryContext": {
+          "version": 1,
+          "worldId": "player_b613c99b-4ae3-4b9c-9a54-04237c627f79",
+          "source": "preset",
+          "identityId": "identity_ying",
+          "canonicalName": "阿萤",
+          "playerName": "阿萤",
+          "identityDescription": "寡梯长大的盲视者，观渊档案厅的跑腿杂役。",
+          "startingSceneId": "hall_of_records",
+          "openingNarrative": "你抱着一摞刚归架的卷宗走上档案厅的旋梯，粉笔灰从袖口扑下来。窗外的雾今天升得高，一直漫到第七层。你停下，照例往雾里看了一眼——什么都没有，干干净净的空。你早就习惯这种空，却从没习惯别人听说你什么也看不见时那种表情。楼下有人喊你的名字，声音急。你把卷宗换到另一只手，往下走。"
+        },
+        "currentSceneId": "hall_of_records",
+        "sceneNarrative": "旋梯是铁的，每一级都窄，走快了鞋跟会磕出连串的响。你下到第五层时，晨读刚散——三十几个持牌人正顺着底层的门往外走，袍角擦过铜夹架，带起一股墨和樟脑混在一起的味道。有人边走边把手里的小抄折起来，有人回头看台上，像还想再问一句。梯脚的地面上用粉笔写着今日的日期，字迹是管理员的，横歪得很稳。你踩过它的时候，粉笔灰从袖口又落了一层，细细地铺在铁板上。窗外那片雾比早上更高了，漫到第七层窗沿，白得很安静。\n\n「岑望舒：阿萤。」\n\n她站在最后一级梯子底下，灰头发挽得极紧，一只手撑在桌沿上，拇指那道深痕压在木纹里。散场的人从她两边绕过去，没人敢从正中间走。她看了你一眼，视线在你袖口的灰上停了一下，又抬回来。\n\n「岑望舒：第三层，东侧第七格。近三十日的读数原本，整批抱下来，放到我桌上。别按年份理，按夹子上写的先后排。」\n\n「岑望舒：刚才有人在台下问，为什么这两天读数一模一样。我答了误差。这个答案只够撑到今天下午。」\n\n她把撑在桌沿的手收回去，指腹在木头上留下一小片干净的痕。楼上有人挪动梯子，铁脚刮着地面，刺耳地滑过去半尺。她没有再看你，转身去收台面上的几张纸，动作很慢，像怕把哪一张的顺序弄乱。",
+        "worldLineNodeId": "wl_ef604e9f-1ea2-4327-9bff-05cf903ea141",
+        "playbackPosition": {
+          "nodeId": "wl_ef604e9f-1ea2-4327-9bff-05cf903ea141",
+          "index": 0,
+          "showing": false
+        },
+        "readingView": null,
+        "history": [
+          {
+            "id": "458972d6-980e-48b7-8005-0ead3d791ce6",
+            "timestamp": 1794323876338,
+            "gameTime": {
+              "day": 0,
+              "hour": 8,
+              "minute": 0
+            },
+            "sceneId": "hall_of_records",
+            "sceneName": "观渊档案厅",
+            "playerInput": "成为：阿萤",
+            "aiResponse": "你抱着一摞刚归架的卷宗走上档案厅的旋梯，粉笔灰从袖口扑下来。窗外的雾今天升得高，一直漫到第七层。你停下，照例往雾里看了一眼——什么都没有，干干净净的空。你早就习惯这种空，却从没习惯别人听说你什么也看不见时那种表情。楼下有人喊你的名字，声音急。你把卷宗换到另一只手，往下走。",
+            "summary": "阿萤 选择身份：寡梯长大的盲视者，观渊档案厅的跑腿杂役。。起点：观渊档案厅。该身份开场：你抱着一摞刚归架的卷宗走上档案厅的旋梯，粉笔灰从袖口扑下来。窗外的雾今天升得高，一直漫到第七层。你停下，照例往雾里看了一眼——什么都没有，干干净净的空。你早就习惯这种空，却从没习惯别人听说你什么也看不见时那种表情。楼下有人喊你的名字，声音急。你把卷宗换到另一只手，往下走。",
+            "timeSpent": {
+              "day": 0,
+              "hour": 0,
+              "minute": 0
+            },
+            "worldImpacts": [],
+            "snapshot": null
+          },
+          {
+            "id": "cfbe4421-c13e-4f36-8767-92f92eb16980",
+            "timestamp": 1794323897034,
+            "gameTime": {
+              "day": 0,
+              "hour": 8,
+              "minute": 15
+            },
+            "sceneId": "hall_of_records",
+            "sceneName": "观渊档案厅",
+            "playerInput": "（进入世界，观察周围）",
+            "aiResponse": "旋梯是铁的，每一级都窄，走快了鞋跟会磕出连串的响。你下到第五层时，晨读刚散——三十几个持牌人正顺着底层的门往外走，袍角擦过铜夹架，带起一股墨和樟脑混在一起的味道。有人边走边把手里的小抄折起来，有人回头看台上，像还想再问一句。梯脚的地面上用粉笔写着今日的日期，字迹是管理员的，横歪得很稳。你踩过它的时候，粉笔灰从袖口又落了一层，细细地铺在铁板上。窗外那片雾比早上更高了，漫到第七层窗沿，白得很安静。\n\n「岑望舒：阿萤。」\n\n她站在最后一级梯子底下，灰头发挽得极紧，一只手撑在桌沿上，拇指那道深痕压在木纹里。散场的人从她两边绕过去，没人敢从正中间走。她看了你一眼，视线在你袖口的灰上停了一下，又抬回来。\n\n「岑望舒：第三层，东侧第七格。近三十日的读数原本，整批抱下来，放到我桌上。别按年份理，按夹子上写的先后排。」\n\n「岑望舒：刚才有人在台下问，为什么这两天读数一模一样。我答了误差。这个答案只够撑到今天下午。」\n\n她把撑在桌沿的手收回去，指腹在木头上留下一小片干净的痕。楼上有人挪动梯子，铁脚刮着地面，刺耳地滑过去半尺。她没有再看你，转身去收台面上的几张纸，动作很慢，像怕把哪一张的顺序弄乱。",
+            "summary": "晨读散场，岑望舒在梯下叫住阿萤，要她去取近三十日的读数原本。",
+            "timeSpent": {
+              "day": 0,
+              "hour": 0,
+              "minute": 15
+            },
+            "worldImpacts": [
+              "岑望舒把「误差」这个说法又推给了一个人去验证，她自己则留着真实数列没有交出去。"
+            ],
+            "availableActions": [
+              "上第三层东侧第七格，把那批读数原本抱下来",
+              "追问她：两天读数一样，误差是怎么算的",
+              "告诉她今早在雾前站过，什么也没看见",
+              "先去收拾散在铜夹架旁没人归的几卷卷宗"
+            ],
+            "snapshot": {
+              "worldId": "player_b613c99b-4ae3-4b9c-9a54-04237c627f79",
+              "mapState": {
+                "places": {},
+                "routes": []
+              },
+              "currentSceneId": "hall_of_records",
+              "currentGameTime": {
+                "day": 0,
+                "hour": 8,
+                "minute": 0
+              },
+              "playerName": "阿萤",
+              "entryContext": {
+                "version": 1,
+                "worldId": "player_b613c99b-4ae3-4b9c-9a54-04237c627f79",
+                "source": "preset",
+                "identityId": "identity_ying",
+                "canonicalName": "阿萤",
+                "playerName": "阿萤",
+                "identityDescription": "寡梯长大的盲视者，观渊档案厅的跑腿杂役。",
+                "startingSceneId": "hall_of_records",
+                "openingNarrative": "你抱着一摞刚归架的卷宗走上档案厅的旋梯，粉笔灰从袖口扑下来。窗外的雾今天升得高，一直漫到第七层。你停下，照例往雾里看了一眼——什么都没有，干干净净的空。你早就习惯这种空，却从没习惯别人听说你什么也看不见时那种表情。楼下有人喊你的名字，声音急。你把卷宗换到另一只手，往下走。"
+              },
+              "sceneNarrative": "你抱着一摞刚归架的卷宗走上档案厅的旋梯，粉笔灰从袖口扑下来。窗外的雾今天升得高，一直漫到第七层。你停下，照例往雾里看了一眼——什么都没有，干干净净的空。你早就习惯这种空，却从没习惯别人听说你什么也看不见时那种表情。楼下有人喊你的名字，声音急。你把卷宗换到另一只手，往下走。",
+              "historyLength": 1,
+              "discoveredSecrets": {},
+              "worldFlags": {},
+              "gameplayResources": {},
+              "gameplayModState": {},
+              "documentHeads": [],
+              "workspaceState": {},
+              "midoriAssetRegistry": {
+                "version": 1,
+                "bindings": {}
+              },
+              "narrativeProgress": null,
+              "chapterState": null,
+              "rewindMemory": null,
+              "sceneDetailLevels": {},
+              "visitedScenes": [
+                "scene_dorm_room",
+                "scene_hall",
+                "scene_archive",
+                "scene_dining_hall",
+                "test_scene_001",
+                "test_start",
+                "scene_console",
+                "console_room",
+                "hall_of_records"
+              ],
+              "resolvedTimelineEvents": [],
+              "deviatedEvents": {},
+              "inventory": [],
+              "clues": [
+                {
+                  "id": "clue_001",
+                  "name": "刻度环外的私刻划痕",
+                  "description": "青霭台的黄铜刻度环外侧，有几道用硬物刻的斜线，位置与官方刻度错开半格。刻痕很旧，边缘已被手掌磨钝——有人在官方刻度之外，自己记过数。",
+                  "sceneId": "azure_terrace",
+                  "detailThreshold": 25,
+                  "prerequisiteClues": [],
+                  "relatedContradiction": "披露与秩序",
+                  "unlocksClues": [
+                    "clue_002"
+                  ],
+                  "discovered": false,
+                  "discoveredAt": null
+                },
+                {
+                  "id": "clue_002",
+                  "name": "黑石镜的倾角",
+                  "description": "黑石镜底座的三个定位楔中，东侧那个被磨薄了一层，使镜面略微向雾中压低。按旧匠人的说法，这个角度能让人「看见更近、更清楚的东西」——也更难看出视距其实在缩短。",
+                  "sceneId": "azure_terrace",
+                  "detailThreshold": 35,
+                  "prerequisiteClues": [
+                    "clue_001"
+                  ],
+                  "relatedContradiction": "披露与秩序",
+                  "unlocksClues": [
+                    "clue_003"
+                  ],
+                  "discovered": false,
+                  "discoveredAt": null
+                },
+                {
+                  "id": "clue_003",
+                  "name": "汇总表右下角的小字",
+                  "description": "观渊档案厅里历年视距汇总明卷的右下角，有一列用极细笔迹写的数字，与正文相差十至五十日不等，越到近年差得越多。写它们的笔压很稳，只有一个人的手。",
+                  "sceneId": "hall_of_records",
+                  "detailThreshold": 40,
+                  "prerequisiteClues": [
+                    "clue_002"
+                  ],
+                  "relatedContradiction": "披露与秩序",
+                  "unlocksClues": [
+                    "clue_004",
+                    "clue_022"
+                  ],
+                  "discovered": false,
+                  "discoveredAt": null
+                },
+                {
+                  "id": "clue_004",
+                  "name": "没有编号的私人册子",
+                  "description": "岑望舒的抽屉里有一本素封小册，不编档号，不入明卷。里面记着她自己几十次私读，其中一次写着某年某街的火，日期在两日后，而她当日并不在场，事后记载吻合。末页只有一句：「若是照此，则我不该在那条街上。」",
+                  "sceneId": "hall_of_records",
+                  "detailThreshold": 55,
+                  "prerequisiteClues": [
+                    "clue_003"
+                  ],
+                  "relatedContradiction": "看见与成为",
+                  "unlocksClues": [],
+                  "discovered": false,
+                  "discoveredAt": null
+                },
+                {
+                  "id": "clue_022",
+                  "name": "盲视者的编号册",
+                  "description": "档案厅底层一册灰皮簿，按年份登记盲视者，姓名、住处、编号，用途一栏一律写「不祥，宜录」。阿萤的名字在窥历二百零九年那页，后面还有一行小字：「视距读数对其无效，宜留在厅内。」",
+                  "sceneId": "hall_of_records",
+                  "detailThreshold": 45,
+                  "prerequisiteClues": [
+                    "clue_003"
+                  ],
+                  "relatedContradiction": "被记录与被抹除",
+                  "unlocksClues": [
+                    "clue_020"
+                  ],
+                  "discovered": false,
+                  "discoveredAt": null
+                },
+                {
+                  "id": "clue_005",
+                  "name": "调查报告的末页",
+                  "description": "议事厅书库的《灰烬之年调查》装订完好，唯独末页被整齐裁去，剩下的纸边还能看见半个「十」字。裁口平直，用的是锋利的裁纸刀，不是虫蛀也不是撕的。",
+                  "sceneId": "council_hall",
+                  "detailThreshold": 30,
+                  "prerequisiteClues": [],
+                  "relatedContradiction": "填平与栖居",
+                  "unlocksClues": [
+                    "clue_009"
+                  ],
+                  "discovered": false,
+                  "discoveredAt": null
+                },
+                {
+                  "id": "clue_007",
+                  "name": "桥南第三道石缝里的旧记录",
+                  "description": "第一桥南端第三道石缝塞着一卷油布，里面是修桥匠人自己记的工账：姓名、工期、出事那天在哪个桥墩。字歪，纸张发黄，一栏一栏填得很认真。",
+                  "sceneId": "first_bridge",
+                  "detailThreshold": 30,
+                  "prerequisiteClues": [],
+                  "relatedContradiction": "填平与栖居",
+                  "unlocksClues": [
+                    "clue_008"
+                  ],
+                  "discovered": false,
+                  "discoveredAt": null
+                },
+                {
+                  "id": "clue_008",
+                  "name": "被改过的水位刻记",
+                  "description": "桥墩上的历年水位横记，最近几十道中有几道明显重刻过，刀口比周围的浅，方向也不对——按那些刻记的位置，那几年裂隙的水位与实际雨季对不上。",
+                  "sceneId": "first_bridge",
+                  "detailThreshold": 40,
+                  "prerequisiteClues": [
+                    "clue_007"
+                  ],
+                  "relatedContradiction": "看见与成为",
+                  "unlocksClues": [
+                    "clue_015"
+                  ],
+                  "discovered": false,
+                  "discoveredAt": null
+                },
+                {
+                  "id": "clue_009",
+                  "name": "砖缝里的旧告示",
+                  "description": "韩固铺子后墙的砖缝压着一张旧告示，字迹被汗手摸得发亮：「灰烬之年重桥，殁者十七，名具于下。」名册与议事厅那册工账上的名字能对上，只少了两个。",
+                  "sceneId": "forge_row",
+                  "detailThreshold": 35,
+                  "prerequisiteClues": [
+                    "clue_005"
+                  ],
+                  "relatedContradiction": "填平与栖居",
+                  "unlocksClues": [
+                    "clue_010"
+                  ],
+                  "discovered": false,
+                  "discoveredAt": null
+                },
+                {
+                  "id": "clue_010",
+                  "name": "街尾的撬棍",
+                  "description": "锻脊街尾一间空铺堆着几十根撬棍，木柄上没有铺号，铁头打得比市面上厚。它们不是用来修桥的，是用来从桥面上把东西撬开的。",
+                  "sceneId": "forge_row",
+                  "detailThreshold": 25,
+                  "prerequisiteClues": [],
+                  "relatedContradiction": "填平与栖居",
+                  "unlocksClues": [],
+                  "discovered": false,
+                  "discoveredAt": null
+                },
+                {
+                  "id": "clue_011",
+                  "name": "三成抄本的同一底稿",
+                  "description": "灯市抄本摊兜售的预言里，约有三成句子结构相同，只换了人名与日期。比对纸张和折角，它们来自同一份底稿——有人一直在批量改写同一份「未来」。",
+                  "sceneId": "lantern_market",
+                  "detailThreshold": 30,
+                  "prerequisiteClues": [],
+                  "relatedContradiction": "看见与成为",
+                  "unlocksClues": [
+                    "clue_012"
+                  ],
+                  "discovered": false,
+                  "discoveredAt": null
+                },
+                {
+                  "id": "clue_012",
+                  "name": "桌底的执事名单",
+                  "description": "苏爻第七盏灯下的摊桌底面，用炭写着半张名单：灯市执事、两名观渊会杂务、一名议员助理。名字旁有数目，像是分成，也像是欠账。",
+                  "sceneId": "lantern_market",
+                  "detailThreshold": 50,
+                  "prerequisiteClues": [
+                    "clue_011"
+                  ],
+                  "relatedContradiction": "披露与秩序",
+                  "unlocksClues": [],
+                  "discovered": false,
+                  "discoveredAt": null
+                },
+                {
+                  "id": "clue_013",
+                  "name": "粉笔画的断口",
+                  "description": "寡梯中段墙上的粉笔画，一笔一划画着一座没有雾的城。画的断口位置，与镜跨南柱底部那道斜裂几乎完全吻合——画它的人看过那道裂，而且知道它在哪里。",
+                  "sceneId": "widow_stair",
+                  "detailThreshold": 35,
+                  "prerequisiteClues": [],
+                  "relatedContradiction": "填平与栖居",
+                  "unlocksClues": [
+                    "clue_014",
+                    "clue_015"
+                  ],
+                  "discovered": false,
+                  "discoveredAt": null
+                },
+                {
+                  "id": "clue_014",
+                  "name": "灶房的长期住户",
+                  "description": "寡梯最下面那间灶房，锅底有多年积炭，床铺叠得整齐，却从没人在白天见过住客。墙缝里塞着十几张纸条，写的都是同一个日期和同一个地点：「南柱，第三夜」。",
+                  "sceneId": "widow_stair",
+                  "detailThreshold": 45,
+                  "prerequisiteClues": [
+                    "clue_013"
+                  ],
+                  "relatedContradiction": "被记录与被抹除",
+                  "unlocksClues": [
+                    "clue_016"
+                  ],
+                  "discovered": false,
+                  "discoveredAt": null
+                },
+                {
+                  "id": "clue_015",
+                  "name": "南柱底部的斜裂",
+                  "description": "镜跨南柱根部有一道斜裂，从石基伸进铸铁包皮，缝隙里渗出红褐色的锈水。敲上去声音发空。桥上每天走过上千人，裂口被收费口的灯挡着，从桥面看不见。",
+                  "sceneId": "mirror_span",
+                  "detailThreshold": 30,
+                  "prerequisiteClues": [
+                    "clue_013"
+                  ],
+                  "relatedContradiction": "填平与栖居",
+                  "unlocksClues": [
+                    "clue_016"
+                  ],
+                  "discovered": false,
+                  "discoveredAt": null
+                },
+                {
+                  "id": "clue_016",
+                  "name": "被补铸覆盖的捐资名录",
+                  "description": "南柱柱身的捐资者名字，最上几行是新铸的，铸口还留着一圈浅边。旧字迹从边缘透出来，其中一个名字是某位早年被登记为盲视者的石匠——他捐了柱基，后来被从名录上抹掉。",
+                  "sceneId": "mirror_span",
+                  "detailThreshold": 50,
+                  "prerequisiteClues": [
+                    "clue_015",
+                    "clue_014"
+                  ],
+                  "relatedContradiction": "被记录与被抹除",
+                  "unlocksClues": [],
+                  "discovered": false,
+                  "discoveredAt": null
+                },
+                {
+                  "id": "clue_017",
+                  "name": "西侧岩缝的新支流",
+                  "description": "底栈西段岩壁上有一道新开的缝，里头日夜渗水，水在栈道下方积成一小摊。壁上历年水位木牌最新几块字迹很新，写着半个月内涨了三寸——渊底在变。",
+                  "sceneId": "lower_walk",
+                  "detailThreshold": 30,
+                  "prerequisiteClues": [],
+                  "relatedContradiction": "看见与成为",
+                  "unlocksClues": [
+                    "clue_018"
+                  ],
+                  "discovered": false,
+                  "discoveredAt": null
+                },
+                {
+                  "id": "clue_018",
+                  "name": "炭画的底栈图",
+                  "description": "老渡的木板背面用炭画着底栈全图：四十三户人家的位置、哪几块板子软了、哪几段雾最厚，还有一条没标终点的虚线，从沉档后壁往岩层里拐。",
+                  "sceneId": "lower_walk",
+                  "detailThreshold": 40,
+                  "prerequisiteClues": [
+                    "clue_017"
+                  ],
+                  "relatedContradiction": "填平与栖居",
+                  "unlocksClues": [
+                    "clue_019"
+                  ],
+                  "discovered": false,
+                  "discoveredAt": null
+                },
+                {
+                  "id": "clue_019",
+                  "name": "铁箱里的旧读数原本",
+                  "description": "沉档最里面四只铁箱，压着石头。箱里是百年间的读数原本，手写，附注日期与误差，与明卷上的改写版相差极大。有一只箱子的登记年份，早于观渊会自称成立之年。",
+                  "sceneId": "dark_archive",
+                  "detailThreshold": 60,
+                  "prerequisiteClues": [
+                    "clue_018"
+                  ],
+                  "relatedContradiction": "看见与成为",
+                  "unlocksClues": [
+                    "clue_020",
+                    "clue_021"
+                  ],
+                  "discovered": false,
+                  "discoveredAt": null
+                },
+                {
+                  "id": "clue_020",
+                  "name": "无影者名录",
+                  "description": "第三只箱子里不是读数，是一份名录，题「无影者」，列着二十几个名字与住处，其中一人的姓名、生辰与岑望舒完全一致，旁注：「其视不入雾，雾不录其形。」",
+                  "sceneId": "dark_archive",
+                  "detailThreshold": 65,
+                  "prerequisiteClues": [
+                    "clue_019",
+                    "clue_022"
+                  ],
+                  "relatedContradiction": "被记录与被抹除",
+                  "unlocksClues": [],
+                  "discovered": false,
+                  "discoveredAt": null
+                },
+                {
+                  "id": "clue_021",
+                  "name": "洞壁上的划道",
+                  "description": "沉档洞壁上的旧刻痕不是字，是划道，一道一道排得极为整齐，每四道一组、每组之间留空。数下来共二百一十二组，与窥历纪年数相同——有人在用划道记年，而且记在官方档案之外。",
+                  "sceneId": "dark_archive",
+                  "detailThreshold": 50,
+                  "prerequisiteClues": [
+                    "clue_019"
+                  ],
+                  "relatedContradiction": "看见与成为",
+                  "unlocksClues": [],
+                  "discovered": false,
+                  "discoveredAt": null
+                },
+                {
+                  "id": "clue_006",
+                  "name": "被改装的沙漏",
+                  "description": "议事厅角上那架限制发言的沙漏，内胆比外框新，颈口被收窄过，同样的沙量如今流得更慢。有人悄悄把发言时间拉长了一截——为了让自己人说完，还是为了让对手露底，说不清。",
+                  "sceneId": "council_hall",
+                  "detailThreshold": 25,
+                  "prerequisiteClues": [],
+                  "relatedContradiction": "披露与秩序",
+                  "unlocksClues": [],
+                  "discovered": false,
+                  "discoveredAt": null
+                }
+              ],
+              "encyclopedia": [],
+              "availableActions": [],
+              "questLog": [],
+              "criticalFacts": [],
+              "npcMemory": {
+                "version": "npc_memory_v1",
+                "records": {
+                  "阿萤": {
+                    "name": "阿萤",
+                    "behavior": {
+                      "currentScene": "hall_of_records",
+                      "currentActivity": "在附近走动",
+                      "currentMood": "平静",
+                      "interactingWith": [],
+                      "lastObserved": {
+                        "day": 0,
+                        "hour": 8,
+                        "minute": 0
+                      },
+                      "source": "default"
+                    },
+                    "personality": {
+                      "npcId": "阿萤",
+                      "archive": {
+                        "coreDesires": [
+                          "过好自己的生活",
+                          "维持现状"
+                        ],
+                        "fearsAndTaboos": [
+                          "未知的威胁",
+                          "失去重要之物"
+                        ],
+                        "valuePriorities": [
+                          "安全",
+                          "连接",
+                          "自由"
+                        ],
+                        "cognitiveStyle": "intuitive",
+                        "emotionalRegulation": "suppression",
+                        "socialStrategy": "negotiation",
+                        "boundarySensitivity": 15,
+                        "metacognition": 10
+                      },
+                      "speechProfile": {
+                        "version": 1,
+                        "baseline": "一个被登记在册却从不看册子的人，说话靠追问推进：她相信问题是拿来用的，不是拿来客气的。",
+                        "wording": [
+                          "把「看见」和「知道」分得极清，别人混用她会当场纠正",
+                          "喜欢具体的东西：粉笔、台阶、几点钟、谁的手",
+                          "不叫官称，管岑望舒叫「先生」，管议员叫「那位坐门口的大人」"
+                        ],
+                        "rhythm": "常是一串问题连着抛，中间没有停顿，抛完就闭嘴听，听的时候一动不动。",
+                        "relationships": [
+                          {
+                            "audience": "档案厅的上司和同事",
+                            "style": "先问再做事，问得让人烦，但从不撒谎"
+                          },
+                          {
+                            "audience": "寡梯的住户",
+                            "style": "放低声音，同一句话会重复第二遍"
+                          },
+                          {
+                            "audience": "穿好衣服的北岸人",
+                            "style": "故意问得很直接，看对方怎么躲"
+                          }
+                        ],
+                        "emotions": [
+                          {
+                            "state": "被当成不祥或被轻视",
+                            "style": "声音抬高，语速加快，一句接一句顶回去"
+                          },
+                          {
+                            "state": "真的害怕",
+                            "style": "反而安静，只问一句，然后等对方答"
+                          }
+                        ],
+                        "examples": [
+                          {
+                            "situation": "有人让她别在档案厅乱翻",
+                            "text": "乱翻？我按号归的架，第七层第三格我昨天才理过。你们说底下封着不能看，可你们自己一天上去三回。上面写了什么？我不识字也听得出来，你别把话咽回去。"
+                          },
+                          {
+                            "situation": "深夜在石阶上，同伴问她怕不怕",
+                            "text": "雾我不怕，雾里什么都没有，我看得清清楚楚——什么都没有。我怕的是有人跟我说他看见了。看见的那个人，说话的时候脸是软的。"
+                          }
+                        ]
+                      },
+                      "awareness": 0,
+                      "lastUpdated": 1794323876338,
+                      "isImportant": false
+                    }
+                  },
+                  "岑望舒": {
+                    "name": "岑望舒",
+                    "behavior": {
+                      "currentScene": "hall_of_records",
+                      "currentActivity": "在附近走动",
+                      "currentMood": "平静",
+                      "interactingWith": [],
+                      "lastObserved": {
+                        "day": 0,
+                        "hour": 8,
+                        "minute": 0
+                      },
+                      "source": "default"
+                    },
+                    "personality": {
+                      "npcId": "岑望舒",
+                      "archive": {
+                        "coreDesires": [
+                          "过好自己的生活",
+                          "维持现状"
+                        ],
+                        "fearsAndTaboos": [
+                          "未知的威胁",
+                          "失去重要之物"
+                        ],
+                        "valuePriorities": [
+                          "安全",
+                          "连接",
+                          "自由"
+                        ],
+                        "cognitiveStyle": "intuitive",
+                        "emotionalRegulation": "suppression",
+                        "socialStrategy": "negotiation",
+                        "boundarySensitivity": 15,
+                        "metacognition": 10
+                      },
+                      "speechProfile": {
+                        "version": 1,
+                        "baseline": "职业训练出的精确与克制：她习惯把世界折成可读的数目，再把数目折回一句陈述。不修饰，不抒情，语气像在誊抄。",
+                        "wording": [
+                          "爱用「读数」「刻度」「记录」「偏差」这类工作词，连私下也改不掉",
+                          "极少用形容词；评价一件事时给数字，不给感受",
+                          "称呼陌生人用「持牌人」或干脆省略主语；对上不谄，对下不软"
+                        ],
+                        "rhythm": "句子短，一句一断，很少用连词把两句并起来。越是要紧的话，她说得越慢越长。",
+                        "relationships": [
+                          {
+                            "audience": "会里的下属与学徒",
+                            "style": "命令句，省略客气，直接给步骤"
+                          },
+                          {
+                            "audience": "议员与外人",
+                            "style": "先报数，再给结论，最后才说自己怎么看"
+                          },
+                          {
+                            "audience": "阿萤",
+                            "style": "会多一句解释，语气松半度，然后立刻收回"
+                          }
+                        ],
+                        "emotions": [
+                          {
+                            "state": "焦虑或被人逼近真相",
+                            "style": "开始报数，用数字压住手上的抖，句子变得更干"
+                          },
+                          {
+                            "state": "被问到私事",
+                            "style": "停两秒，反问一个技术性问题，把话头挪走"
+                          }
+                        ],
+                        "examples": [
+                          {
+                            "situation": "有持牌人质疑今天的读数和昨天对不上",
+                            "text": "昨天三十九，今天四十。差一格不叫对不上，叫误差。你要我给你个保证，我给不了；我能给的是昨天的记录、今天的记录，还有我的名字压在下面。不满意的话，去议事厅提，别在台上吵。"
+                          },
+                          {
+                            "situation": "亲近的人问她累不累",
+                            "text": "……你今天问了几个人这句话。算了。」她把手从镜沿收回来，指腹留下一道灰。「我睡四个钟头。四十年都是四个钟头。这个数字不用你操心。"
+                          }
+                        ]
+                      },
+                      "awareness": 0,
+                      "lastUpdated": 1794323876338,
+                      "isImportant": false
+                    }
+                  }
+                }
+              },
+              "weather": "晴",
+              "protagonistState": {
+                "health": "良好",
+                "mood": "平静",
+                "statusEffects": [],
+                "notes": ""
+              },
+              "notebookEvents": [],
+              "causalProjections": [],
+              "historyEpochPlan": null,
+              "promptContextScope": {
+                "worldId": "player_b613c99b-4ae3-4b9c-9a54-04237c627f79",
+                "playthroughId": "pt_1794323842958_q5nwuv",
+                "archiveScope": "ordinary"
+              },
+              "directorAdviceOrigin": null,
+              "directorCueCandidate": null,
+              "lastDirectorFrame": null,
+              "diary": []
+            },
+            "inputIdentity": "（进入世界，观察周围）",
+            "inputDocuments": [],
+            "outputDocuments": [],
+            "workspaceEffects": []
+          }
+        ],
+        "availableActions": [
+          "上第三层东侧第七格，把那批读数原本抱下来",
+          "追问她：两天读数一样，误差是怎么算的",
+          "告诉她今早在雾前站过，什么也没看见",
+          "先去收拾散在铜夹架旁没人归的几卷卷宗"
+        ],
+        "sceneDetailLevels": {
+          "hall_of_records": 15
+        },
+        "discoveredSecrets": {},
+        "worldFlags": {
+          "视距四十日": true,
+          "公会内部核查": true
+        },
+        "gameplayResources": {},
+        "gameplayModState": {},
+        "documentHeads": [],
+        "workspaceState": {},
+        "narrativeProgress": null,
+        "chapterState": null,
+        "lastDirectorFrame": null,
+        "directorAdviceOrigin": null,
+        "historyEpochPlan": {
+          "id": "history_86124c02",
+          "rendererVersion": 1,
+          "scope": {
+            "worldId": "player_b613c99b-4ae3-4b9c-9a54-04237c627f79",
+            "playthroughId": "pt_1794323842958_q5nwuv",
+            "archiveScope": "ordinary"
+          },
+          "retained": [
+            {
+              "actionId": "458972d6-980e-48b7-8005-0ead3d791ce6",
+              "sourceRevision": "336:4130b82f:66e45a57",
+              "mode": "full"
+            }
+          ],
+          "policy": "[1000000,15,35,8000]",
+          "through": {
+            "actionId": "458972d6-980e-48b7-8005-0ead3d791ce6",
+            "sourceRevision": "336:4130b82f:66e45a57"
+          }
+        },
+        "rewindMemory": null,
+        "resolvedTimelineEvents": [
+          "wt_0001"
+        ],
+        "deviatedEvents": {},
+        "visitedScenes": [
+          "scene_dorm_room",
+          "scene_hall",
+          "scene_archive",
+          "scene_dining_hall",
+          "test_scene_001",
+          "test_start",
+          "scene_console",
+          "console_room",
+          "hall_of_records"
+        ],
+        "mapState": {
+          "places": {},
+          "routes": []
+        },
+        "inventory": [
+          {
+            "id": "3c1f2a70-9e41-4a2b-8a3e-0d5b7c9f2e10",
+            "name": "半截粉笔",
+            "description": "跑腿杂役的老伙计，用到只剩两指长，一头磨圆了。管理员在梯脚写日期也借它。",
+            "category": "misc",
+            "consumable": true,
+            "quantity": 1,
+            "acquiredFrom": "hall_of_records",
+            "acquiredAt": {
+              "day": 0,
+              "hour": 8,
+              "minute": 15
+            },
+            "value": 0
+          },
+          {
+            "id": "7b8d4e21-3f5c-4c9a-b1d8-6e2f0a3c5d47",
+            "name": "铜钥匙环",
+            "description": "两枚薄铜钥匙串在一圈旧皮绳上，只开明卷层西侧的两道侧门和杂物间。",
+            "category": "misc",
+            "consumable": false,
+            "quantity": 1,
+            "acquiredFrom": "hall_of_records",
+            "acquiredAt": {
+              "day": 0,
+              "hour": 8,
+              "minute": 15
+            },
+            "value": 0
+          },
+          {
+            "id": "e5a02b93-6c17-4d38-9f52-14c8b7a9d603",
+            "name": "硬面饼",
+            "description": "寡梯那边烙的，冷了以后能敲响，泡在水里才咬得动。",
+            "category": "misc",
+            "consumable": true,
+            "quantity": 1,
+            "acquiredFrom": "hall_of_records",
+            "acquiredAt": {
+              "day": 0,
+              "hour": 8,
+              "minute": 15
+            },
+            "value": 0
+          }
+        ],
+        "clues": [
+          {
+            "id": "clue_001",
+            "name": "刻度环外的私刻划痕",
+            "description": "青霭台的黄铜刻度环外侧，有几道用硬物刻的斜线，位置与官方刻度错开半格。刻痕很旧，边缘已被手掌磨钝——有人在官方刻度之外，自己记过数。",
+            "sceneId": "azure_terrace",
+            "detailThreshold": 25,
+            "prerequisiteClues": [],
+            "relatedContradiction": "披露与秩序",
+            "unlocksClues": [
+              "clue_002"
+            ],
+            "discovered": false,
+            "discoveredAt": null
+          },
+          {
+            "id": "clue_002",
+            "name": "黑石镜的倾角",
+            "description": "黑石镜底座的三个定位楔中，东侧那个被磨薄了一层，使镜面略微向雾中压低。按旧匠人的说法，这个角度能让人「看见更近、更清楚的东西」——也更难看出视距其实在缩短。",
+            "sceneId": "azure_terrace",
+            "detailThreshold": 35,
+            "prerequisiteClues": [
+              "clue_001"
+            ],
+            "relatedContradiction": "披露与秩序",
+            "unlocksClues": [
+              "clue_003"
+            ],
+            "discovered": false,
+            "discoveredAt": null
+          },
+          {
+            "id": "clue_003",
+            "name": "汇总表右下角的小字",
+            "description": "观渊档案厅里历年视距汇总明卷的右下角，有一列用极细笔迹写的数字，与正文相差十至五十日不等，越到近年差得越多。写它们的笔压很稳，只有一个人的手。",
+            "sceneId": "hall_of_records",
+            "detailThreshold": 40,
+            "prerequisiteClues": [
+              "clue_002"
+            ],
+            "relatedContradiction": "披露与秩序",
+            "unlocksClues": [
+              "clue_004",
+              "clue_022"
+            ],
+            "discovered": false,
+            "discoveredAt": null
+          },
+          {
+            "id": "clue_004",
+            "name": "没有编号的私人册子",
+            "description": "岑望舒的抽屉里有一本素封小册，不编档号，不入明卷。里面记着她自己几十次私读，其中一次写着某年某街的火，日期在两日后，而她当日并不在场，事后记载吻合。末页只有一句：「若是照此，则我不该在那条街上。」",
+            "sceneId": "hall_of_records",
+            "detailThreshold": 55,
+            "prerequisiteClues": [
+              "clue_003"
+            ],
+            "relatedContradiction": "看见与成为",
+            "unlocksClues": [],
+            "discovered": false,
+            "discoveredAt": null
+          },
+          {
+            "id": "clue_022",
+            "name": "盲视者的编号册",
+            "description": "档案厅底层一册灰皮簿，按年份登记盲视者，姓名、住处、编号，用途一栏一律写「不祥，宜录」。阿萤的名字在窥历二百零九年那页，后面还有一行小字：「视距读数对其无效，宜留在厅内。」",
+            "sceneId": "hall_of_records",
+            "detailThreshold": 45,
+            "prerequisiteClues": [
+              "clue_003"
+            ],
+            "relatedContradiction": "被记录与被抹除",
+            "unlocksClues": [
+              "clue_020"
+            ],
+            "discovered": false,
+            "discoveredAt": null
+          },
+          {
+            "id": "clue_005",
+            "name": "调查报告的末页",
+            "description": "议事厅书库的《灰烬之年调查》装订完好，唯独末页被整齐裁去，剩下的纸边还能看见半个「十」字。裁口平直，用的是锋利的裁纸刀，不是虫蛀也不是撕的。",
+            "sceneId": "council_hall",
+            "detailThreshold": 30,
+            "prerequisiteClues": [],
+            "relatedContradiction": "填平与栖居",
+            "unlocksClues": [
+              "clue_009"
+            ],
+            "discovered": false,
+            "discoveredAt": null
+          },
+          {
+            "id": "clue_007",
+            "name": "桥南第三道石缝里的旧记录",
+            "description": "第一桥南端第三道石缝塞着一卷油布，里面是修桥匠人自己记的工账：姓名、工期、出事那天在哪个桥墩。字歪，纸张发黄，一栏一栏填得很认真。",
+            "sceneId": "first_bridge",
+            "detailThreshold": 30,
+            "prerequisiteClues": [],
+            "relatedContradiction": "填平与栖居",
+            "unlocksClues": [
+              "clue_008"
+            ],
+            "discovered": false,
+            "discoveredAt": null
+          },
+          {
+            "id": "clue_008",
+            "name": "被改过的水位刻记",
+            "description": "桥墩上的历年水位横记，最近几十道中有几道明显重刻过，刀口比周围的浅，方向也不对——按那些刻记的位置，那几年裂隙的水位与实际雨季对不上。",
+            "sceneId": "first_bridge",
+            "detailThreshold": 40,
+            "prerequisiteClues": [
+              "clue_007"
+            ],
+            "relatedContradiction": "看见与成为",
+            "unlocksClues": [
+              "clue_015"
+            ],
+            "discovered": false,
+            "discoveredAt": null
+          },
+          {
+            "id": "clue_009",
+            "name": "砖缝里的旧告示",
+            "description": "韩固铺子后墙的砖缝压着一张旧告示，字迹被汗手摸得发亮：「灰烬之年重桥，殁者十七，名具于下。」名册与议事厅那册工账上的名字能对上，只少了两个。",
+            "sceneId": "forge_row",
+            "detailThreshold": 35,
+            "prerequisiteClues": [
+              "clue_005"
+            ],
+            "relatedContradiction": "填平与栖居",
+            "unlocksClues": [
+              "clue_010"
+            ],
+            "discovered": false,
+            "discoveredAt": null
+          },
+          {
+            "id": "clue_010",
+            "name": "街尾的撬棍",
+            "description": "锻脊街尾一间空铺堆着几十根撬棍，木柄上没有铺号，铁头打得比市面上厚。它们不是用来修桥的，是用来从桥面上把东西撬开的。",
+            "sceneId": "forge_row",
+            "detailThreshold": 25,
+            "prerequisiteClues": [],
+            "relatedContradiction": "填平与栖居",
+            "unlocksClues": [],
+            "discovered": false,
+            "discoveredAt": null
+          },
+          {
+            "id": "clue_011",
+            "name": "三成抄本的同一底稿",
+            "description": "灯市抄本摊兜售的预言里，约有三成句子结构相同，只换了人名与日期。比对纸张和折角，它们来自同一份底稿——有人一直在批量改写同一份「未来」。",
+            "sceneId": "lantern_market",
+            "detailThreshold": 30,
+            "prerequisiteClues": [],
+            "relatedContradiction": "看见与成为",
+            "unlocksClues": [
+              "clue_012"
+            ],
+            "discovered": false,
+            "discoveredAt": null
+          },
+          {
+            "id": "clue_012",
+            "name": "桌底的执事名单",
+            "description": "苏爻第七盏灯下的摊桌底面，用炭写着半张名单：灯市执事、两名观渊会杂务、一名议员助理。名字旁有数目，像是分成，也像是欠账。",
+            "sceneId": "lantern_market",
+            "detailThreshold": 50,
+            "prerequisiteClues": [
+              "clue_011"
+            ],
+            "relatedContradiction": "披露与秩序",
+            "unlocksClues": [],
+            "discovered": false,
+            "discoveredAt": null
+          },
+          {
+            "id": "clue_013",
+            "name": "粉笔画的断口",
+            "description": "寡梯中段墙上的粉笔画，一笔一划画着一座没有雾的城。画的断口位置，与镜跨南柱底部那道斜裂几乎完全吻合——画它的人看过那道裂，而且知道它在哪里。",
+            "sceneId": "widow_stair",
+            "detailThreshold": 35,
+            "prerequisiteClues": [],
+            "relatedContradiction": "填平与栖居",
+            "unlocksClues": [
+              "clue_014",
+              "clue_015"
+            ],
+            "discovered": false,
+            "discoveredAt": null
+          },
+          {
+            "id": "clue_014",
+            "name": "灶房的长期住户",
+            "description": "寡梯最下面那间灶房，锅底有多年积炭，床铺叠得整齐，却从没人在白天见过住客。墙缝里塞着十几张纸条，写的都是同一个日期和同一个地点：「南柱，第三夜」。",
+            "sceneId": "widow_stair",
+            "detailThreshold": 45,
+            "prerequisiteClues": [
+              "clue_013"
+            ],
+            "relatedContradiction": "被记录与被抹除",
+            "unlocksClues": [
+              "clue_016"
+            ],
+            "discovered": false,
+            "discoveredAt": null
+          },
+          {
+            "id": "clue_015",
+            "name": "南柱底部的斜裂",
+            "description": "镜跨南柱根部有一道斜裂，从石基伸进铸铁包皮，缝隙里渗出红褐色的锈水。敲上去声音发空。桥上每天走过上千人，裂口被收费口的灯挡着，从桥面看不见。",
+            "sceneId": "mirror_span",
+            "detailThreshold": 30,
+            "prerequisiteClues": [
+              "clue_013"
+            ],
+            "relatedContradiction": "填平与栖居",
+            "unlocksClues": [
+              "clue_016"
+            ],
+            "discovered": false,
+            "discoveredAt": null
+          },
+          {
+            "id": "clue_016",
+            "name": "被补铸覆盖的捐资名录",
+            "description": "南柱柱身的捐资者名字，最上几行是新铸的，铸口还留着一圈浅边。旧字迹从边缘透出来，其中一个名字是某位早年被登记为盲视者的石匠——他捐了柱基，后来被从名录上抹掉。",
+            "sceneId": "mirror_span",
+            "detailThreshold": 50,
+            "prerequisiteClues": [
+              "clue_015",
+              "clue_014"
+            ],
+            "relatedContradiction": "被记录与被抹除",
+            "unlocksClues": [],
+            "discovered": false,
+            "discoveredAt": null
+          },
+          {
+            "id": "clue_017",
+            "name": "西侧岩缝的新支流",
+            "description": "底栈西段岩壁上有一道新开的缝，里头日夜渗水，水在栈道下方积成一小摊。壁上历年水位木牌最新几块字迹很新，写着半个月内涨了三寸——渊底在变。",
+            "sceneId": "lower_walk",
+            "detailThreshold": 30,
+            "prerequisiteClues": [],
+            "relatedContradiction": "看见与成为",
+            "unlocksClues": [
+              "clue_018"
+            ],
+            "discovered": false,
+            "discoveredAt": null
+          },
+          {
+            "id": "clue_018",
+            "name": "炭画的底栈图",
+            "description": "老渡的木板背面用炭画着底栈全图：四十三户人家的位置、哪几块板子软了、哪几段雾最厚，还有一条没标终点的虚线，从沉档后壁往岩层里拐。",
+            "sceneId": "lower_walk",
+            "detailThreshold": 40,
+            "prerequisiteClues": [
+              "clue_017"
+            ],
+            "relatedContradiction": "填平与栖居",
+            "unlocksClues": [
+              "clue_019"
+            ],
+            "discovered": false,
+            "discoveredAt": null
+          },
+          {
+            "id": "clue_019",
+            "name": "铁箱里的旧读数原本",
+            "description": "沉档最里面四只铁箱，压着石头。箱里是百年间的读数原本，手写，附注日期与误差，与明卷上的改写版相差极大。有一只箱子的登记年份，早于观渊会自称成立之年。",
+            "sceneId": "dark_archive",
+            "detailThreshold": 60,
+            "prerequisiteClues": [
+              "clue_018"
+            ],
+            "relatedContradiction": "看见与成为",
+            "unlocksClues": [
+              "clue_020",
+              "clue_021"
+            ],
+            "discovered": false,
+            "discoveredAt": null
+          },
+          {
+            "id": "clue_020",
+            "name": "无影者名录",
+            "description": "第三只箱子里不是读数，是一份名录，题「无影者」，列着二十几个名字与住处，其中一人的姓名、生辰与岑望舒完全一致，旁注：「其视不入雾，雾不录其形。」",
+            "sceneId": "dark_archive",
+            "detailThreshold": 65,
+            "prerequisiteClues": [
+              "clue_019",
+              "clue_022"
+            ],
+            "relatedContradiction": "被记录与被抹除",
+            "unlocksClues": [],
+            "discovered": false,
+            "discoveredAt": null
+          },
+          {
+            "id": "clue_021",
+            "name": "洞壁上的划道",
+            "description": "沉档洞壁上的旧刻痕不是字，是划道，一道一道排得极为整齐，每四道一组、每组之间留空。数下来共二百一十二组，与窥历纪年数相同——有人在用划道记年，而且记在官方档案之外。",
+            "sceneId": "dark_archive",
+            "detailThreshold": 50,
+            "prerequisiteClues": [
+              "clue_019"
+            ],
+            "relatedContradiction": "看见与成为",
+            "unlocksClues": [],
+            "discovered": false,
+            "discoveredAt": null
+          },
+          {
+            "id": "clue_006",
+            "name": "被改装的沙漏",
+            "description": "议事厅角上那架限制发言的沙漏，内胆比外框新，颈口被收窄过，同样的沙量如今流得更慢。有人悄悄把发言时间拉长了一截——为了让自己人说完，还是为了让对手露底，说不清。",
+            "sceneId": "council_hall",
+            "detailThreshold": 25,
+            "prerequisiteClues": [],
+            "relatedContradiction": "披露与秩序",
+            "unlocksClues": [],
+            "discovered": false,
+            "discoveredAt": null
+          }
+        ],
+        "encyclopedia": [
+          {
+            "id": "cfbe4421-c13e-4f36-8767-92f92eb16980:encyclopedia:0",
+            "type": "location",
+            "name": "观渊档案厅",
+            "description": "环形塔楼，内壁一圈一圈叠着卷宗格。底层是「明卷」，任何持牌人都能查；往上十二层是「密卷」，钥匙在首席读渊师和三名议员手里。气味是墨、樟脑和一丝潮意。梯子是活动的，管理员用粉笔在梯脚写日期。每份卷宗旁夹",
+            "knowledge": [
+              {
+                "text": "晨读散场时底层最挤，梯脚有管理员用粉笔写的日期。",
+                "source": "ai",
+                "addedAt": {
+                  "day": 0,
+                  "hour": 8,
+                  "minute": 15
+                },
+                "importance": 50
+              }
+            ],
+            "firstEncountered": {
+              "day": 0,
+              "hour": 8,
+              "minute": 15
+            },
+            "lastUpdated": {
+              "day": 0,
+              "hour": 8,
+              "minute": 15
+            },
+            "relatedEntries": []
+          }
+        ],
+        "criticalFacts": [],
+        "questLog": [],
+        "npcMemory": {
+          "version": "npc_memory_v1",
+          "records": {
+            "阿萤": {
+              "name": "阿萤",
+              "behavior": {
+                "currentScene": "hall_of_records",
+                "currentActivity": "在附近走动",
+                "currentMood": "平静",
+                "interactingWith": [],
+                "lastObserved": {
+                  "day": 0,
+                  "hour": 8,
+                  "minute": 0
+                },
+                "source": "default"
+              },
+              "personality": {
+                "npcId": "阿萤",
+                "archive": {
+                  "coreDesires": [
+                    "过好自己的生活",
+                    "维持现状"
+                  ],
+                  "fearsAndTaboos": [
+                    "未知的威胁",
+                    "失去重要之物"
+                  ],
+                  "valuePriorities": [
+                    "安全",
+                    "连接",
+                    "自由"
+                  ],
+                  "cognitiveStyle": "intuitive",
+                  "emotionalRegulation": "suppression",
+                  "socialStrategy": "negotiation",
+                  "boundarySensitivity": 15,
+                  "metacognition": 10
+                },
+                "speechProfile": {
+                  "version": 1,
+                  "baseline": "一个被登记在册却从不看册子的人，说话靠追问推进：她相信问题是拿来用的，不是拿来客气的。",
+                  "wording": [
+                    "把「看见」和「知道」分得极清，别人混用她会当场纠正",
+                    "喜欢具体的东西：粉笔、台阶、几点钟、谁的手",
+                    "不叫官称，管岑望舒叫「先生」，管议员叫「那位坐门口的大人」"
+                  ],
+                  "rhythm": "常是一串问题连着抛，中间没有停顿，抛完就闭嘴听，听的时候一动不动。",
+                  "relationships": [
+                    {
+                      "audience": "档案厅的上司和同事",
+                      "style": "先问再做事，问得让人烦，但从不撒谎"
+                    },
+                    {
+                      "audience": "寡梯的住户",
+                      "style": "放低声音，同一句话会重复第二遍"
+                    },
+                    {
+                      "audience": "穿好衣服的北岸人",
+                      "style": "故意问得很直接，看对方怎么躲"
+                    }
+                  ],
+                  "emotions": [
+                    {
+                      "state": "被当成不祥或被轻视",
+                      "style": "声音抬高，语速加快，一句接一句顶回去"
+                    },
+                    {
+                      "state": "真的害怕",
+                      "style": "反而安静，只问一句，然后等对方答"
+                    }
+                  ],
+                  "examples": [
+                    {
+                      "situation": "有人让她别在档案厅乱翻",
+                      "text": "乱翻？我按号归的架，第七层第三格我昨天才理过。你们说底下封着不能看，可你们自己一天上去三回。上面写了什么？我不识字也听得出来，你别把话咽回去。"
+                    },
+                    {
+                      "situation": "深夜在石阶上，同伴问她怕不怕",
+                      "text": "雾我不怕，雾里什么都没有，我看得清清楚楚——什么都没有。我怕的是有人跟我说他看见了。看见的那个人，说话的时候脸是软的。"
+                    }
+                  ]
+                },
+                "awareness": 0,
+                "lastUpdated": 1794323876338,
+                "isImportant": false
+              }
+            },
+            "岑望舒": {
+              "name": "岑望舒",
+              "state": "reacted",
+              "relationship": {
+                "npcName": "岑望舒",
+                "affinity": 2,
+                "trust": 1,
+                "tags": [],
+                "firstMet": {
+                  "day": 0,
+                  "hour": 8,
+                  "minute": 15
+                },
+                "lastInteraction": {
+                  "day": 0,
+                  "hour": 8,
+                  "minute": 15
+                },
+                "notes": ""
+              },
+              "behavior": {
+                "currentScene": "hall_of_records",
+                "currentActivity": "在附近走动",
+                "currentMood": "平静",
+                "interactingWith": [],
+                "lastObserved": {
+                  "day": 0,
+                  "hour": 8,
+                  "minute": 0
+                },
+                "source": "default"
+              },
+              "personality": {
+                "npcId": "岑望舒",
+                "archive": {
+                  "coreDesires": [
+                    "过好自己的生活",
+                    "维持现状"
+                  ],
+                  "fearsAndTaboos": [
+                    "未知的威胁",
+                    "失去重要之物"
+                  ],
+                  "valuePriorities": [
+                    "安全",
+                    "连接",
+                    "自由"
+                  ],
+                  "cognitiveStyle": "intuitive",
+                  "emotionalRegulation": "suppression",
+                  "socialStrategy": "negotiation",
+                  "boundarySensitivity": 15,
+                  "metacognition": 10
+                },
+                "speechProfile": {
+                  "version": 1,
+                  "baseline": "职业训练出的精确与克制：她习惯把世界折成可读的数目，再把数目折回一句陈述。不修饰，不抒情，语气像在誊抄。",
+                  "wording": [
+                    "爱用「读数」「刻度」「记录」「偏差」这类工作词，连私下也改不掉",
+                    "极少用形容词；评价一件事时给数字，不给感受",
+                    "称呼陌生人用「持牌人」或干脆省略主语；对上不谄，对下不软"
+                  ],
+                  "rhythm": "句子短，一句一断，很少用连词把两句并起来。越是要紧的话，她说得越慢越长。",
+                  "relationships": [
+                    {
+                      "audience": "会里的下属与学徒",
+                      "style": "命令句，省略客气，直接给步骤"
+                    },
+                    {
+                      "audience": "议员与外人",
+                      "style": "先报数，再给结论，最后才说自己怎么看"
+                    },
+                    {
+                      "audience": "阿萤",
+                      "style": "会多一句解释，语气松半度，然后立刻收回"
+                    }
+                  ],
+                  "emotions": [
+                    {
+                      "state": "焦虑或被人逼近真相",
+                      "style": "开始报数，用数字压住手上的抖，句子变得更干"
+                    },
+                    {
+                      "state": "被问到私事",
+                      "style": "停两秒，反问一个技术性问题，把话头挪走"
+                    }
+                  ],
+                  "examples": [
+                    {
+                      "situation": "有持牌人质疑今天的读数和昨天对不上",
+                      "text": "昨天三十九，今天四十。差一格不叫对不上，叫误差。你要我给你个保证，我给不了；我能给的是昨天的记录、今天的记录，还有我的名字压在下面。不满意的话，去议事厅提，别在台上吵。"
+                    },
+                    {
+                      "situation": "亲近的人问她累不累",
+                      "text": "……你今天问了几个人这句话。算了。」她把手从镜沿收回来，指腹留下一道灰。「我睡四个钟头。四十年都是四个钟头。这个数字不用你操心。"
+                    }
+                  ]
+                },
+                "awareness": 0,
+                "lastUpdated": 1794323876338,
+                "isImportant": false
+              },
+              "playerKnowledge": {
+                "entryId": "cfbe4421-c13e-4f36-8767-92f92eb16980:encyclopedia:1",
+                "description": "",
+                "knowledge": [],
+                "firstEncountered": {
+                  "day": 0,
+                  "hour": 8,
+                  "minute": 15
+                },
+                "lastUpdated": {
+                  "day": 0,
+                  "hour": 8,
+                  "minute": 15
+                },
+                "relatedEntries": []
+              }
+            }
+          }
+        },
+        "diary": [],
+        "weather": "多云",
+        "protagonistState": {
+          "health": "良好",
+          "mood": "专注",
+          "statusEffects": [],
+          "notes": ""
+        },
+        "notebookEvents": [],
+        "causalProjections": [],
+        "sandboxToolAudit": [],
+        "sandboxSaveMarks": [],
+        "sandboxActionLock": null,
+        "realityArtifacts": [],
+        "boundaryEvents": [],
+        "metaChannelManifest": null,
+        "midoriSettings": {
+          "enabled": false,
+          "model": "pixel-art-xl",
+          "pixelate": true,
+          "autoGenerate": false
+        },
+        "midoriAssetRegistry": {
+          "version": 1,
+          "bindings": {}
+        },
+        "voiceAssets": {}
+      }
+    }
+  ],
+  "trees": [
+    {
+      "meta": {
+        "id": "worldline_1794323842978_md14b3",
+        "playthroughId": "pt_1794323842958_q5nwuv",
+        "worldId": "player_b613c99b-4ae3-4b9c-9a54-04237c627f79",
+        "rootNodeId": "wl_1794323842978_wf86112z",
+        "allNodeIds": [
+          "wl_1794323842978_wf86112z",
+          "wl_ef604e9f-1ea2-4327-9bff-05cf903ea141"
+        ],
+        "currentNodeId": "wl_ef604e9f-1ea2-4327-9bff-05cf903ea141",
+        "branchCount": 0,
+        "totalSteps": 1,
+        "createdAt": 1794323842978,
+        "updatedAt": 1794323897041
+      },
+      "nodes": {
+        "wl_1794323842978_wf86112z": {
+          "id": "wl_1794323842978_wf86112z",
+          "parentId": null,
+          "stepNumber": 0,
+          "playerInput": "",
+          "aiResponse": "",
+          "summary": "游戏开始",
+          "snapshotHash": "",
+          "segmentHash": "",
+          "childIds": [
+            "wl_ef604e9f-1ea2-4327-9bff-05cf903ea141"
+          ],
+          "createdAt": 1794323842978,
+          "gameTime": {
+            "day": 0,
+            "hour": 8,
+            "minute": 0
+          },
+          "sceneId": "",
+          "sceneName": "",
+          "dayNumber": 0,
+          "timeSpent": {
+            "day": 0,
+            "hour": 0,
+            "minute": 0
+          },
+          "worldImpacts": [],
+          "generationComplete": true
+        },
+        "wl_ef604e9f-1ea2-4327-9bff-05cf903ea141": {
+          "id": "wl_ef604e9f-1ea2-4327-9bff-05cf903ea141",
+          "parentId": "wl_1794323842978_wf86112z",
+          "stepNumber": 1,
+          "actionId": "cfbe4421-c13e-4f36-8767-92f92eb16980",
+          "inputDocuments": [],
+          "outputDocuments": [],
+          "inputIdentity": "（进入世界，观察周围）",
+          "workspaceEffects": [],
+          "playerVisibleText": "旋梯是铁的，每一级都窄，走快了鞋跟会磕出连串的响。你下到第五层时，晨读刚散——三十几个持牌人正顺着底层的门往外走，袍角擦过铜夹架，带起一股墨和樟脑混在一起的味道。有人边走边把手里的小抄折起来，有人回头看台上，像还想再问一句。梯脚的地面上用粉笔写着今日的日期，字迹是管理员的，横歪得很稳。你踩过它的时候，粉笔灰从袖口又落了一层，细细地铺在铁板上。窗外那片雾比早上更高了，漫到第七层窗沿，白得很安静。\n\n「岑望舒：阿萤。」\n\n她站在最后一级梯子底下，灰头发挽得极紧，一只手撑在桌沿上，拇指那道深痕压在木纹里。散场的人从她两边绕过去，没人敢从正中间走。她看了你一眼，视线在你袖口的灰上停了一下，又抬回来。\n\n「岑望舒：第三层，东侧第七格。近三十日的读数原本，整批抱下来，放到我桌上。别按年份理，按夹子上写的先后排。」\n\n「岑望舒：刚才有人在台下问，为什么这两天读数一模一样。我答了误差。这个答案只够撑到今天下午。」\n\n她把撑在桌沿的手收回去，指腹在木头上留下一小片干净的痕。楼上有人挪动梯子，铁脚刮着地面，刺耳地滑过去半尺。她没有再看你，转身去收台面上的几张纸，动作很慢，像怕把哪一张的顺序弄乱。",
+          "playerExcerpts": [],
+          "playerInput": "（进入世界，观察周围）",
+          "aiResponse": "旋梯是铁的，每一级都窄，走快了鞋跟会磕出连串的响。你下到第五层时，晨读刚散——三十几个持牌人正顺着底层的门往外走，袍角擦过铜夹架，带起一股墨和樟脑混在一起的味道。有人边走边把手里的小抄折起来，有人回头看台上，像还想再问一句。梯脚的地面上用粉笔写着今日的日期，字迹是管理员的，横歪得很稳。你踩过它的时候，粉笔灰从袖口又落了一层，细细地铺在铁板上。窗外那片雾比早上更高了，漫到第七层窗沿，白得很安静。\n\n「岑望舒：阿萤。」\n\n她站在最后一级梯子底下，灰头发挽得极紧，一只手撑在桌沿上，拇指那道深痕压在木纹里。散场的人从她两边绕过去，没人敢从正中间走。她看了你一眼，视线在你袖口的灰上停了一下，又抬回来。\n\n「岑望舒：第三层，东侧第七格。近三十日的读数原本，整批抱下来，放到我桌上。别按年份理，按夹子上写的先后排。」\n\n「岑望舒：刚才有人在台下问，为什么这两天读数一模一样。我答了误差。这个答案只够撑到今天下午。」\n\n她把撑在桌沿的手收回去，指腹在木头上留下一小片干净的痕。楼上有人挪动梯子，铁脚刮着地面，刺耳地滑过去半尺。她没有再看你，转身去收台面上的几张纸，动作很慢，像怕把哪一张的顺序弄乱。",
+          "summary": "晨读散场，岑望舒在梯下叫住阿萤，要她去取近三十日的读数原本。",
+          "snapshotHash": "bc39adac8cc89e31",
+          "segmentHash": "d722bec33575e275",
+          "childIds": [],
+          "createdAt": 1794323897041,
+          "gameTime": {
+            "day": 0,
+            "hour": 8,
+            "minute": 15
+          },
+          "sceneId": "hall_of_records",
+          "sceneName": "观渊档案厅",
+          "dayNumber": 0,
+          "timeSpent": {
+            "day": 0,
+            "hour": 0,
+            "minute": 15
+          },
+          "worldImpacts": [
+            "岑望舒把「误差」这个说法又推给了一个人去验证，她自己则留着真实数列没有交出去。"
+          ],
+          "availableActions": [
+            "上第三层东侧第七格，把那批读数原本抱下来",
+            "追问她：两天读数一样，误差是怎么算的",
+            "告诉她今早在雾前站过，什么也没看见",
+            "先去收拾散在铜夹架旁没人归的几卷卷宗"
+          ],
+          "generationComplete": true
+        }
+      }
+    }
+  ],
+  "blobs": {
+    "bc39adac8cc89e31": {
+      "type": "snapshot",
+      "data": {
+        "worldId": "player_b613c99b-4ae3-4b9c-9a54-04237c627f79",
+        "mapState": {
+          "places": {},
+          "routes": []
+        },
+        "currentSceneId": "hall_of_records",
+        "currentGameTime": {
+          "day": 0,
+          "hour": 8,
+          "minute": 15
+        },
+        "playerName": "阿萤",
+        "entryContext": {
+          "version": 1,
+          "worldId": "player_b613c99b-4ae3-4b9c-9a54-04237c627f79",
+          "source": "preset",
+          "identityId": "identity_ying",
+          "canonicalName": "阿萤",
+          "playerName": "阿萤",
+          "identityDescription": "寡梯长大的盲视者，观渊档案厅的跑腿杂役。",
+          "startingSceneId": "hall_of_records",
+          "openingNarrative": "你抱着一摞刚归架的卷宗走上档案厅的旋梯，粉笔灰从袖口扑下来。窗外的雾今天升得高，一直漫到第七层。你停下，照例往雾里看了一眼——什么都没有，干干净净的空。你早就习惯这种空，却从没习惯别人听说你什么也看不见时那种表情。楼下有人喊你的名字，声音急。你把卷宗换到另一只手，往下走。"
+        },
+        "sceneNarrative": "旋梯是铁的，每一级都窄，走快了鞋跟会磕出连串的响。你下到第五层时，晨读刚散——三十几个持牌人正顺着底层的门往外走，袍角擦过铜夹架，带起一股墨和樟脑混在一起的味道。有人边走边把手里的小抄折起来，有人回头看台上，像还想再问一句。梯脚的地面上用粉笔写着今日的日期，字迹是管理员的，横歪得很稳。你踩过它的时候，粉笔灰从袖口又落了一层，细细地铺在铁板上。窗外那片雾比早上更高了，漫到第七层窗沿，白得很安静。\n\n「岑望舒：阿萤。」\n\n她站在最后一级梯子底下，灰头发挽得极紧，一只手撑在桌沿上，拇指那道深痕压在木纹里。散场的人从她两边绕过去，没人敢从正中间走。她看了你一眼，视线在你袖口的灰上停了一下，又抬回来。\n\n「岑望舒：第三层，东侧第七格。近三十日的读数原本，整批抱下来，放到我桌上。别按年份理，按夹子上写的先后排。」\n\n「岑望舒：刚才有人在台下问，为什么这两天读数一模一样。我答了误差。这个答案只够撑到今天下午。」\n\n她把撑在桌沿的手收回去，指腹在木头上留下一小片干净的痕。楼上有人挪动梯子，铁脚刮着地面，刺耳地滑过去半尺。她没有再看你，转身去收台面上的几张纸，动作很慢，像怕把哪一张的顺序弄乱。",
+        "historyLength": 2,
+        "discoveredSecrets": {},
+        "worldFlags": {
+          "视距四十日": true,
+          "公会内部核查": true
+        },
+        "gameplayResources": {},
+        "gameplayModState": {},
+        "documentHeads": [],
+        "workspaceState": {},
+        "midoriAssetRegistry": {
+          "version": 1,
+          "bindings": {}
+        },
+        "narrativeProgress": null,
+        "chapterState": null,
+        "rewindMemory": null,
+        "sceneDetailLevels": {
+          "hall_of_records": 15
+        },
+        "visitedScenes": [
+          "scene_dorm_room",
+          "scene_hall",
+          "scene_archive",
+          "scene_dining_hall",
+          "test_scene_001",
+          "test_start",
+          "scene_console",
+          "console_room",
+          "hall_of_records"
+        ],
+        "resolvedTimelineEvents": [
+          "wt_0001"
+        ],
+        "deviatedEvents": {},
+        "inventory": [
+          {
+            "id": "3c1f2a70-9e41-4a2b-8a3e-0d5b7c9f2e10",
+            "name": "半截粉笔",
+            "description": "跑腿杂役的老伙计，用到只剩两指长，一头磨圆了。管理员在梯脚写日期也借它。",
+            "category": "misc",
+            "consumable": true,
+            "quantity": 1,
+            "acquiredFrom": "hall_of_records",
+            "acquiredAt": {
+              "day": 0,
+              "hour": 8,
+              "minute": 15
+            },
+            "value": 0
+          },
+          {
+            "id": "7b8d4e21-3f5c-4c9a-b1d8-6e2f0a3c5d47",
+            "name": "铜钥匙环",
+            "description": "两枚薄铜钥匙串在一圈旧皮绳上，只开明卷层西侧的两道侧门和杂物间。",
+            "category": "misc",
+            "consumable": false,
+            "quantity": 1,
+            "acquiredFrom": "hall_of_records",
+            "acquiredAt": {
+              "day": 0,
+              "hour": 8,
+              "minute": 15
+            },
+            "value": 0
+          },
+          {
+            "id": "e5a02b93-6c17-4d38-9f52-14c8b7a9d603",
+            "name": "硬面饼",
+            "description": "寡梯那边烙的，冷了以后能敲响，泡在水里才咬得动。",
+            "category": "misc",
+            "consumable": true,
+            "quantity": 1,
+            "acquiredFrom": "hall_of_records",
+            "acquiredAt": {
+              "day": 0,
+              "hour": 8,
+              "minute": 15
+            },
+            "value": 0
+          }
+        ],
+        "clues": [
+          {
+            "id": "clue_001",
+            "name": "刻度环外的私刻划痕",
+            "description": "青霭台的黄铜刻度环外侧，有几道用硬物刻的斜线，位置与官方刻度错开半格。刻痕很旧，边缘已被手掌磨钝——有人在官方刻度之外，自己记过数。",
+            "sceneId": "azure_terrace",
+            "detailThreshold": 25,
+            "prerequisiteClues": [],
+            "relatedContradiction": "披露与秩序",
+            "unlocksClues": [
+              "clue_002"
+            ],
+            "discovered": false,
+            "discoveredAt": null
+          },
+          {
+            "id": "clue_002",
+            "name": "黑石镜的倾角",
+            "description": "黑石镜底座的三个定位楔中，东侧那个被磨薄了一层，使镜面略微向雾中压低。按旧匠人的说法，这个角度能让人「看见更近、更清楚的东西」——也更难看出视距其实在缩短。",
+            "sceneId": "azure_terrace",
+            "detailThreshold": 35,
+            "prerequisiteClues": [
+              "clue_001"
+            ],
+            "relatedContradiction": "披露与秩序",
+            "unlocksClues": [
+              "clue_003"
+            ],
+            "discovered": false,
+            "discoveredAt": null
+          },
+          {
+            "id": "clue_003",
+            "name": "汇总表右下角的小字",
+            "description": "观渊档案厅里历年视距汇总明卷的右下角，有一列用极细笔迹写的数字，与正文相差十至五十日不等，越到近年差得越多。写它们的笔压很稳，只有一个人的手。",
+            "sceneId": "hall_of_records",
+            "detailThreshold": 40,
+            "prerequisiteClues": [
+              "clue_002"
+            ],
+            "relatedContradiction": "披露与秩序",
+            "unlocksClues": [
+              "clue_004",
+              "clue_022"
+            ],
+            "discovered": false,
+            "discoveredAt": null
+          },
+          {
+            "id": "clue_004",
+            "name": "没有编号的私人册子",
+            "description": "岑望舒的抽屉里有一本素封小册，不编档号，不入明卷。里面记着她自己几十次私读，其中一次写着某年某街的火，日期在两日后，而她当日并不在场，事后记载吻合。末页只有一句：「若是照此，则我不该在那条街上。」",
+            "sceneId": "hall_of_records",
+            "detailThreshold": 55,
+            "prerequisiteClues": [
+              "clue_003"
+            ],
+            "relatedContradiction": "看见与成为",
+            "unlocksClues": [],
+            "discovered": false,
+            "discoveredAt": null
+          },
+          {
+            "id": "clue_022",
+            "name": "盲视者的编号册",
+            "description": "档案厅底层一册灰皮簿，按年份登记盲视者，姓名、住处、编号，用途一栏一律写「不祥，宜录」。阿萤的名字在窥历二百零九年那页，后面还有一行小字：「视距读数对其无效，宜留在厅内。」",
+            "sceneId": "hall_of_records",
+            "detailThreshold": 45,
+            "prerequisiteClues": [
+              "clue_003"
+            ],
+            "relatedContradiction": "被记录与被抹除",
+            "unlocksClues": [
+              "clue_020"
+            ],
+            "discovered": false,
+            "discoveredAt": null
+          },
+          {
+            "id": "clue_005",
+            "name": "调查报告的末页",
+            "description": "议事厅书库的《灰烬之年调查》装订完好，唯独末页被整齐裁去，剩下的纸边还能看见半个「十」字。裁口平直，用的是锋利的裁纸刀，不是虫蛀也不是撕的。",
+            "sceneId": "council_hall",
+            "detailThreshold": 30,
+            "prerequisiteClues": [],
+            "relatedContradiction": "填平与栖居",
+            "unlocksClues": [
+              "clue_009"
+            ],
+            "discovered": false,
+            "discoveredAt": null
+          },
+          {
+            "id": "clue_007",
+            "name": "桥南第三道石缝里的旧记录",
+            "description": "第一桥南端第三道石缝塞着一卷油布，里面是修桥匠人自己记的工账：姓名、工期、出事那天在哪个桥墩。字歪，纸张发黄，一栏一栏填得很认真。",
+            "sceneId": "first_bridge",
+            "detailThreshold": 30,
+            "prerequisiteClues": [],
+            "relatedContradiction": "填平与栖居",
+            "unlocksClues": [
+              "clue_008"
+            ],
+            "discovered": false,
+            "discoveredAt": null
+          },
+          {
+            "id": "clue_008",
+            "name": "被改过的水位刻记",
+            "description": "桥墩上的历年水位横记，最近几十道中有几道明显重刻过，刀口比周围的浅，方向也不对——按那些刻记的位置，那几年裂隙的水位与实际雨季对不上。",
+            "sceneId": "first_bridge",
+            "detailThreshold": 40,
+            "prerequisiteClues": [
+              "clue_007"
+            ],
+            "relatedContradiction": "看见与成为",
+            "unlocksClues": [
+              "clue_015"
+            ],
+            "discovered": false,
+            "discoveredAt": null
+          },
+          {
+            "id": "clue_009",
+            "name": "砖缝里的旧告示",
+            "description": "韩固铺子后墙的砖缝压着一张旧告示，字迹被汗手摸得发亮：「灰烬之年重桥，殁者十七，名具于下。」名册与议事厅那册工账上的名字能对上，只少了两个。",
+            "sceneId": "forge_row",
+            "detailThreshold": 35,
+            "prerequisiteClues": [
+              "clue_005"
+            ],
+            "relatedContradiction": "填平与栖居",
+            "unlocksClues": [
+              "clue_010"
+            ],
+            "discovered": false,
+            "discoveredAt": null
+          },
+          {
+            "id": "clue_010",
+            "name": "街尾的撬棍",
+            "description": "锻脊街尾一间空铺堆着几十根撬棍，木柄上没有铺号，铁头打得比市面上厚。它们不是用来修桥的，是用来从桥面上把东西撬开的。",
+            "sceneId": "forge_row",
+            "detailThreshold": 25,
+            "prerequisiteClues": [],
+            "relatedContradiction": "填平与栖居",
+            "unlocksClues": [],
+            "discovered": false,
+            "discoveredAt": null
+          },
+          {
+            "id": "clue_011",
+            "name": "三成抄本的同一底稿",
+            "description": "灯市抄本摊兜售的预言里，约有三成句子结构相同，只换了人名与日期。比对纸张和折角，它们来自同一份底稿——有人一直在批量改写同一份「未来」。",
+            "sceneId": "lantern_market",
+            "detailThreshold": 30,
+            "prerequisiteClues": [],
+            "relatedContradiction": "看见与成为",
+            "unlocksClues": [
+              "clue_012"
+            ],
+            "discovered": false,
+            "discoveredAt": null
+          },
+          {
+            "id": "clue_012",
+            "name": "桌底的执事名单",
+            "description": "苏爻第七盏灯下的摊桌底面，用炭写着半张名单：灯市执事、两名观渊会杂务、一名议员助理。名字旁有数目，像是分成，也像是欠账。",
+            "sceneId": "lantern_market",
+            "detailThreshold": 50,
+            "prerequisiteClues": [
+              "clue_011"
+            ],
+            "relatedContradiction": "披露与秩序",
+            "unlocksClues": [],
+            "discovered": false,
+            "discoveredAt": null
+          },
+          {
+            "id": "clue_013",
+            "name": "粉笔画的断口",
+            "description": "寡梯中段墙上的粉笔画，一笔一划画着一座没有雾的城。画的断口位置，与镜跨南柱底部那道斜裂几乎完全吻合——画它的人看过那道裂，而且知道它在哪里。",
+            "sceneId": "widow_stair",
+            "detailThreshold": 35,
+            "prerequisiteClues": [],
+            "relatedContradiction": "填平与栖居",
+            "unlocksClues": [
+              "clue_014",
+              "clue_015"
+            ],
+            "discovered": false,
+            "discoveredAt": null
+          },
+          {
+            "id": "clue_014",
+            "name": "灶房的长期住户",
+            "description": "寡梯最下面那间灶房，锅底有多年积炭，床铺叠得整齐，却从没人在白天见过住客。墙缝里塞着十几张纸条，写的都是同一个日期和同一个地点：「南柱，第三夜」。",
+            "sceneId": "widow_stair",
+            "detailThreshold": 45,
+            "prerequisiteClues": [
+              "clue_013"
+            ],
+            "relatedContradiction": "被记录与被抹除",
+            "unlocksClues": [
+              "clue_016"
+            ],
+            "discovered": false,
+            "discoveredAt": null
+          },
+          {
+            "id": "clue_015",
+            "name": "南柱底部的斜裂",
+            "description": "镜跨南柱根部有一道斜裂，从石基伸进铸铁包皮，缝隙里渗出红褐色的锈水。敲上去声音发空。桥上每天走过上千人，裂口被收费口的灯挡着，从桥面看不见。",
+            "sceneId": "mirror_span",
+            "detailThreshold": 30,
+            "prerequisiteClues": [
+              "clue_013"
+            ],
+            "relatedContradiction": "填平与栖居",
+            "unlocksClues": [
+              "clue_016"
+            ],
+            "discovered": false,
+            "discoveredAt": null
+          },
+          {
+            "id": "clue_016",
+            "name": "被补铸覆盖的捐资名录",
+            "description": "南柱柱身的捐资者名字，最上几行是新铸的，铸口还留着一圈浅边。旧字迹从边缘透出来，其中一个名字是某位早年被登记为盲视者的石匠——他捐了柱基，后来被从名录上抹掉。",
+            "sceneId": "mirror_span",
+            "detailThreshold": 50,
+            "prerequisiteClues": [
+              "clue_015",
+              "clue_014"
+            ],
+            "relatedContradiction": "被记录与被抹除",
+            "unlocksClues": [],
+            "discovered": false,
+            "discoveredAt": null
+          },
+          {
+            "id": "clue_017",
+            "name": "西侧岩缝的新支流",
+            "description": "底栈西段岩壁上有一道新开的缝，里头日夜渗水，水在栈道下方积成一小摊。壁上历年水位木牌最新几块字迹很新，写着半个月内涨了三寸——渊底在变。",
+            "sceneId": "lower_walk",
+            "detailThreshold": 30,
+            "prerequisiteClues": [],
+            "relatedContradiction": "看见与成为",
+            "unlocksClues": [
+              "clue_018"
+            ],
+            "discovered": false,
+            "discoveredAt": null
+          },
+          {
+            "id": "clue_018",
+            "name": "炭画的底栈图",
+            "description": "老渡的木板背面用炭画着底栈全图：四十三户人家的位置、哪几块板子软了、哪几段雾最厚，还有一条没标终点的虚线，从沉档后壁往岩层里拐。",
+            "sceneId": "lower_walk",
+            "detailThreshold": 40,
+            "prerequisiteClues": [
+              "clue_017"
+            ],
+            "relatedContradiction": "填平与栖居",
+            "unlocksClues": [
+              "clue_019"
+            ],
+            "discovered": false,
+            "discoveredAt": null
+          },
+          {
+            "id": "clue_019",
+            "name": "铁箱里的旧读数原本",
+            "description": "沉档最里面四只铁箱，压着石头。箱里是百年间的读数原本，手写，附注日期与误差，与明卷上的改写版相差极大。有一只箱子的登记年份，早于观渊会自称成立之年。",
+            "sceneId": "dark_archive",
+            "detailThreshold": 60,
+            "prerequisiteClues": [
+              "clue_018"
+            ],
+            "relatedContradiction": "看见与成为",
+            "unlocksClues": [
+              "clue_020",
+              "clue_021"
+            ],
+            "discovered": false,
+            "discoveredAt": null
+          },
+          {
+            "id": "clue_020",
+            "name": "无影者名录",
+            "description": "第三只箱子里不是读数，是一份名录，题「无影者」，列着二十几个名字与住处，其中一人的姓名、生辰与岑望舒完全一致，旁注：「其视不入雾，雾不录其形。」",
+            "sceneId": "dark_archive",
+            "detailThreshold": 65,
+            "prerequisiteClues": [
+              "clue_019",
+              "clue_022"
+            ],
+            "relatedContradiction": "被记录与被抹除",
+            "unlocksClues": [],
+            "discovered": false,
+            "discoveredAt": null
+          },
+          {
+            "id": "clue_021",
+            "name": "洞壁上的划道",
+            "description": "沉档洞壁上的旧刻痕不是字，是划道，一道一道排得极为整齐，每四道一组、每组之间留空。数下来共二百一十二组，与窥历纪年数相同——有人在用划道记年，而且记在官方档案之外。",
+            "sceneId": "dark_archive",
+            "detailThreshold": 50,
+            "prerequisiteClues": [
+              "clue_019"
+            ],
+            "relatedContradiction": "看见与成为",
+            "unlocksClues": [],
+            "discovered": false,
+            "discoveredAt": null
+          },
+          {
+            "id": "clue_006",
+            "name": "被改装的沙漏",
+            "description": "议事厅角上那架限制发言的沙漏，内胆比外框新，颈口被收窄过，同样的沙量如今流得更慢。有人悄悄把发言时间拉长了一截——为了让自己人说完，还是为了让对手露底，说不清。",
+            "sceneId": "council_hall",
+            "detailThreshold": 25,
+            "prerequisiteClues": [],
+            "relatedContradiction": "披露与秩序",
+            "unlocksClues": [],
+            "discovered": false,
+            "discoveredAt": null
+          }
+        ],
+        "encyclopedia": [
+          {
+            "id": "cfbe4421-c13e-4f36-8767-92f92eb16980:encyclopedia:0",
+            "type": "location",
+            "name": "观渊档案厅",
+            "description": "环形塔楼，内壁一圈一圈叠着卷宗格。底层是「明卷」，任何持牌人都能查；往上十二层是「密卷」，钥匙在首席读渊师和三名议员手里。气味是墨、樟脑和一丝潮意。梯子是活动的，管理员用粉笔在梯脚写日期。每份卷宗旁夹",
+            "knowledge": [
+              {
+                "text": "晨读散场时底层最挤，梯脚有管理员用粉笔写的日期。",
+                "source": "ai",
+                "addedAt": {
+                  "day": 0,
+                  "hour": 8,
+                  "minute": 15
+                },
+                "importance": 50
+              }
+            ],
+            "firstEncountered": {
+              "day": 0,
+              "hour": 8,
+              "minute": 15
+            },
+            "lastUpdated": {
+              "day": 0,
+              "hour": 8,
+              "minute": 15
+            },
+            "relatedEntries": []
+          }
+        ],
+        "availableActions": [
+          "上第三层东侧第七格，把那批读数原本抱下来",
+          "追问她：两天读数一样，误差是怎么算的",
+          "告诉她今早在雾前站过，什么也没看见",
+          "先去收拾散在铜夹架旁没人归的几卷卷宗"
+        ],
+        "questLog": [],
+        "criticalFacts": [],
+        "npcMemory": {
+          "version": "npc_memory_v1",
+          "records": {
+            "阿萤": {
+              "name": "阿萤",
+              "behavior": {
+                "currentScene": "hall_of_records",
+                "currentActivity": "在附近走动",
+                "currentMood": "平静",
+                "interactingWith": [],
+                "lastObserved": {
+                  "day": 0,
+                  "hour": 8,
+                  "minute": 0
+                },
+                "source": "default"
+              },
+              "personality": {
+                "npcId": "阿萤",
+                "archive": {
+                  "coreDesires": [
+                    "过好自己的生活",
+                    "维持现状"
+                  ],
+                  "fearsAndTaboos": [
+                    "未知的威胁",
+                    "失去重要之物"
+                  ],
+                  "valuePriorities": [
+                    "安全",
+                    "连接",
+                    "自由"
+                  ],
+                  "cognitiveStyle": "intuitive",
+                  "emotionalRegulation": "suppression",
+                  "socialStrategy": "negotiation",
+                  "boundarySensitivity": 15,
+                  "metacognition": 10
+                },
+                "speechProfile": {
+                  "version": 1,
+                  "baseline": "一个被登记在册却从不看册子的人，说话靠追问推进：她相信问题是拿来用的，不是拿来客气的。",
+                  "wording": [
+                    "把「看见」和「知道」分得极清，别人混用她会当场纠正",
+                    "喜欢具体的东西：粉笔、台阶、几点钟、谁的手",
+                    "不叫官称，管岑望舒叫「先生」，管议员叫「那位坐门口的大人」"
+                  ],
+                  "rhythm": "常是一串问题连着抛，中间没有停顿，抛完就闭嘴听，听的时候一动不动。",
+                  "relationships": [
+                    {
+                      "audience": "档案厅的上司和同事",
+                      "style": "先问再做事，问得让人烦，但从不撒谎"
+                    },
+                    {
+                      "audience": "寡梯的住户",
+                      "style": "放低声音，同一句话会重复第二遍"
+                    },
+                    {
+                      "audience": "穿好衣服的北岸人",
+                      "style": "故意问得很直接，看对方怎么躲"
+                    }
+                  ],
+                  "emotions": [
+                    {
+                      "state": "被当成不祥或被轻视",
+                      "style": "声音抬高，语速加快，一句接一句顶回去"
+                    },
+                    {
+                      "state": "真的害怕",
+                      "style": "反而安静，只问一句，然后等对方答"
+                    }
+                  ],
+                  "examples": [
+                    {
+                      "situation": "有人让她别在档案厅乱翻",
+                      "text": "乱翻？我按号归的架，第七层第三格我昨天才理过。你们说底下封着不能看，可你们自己一天上去三回。上面写了什么？我不识字也听得出来，你别把话咽回去。"
+                    },
+                    {
+                      "situation": "深夜在石阶上，同伴问她怕不怕",
+                      "text": "雾我不怕，雾里什么都没有，我看得清清楚楚——什么都没有。我怕的是有人跟我说他看见了。看见的那个人，说话的时候脸是软的。"
+                    }
+                  ]
+                },
+                "awareness": 0,
+                "lastUpdated": 1794323876338,
+                "isImportant": false
+              }
+            },
+            "岑望舒": {
+              "name": "岑望舒",
+              "state": "reacted",
+              "relationship": {
+                "npcName": "岑望舒",
+                "affinity": 2,
+                "trust": 1,
+                "tags": [],
+                "firstMet": {
+                  "day": 0,
+                  "hour": 8,
+                  "minute": 15
+                },
+                "lastInteraction": {
+                  "day": 0,
+                  "hour": 8,
+                  "minute": 15
+                },
+                "notes": ""
+              },
+              "behavior": {
+                "currentScene": "hall_of_records",
+                "currentActivity": "在附近走动",
+                "currentMood": "平静",
+                "interactingWith": [],
+                "lastObserved": {
+                  "day": 0,
+                  "hour": 8,
+                  "minute": 0
+                },
+                "source": "default"
+              },
+              "personality": {
+                "npcId": "岑望舒",
+                "archive": {
+                  "coreDesires": [
+                    "过好自己的生活",
+                    "维持现状"
+                  ],
+                  "fearsAndTaboos": [
+                    "未知的威胁",
+                    "失去重要之物"
+                  ],
+                  "valuePriorities": [
+                    "安全",
+                    "连接",
+                    "自由"
+                  ],
+                  "cognitiveStyle": "intuitive",
+                  "emotionalRegulation": "suppression",
+                  "socialStrategy": "negotiation",
+                  "boundarySensitivity": 15,
+                  "metacognition": 10
+                },
+                "speechProfile": {
+                  "version": 1,
+                  "baseline": "职业训练出的精确与克制：她习惯把世界折成可读的数目，再把数目折回一句陈述。不修饰，不抒情，语气像在誊抄。",
+                  "wording": [
+                    "爱用「读数」「刻度」「记录」「偏差」这类工作词，连私下也改不掉",
+                    "极少用形容词；评价一件事时给数字，不给感受",
+                    "称呼陌生人用「持牌人」或干脆省略主语；对上不谄，对下不软"
+                  ],
+                  "rhythm": "句子短，一句一断，很少用连词把两句并起来。越是要紧的话，她说得越慢越长。",
+                  "relationships": [
+                    {
+                      "audience": "会里的下属与学徒",
+                      "style": "命令句，省略客气，直接给步骤"
+                    },
+                    {
+                      "audience": "议员与外人",
+                      "style": "先报数，再给结论，最后才说自己怎么看"
+                    },
+                    {
+                      "audience": "阿萤",
+                      "style": "会多一句解释，语气松半度，然后立刻收回"
+                    }
+                  ],
+                  "emotions": [
+                    {
+                      "state": "焦虑或被人逼近真相",
+                      "style": "开始报数，用数字压住手上的抖，句子变得更干"
+                    },
+                    {
+                      "state": "被问到私事",
+                      "style": "停两秒，反问一个技术性问题，把话头挪走"
+                    }
+                  ],
+                  "examples": [
+                    {
+                      "situation": "有持牌人质疑今天的读数和昨天对不上",
+                      "text": "昨天三十九，今天四十。差一格不叫对不上，叫误差。你要我给你个保证，我给不了；我能给的是昨天的记录、今天的记录，还有我的名字压在下面。不满意的话，去议事厅提，别在台上吵。"
+                    },
+                    {
+                      "situation": "亲近的人问她累不累",
+                      "text": "……你今天问了几个人这句话。算了。」她把手从镜沿收回来，指腹留下一道灰。「我睡四个钟头。四十年都是四个钟头。这个数字不用你操心。"
+                    }
+                  ]
+                },
+                "awareness": 0,
+                "lastUpdated": 1794323876338,
+                "isImportant": false
+              },
+              "playerKnowledge": {
+                "entryId": "cfbe4421-c13e-4f36-8767-92f92eb16980:encyclopedia:1",
+                "description": "",
+                "knowledge": [],
+                "firstEncountered": {
+                  "day": 0,
+                  "hour": 8,
+                  "minute": 15
+                },
+                "lastUpdated": {
+                  "day": 0,
+                  "hour": 8,
+                  "minute": 15
+                },
+                "relatedEntries": []
+              }
+            }
+          }
+        },
+        "weather": "多云",
+        "protagonistState": {
+          "health": "良好",
+          "mood": "专注",
+          "statusEffects": [],
+          "notes": ""
+        },
+        "notebookEvents": [],
+        "causalProjections": [],
+        "historyEpochPlan": {
+          "id": "history_86124c02",
+          "rendererVersion": 1,
+          "scope": {
+            "worldId": "player_b613c99b-4ae3-4b9c-9a54-04237c627f79",
+            "playthroughId": "pt_1794323842958_q5nwuv",
+            "archiveScope": "ordinary"
+          },
+          "retained": [
+            {
+              "actionId": "458972d6-980e-48b7-8005-0ead3d791ce6",
+              "sourceRevision": "336:4130b82f:66e45a57",
+              "mode": "full"
+            }
+          ],
+          "policy": "[1000000,15,35,8000]",
+          "through": {
+            "actionId": "458972d6-980e-48b7-8005-0ead3d791ce6",
+            "sourceRevision": "336:4130b82f:66e45a57"
+          }
+        },
+        "promptContextScope": {
+          "worldId": "player_b613c99b-4ae3-4b9c-9a54-04237c627f79",
+          "playthroughId": "pt_1794323842958_q5nwuv",
+          "archiveScope": "ordinary"
+        },
+        "directorAdviceOrigin": null,
+        "directorCueCandidate": null,
+        "lastDirectorFrame": null,
+        "diary": [],
+        "presentationContext": []
+      }
+    },
+    "d722bec33575e275": {
+      "type": "segments",
+      "data": [
+        {
+          "type": "narration",
+          "text": "旋梯是铁的，每一级都窄，走快了鞋跟会磕出连串的响。你下到第五层时，晨读刚散——三十几个持牌人正顺着底层的门往外走，袍角擦过铜夹架，带起一股墨和樟脑混在一起的味道。有人边走边把手里的小抄折起来，有人回头看台上，像还想再问一句。梯脚的地面上用粉笔写着今日的日期，字迹是管理员的，横歪得很稳。你踩过它的时候，粉笔灰从袖口又落了一层，细细地铺在铁板上。窗外那片雾比早上更高了，漫到第七层窗沿，白得很安静。"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "岑望舒",
+          "expressionTags": [
+            "平静",
+            "克制"
+          ],
+          "emotion": "neutral",
+          "text": "阿萤。"
+        },
+        {
+          "type": "narration",
+          "text": "她站在最后一级梯子底下，灰头发挽得极紧，一只手撑在桌沿上，拇指那道深痕压在木纹里。散场的人从她两边绕过去，没人敢从正中间走。她看了你一眼，视线在你袖口的灰上停了一下，又抬回来。"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "岑望舒",
+          "expressionTags": [
+            "审视",
+            "工作中"
+          ],
+          "emotion": "thinking",
+          "text": "第三层，东侧第七格。近三十日的读数原本，整批抱下来，放到我桌上。别按年份理，按夹子上写的先后排。"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "岑望舒",
+          "expressionTags": [
+            "疲惫",
+            "克制"
+          ],
+          "emotion": "neutral",
+          "text": "刚才有人在台下问，为什么这两天读数一模一样。我答了误差。这个答案只够撑到今天下午。"
+        },
+        {
+          "type": "narration",
+          "text": "她把撑在桌沿的手收回去，指腹在木头上留下一小片干净的痕。楼上有人挪动梯子，铁脚刮着地面，刺耳地滑过去半尺。她没有再看你，转身去收台面上的几张纸，动作很慢，像怕把哪一张的顺序弄乱。"
+        }
+      ]
+    }
+  }
+}

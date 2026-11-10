@@ -1,0 +1,856 @@
+{
+  "format": "eidos-gameplay-plugin",
+  "version": 1,
+  "id": "debate-room",
+  "name": "证据对照与群体辩论",
+  "description": "逐条核对人物发言，调查并出示证据，选择反驳或支持。证据与发言的关系按案件事实核验，过程融入原有正文和行动。",
+  "tags": [
+    "推理",
+    "证据对照",
+    "群体辩论"
+  ],
+  "prompts": {
+    "creation": "创建一个事实可核验的小型调查场景。让不同角色提出具体、可对照的发言；不要让玩法界面替玩家判断动机。案例数据中的正确证据与关系是作者判定依据，属于内部答案，不得直接展示给玩家。",
+    "action": "辩论只允许使用玩家已经发现的证据。具体发言与证据的关系由声明规则按案例事实判定；不要让叙事模型重新投票或改写判定。正确的反驳或支持之后，可以让角色自然回应。\n使用宿主原有正文、推荐行动和自由输入。没有独立面板、证据架、进度条或专用阅读界面。推荐操作与自由行动共用规则和正式事实；涉及已声明规则时只提议本轮实际满足前提的事件，不提前宣称结算成功。",
+    "review": "审阅叙事与已经揭示的线索是否一致。不得透露未发现线索、尚未出场的证人发言或本地判定答案。"
+  },
+  "rules": [
+    {
+      "id": "n-start",
+      "description": "雾港档案室停电七分钟。一只蓝色封存袋不见了，两位值夜人对门是否开过、封存袋何时交接各执一词。请把每条发言与已发现记录对照。",
+      "requires": {
+        "n-started": false
+      },
+      "sets": {
+        "n-started": true,
+        "n-active": true
+      },
+      "once": true,
+      "effects": {
+        "facts": [
+          {
+            "op": "add",
+            "path": "/nativeLastResult",
+            "value": "雾港档案室停电七分钟。一只蓝色封存袋不见了，两位值夜人对门是否开过、封存袋何时交接各执一词。请把每条发言与已发现记录对照。"
+          },
+          {
+            "op": "add",
+            "path": "/caseTitle",
+            "value": "雾港档案室的蓝色封存袋"
+          }
+        ]
+      }
+    },
+    {
+      "id": "n-pause",
+      "description": "你暂时停下调查，已经确认的记录仍然保留。",
+      "requires": {
+        "n-active": true,
+        "n-closed": false
+      },
+      "sets": {
+        "n-active": false
+      },
+      "once": false,
+      "effects": {
+        "facts": [
+          {
+            "op": "add",
+            "path": "/nativeLastResult",
+            "value": "你暂时停下调查，已经确认的记录仍然保留。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "n-resume",
+      "description": "你重新翻开已确认的记录，接着处理尚未解答的问题。",
+      "requires": {
+        "n-started": true,
+        "n-active": false,
+        "n-closed": false
+      },
+      "sets": {
+        "n-active": true
+      },
+      "once": false,
+      "effects": {
+        "facts": [
+          {
+            "op": "add",
+            "path": "/nativeLastResult",
+            "value": "你重新翻开已确认的记录，接着处理尚未解答的问题。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "n-find-bell-ledger",
+      "description": "20:17，西侧门铃留下了一次机械刻痕；检查确认记录只由门开启联动，手动摇铃不会写入。",
+      "requires": {
+        "n-active": true,
+        "n-closed": false,
+        "n-found-bell-ledger": false
+      },
+      "sets": {
+        "n-found-bell-ledger": true
+      },
+      "once": true,
+      "effects": {
+        "facts": [
+          {
+            "op": "add",
+            "path": "/nativeLastResult",
+            "value": "20:17，西侧门铃留下了一次机械刻痕；检查确认记录只由门开启联动，手动摇铃不会写入。"
+          },
+          {
+            "op": "add",
+            "path": "/evidence-bell-ledger",
+            "value": {
+              "id": "bell-ledger",
+              "name": "外廊巡铃簿",
+              "summary": "20:17，西侧门铃留下了一次机械刻痕；检查确认记录只由门开启联动，手动摇铃不会写入。"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "n-find-handover-slip",
+      "description": "20:29，蓝色封存袋已交给接班员并签收；栖舟的离岗签名记录为20:32。",
+      "requires": {
+        "n-active": true,
+        "n-closed": false,
+        "n-found-handover-slip": false
+      },
+      "sets": {
+        "n-found-handover-slip": true
+      },
+      "once": true,
+      "effects": {
+        "facts": [
+          {
+            "op": "add",
+            "path": "/nativeLastResult",
+            "value": "20:29，蓝色封存袋已交给接班员并签收；栖舟的离岗签名记录为20:32。"
+          },
+          {
+            "op": "add",
+            "path": "/evidence-handover-slip",
+            "value": {
+              "id": "handover-slip",
+              "name": "夜班交接单",
+              "summary": "20:29，蓝色封存袋已交给接班员并签收；栖舟的离岗签名记录为20:32。"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "n-find-salted-key",
+      "description": "一把备用钥匙带着海盐与旧机油。",
+      "requires": {
+        "n-active": true,
+        "n-closed": false,
+        "n-found-salted-key": false
+      },
+      "sets": {
+        "n-found-salted-key": true
+      },
+      "once": true,
+      "effects": {
+        "facts": [
+          {
+            "op": "add",
+            "path": "/nativeLastResult",
+            "value": "一把备用钥匙带着海盐与旧机油。"
+          },
+          {
+            "op": "add",
+            "path": "/evidence-salted-key",
+            "value": {
+              "id": "salted-key",
+              "name": "盐渍钥匙",
+              "summary": "一把备用钥匙带着海盐与旧机油。"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "n-check-0-bell-ledger-rebut",
+      "description": "巡铃簿记录的机械刻痕与这句绝对陈述直接冲突。",
+      "requires": {
+        "n-active": true,
+        "n-closed": false,
+        "n-done-0": false,
+        "n-found-bell-ledger": true
+      },
+      "sets": {
+        "n-done-0": true
+      },
+      "once": true,
+      "effects": {
+        "facts": [
+          {
+            "op": "add",
+            "path": "/nativeLastResult",
+            "value": "巡铃簿记录的机械刻痕与这句绝对陈述直接冲突。"
+          },
+          {
+            "op": "add",
+            "path": "/lastEvidenceResult",
+            "value": {
+              "evidence": "外廊巡铃簿",
+              "accepted": true,
+              "statement": 0
+            }
+          },
+          {
+            "op": "add",
+            "path": "/resolved-0",
+            "value": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "n-check-0-bell-ledger-support",
+      "description": "「外廊巡铃簿」目前不能以这个理由证明或推翻这句话。你可以换一份已取得的材料再核对。",
+      "requires": {
+        "n-active": true,
+        "n-closed": false,
+        "n-done-0": false,
+        "n-found-bell-ledger": true
+      },
+      "sets": {},
+      "once": false,
+      "effects": {
+        "facts": [
+          {
+            "op": "add",
+            "path": "/nativeLastResult",
+            "value": "「外廊巡铃簿」目前不能以这个理由证明或推翻这句话。你可以换一份已取得的材料再核对。"
+          },
+          {
+            "op": "add",
+            "path": "/lastEvidenceResult",
+            "value": {
+              "evidence": "外廊巡铃簿",
+              "accepted": false,
+              "statement": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "n-check-0-handover-slip-rebut",
+      "description": "「夜班交接单」目前不能以这个理由证明或推翻这句话。你可以换一份已取得的材料再核对。",
+      "requires": {
+        "n-active": true,
+        "n-closed": false,
+        "n-done-0": false,
+        "n-found-handover-slip": true
+      },
+      "sets": {},
+      "once": false,
+      "effects": {
+        "facts": [
+          {
+            "op": "add",
+            "path": "/nativeLastResult",
+            "value": "「夜班交接单」目前不能以这个理由证明或推翻这句话。你可以换一份已取得的材料再核对。"
+          },
+          {
+            "op": "add",
+            "path": "/lastEvidenceResult",
+            "value": {
+              "evidence": "夜班交接单",
+              "accepted": false,
+              "statement": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "n-check-0-handover-slip-support",
+      "description": "「夜班交接单」目前不能以这个理由证明或推翻这句话。你可以换一份已取得的材料再核对。",
+      "requires": {
+        "n-active": true,
+        "n-closed": false,
+        "n-done-0": false,
+        "n-found-handover-slip": true
+      },
+      "sets": {},
+      "once": false,
+      "effects": {
+        "facts": [
+          {
+            "op": "add",
+            "path": "/nativeLastResult",
+            "value": "「夜班交接单」目前不能以这个理由证明或推翻这句话。你可以换一份已取得的材料再核对。"
+          },
+          {
+            "op": "add",
+            "path": "/lastEvidenceResult",
+            "value": {
+              "evidence": "夜班交接单",
+              "accepted": false,
+              "statement": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "n-check-0-salted-key-rebut",
+      "description": "「盐渍钥匙」目前不能以这个理由证明或推翻这句话。你可以换一份已取得的材料再核对。",
+      "requires": {
+        "n-active": true,
+        "n-closed": false,
+        "n-done-0": false,
+        "n-found-salted-key": true
+      },
+      "sets": {},
+      "once": false,
+      "effects": {
+        "facts": [
+          {
+            "op": "add",
+            "path": "/nativeLastResult",
+            "value": "「盐渍钥匙」目前不能以这个理由证明或推翻这句话。你可以换一份已取得的材料再核对。"
+          },
+          {
+            "op": "add",
+            "path": "/lastEvidenceResult",
+            "value": {
+              "evidence": "盐渍钥匙",
+              "accepted": false,
+              "statement": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "n-check-0-salted-key-support",
+      "description": "「盐渍钥匙」目前不能以这个理由证明或推翻这句话。你可以换一份已取得的材料再核对。",
+      "requires": {
+        "n-active": true,
+        "n-closed": false,
+        "n-done-0": false,
+        "n-found-salted-key": true
+      },
+      "sets": {},
+      "once": false,
+      "effects": {
+        "facts": [
+          {
+            "op": "add",
+            "path": "/nativeLastResult",
+            "value": "「盐渍钥匙」目前不能以这个理由证明或推翻这句话。你可以换一份已取得的材料再核对。"
+          },
+          {
+            "op": "add",
+            "path": "/lastEvidenceResult",
+            "value": {
+              "evidence": "盐渍钥匙",
+              "accepted": false,
+              "statement": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "n-check-1-bell-ledger-rebut",
+      "description": "「外廊巡铃簿」目前不能以这个理由证明或推翻这句话。你可以换一份已取得的材料再核对。",
+      "requires": {
+        "n-active": true,
+        "n-closed": false,
+        "n-done-1": false,
+        "n-done-0": true,
+        "n-found-bell-ledger": true
+      },
+      "sets": {},
+      "once": false,
+      "effects": {
+        "facts": [
+          {
+            "op": "add",
+            "path": "/nativeLastResult",
+            "value": "「外廊巡铃簿」目前不能以这个理由证明或推翻这句话。你可以换一份已取得的材料再核对。"
+          },
+          {
+            "op": "add",
+            "path": "/lastEvidenceResult",
+            "value": {
+              "evidence": "外廊巡铃簿",
+              "accepted": false,
+              "statement": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "n-check-1-bell-ledger-support",
+      "description": "「外廊巡铃簿」目前不能以这个理由证明或推翻这句话。你可以换一份已取得的材料再核对。",
+      "requires": {
+        "n-active": true,
+        "n-closed": false,
+        "n-done-1": false,
+        "n-done-0": true,
+        "n-found-bell-ledger": true
+      },
+      "sets": {},
+      "once": false,
+      "effects": {
+        "facts": [
+          {
+            "op": "add",
+            "path": "/nativeLastResult",
+            "value": "「外廊巡铃簿」目前不能以这个理由证明或推翻这句话。你可以换一份已取得的材料再核对。"
+          },
+          {
+            "op": "add",
+            "path": "/lastEvidenceResult",
+            "value": {
+              "evidence": "外廊巡铃簿",
+              "accepted": false,
+              "statement": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "n-check-1-handover-slip-rebut",
+      "description": "「夜班交接单」目前不能以这个理由证明或推翻这句话。你可以换一份已取得的材料再核对。",
+      "requires": {
+        "n-active": true,
+        "n-closed": false,
+        "n-done-1": false,
+        "n-done-0": true,
+        "n-found-handover-slip": true
+      },
+      "sets": {},
+      "once": false,
+      "effects": {
+        "facts": [
+          {
+            "op": "add",
+            "path": "/nativeLastResult",
+            "value": "「夜班交接单」目前不能以这个理由证明或推翻这句话。你可以换一份已取得的材料再核对。"
+          },
+          {
+            "op": "add",
+            "path": "/lastEvidenceResult",
+            "value": {
+              "evidence": "夜班交接单",
+              "accepted": false,
+              "statement": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "n-check-1-handover-slip-support",
+      "description": "巡铃记录与交接单将两段时间线接在了一起。",
+      "requires": {
+        "n-active": true,
+        "n-closed": false,
+        "n-done-1": false,
+        "n-done-0": true,
+        "n-found-handover-slip": true
+      },
+      "sets": {
+        "n-done-1": true,
+        "n-closed": true,
+        "n-active": false
+      },
+      "once": true,
+      "effects": {
+        "facts": [
+          {
+            "op": "add",
+            "path": "/nativeLastResult",
+            "value": "巡铃记录与交接单将两段时间线接在了一起。"
+          },
+          {
+            "op": "add",
+            "path": "/lastEvidenceResult",
+            "value": {
+              "evidence": "夜班交接单",
+              "accepted": true,
+              "statement": 1
+            }
+          },
+          {
+            "op": "add",
+            "path": "/resolved-1",
+            "value": true
+          },
+          {
+            "op": "add",
+            "path": "/completed",
+            "value": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "n-check-1-salted-key-rebut",
+      "description": "「盐渍钥匙」目前不能以这个理由证明或推翻这句话。你可以换一份已取得的材料再核对。",
+      "requires": {
+        "n-active": true,
+        "n-closed": false,
+        "n-done-1": false,
+        "n-done-0": true,
+        "n-found-salted-key": true
+      },
+      "sets": {},
+      "once": false,
+      "effects": {
+        "facts": [
+          {
+            "op": "add",
+            "path": "/nativeLastResult",
+            "value": "「盐渍钥匙」目前不能以这个理由证明或推翻这句话。你可以换一份已取得的材料再核对。"
+          },
+          {
+            "op": "add",
+            "path": "/lastEvidenceResult",
+            "value": {
+              "evidence": "盐渍钥匙",
+              "accepted": false,
+              "statement": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "n-check-1-salted-key-support",
+      "description": "「盐渍钥匙」目前不能以这个理由证明或推翻这句话。你可以换一份已取得的材料再核对。",
+      "requires": {
+        "n-active": true,
+        "n-closed": false,
+        "n-done-1": false,
+        "n-done-0": true,
+        "n-found-salted-key": true
+      },
+      "sets": {},
+      "once": false,
+      "effects": {
+        "facts": [
+          {
+            "op": "add",
+            "path": "/nativeLastResult",
+            "value": "「盐渍钥匙」目前不能以这个理由证明或推翻这句话。你可以换一份已取得的材料再核对。"
+          },
+          {
+            "op": "add",
+            "path": "/lastEvidenceResult",
+            "value": {
+              "evidence": "盐渍钥匙",
+              "accepted": false,
+              "statement": 1
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "data": {
+    "case": {
+      "title": "雾港档案室的蓝色封存袋",
+      "intro": "雾港档案室停电七分钟。一只蓝色封存袋不见了，两位值夜人对门是否开过、封存袋何时交接各执一词。请把每条发言与已发现记录对照。",
+      "clues": [
+        {
+          "id": "bell-ledger",
+          "name": "外廊巡铃簿",
+          "aliases": [
+            "巡铃簿",
+            "外廊铃记录"
+          ],
+          "summary": "20:17，西侧门铃留下了一次机械刻痕；检查确认记录只由门开启联动，手动摇铃不会写入。"
+        },
+        {
+          "id": "handover-slip",
+          "name": "夜班交接单",
+          "aliases": [
+            "交接单",
+            "夜班登记"
+          ],
+          "summary": "20:29，蓝色封存袋已交给接班员并签收；栖舟的离岗签名记录为20:32。"
+        },
+        {
+          "id": "salted-key",
+          "name": "盐渍钥匙",
+          "aliases": [
+            "盐渍钥匙",
+            "沾盐钥匙"
+          ],
+          "summary": "一把备用钥匙带着海盐与旧机油。"
+        }
+      ],
+      "demoDiscoveries": [
+        "bell-ledger",
+        "salted-key",
+        "handover-slip"
+      ],
+      "rounds": [
+        {
+          "id": "door-bell",
+          "relation": "rebut",
+          "evidenceId": "bell-ledger",
+          "statement": {
+            "id": "warden-door",
+            "speaker": "闻澜（守门人）",
+            "text": "20点以后，外廊的门一次也没有打开。"
+          },
+          "topic": "门是否开启",
+          "why": "巡铃簿记录的机械刻痕与这句绝对陈述直接冲突。"
+        },
+        {
+          "id": "bag-handover",
+          "relation": "support",
+          "evidenceId": "handover-slip",
+          "statement": {
+            "id": "archivist-handover",
+            "speaker": "栖舟（档案员）",
+            "text": "封存袋在我离岗前已经交给了接班人。"
+          },
+          "topic": "封存袋何时交接",
+          "why": "交接单给出了签收人和时间，支持这条陈述。"
+        }
+      ],
+      "closing": "巡铃记录与交接单将两段时间线接在了一起。"
+    }
+  },
+  "ui": {
+    "reading": "inherit",
+    "initialState": {
+      "roundIndex": 0,
+      "resolved": [],
+      "paused": false,
+      "completed": false,
+      "selectedEvidenceId": "",
+      "feedback": "",
+      "demoMode": false,
+      "offlineClueIndex": 0
+    },
+    "presentation": "native",
+    "html": "<!doctype html>\n<html data-eidos-workbench lang=\"zh-CN\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <meta name=\"color-scheme\" content=\"dark\">\n  <title>焦点辩论室</title>\n  <style>\n    :root{font-family:ui-sans-serif,system-ui,-apple-system,\"Segoe UI\",sans-serif;color:#efece5;background:#111820;font-synthesis:none;text-rendering:optimizeLegibility;--ink:#efece5;--muted:#a2adb0;--line:#36464c;--panel:#19252b;--panel2:#202f35;--sea:#78d5c5;--amber:#e8bb73;--red:#ed927d;--shadow:0 14px 40px #050b0e66}\n    *{box-sizing:border-box}body{margin:0;min-width:280px;min-height:100vh;background:radial-gradient(ellipse at 78% -20%,#26505255,transparent 48%),linear-gradient(145deg,#10171d,#17242a 60%,#17252a);color:var(--ink)}button{font:inherit;color:inherit;cursor:pointer}button:focus-visible{outline:2px solid var(--sea);outline-offset:3px}button:disabled{opacity:.45;cursor:not-allowed}.shell{max-width:1050px;margin:auto;padding:clamp(14px,3vw,32px)}.mast{display:flex;align-items:center;justify-content:space-between;gap:14px;border-bottom:1px solid var(--line);padding:2px 0 18px}.brand{display:flex;align-items:center;gap:12px}.brand-mark{display:grid;place-items:center;width:39px;height:39px;border:1px solid #69bdaf;border-radius:50%;color:var(--sea);font-size:19px}.eyebrow,.micro{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}h1{font-size:15px;letter-spacing:.12em;margin:0;font-weight:650}.mast-note{font-size:12px;color:var(--muted);text-align:right}.casehead{display:flex;align-items:end;justify-content:space-between;gap:16px;padding:26px 0 18px}.casehead h2{font-size:clamp(20px,3.2vw,30px);letter-spacing:.01em;margin:5px 0 7px}.intro{max-width:620px;font-size:13px;line-height:1.7;color:#bec7c5;margin:0}.progress{min-width:105px;text-align:right;color:var(--sea);font-variant-numeric:tabular-nums}.progress b{display:block;font-size:22px;font-weight:580}.progress span{font-size:10px;color:var(--muted);letter-spacing:.14em}.layout{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(270px,.9fr);gap:14px}.panel{background:linear-gradient(160deg,#1d2b31ee,#172329ee);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);overflow:hidden}.panel-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:15px 17px;border-bottom:1px solid #34454b}.panel-title{margin:0;font-size:11px;letter-spacing:.14em;color:#bfcbc8}.tag{border:1px solid #55746e;color:#a9ded2;border-radius:99px;padding:4px 8px;font-size:10px;letter-spacing:.06em}.statement{padding:22px 20px 19px;min-height:168px;display:flex;flex-direction:column;justify-content:space-between}.statement blockquote{margin:14px 0;font-size:clamp(19px,2.5vw,25px);line-height:1.55;letter-spacing:.025em}.speaker{color:var(--amber);font-size:12px}.subject{font-size:11px;color:var(--muted)}.evidence-list{padding:13px;display:grid;gap:8px;max-height:290px;overflow:auto}.evidence{width:100%;text-align:left;background:#19272c;border:1px solid #42545a;border-radius:9px;padding:11px 12px;transition:border-color .15s,background .15s}.evidence:hover{border-color:#82cfc1;background:#22353a}.evidence[aria-pressed=\"true\"]{border-color:var(--sea);box-shadow:inset 3px 0 var(--sea);background:#253b3e}.evidence strong{display:block;font-size:13px;font-weight:600}.evidence span{display:block;margin-top:5px;font-size:11px;line-height:1.55;color:#b4c1bf}.empty{padding:20px;color:var(--muted);font-size:12px;line-height:1.65}.empty strong{display:block;color:var(--ink);font-size:13px;margin-bottom:6px}.actions{display:flex;flex-wrap:wrap;gap:8px;padding:13px 16px;border-top:1px solid #34454b}.action{border:1px solid #5d7c76;background:#203831;border-radius:8px;padding:9px 13px;font-size:12px}.action:hover:not(:disabled){background:#285247;border-color:var(--sea)}.action.primary{background:#207766;border-color:#42b59f;color:white}.action.primary:hover:not(:disabled){background:#29927d}.action.secondary{background:#29343a;border-color:#536168}.action.ghost{background:transparent;border-color:var(--line);color:#c5d0ce}.feedback{margin:13px 16px 0;padding:10px 12px;border-left:2px solid var(--amber);background:#e8bb7310;color:#e9d6ad;font-size:12px;line-height:1.55}.feedback.good{border-color:var(--sea);background:#78d5c510;color:#b1e6db}.feedback.bad{border-color:var(--red);background:#ed927d10;color:#ffc1b2}.toolbar{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:13px 2px 0}.tool{background:none;border:0;color:#b4c2c0;font-size:11px;padding:7px}.tool:hover{color:var(--sea)}.footer{display:flex;justify-content:space-between;gap:14px;color:#839195;font-size:10px;padding:18px 2px 0}.replay{position:fixed;inset:0;background:#061014d9;display:grid;place-items:center;padding:20px;z-index:5}.replay[hidden]{display:none}.replay-card{width:min(600px,100%);background:#19272d;border:1px solid #56706f;border-radius:12px;box-shadow:var(--shadow);padding:20px}.replay-card h3{margin:0 0 12px;font-size:14px}.replay-card pre{white-space:pre-wrap;font:inherit;font-size:14px;line-height:1.8;color:#e7e6df;max-height:60vh;overflow:auto}.done{grid-column:1/-1;padding:30px;text-align:center}.done-mark{width:54px;height:54px;border-radius:50%;margin:0 auto 14px;display:grid;place-items:center;color:var(--sea);border:1px solid #5eaaa0;font-size:24px}.done h3{font-size:20px;margin:0 0 8px}.done p{font-size:13px;color:#bec7c5;line-height:1.7}.status{margin-left:auto;font-size:10px;color:var(--muted)}@media(max-width:720px){.shell{padding:14px}.layout{grid-template-columns:1fr}.casehead{align-items:start}.progress{min-width:66px}.mast-note{max-width:125px;line-height:1.5}.evidence-list{max-height:230px}.statement{min-height:150px}.footer span:last-child{display:none}}\n  </style>\n  <style>\n    .story{margin:0 0 14px;background:linear-gradient(120deg,#17272a,#1a2529);border:1px solid #3d5b58;border-radius:11px;overflow:hidden}.story-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 14px;border-bottom:1px solid #344b49}.story-label{font-size:10px;letter-spacing:.15em;color:#a9d3c8}.story-meta{font-size:10px;color:var(--muted);margin-left:auto}.story-text{white-space:pre-wrap;max-height:190px;overflow:auto;padding:14px 16px;margin:0;color:#e3e4de;font-size:13px;line-height:1.75}.story-next{border:1px solid #548d7e;background:#1f4e43;border-radius:7px;padding:7px 11px;font-size:11px}.story-next:hover:not(:disabled){background:#286351}.story-error{padding:0 16px 12px;color:#ffc1b2;font-size:11px}\n  </style>\n<style data-eidos-workbench-theme>/* Shared author/tool presentation. The host supplies these tokens in either theme. */\nhtml[data-eidos-workbench] {\n  --wb-paper: var(--eidos-paper, #faf9f6);\n  --wb-surface: var(--eidos-surface, #ffffff);\n  --wb-ink: var(--eidos-ink, #202124);\n  --wb-accent: var(--eidos-accent, #9e0000);\n  --wb-muted: color-mix(in srgb, var(--wb-ink) 65%, var(--wb-paper));\n  --wb-line: color-mix(in srgb, var(--wb-ink) 16%, var(--wb-paper));\n  --wb-quiet: color-mix(in srgb, var(--wb-ink) 3%, var(--wb-paper));\n  --wb-highlight: color-mix(in srgb, var(--wb-accent) 7%, var(--wb-paper));\n  --bg: var(--wb-paper); --panel: var(--wb-surface); --panel2: var(--wb-quiet);\n  --paper: var(--wb-paper); --ink: var(--wb-ink); --accent: var(--wb-accent);\n  --muted: var(--wb-muted); --line: var(--wb-line); --quiet: var(--wb-quiet);\n  --highlight: var(--wb-highlight); --sea: var(--wb-accent); --amber: var(--wb-accent); --red: var(--wb-accent); --shadow: none;\n  color-scheme: light dark; color: var(--wb-ink); background: var(--wb-paper);\n  font-family: var(--font-geist-sans, ui-sans-serif, -apple-system, \"PingFang SC\", \"Microsoft YaHei\", sans-serif);\n  font-size: 14px; line-height: 1.8; font-synthesis: none;\n}\nhtml[data-eidos-workbench] body { min-width: 0; margin: 0; background: var(--wb-paper); color: var(--wb-ink); font: inherit; }\nhtml[data-eidos-workbench] :is(main, .shell, #mod-root) { width: 100%; max-width: 1080px; margin-inline: auto; padding: 24px clamp(18px, 3vw, 32px) 32px; }\nhtml[data-eidos-workbench] #mod-root { --ink: var(--wb-ink); --paper: var(--wb-paper); --muted: var(--wb-muted); --line: var(--wb-line); }\nhtml[data-eidos-workbench] :is(header, .mast, .masthead) { background: transparent; border-color: var(--wb-line); box-shadow: none; padding: 0 0 18px; gap: 18px; }\nhtml[data-eidos-workbench] :is(h1, h2, h3, h4) { color: var(--wb-ink); font-family: inherit; letter-spacing: -.015em; font-weight: 600; overflow-wrap: anywhere; }\nhtml[data-eidos-workbench] h1 { font-size: 22px; line-height: 1.4; margin: 0 0 8px; }\nhtml[data-eidos-workbench] h2 { font-size: 18px; line-height: 1.5; }\nhtml[data-eidos-workbench] h3 { font-size: 15px; }\nhtml[data-eidos-workbench] :is(p, blockquote, pre) { overflow-wrap: anywhere; }\nhtml[data-eidos-workbench] :is(.intro, .subtitle, .scene, .hint, .micro, .eyebrow, .small-note, .mast-note, .footer, footer, small, label, .subject, .story-meta, .reader-status, .action-caption, .choice-caption, .world-mark, .person p, .person-row p) { color: var(--wb-muted); font-family: inherit; font-size: 12px; line-height: 1.8; letter-spacing: .02em; }\nhtml[data-eidos-workbench] :is(.brand-mark, .done-mark) { display: none; }\nhtml[data-eidos-workbench] :is(.layout, .columns) { gap: 24px; grid-template-columns: minmax(0, 1.3fr) minmax(250px, 1fr); align-items: start; }\nhtml[data-eidos-workbench] :is(.layout, .columns, .body-grid) > * { min-width: 0; }\nhtml[data-eidos-workbench] :is(.panel, .card, .story:not(main), .replay-card, .rail, .choice-box, .action-area) { background: var(--wb-surface); color: var(--wb-ink); border: 1px solid var(--wb-line); border-radius: 4px; box-shadow: none; }\nhtml[data-eidos-workbench] :is(.panel-head, .story-head, .actions, .columns > section, .person, .log p, .evidence-item, footer, #world) { border-color: var(--wb-line); }\nhtml[data-eidos-workbench] :is(.panel-title, .story-label, .world-mark strong, .speaker, .progress, #ending) { color: var(--wb-accent); }\nhtml[data-eidos-workbench] :is(.world-mark, .tag) { background: transparent; border-color: var(--wb-line); border-radius: 3px; }\nhtml[data-eidos-workbench] :is(.statement blockquote, .testimony-text, .stage-line, .story p, #passage p, #continuation p) { color: var(--wb-ink); font-size: 16px; line-height: 1.95; letter-spacing: 0; }\nhtml[data-eidos-workbench] :is(.story-text, .reading-strip p, .replay-card pre, .evidence span, .empty, .empty strong, .done p, .status, .narration, .log) { color: var(--wb-ink); font-size: 13px; line-height: 1.85; }\nhtml[data-eidos-workbench] .reading-strip { background: var(--wb-quiet); border-color: var(--wb-accent); }\nhtml[data-eidos-workbench] .log { max-height: 22rem; }\nhtml[data-eidos-workbench] button { min-height: 36px; max-width: 100%; padding: 8px 12px; border: 1px solid var(--wb-line); border-radius: 3px; background: var(--wb-surface); color: var(--wb-ink); font-size: 13px; font-weight: 500; line-height: 1.6; font-family: inherit; letter-spacing: 0; white-space: normal; text-align: start; box-shadow: none; transition: background-color .15s, border-color .15s; }\nhtml[data-eidos-workbench] button:hover:not(:disabled) { background: var(--wb-highlight); color: var(--wb-ink); border-color: var(--wb-accent); transform: none; }\nhtml[data-eidos-workbench] :is(button.primary, .action.primary, .control--accent, [aria-pressed=\"true\"], [aria-current=\"page\"]) { color: var(--wb-accent); background: var(--wb-highlight); border-color: var(--wb-accent); box-shadow: none; }\nhtml[data-eidos-workbench] button:disabled { opacity: .45; cursor: default; }\nhtml[data-eidos-workbench] :is(button, input, select, textarea, summary):focus-visible { outline: 2px solid var(--wb-accent); outline-offset: 3px; }\nhtml[data-eidos-workbench] :is(input:not([type=\"checkbox\"]):not([type=\"file\"]), select, textarea) { min-width: 0; max-width: 100%; background: var(--wb-paper); color: var(--wb-ink); border: 1px solid var(--wb-line); border-radius: 3px; padding: 9px 11px; font: inherit; }\nhtml[data-eidos-workbench] textarea { line-height: 1.8; min-height: 120px; resize: vertical; }\nhtml[data-eidos-workbench] .row { flex-wrap: wrap; }\nhtml[data-eidos-workbench] :is(.evidence, .testimony, .clue-card, .person-card, .person-row) { background: var(--wb-quiet); color: var(--wb-ink); border-color: var(--wb-line); border-radius: 3px; box-shadow: none; }\nhtml[data-eidos-workbench] :is(.feedback, .feedback.good, .feedback.bad, #confirm, .confirm) { color: var(--wb-ink); background: var(--wb-quiet); border-color: var(--wb-accent); }\nhtml[data-eidos-workbench] :is([role=\"alert\"], .story-error, #error, [data-error]) { color: var(--wb-accent); }\nhtml[data-eidos-workbench] :is(.replay, .modal) { background: color-mix(in srgb, var(--wb-ink) 24%, transparent); }\nhtml[data-eidos-workbench] .controls { background: var(--wb-paper); border-color: var(--wb-line); }\nhtml[data-eidos-workbench] .novel { padding: 24px clamp(18px, 3vw, 32px); gap: 16px; }\nhtml[data-eidos-workbench] .novel main.story { margin: 0; padding: 8px 18px; }\nhtml[data-eidos-workbench] details { border-color: var(--wb-line); }\nhtml[data-eidos-workbench] summary { color: var(--wb-muted); font-size: 13px; }\nhtml[data-eidos-workbench] [hidden] { display: none !important; }\n@media (max-width: 900px) { html[data-eidos-workbench] :is(.layout, .columns, .body-grid) { grid-template-columns: minmax(0, 1fr); } }\n@media (prefers-reduced-motion: reduce) { html[data-eidos-workbench] button { transition: none; } }\n\nhtml[data-eidos-workbench] :is(.character-card, .ability-card, .clue-item, .testimony-card, .result-card, .callout, .status-line, .decision-record, .private-reveal, .scene-intro) { background: var(--wb-quiet); color: var(--wb-ink); border-color: var(--wb-line); border-radius: 3px; box-shadow: none; }\nhtml[data-eidos-workbench] :is(.scene-intro p, .scene-copy, .character-card p, .ability-card p, .testimony-card blockquote, .clue-item strong, .clue-item .detail, .result-card p, .person-line strong, .line, .line[data-type=\"dialogue\"], .rail li) { color: var(--wb-ink); font-family: inherit; font-size: 14px; line-height: 1.9; }\nhtml[data-eidos-workbench] :is(.page-heading, .section-label, .character-card .role, .character-card .daily, .testimony-card .challenge-note, .evidence-count, .clue-item small, .binding-row, .footnote, .empty-note, .rail .muted) { color: var(--wb-muted); font-size: 12px; line-height: 1.8; }\nhtml[data-eidos-workbench] .ability-label { color: var(--wb-accent) !important; }\nhtml[data-eidos-workbench] .private-reveal { color: var(--wb-ink) !important; }\nhtml[data-eidos-workbench] :is(.panel-head h2, .panel-head h3, .result-card h3, .character-card h4, .ability-card h4, .rail h2) { color: var(--wb-ink); font-family: inherit; font-weight: 600; letter-spacing: 0; }\nhtml[data-eidos-workbench] .choice-button::before { content: none; }\nhtml[data-eidos-workbench] .stage-line.size-small { font-size: 13px; }\nhtml[data-eidos-workbench] .stage-line.size-large { font-size: 22px; }\nhtml[data-eidos-workbench] .stage-line.size-huge { font-size: 28px; }\nhtml[data-eidos-workbench] .stage-line.color-accent { color: var(--wb-accent); }\nhtml[data-eidos-workbench] .stage-line.color-muted { color: var(--wb-muted); }\nhtml[data-eidos-workbench] .stage-line.color-ink { color: var(--wb-ink); }\nhtml[data-eidos-workbench] .stage-line.color-blood { color: color-mix(in srgb, var(--wb-accent) 70%, #a22d36); }\n\nhtml[data-eidos-workbench] .masthead::after { display: none; }\nhtml[data-eidos-workbench] .actions button { flex: 0 1 auto; }\n</style></head>\n<body>\n  <main class=\"shell\">\n    <header class=\"mast\">\n      <div class=\"brand\"><div class=\"brand-mark\" aria-hidden=\"true\">◈</div><div><div class=\"eyebrow\">EIDOS · FIELD SESSION</div><h1>焦点辩论室</h1></div></div>\n      <div class=\"mast-note\">以具体发言为靶心<br>让记录说出它支持什么</div>\n    </header>\n    <section class=\"casehead\" aria-labelledby=\"case-title\">\n      <div><div class=\"eyebrow\">CASE FILE / <span id=\"case-number\">—</span></div><h2 id=\"case-title\">正在读取案件…</h2><p class=\"intro\" id=\"case-intro\"></p></div>\n      <div class=\"progress\" id=\"progress\" aria-live=\"polite\"></div>\n    </section>\n    <section class=\"story\" aria-label=\"已读现场叙事\"><div class=\"story-head\"><span class=\"story-label\">现场叙事 · 已读部分</span><span class=\"story-meta\" id=\"reading-meta\"></span><button class=\"story-next\" id=\"advance-reading\" type=\"button\">继续阅读</button></div><p class=\"story-text\" id=\"reading-text\" aria-live=\"polite\"></p><div class=\"story-error\" id=\"reading-error\" hidden></div></section>\n    <section class=\"layout\" id=\"board\" aria-live=\"polite\"></section>\n    <nav class=\"toolbar\" aria-label=\"辩论控制\">\n      <button class=\"tool\" id=\"pause\" type=\"button\">暂停辩论</button>\n      <button class=\"tool\" id=\"reread\" type=\"button\">重读现场与当前发言</button>\n      <span class=\"status\" id=\"status\"></span>\n    </nav>\n    <footer class=\"footer\"><span>本地事实核验 · AI 负责现场回应</span><span>证据只从已发现线索中选择</span></footer>\n  </main>\n  <div class=\"replay\" id=\"replay\" hidden role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"replay-title\"><div class=\"replay-card\"><h3 id=\"replay-title\">现场记录 · 当前发言</h3><pre id=\"replay-text\"></pre><button class=\"action secondary\" id=\"close-replay\" type=\"button\">返回辩论</button></div></div>\n  <script>(function (root) {\n  'use strict';\n\n  var relationNames = { rebut: '反驳', support: '支持' };\n  var fallbackCase = {\n    title: '没有可用的案件资料', intro: '请先在 manifest.json 的 data.case 中编辑一个案件。', rounds: [], clues: [],\n  };\n  var text = function (value) { return typeof value === 'string' ? value.trim() : ''; };\n  var normal = function (value) { return text(value).toLocaleLowerCase(); };\n  var own = function (value) { return value && typeof value === 'object' && !Array.isArray(value) ? value : {}; };\n  var caseFor = function (context) {\n    return own(own(own(context).plugin).data).case || fallbackCase;\n  };\n  var mappedSpeaker = function (context, caseDef, speaker) {\n    var target = text(own(caseDef.characterBindings)[speaker]);\n    if (!target) return speaker;\n    var characters = Array.isArray(own(context).characters) ? context.characters : [];\n    var match = characters.find(function (character) {\n      if (typeof character === 'string') return normal(character) === normal(target);\n      character = own(character);\n      return ['id', 'name', 'displayName', 'label'].some(function (key) { return normal(character[key]) === normal(target); });\n    });\n    if (typeof match === 'string') return match;\n    if (match) return text(own(match).name || own(match).displayName || own(match).label || target);\n    return target;\n  };\n  var clueParts = function (clue) {\n    if (typeof clue === 'string') return [clue];\n    clue = own(clue);\n    return ['id', 'clueId', 'name', 'title', 'label', 'text', 'key'].map(function (key) { return text(clue[key]); }).filter(Boolean);\n  };\n  var clueKey = function (clue) {\n    if (typeof clue === 'string') return clue.trim();\n    clue = own(clue);\n    return text(clue.id || clue.clueId || clue.name || clue.title || clue.label || clue.text || clue.key);\n  };\n  var authoredClueFor = function (caseDef, clue) {\n    var parts = clueParts(clue).map(normal);\n    return (Array.isArray(caseDef.clues) ? caseDef.clues : []).find(function (entry) {\n      entry = own(entry);\n      return [entry.id, entry.name].concat(Array.isArray(entry.aliases) ? entry.aliases : []).map(normal).some(function (name) {\n        return name && parts.indexOf(name) >= 0;\n      });\n    }) || null;\n  };\n  var discovered = function (context) {\n    var clues = own(context).clues;\n    return Array.isArray(clues) ? clues : [];\n  };\n  var visibleEvidence = function (context, caseDef) {\n    return discovered(context).map(function (clue) {\n      var authored = authoredClueFor(caseDef, clue);\n      var source = own(clue);\n      return {\n        id: clueKey(clue),\n        name: authored ? text(authored.name) || clueKey(clue) : clueKey(clue),\n        summary: authored ? text(authored.summary) : text(source.summary || source.description || source.text || source.detail),\n      };\n    }).filter(function (item) { return item.id; });\n  };\n  var availableEvidence = function (context, state, caseDef) {\n    var result = visibleEvidence(context, caseDef);\n    if (!state.demoMode) return result;\n    var authored = Array.isArray(caseDef.clues) ? caseDef.clues : [];\n    var order = Array.isArray(caseDef.demoDiscoveries) ? caseDef.demoDiscoveries : authored.map(function (clue) { return text(own(clue).id); });\n    order.slice(0, state.offlineClueIndex).forEach(function (id) {\n      var clue = authored.find(function (entry) { return text(own(entry).id) === text(id); });\n      if (clue && !result.some(function (item) { return item.id === text(id); })) {\n        result.push({ id: text(id), name: text(clue.name) || text(id), summary: text(clue.summary) });\n      }\n    });\n    return result;\n  };\n  var stateWith = function (state, patch) {\n    return Object.assign({}, own(state), patch);\n  };\n  var copyList = function (value) { return Array.isArray(value) ? value.slice() : []; };\n\n  function createState(source) {\n    source = own(source);\n    return {\n      roundIndex: Number.isInteger(source.roundIndex) && source.roundIndex >= 0 ? source.roundIndex : 0,\n      resolved: copyList(source.resolved),\n      paused: source.paused === true,\n      completed: source.completed === true,\n      selectedEvidenceId: text(source.selectedEvidenceId),\n      feedback: text(source.feedback),\n      demoMode: source.demoMode === true,\n      offlineClueIndex: Number.isInteger(source.offlineClueIndex) && source.offlineClueIndex > 0 ? source.offlineClueIndex : 0,\n    };\n  }\n\n  function view(context, sourceState) {\n    var state = createState(sourceState);\n    var caseDef = caseFor(context);\n    var rounds = Array.isArray(caseDef.rounds) ? caseDef.rounds : [];\n    var current = !state.completed && rounds[state.roundIndex] ? rounds[state.roundIndex] : null;\n    var evidence = availableEvidence(context, state, caseDef);\n    var demoOrder = Array.isArray(caseDef.demoDiscoveries) ? caseDef.demoDiscoveries : (Array.isArray(caseDef.clues) ? caseDef.clues.map(function (clue) { return text(own(clue).id); }) : []);\n    return {\n      title: text(caseDef.title) || '焦点辩论',\n      intro: text(caseDef.intro),\n      progress: { current: current ? state.roundIndex + 1 : rounds.length, total: rounds.length },\n      current: current ? {\n        id: text(own(current.statement).id),\n        topic: text(current.topic),\n        statement: {\n          id: text(own(current.statement).id),\n          speaker: mappedSpeaker(context, caseDef, text(own(current.statement).speaker)),\n          text: text(own(current.statement).text),\n        },\n      } : null,\n      evidence: evidence,\n      selectedEvidenceId: evidence.some(function (item) { return item.id === state.selectedEvidenceId; }) ? state.selectedEvidenceId : '',\n      paused: state.paused,\n      completed: state.completed || (rounds.length > 0 && state.roundIndex >= rounds.length),\n      demoMode: state.demoMode,\n      demoHasMore: state.demoMode && state.offlineClueIndex < demoOrder.length,\n      feedback: state.feedback,\n      closing: (state.completed || state.roundIndex >= rounds.length) ? text(caseDef.closing) : '',\n    };\n  }\n\n  function selectEvidence(context, sourceState, evidenceId) {\n    var state = createState(sourceState);\n    var visible = availableEvidence(context, state, caseFor(context));\n    var selected = text(evidenceId);\n    if (!visible.some(function (item) { return item.id === selected; })) selected = '';\n    return stateWith(state, { selectedEvidenceId: selected, feedback: '' });\n  }\n\n  function setPaused(sourceState, paused) {\n    return stateWith(createState(sourceState), { paused: paused === true });\n  }\n\n  function startOfflineDemo(sourceState) {\n    return stateWith(createState(sourceState), { demoMode: true, offlineClueIndex: 0, feedback: '离线案例已打开。调查动作会逐条揭开随案记录，不调用模型。' });\n  }\n\n  function discoverDemoEvidence(context, sourceState) {\n    var state = createState(sourceState);\n    var caseDef = caseFor(context);\n    var clues = Array.isArray(caseDef.clues) ? caseDef.clues : [];\n    var order = Array.isArray(caseDef.demoDiscoveries) ? caseDef.demoDiscoveries : clues.map(function (clue) { return text(own(clue).id); });\n    if (!state.demoMode) return { outcome: 'not-demo', state: state, feedback: '请先开启离线案例。' };\n    if (state.offlineClueIndex >= order.length) {\n      var done = stateWith(state, { feedback: '随案记录已经全部发现。可以继续核对当前发言。' });\n      return { outcome: 'offline-complete', state: done, feedback: done.feedback };\n    }\n    var next = stateWith(state, { offlineClueIndex: state.offlineClueIndex + 1, feedback: '新记录已收录到证据架。请判断它是否回应当前发言。' });\n    return { outcome: 'found', state: next, feedback: next.feedback };\n  }\n\n  function endOfflineDemo(sourceState) {\n    return stateWith(createState(sourceState), {\n      demoMode: false,\n      offlineClueIndex: 0,\n      roundIndex: 0,\n      resolved: [],\n      paused: false,\n      completed: false,\n      selectedEvidenceId: '',\n      feedback: '',\n    });\n  }\n\n  function respond(context, sourceState, response) {\n    var state = createState(sourceState);\n    var caseDef = caseFor(context);\n    var rounds = Array.isArray(caseDef.rounds) ? caseDef.rounds : [];\n    var round = rounds[state.roundIndex];\n    response = own(response);\n    var lineId = text(response.lineId);\n    var evidenceId = text(response.evidenceId);\n    var relation = text(response.relation);\n    var evidence = availableEvidence(context, state, caseDef);\n\n    if (state.paused) return { outcome: 'paused', state: state, feedback: '辩论已暂停。准备好后可以继续。' };\n    if (!round) return { outcome: 'case-complete', state: stateWith(state, { completed: true }), feedback: text(caseDef.closing) };\n    if (lineId !== text(own(round.statement).id)) return { outcome: 'wrong-statement', state: state, feedback: '请先围绕当前这条发言回应。' };\n    if (!evidence.some(function (item) { return item.id === evidenceId; })) {\n      return { outcome: 'unknown-evidence', state: stateWith(state, { feedback: '这份材料还没有在现场记录中出现。先调查取得它，再带回辩论室。' }), feedback: '这份材料还没有在现场记录中出现。先调查取得它，再带回辩论室。' };\n    }\n    if (relation !== 'rebut' && relation !== 'support') {\n      return { outcome: 'invalid-relation', state: stateWith(state, { feedback: '选择“反驳”或“支持”，再说明这条记录怎样回应发言。' }), feedback: '选择“反驳”或“支持”，再说明这条记录怎样回应发言。' };\n    }\n    var authored = authoredClueFor(caseDef, evidenceId) || discovered(context).map(function (clue) {\n      return clueKey(clue) === evidenceId ? authoredClueFor(caseDef, clue) : null;\n    }).find(Boolean);\n    var fits = Boolean(authored && text(authored.id) === text(round.evidenceId) && relation === text(round.relation));\n    if (!fits) {\n      var miss = relation !== text(round.relation) && authored && text(authored.id) === text(round.evidenceId)\n        ? '方向不对：证据与这条发言的关系没有被正确表达。'\n        : '这份记录还不能证明或推翻当前这句话。可以换一条已发现的证据再试。';\n      return { outcome: authored && text(authored.id) === text(round.evidenceId) ? 'wrong-relation' : 'wrong-evidence', state: stateWith(state, { feedback: miss }), feedback: miss };\n    }\n\n    var resolved = copyList(state.resolved).concat([text(round.id)]);\n    var nextIndex = state.roundIndex + 1;\n    var complete = nextIndex >= rounds.length;\n    var success = complete ? text(caseDef.closing) || '这组发言已核对完毕。' : '记录与发言的关系成立。辩论继续，下一位发言人正在回应。';\n    var nextState = stateWith(state, {\n      roundIndex: nextIndex,\n      resolved: resolved,\n      paused: false,\n      completed: complete,\n      selectedEvidenceId: '',\n      feedback: success,\n    });\n    return {\n      outcome: complete ? 'case-complete' : 'resolved',\n      state: nextState,\n      feedback: success,\n      action: '我在辩论中' + relationNames[relation] + '了“' + text(own(round.statement).text) + '”，依据是已发现的“' + (authored ? text(authored.name) : evidenceId) + '”。请让现场人物依据这个事实回应。',\n    };\n  }\n\n  function reread(context, sourceState) {\n    var state = createState(sourceState);\n    var caseDef = caseFor(context);\n    var rounds = Array.isArray(caseDef.rounds) ? caseDef.rounds : [];\n    var round = rounds[state.roundIndex];\n    var readingText = text(own(context).reading && own(own(context).reading).displayedText);\n    return [readingText, round ? text(own(round.statement).speaker) + '：“' + text(own(round.statement).text) + '”' : text(caseDef.closing)].filter(Boolean).join('\\n\\n');\n  }\n\n  root.DebateRoom = {\n    createState: createState,\n    view: view,\n    selectEvidence: selectEvidence,\n    setPaused: setPaused,\n    startOfflineDemo: startOfflineDemo,\n    discoverDemoEvidence: discoverDemoEvidence,\n    endOfflineDemo: endOfflineDemo,\n    respond: respond,\n    reread: reread,\n  };\n})(typeof globalThis !== 'undefined' ? globalThis : this);\n</script>\n  <script>\n    (function () {\n      'use strict';\n      var latest = null;\n      var pendingCommit = false;\n      var replayOpen = false;\n      var busy = function (context) { return pendingCommit || Boolean(context && context.reading && (context.reading.loading || context.reading.typing || context.reading.paused)); };\n      var esc = function (value) { return String(value == null ? '' : value).replace(/[&<>\"']/g, function (char) { return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '\"': '&quot;', \"'\": '&#39;' })[char]; }); };\n      var byId = function (id) { return document.getElementById(id); };\n      var readText = function (context) {\n        var reading = context && context.reading || {};\n        if (typeof reading.displayedText === 'string' && reading.displayedText.trim()) return reading.displayedText;\n        var segment = Array.isArray(reading.segments) ? reading.segments[reading.index] : null;\n        if (typeof segment === 'string') return segment;\n        if (segment && typeof segment === 'object') return segment.text || segment.content || segment.displayedText || '';\n        return '';\n      };\n      var currentState = function () { return DebateRoom.createState(latest && latest.state); };\n      var update = function (next) {\n        if (!latest) return;\n        latest = Object.assign({}, latest, { state: next });\n        Eidos.setState(next);\n        render(latest);\n      };\n      var submit = function (action, next) {\n        if (!latest || busy(latest)) return;\n        latest = Object.assign({}, latest, { state: next });\n        Eidos.submit(action, next);\n        render(latest);\n      };\n      var setFeedback = function (result) {\n        if (result.outcome === 'resolved' || result.outcome === 'case-complete') {\n          if (result.state.demoMode) update(result.state);\n          else acceptResult(result, true);\n        }\n        else update(result.state);\n      };\n      var acceptResult = function (result, narrate) {\n        if (!latest || pendingCommit) return;\n        if (!Eidos.gameplay || result.state.demoMode) { if (narrate && !result.state.demoMode) submit(result.action, result.state); else update(result.state); return; }\n        var next = result.state;\n        var facts = { resolved: next.resolved || [], roundIndex: next.roundIndex, completed: next.completed, currentRound: DebateRoom.view(latest, next).current };\n        pendingCommit = true; render(latest);\n        Eidos.gameplay.commit({ summary: result.action || result.feedback || '玩法进度已确认', state: next, facts: facts, narrate: narrate }).then(function (receipt) {\n          latest = Object.assign({}, latest, { state: Object.assign({}, next, { _eidosGameplay: { revision: receipt.revision, facts: facts, last: receipt } }) });\n          pendingCommit = false; render(latest);\n          if (narrate && receipt.persistence === 'saved') return Eidos.gameplay.narrate(receipt.id);\n        }).catch(function (error) {\n          pendingCommit = false;\n          latest = Object.assign({}, latest, { state: Object.assign({}, latest.state, { feedback: error.message || '操作未确认，请重试。' }) });\n          render(latest);\n        });\n      };\n      var evidenceCard = function (item, selected) {\n        return '<button class=\"evidence\" type=\"button\" data-evidence=\"' + esc(item.id) + '\" aria-pressed=\"' + (selected ? 'true' : 'false') + '\"><strong>' + esc(item.name) + '</strong><span>' + esc(item.summary || '记录已收录，细节待核对。') + '</span></button>';\n      };\n      var bindDemoExit = function (board) {\n        var exit = board.querySelector('[data-exit-demo]');\n        if (exit) exit.addEventListener('click', function () { update(DebateRoom.endOfflineDemo(currentState())); });\n      };\n      function render(context) {\n        var state = DebateRoom.createState(context && context.state);\n        var view = DebateRoom.view(context, state);\n        var reading = context && context.reading || {};\n        var segments = Array.isArray(reading.segments) ? reading.segments : [];\n        byId('reading-text').textContent = readText(context) || '此处显示本世界已经读到的内容。';\n        byId('reading-meta').textContent = segments.length ? ('第 ' + (Number(reading.index || 0) + 1) + ' / ' + segments.length + ' 段') : (reading.complete ? '当前内容已读完' : '等待现场展开');\n        var last = context && context.state && context.state._eidosGameplay && context.state._eidosGameplay.last;\n        var pendingNarration = last && last.narration === 'pending' && Eidos.gameplay;\n        byId('advance-reading').hidden = reading.complete === true && !pendingNarration;\n        byId('advance-reading').disabled = Boolean(reading.loading || reading.typing);\n        byId('advance-reading').textContent = reading.complete && pendingNarration ? (reading.error ? '重试结果叙事' : '继续结果叙事') : '继续阅读下一段';\n        byId('reading-error').hidden = !reading.error;\n        byId('reading-error').textContent = typeof reading.error === 'string' ? reading.error : (reading.error ? '阅读遇到问题，请重试或继续行动。' : '');\n        byId('case-title').textContent = view.title;\n        byId('case-intro').textContent = view.intro;\n        byId('case-number').textContent = view.completed ? '已归档' : ('轮次 ' + view.progress.current);\n        byId('progress').innerHTML = '<b>' + String(view.progress.current).padStart(2, '0') + '<span style=\"font-size:13px;color:#718386\"> / ' + String(view.progress.total).padStart(2, '0') + '</span></b><span>发言核验</span>';\n        byId('pause').textContent = view.paused ? '继续辩论' : '暂停辩论';\n        byId('pause').setAttribute('aria-pressed', view.paused ? 'true' : 'false');\n        byId('status').textContent = busy(context) ? '现场回应生成中…' : (view.paused ? '暂时停在当前发言' : '');\n        var board = byId('board');\n        if (view.completed) {\n          board.innerHTML = '<article class=\"panel done\"><div class=\"done-mark\" aria-hidden=\"true\">✓</div><div class=\"eyebrow\">CASE CLOSED</div><h3>本组发言已核对完毕</h3><p>' + esc(view.closing) + '</p><p>辩论记录已经与本案的事实对应。你仍可通过自由行动继续询问现场人物。</p>' + (view.demoMode ? '<button class=\"action secondary\" type=\"button\" data-exit-demo>结束离线演练</button>' : '') + '</article>';\n          bindDemoExit(board);\n          return;\n        }\n        if (!view.current) {\n          board.innerHTML = '<article class=\"panel done\"><div class=\"eyebrow\">CASE FILE</div><h3>还没有配置可玩的发言</h3><p>请在导出的 manifest.json 中编辑 data.case.rounds，加入具体发言、证据映射与支持/反驳关系。</p></article>';\n          return;\n        }\n        var evidenceMarkup = view.evidence.length\n          ? view.evidence.map(function (item) { return evidenceCard(item, item.id === view.selectedEvidenceId); }).join('')\n          : '<div class=\"empty\"><strong>还没有可用于本轮的现场记录</strong>先从自由行动或下方调查入口寻找线索；发现后回到这里逐条核对。</div>';\n        var feedbackClass = state.feedback ? (state.roundIndex > Number(context && context.state && context.state.roundIndex || 0) ? 'good' : '') : '';\n        var panel = '<article class=\"panel\"><div class=\"panel-head\"><h3 class=\"panel-title\">当前发言 · ' + esc(view.current.topic || '争议焦点') + '</h3><span class=\"tag\">逐句核对</span></div><div class=\"statement\"><span class=\"speaker\">' + esc(view.current.statement.speaker) + '</span><blockquote>“' + esc(view.current.statement.text) + '”</blockquote><span class=\"subject\">选择这句话，再用已发现记录回应</span></div>';\n        if (view.feedback) panel += '<div class=\"feedback ' + feedbackClass + '\" role=\"status\">' + esc(view.feedback) + '</div>';\n        panel += '<div class=\"actions\"><button class=\"action primary\" type=\"button\" data-relation=\"rebut\" ' + (!view.selectedEvidenceId || view.paused || busy(context) ? 'disabled' : '') + '>用证据反驳</button><button class=\"action\" type=\"button\" data-relation=\"support\" ' + (!view.selectedEvidenceId || view.paused || busy(context) ? 'disabled' : '') + '>用证据支持</button></div></article>';\n        var demoControl = view.demoMode\n          ? '<button class=\"action secondary\" type=\"button\" data-demo-investigate ' + (!view.demoHasMore || view.paused ? 'disabled' : '') + '>' + (view.demoHasMore ? '检查下一处随案记录' : '示例记录已找齐') + '</button><button class=\"action ghost\" type=\"button\" data-exit-demo>结束离线演练</button>'\n          : '<button class=\"action secondary\" type=\"button\" data-offline-demo ' + (view.paused ? 'disabled' : '') + '>离线演练此原创案例</button><button class=\"action\" type=\"button\" data-investigate ' + (busy(context) || view.paused ? 'disabled' : '') + '>继续调查世界现场</button>';\n        var records = '<article class=\"panel\"><div class=\"panel-head\"><h3 class=\"panel-title\">已发现记录</h3><span class=\"tag\">' + view.evidence.length + ' 份可选</span></div><div class=\"evidence-list\">' + evidenceMarkup + '</div><div class=\"actions\">' + demoControl + '</div></article>';\n        board.innerHTML = panel + records;\n        if (view.paused) board.insertAdjacentHTML('afterbegin', '<div class=\"panel feedback\" style=\"grid-column:1/-1;margin:0\" role=\"status\">辩论已暂停。你可以重读，也可以继续调查；恢复后再回应当前发言。</div>');\n        board.querySelectorAll('[data-evidence]').forEach(function (button) {\n          button.addEventListener('click', function () { update(DebateRoom.selectEvidence(latest, currentState(), button.getAttribute('data-evidence'))); });\n        });\n        board.querySelectorAll('[data-relation]').forEach(function (button) {\n          button.addEventListener('click', function () {\n            var now = DebateRoom.view(latest, currentState());\n            setFeedback(DebateRoom.respond(latest, currentState(), {\n              lineId: now.current.statement.id,\n              evidenceId: now.selectedEvidenceId,\n              relation: button.getAttribute('data-relation'),\n            }));\n          });\n        });\n        var investigate = board.querySelector('[data-investigate]');\n        if (investigate) investigate.addEventListener('click', function () {\n          submit('调查当前现场并寻找能核验本轮争议的记录；先叙述发现，不要预告答案。', currentState());\n        });\n        var offline = board.querySelector('[data-offline-demo]');\n        if (offline) offline.addEventListener('click', function () { update(DebateRoom.startOfflineDemo(currentState())); });\n        var demoInvestigate = board.querySelector('[data-demo-investigate]');\n        if (demoInvestigate) demoInvestigate.addEventListener('click', function () { update(DebateRoom.discoverDemoEvidence(latest, currentState()).state); });\n        bindDemoExit(board);\n      }\n      Eidos.onContext(function (context) {\n        latest = context;\n        render(context);\n        if (replayOpen) showReplay();\n      });\n      byId('pause').addEventListener('click', function () {\n        if (!latest) return;\n        var state = currentState();\n        update(DebateRoom.setPaused(state, !state.paused));\n      });\n      byId('advance-reading').addEventListener('click', function () {\n        if (!latest || pendingCommit) return;\n        var last = latest.state && latest.state._eidosGameplay && latest.state._eidosGameplay.last;\n        if (last && last.narration === 'pending' && Eidos.gameplay && latest.reading.complete && !busy(latest)) Eidos.gameplay.narrate(last.id).catch(function (error) { latest.state.feedback = error.message; render(latest); });\n        else if (typeof Eidos.advance === 'function') Eidos.advance();\n      });\n      function showReplay() {\n        byId('replay-text').textContent = DebateRoom.reread(latest, currentState()) || '现场目前没有可重读的文字。';\n        byId('replay').hidden = !replayOpen;\n      }\n      byId('reread').addEventListener('click', function () { if (!latest) return; replayOpen = true; showReplay(); });\n      byId('close-replay').addEventListener('click', function () { replayOpen = false; showReplay(); });\n      byId('replay').addEventListener('click', function (event) { if (event.target === byId('replay')) { replayOpen = false; showReplay(); } });\n    })();\n  </script>\n</body>\n</html>\n",
+    "actions": [
+      {
+        "ruleId": "n-start",
+        "label": "开始调查：雾港档案室的蓝色封存袋",
+        "segments": [
+          {
+            "type": "narration",
+            "text": "雾港档案室停电七分钟。一只蓝色封存袋不见了，两位值夜人对门是否开过、封存袋何时交接各执一词。请把每条发言与已发现记录对照。"
+          },
+          {
+            "type": "dialogue",
+            "speaker": "闻澜（守门人）",
+            "text": "20点以后，外廊的门一次也没有打开。"
+          }
+        ]
+      },
+      {
+        "ruleId": "n-pause",
+        "label": "暂离「雾港档案室的蓝色封存袋」",
+        "segments": [
+          {
+            "type": "narration",
+            "text": "你暂时停下调查，已经确认的记录仍然保留。"
+          }
+        ]
+      },
+      {
+        "ruleId": "n-resume",
+        "label": "继续调查：雾港档案室的蓝色封存袋",
+        "segments": [
+          {
+            "type": "narration",
+            "text": "你重新翻开已确认的记录，接着处理尚未解答的问题。"
+          }
+        ]
+      },
+      {
+        "ruleId": "n-find-bell-ledger",
+        "label": "查看「外廊巡铃簿」",
+        "segments": [
+          {
+            "type": "narration",
+            "text": "20:17，西侧门铃留下了一次机械刻痕；检查确认记录只由门开启联动，手动摇铃不会写入。"
+          }
+        ]
+      },
+      {
+        "ruleId": "n-find-handover-slip",
+        "label": "查看「夜班交接单」",
+        "segments": [
+          {
+            "type": "narration",
+            "text": "20:29，蓝色封存袋已交给接班员并签收；栖舟的离岗签名记录为20:32。"
+          }
+        ]
+      },
+      {
+        "ruleId": "n-find-salted-key",
+        "label": "查看「盐渍钥匙」",
+        "segments": [
+          {
+            "type": "narration",
+            "text": "一把备用钥匙带着海盐与旧机油。"
+          }
+        ]
+      },
+      {
+        "ruleId": "n-check-0-bell-ledger-rebut",
+        "label": "对第1句用「外廊巡铃簿」反驳",
+        "segments": [
+          {
+            "type": "narration",
+            "text": "巡铃簿记录的机械刻痕与这句绝对陈述直接冲突。"
+          },
+          {
+            "type": "dialogue",
+            "speaker": "栖舟（档案员）",
+            "text": "封存袋在我离岗前已经交给了接班人。"
+          }
+        ]
+      },
+      {
+        "ruleId": "n-check-0-bell-ledger-support",
+        "label": "对第1句用「外廊巡铃簿」支持",
+        "segments": [
+          {
+            "type": "narration",
+            "text": "「外廊巡铃簿」目前不能以这个理由证明或推翻这句话。你可以换一份已取得的材料再核对。"
+          }
+        ]
+      },
+      {
+        "ruleId": "n-check-0-handover-slip-rebut",
+        "label": "对第1句用「夜班交接单」反驳",
+        "segments": [
+          {
+            "type": "narration",
+            "text": "「夜班交接单」目前不能以这个理由证明或推翻这句话。你可以换一份已取得的材料再核对。"
+          }
+        ]
+      },
+      {
+        "ruleId": "n-check-0-handover-slip-support",
+        "label": "对第1句用「夜班交接单」支持",
+        "segments": [
+          {
+            "type": "narration",
+            "text": "「夜班交接单」目前不能以这个理由证明或推翻这句话。你可以换一份已取得的材料再核对。"
+          }
+        ]
+      },
+      {
+        "ruleId": "n-check-0-salted-key-rebut",
+        "label": "对第1句用「盐渍钥匙」反驳",
+        "segments": [
+          {
+            "type": "narration",
+            "text": "「盐渍钥匙」目前不能以这个理由证明或推翻这句话。你可以换一份已取得的材料再核对。"
+          }
+        ]
+      },
+      {
+        "ruleId": "n-check-0-salted-key-support",
+        "label": "对第1句用「盐渍钥匙」支持",
+        "segments": [
+          {
+            "type": "narration",
+            "text": "「盐渍钥匙」目前不能以这个理由证明或推翻这句话。你可以换一份已取得的材料再核对。"
+          }
+        ]
+      },
+      {
+        "ruleId": "n-check-1-bell-ledger-rebut",
+        "label": "对第2句用「外廊巡铃簿」反驳",
+        "segments": [
+          {
+            "type": "narration",
+            "text": "「外廊巡铃簿」目前不能以这个理由证明或推翻这句话。你可以换一份已取得的材料再核对。"
+          }
+        ]
+      },
+      {
+        "ruleId": "n-check-1-bell-ledger-support",
+        "label": "对第2句用「外廊巡铃簿」支持",
+        "segments": [
+          {
+            "type": "narration",
+            "text": "「外廊巡铃簿」目前不能以这个理由证明或推翻这句话。你可以换一份已取得的材料再核对。"
+          }
+        ]
+      },
+      {
+        "ruleId": "n-check-1-handover-slip-rebut",
+        "label": "对第2句用「夜班交接单」反驳",
+        "segments": [
+          {
+            "type": "narration",
+            "text": "「夜班交接单」目前不能以这个理由证明或推翻这句话。你可以换一份已取得的材料再核对。"
+          }
+        ]
+      },
+      {
+        "ruleId": "n-check-1-handover-slip-support",
+        "label": "对第2句用「夜班交接单」支持",
+        "segments": [
+          {
+            "type": "narration",
+            "text": "交接单给出了签收人和时间，支持这条陈述。"
+          },
+          {
+            "type": "narration",
+            "text": "巡铃记录与交接单将两段时间线接在了一起。"
+          }
+        ]
+      },
+      {
+        "ruleId": "n-check-1-salted-key-rebut",
+        "label": "对第2句用「盐渍钥匙」反驳",
+        "segments": [
+          {
+            "type": "narration",
+            "text": "「盐渍钥匙」目前不能以这个理由证明或推翻这句话。你可以换一份已取得的材料再核对。"
+          }
+        ]
+      },
+      {
+        "ruleId": "n-check-1-salted-key-support",
+        "label": "对第2句用「盐渍钥匙」支持",
+        "segments": [
+          {
+            "type": "narration",
+            "text": "「盐渍钥匙」目前不能以这个理由证明或推翻这句话。你可以换一份已取得的材料再核对。"
+          }
+        ]
+      }
+    ]
+  },
+  "release": "0.3.0",
+  "stateVersion": 1,
+  "introduction": {
+    "impacts": [
+      "gameplay",
+      "narrative",
+      "tools"
+    ],
+    "images": []
+  }
+}

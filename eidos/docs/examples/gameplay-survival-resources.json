@@ -1,0 +1,24 @@
+{
+  "format": "eidos-gameplay-plugin",
+  "version": 2,
+  "id": "survival-resources",
+  "name": "荒野补给与体力",
+  "description": "探索与采集消耗体力，休整与进食恢复资源；找到路线后抵达营地。",
+  "tags": ["生存", "资源", "探索"],
+  "prompts": {
+    "creation": "设计一片可徒步探索的荒野、可重复采集但有劳动成本的补给点，以及安全休整位置。探索后找到营地路线。声明中的初值与上下限由程序负责，不用 gameModeConfig 覆盖资源。为每条规则安排可在世界中实施的行动路径。",
+    "action": "结合当前插件资源叙述。explore 表示探索一段道路，消耗2体力并确认营地路线；gather 表示采集一份补给，消耗1体力；rest 表示在安全处休整，恢复2体力；eat 使用1份补给恢复1体力；reach-shelter 需要已探索路线和至少1体力。休整需要合理时间与安全条件。涉及规则的行动须返回相应 pluginEvents；只叙述本轮实际发生的结果。同批同规则只执行一次，复合行动不能假定重复结算。资源不足时提供休整或其他可行尝试。",
+    "review": "核对资源事件的叙事依据：是否实际探索、采集、进食或安全休整；采集不能无成本，休整不能瞬间完成。确认营地路线前不能抵达营地。资源固定增减及界限由程序检查，不直接写入资源数值。"
+  },
+  "resources": {
+    "stamina": { "name": "体力", "initial": 6, "min": 0, "max": 6, "unit": "点", "hud": { "style": "gauge", "tone": "mint", "warningBelow": 2 } },
+    "supplies": { "name": "补给", "initial": 2, "min": 0, "max": 4, "unit": "份", "hud": { "style": "counter", "placement": "right", "tone": "amber", "warningBelow": 1 } }
+  },
+  "rules": [
+    { "id": "explore", "description": "探索道路并确认营地路线", "once": false, "resourceRequires": { "stamina": { "min": 2 } }, "resourceChanges": { "stamina": -2 }, "sets": { "route-found": true } },
+    { "id": "gather", "description": "采集一份补给", "once": false, "resourceRequires": { "stamina": { "min": 1 }, "supplies": { "max": 3 } }, "resourceChanges": { "stamina": -1, "supplies": 1 } },
+    { "id": "rest", "description": "在安全处休整", "once": false, "resourceRequires": { "stamina": { "max": 4 } }, "resourceChanges": { "stamina": 2 } },
+    { "id": "eat", "description": "进食一份补给", "once": false, "resourceRequires": { "supplies": { "min": 1 }, "stamina": { "max": 5 } }, "resourceChanges": { "supplies": -1, "stamina": 1 } },
+    { "id": "reach-shelter", "description": "沿已知路线抵达营地", "requires": { "route-found": true }, "resourceRequires": { "stamina": { "min": 1 } }, "sets": { "safe": true } }
+  ]
+}

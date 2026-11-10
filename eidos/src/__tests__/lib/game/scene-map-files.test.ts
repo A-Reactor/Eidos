@@ -1,0 +1,75 @@
+// @vitest-environment jsdom
+import 'fake-indexeddb/auto';
+import { beforeEach, expect, it, vi } from 'vitest';
+import { useGameStore } from '@/store/game-store';
+import { buildRiftCityStartState } from '@/lib/test/fixtures';
+import { buildModScene } from '@/lib/game/plugins/world-interaction';
+import { mountSceneMapFiles, readSceneMapFile, sceneMapFileCatalog } from '@/lib/game/plugins/scene-map-files';
+import { createWorkspaceSession, runWorkspaceTool } from '@/lib/game/workspace/session';
+import { createActionWorkspace, workspaceInputRevision } from '@/lib/game/workspace/action-session';
+import { createStreamRequestScope } from '@/lib/game/stream-lifecycle';
+import { currentDocumentScope } from '@/lib/game/model-documents';
+import { prepareActionArtifacts } from '@/lib/game/documents/action-artifacts';
+import { mergeWorkspaceBranchAt } from '@/lib/game/workspace/branch';
+import { parsePluginFile } from '@/lib/game/plugins/manifest';
+import { loadModPackage } from '../../../../scripts/mod-package.mjs';
+import { loadChineseRoom } from '../../mods/chinese-room-fixtures';
+import type { WorldLineNode } from '@/lib/game/types';
+
+beforeEach(async()=>{
+  const {world,snapshot}=buildRiftCityStartState();
+  const plugin=await loadModPackage('mods/chinese-room');
+  useGameStore.setState({...useGameStore.getInitialState(),currentWorld:{...world,id:crypto.randomUUID(),gameplayPlugins:parsePluginFile(plugin)},currentPlaythroughId:crypto.randomUUID()});
+  useGameStore.getState().restoreSnapshot({...snapshot,worldId:useGameStore.getState().currentWorld!.id,gameplayModState:undefined});
+  const scene=buildModScene(useGameStore.getState())!,game=loadChineseRoom(),map=game.baseMap(scene),position=game.positionFor(map);
+  useGameStore.setState({gameplayModState:{'chinese-room':{maps:{[scene.id]:{layout:map}},positions:{[scene.id]:position}}},persistWorldLineData:vi.fn().mockResolvedValue(undefined)});
+});
+it('exposes the current layout through real action files as read-only public material',async()=>{
+  const state=useGameStore.getState(),revision=workspaceInputRevision(state);
+  const session=(await createActionWorkspace(state,[],createStreamRequestScope(state),()=>true))!;
+  const path='maps/chinese-room/current.json';
+  const read=await runWorkspaceTool(session,{method:'files.read',params:{path}});
+  expect(read.status).toBe('committed');
+  const data=JSON.parse(read.text!);
+  expect(data.scene.id).toBe(state.currentSceneId);expect(data.map.sceneId).toBe(state.currentSceneId);expect(data.player).toEqual({x:7,y:expect.any(Number),facing:[0,-1]});
+  expect(data).not.toHaveProperty('inventory');expect(data.scene).not.toHaveProperty('secrets');
+  const write=await runWorkspaceTool(session,{method:'files.write',params:{path,expectedVersion:read.version,text:'伪造世界'}});
+  expect(write.status).toBe('denied');expect(session.files[path].id).toBe(read.version);
+  useGameStore.setState(s=>({gameplayModState:{'chinese-room':{...s.gameplayModState['chinese-room'],positions:{[s.currentSceneId]:{x:6,y:7,facing:[-1,0]}}}}}));
+  expect(workspaceInputRevision(useGameStore.getState())).not.toBe(revision);
+});
+it('does not mount disabled map plugins and refuses late atlas ownership changes',async()=>{
+  const state=useGameStore.getState(),session=await createWorkspaceSession({scope:currentDocumentScope(state)!,actionId:'read',parentNodeId:null,inputs:[],isCurrent:()=>false});
+  await expect(mountSceneMapFiles(session,state)).rejects.toMatchObject({name:'AbortError'});
+  expect(session.files).toEqual({});
+  useGameStore.setState({currentWorld:{...state.currentWorld!,gameplayPlugins:state.currentWorld!.gameplayPlugins!.map(p=>({...p,activation:{requires:{map_awake:true}}}))},worldFlags:{map_awake:false}});
+  const inactive=await createWorkspaceSession({scope:currentDocumentScope(state)!,actionId:'inactive',parentNodeId:null,inputs:[]});
+  await mountSceneMapFiles(inactive,useGameStore.getState());expect(inactive.files).toEqual({});
+});
+it('publishes a map artifact only at its actual playback merge, using ordinary tool receipts',async()=>{
+  const state=useGameStore.getState(),scope=currentDocumentScope(state)!;
+  const session=await createWorkspaceSession({scope,actionId:'map-change',parentNodeId:null,inputs:[]});
+  const scene=buildModScene(state)!,layout=loadChineseRoom().baseMap(scene),path=`${session.draftRoot}/map.json`;
+  const write=await runWorkspaceTool(session,{method:'files.write',params:{path,expectedVersion:null,text:JSON.stringify(layout),mimeType:'application/json'}});
+  const segments=[{type:'narration' as const,text:'她走向门口。'},{type:'narration' as const,text:'门后的院子露了出来。',workspaceEffects:[write.operationId!]}];
+  const artifacts=await prepareActionArtifacts({scope,actionId:session.actionId,session,inputs:[],segments,documents:[{key:'scene_map',title:'地点地图',format:'text',artifactRef:{path,version:write.afterVersion},segmentIndex:1}]});
+  const node={id:'map-node',parentId:null,actionId:session.actionId,stepNumber:1,aiResponse:segments.map(s=>s.text).join('\n\n'),playerVisibleText:segments.map(s=>s.text).join('\n\n'),generationComplete:true,workspaceBranch:artifacts.branch,childIds:[],sceneId:scene.id,snapshotHash:'',segmentHash:''} as unknown as WorldLineNode;
+  useGameStore.setState({currentNode:node,allNodes:{[node.id]:node}});
+  expect(sceneMapFileCatalog(useGameStore.getState())).toEqual([]);
+  const candidate=artifacts.branch!.outputs[0];
+  useGameStore.setState({workspaceState:{[candidate.path]:candidate.resource}});
+  expect(sceneMapFileCatalog(useGameStore.getState())).toEqual([]);
+  useGameStore.setState({workspaceState:{}});
+  await mergeWorkspaceBranchAt(useGameStore,node.id,0);
+  expect(sceneMapFileCatalog(useGameStore.getState())).toEqual([]);
+  await mergeWorkspaceBranchAt(useGameStore,node.id,1);
+  const files=sceneMapFileCatalog(useGameStore.getState());expect(files).toHaveLength(1);expect(files[0].path).toBe('outputs/map-change/scene_map.txt');
+  await expect(readSceneMapFile(useGameStore.getState(),{...files[0]},()=>true)).rejects.toThrow('参数');
+  const read=await readSceneMapFile(useGameStore.getState(),{path:files[0].path,version:files[0].version},()=>true);
+  expect(JSON.parse(read.text)).toEqual(layout);
+  await expect(readSceneMapFile(useGameStore.getState(),{path:files[0].path,version:'old'},()=>true)).rejects.toThrow('版本');
+  await expect(readSceneMapFile(useGameStore.getState(),{path:files[0].path,version:files[0].version},()=>false)).rejects.toMatchObject({name:'AbortError'});
+  useGameStore.setState({currentNode:null,allNodes:{}});
+  expect(sceneMapFileCatalog(useGameStore.getState())).toEqual([]);
+  await expect(readSceneMapFile(useGameStore.getState(),{path:files[0].path,version:files[0].version},()=>true)).rejects.toThrow('分支');
+});

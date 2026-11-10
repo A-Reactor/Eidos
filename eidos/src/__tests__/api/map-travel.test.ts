@@ -1,0 +1,23 @@
+import { it, expect, vi } from 'vitest';
+import { NextRequest } from 'next/server';
+import { POST } from '@/app/api/game/action/route';
+import { callDeepSeek } from '@/lib/ai/client';
+import { buildRiftCityStartState } from '@/lib/test/fixtures';
+vi.mock('@/lib/ai/client',()=>({callDeepSeek:vi.fn(),parseJSON:JSON.parse,drainPendingTokens:()=>[]}));
+vi.mock('@/lib/ai/action-handler',()=>({processPlayerAction:vi.fn()}));
+it('handles a multi-stop journey with one ALICE call and rejects unknown routes before generation',async()=>{
+  const {world,snapshot}=buildRiftCityStartState();
+  const scenes=Object.values(world.regions).flatMap(region=>Object.values(region.scenes));
+  const start=scenes.find(scene=>scene.connections.some(id=>scenes.some(target=>target.id===id)))!;
+  const to=start.connections.find(id=>scenes.some(target=>target.id===id))!;
+  const state={...snapshot,currentSceneId:start.id,visitedScenes:[start.id,to]};
+  const travelSegments=[{from:start.id,to,arrived:true,text:'你抵达街口，四下观察。',minutes:2}];
+  vi.mocked(callDeepSeek).mockResolvedValue({content:JSON.stringify({travelSegments}),usage:{} as never,elapsedMs:1});
+  const send=(path:string[])=>POST(new NextRequest('http://localhost/api/game/action',{method:'POST',body:JSON.stringify({playerInput:'旅行',world,snapshot:state,travelPath:path})}));
+  const response=await send([start.id,to]);
+  expect(response.status).toBe(200);expect((await response.json()).travelSegments).toEqual(travelSegments);
+  expect(callDeepSeek).toHaveBeenCalledTimes(1);
+  expect(vi.mocked(callDeepSeek).mock.calls[0][0]).toContain('玩家可在任意段落停下');
+  expect((await send([start.id,'missing'])).status).toBe(400);
+  expect(callDeepSeek).toHaveBeenCalledTimes(1);
+});

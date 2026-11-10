@@ -1,0 +1,6 @@
+{
+  "content": "cases/borrowed-echo.json",
+  "presentation": "index.html",
+  "native": "secrets-trial",
+  "workbenchTheme": true
+}

@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>焦点辩论室</title>
+  <style>
+    :root{font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;color:#efece5;background:#111820;font-synthesis:none;text-rendering:optimizeLegibility;--ink:#efece5;--muted:#a2adb0;--line:#36464c;--panel:#19252b;--panel2:#202f35;--sea:#78d5c5;--amber:#e8bb73;--red:#ed927d;--shadow:0 14px 40px #050b0e66}
+    *{box-sizing:border-box}body{margin:0;min-width:280px;min-height:100vh;background:radial-gradient(ellipse at 78% -20%,#26505255,transparent 48%),linear-gradient(145deg,#10171d,#17242a 60%,#17252a);color:var(--ink)}button{font:inherit;color:inherit;cursor:pointer}button:focus-visible{outline:2px solid var(--sea);outline-offset:3px}button:disabled{opacity:.45;cursor:not-allowed}.shell{max-width:1050px;margin:auto;padding:clamp(14px,3vw,32px)}.mast{display:flex;align-items:center;justify-content:space-between;gap:14px;border-bottom:1px solid var(--line);padding:2px 0 18px}.brand{display:flex;align-items:center;gap:12px}.brand-mark{display:grid;place-items:center;width:39px;height:39px;border:1px solid #69bdaf;border-radius:50%;color:var(--sea);font-size:19px}.eyebrow,.micro{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}h1{font-size:15px;letter-spacing:.12em;margin:0;font-weight:650}.mast-note{font-size:12px;color:var(--muted);text-align:right}.casehead{display:flex;align-items:end;justify-content:space-between;gap:16px;padding:26px 0 18px}.casehead h2{font-size:clamp(20px,3.2vw,30px);letter-spacing:.01em;margin:5px 0 7px}.intro{max-width:620px;font-size:13px;line-height:1.7;color:#bec7c5;margin:0}.progress{min-width:105px;text-align:right;color:var(--sea);font-variant-numeric:tabular-nums}.progress b{display:block;font-size:22px;font-weight:580}.progress span{font-size:10px;color:var(--muted);letter-spacing:.14em}.layout{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(270px,.9fr);gap:14px}.panel{background:linear-gradient(160deg,#1d2b31ee,#172329ee);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);overflow:hidden}.panel-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:15px 17px;border-bottom:1px solid #34454b}.panel-title{margin:0;font-size:11px;letter-spacing:.14em;color:#bfcbc8}.tag{border:1px solid #55746e;color:#a9ded2;border-radius:99px;padding:4px 8px;font-size:10px;letter-spacing:.06em}.statement{padding:22px 20px 19px;min-height:168px;display:flex;flex-direction:column;justify-content:space-between}.statement blockquote{margin:14px 0;font-size:clamp(19px,2.5vw,25px);line-height:1.55;letter-spacing:.025em}.speaker{color:var(--amber);font-size:12px}.subject{font-size:11px;color:var(--muted)}.evidence-list{padding:13px;display:grid;gap:8px;max-height:290px;overflow:auto}.evidence{width:100%;text-align:left;background:#19272c;border:1px solid #42545a;border-radius:9px;padding:11px 12px;transition:border-color .15s,background .15s}.evidence:hover{border-color:#82cfc1;background:#22353a}.evidence[aria-pressed="true"]{border-color:var(--sea);box-shadow:inset 3px 0 var(--sea);background:#253b3e}.evidence strong{display:block;font-size:13px;font-weight:600}.evidence span{display:block;margin-top:5px;font-size:11px;line-height:1.55;color:#b4c1bf}.empty{padding:20px;color:var(--muted);font-size:12px;line-height:1.65}.empty strong{display:block;color:var(--ink);font-size:13px;margin-bottom:6px}.actions{display:flex;flex-wrap:wrap;gap:8px;padding:13px 16px;border-top:1px solid #34454b}.action{border:1px solid #5d7c76;background:#203831;border-radius:8px;padding:9px 13px;font-size:12px}.action:hover:not(:disabled){background:#285247;border-color:var(--sea)}.action.primary{background:#207766;border-color:#42b59f;color:white}.action.primary:hover:not(:disabled){background:#29927d}.action.secondary{background:#29343a;border-color:#536168}.action.ghost{background:transparent;border-color:var(--line);color:#c5d0ce}.feedback{margin:13px 16px 0;padding:10px 12px;border-left:2px solid var(--amber);background:#e8bb7310;color:#e9d6ad;font-size:12px;line-height:1.55}.feedback.good{border-color:var(--sea);background:#78d5c510;color:#b1e6db}.feedback.bad{border-color:var(--red);background:#ed927d10;color:#ffc1b2}.toolbar{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:13px 2px 0}.tool{background:none;border:0;color:#b4c2c0;font-size:11px;padding:7px}.tool:hover{color:var(--sea)}.footer{display:flex;justify-content:space-between;gap:14px;color:#839195;font-size:10px;padding:18px 2px 0}.replay{position:fixed;inset:0;background:#061014d9;display:grid;place-items:center;padding:20px;z-index:5}.replay[hidden]{display:none}.replay-card{width:min(600px,100%);background:#19272d;border:1px solid #56706f;border-radius:12px;box-shadow:var(--shadow);padding:20px}.replay-card h3{margin:0 0 12px;font-size:14px}.replay-card pre{white-space:pre-wrap;font:inherit;font-size:14px;line-height:1.8;color:#e7e6df;max-height:60vh;overflow:auto}.done{grid-column:1/-1;padding:30px;text-align:center}.done-mark{width:54px;height:54px;border-radius:50%;margin:0 auto 14px;display:grid;place-items:center;color:var(--sea);border:1px solid #5eaaa0;font-size:24px}.done h3{font-size:20px;margin:0 0 8px}.done p{font-size:13px;color:#bec7c5;line-height:1.7}.status{margin-left:auto;font-size:10px;color:var(--muted)}@media(max-width:720px){.shell{padding:14px}.layout{grid-template-columns:1fr}.casehead{align-items:start}.progress{min-width:66px}.mast-note{max-width:125px;line-height:1.5}.evidence-list{max-height:230px}.statement{min-height:150px}.footer span:last-child{display:none}}
+  </style>
+  <style>
+    .story{margin:0 0 14px;background:linear-gradient(120deg,#17272a,#1a2529);border:1px solid #3d5b58;border-radius:11px;overflow:hidden}.story-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 14px;border-bottom:1px solid #344b49}.story-label{font-size:10px;letter-spacing:.15em;color:#a9d3c8}.story-meta{font-size:10px;color:var(--muted);margin-left:auto}.story-text{white-space:pre-wrap;max-height:190px;overflow:auto;padding:14px 16px;margin:0;color:#e3e4de;font-size:13px;line-height:1.75}.story-next{border:1px solid #548d7e;background:#1f4e43;border-radius:7px;padding:7px 11px;font-size:11px}.story-next:hover:not(:disabled){background:#286351}.story-error{padding:0 16px 12px;color:#ffc1b2;font-size:11px}
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <header class="mast">
+      <div class="brand"><div class="brand-mark" aria-hidden="true">◈</div><div><div class="eyebrow">EIDOS · FIELD SESSION</div><h1>焦点辩论室</h1></div></div>
+      <div class="mast-note">以具体发言为靶心<br>让记录说出它支持什么</div>
+    </header>
+    <section class="casehead" aria-labelledby="case-title">
+      <div><div class="eyebrow">CASE FILE / <span id="case-number">—</span></div><h2 id="case-title">正在读取案件…</h2><p class="intro" id="case-intro"></p></div>
+      <div class="progress" id="progress" aria-live="polite"></div>
+    </section>
+    <section class="story" aria-label="已读现场叙事"><div class="story-head"><span class="story-label">现场叙事 · 已读部分</span><span class="story-meta" id="reading-meta"></span><button class="story-next" id="advance-reading" type="button">继续阅读</button></div><p class="story-text" id="reading-text" aria-live="polite"></p><div class="story-error" id="reading-error" hidden></div></section>
+    <section class="layout" id="board" aria-live="polite"></section>
+    <nav class="toolbar" aria-label="辩论控制">
+      <button class="tool" id="pause" type="button">暂停辩论</button>
+      <button class="tool" id="reread" type="button">重读现场与当前发言</button>
+      <span class="status" id="status"></span>
+    </nav>
+    <footer class="footer"><span>本地事实核验 · AI 负责现场回应</span><span>证据只从已发现线索中选择</span></footer>
+  </main>
+  <div class="replay" id="replay" hidden role="dialog" aria-modal="true" aria-labelledby="replay-title"><div class="replay-card"><h3 id="replay-title">现场记录 · 当前发言</h3><pre id="replay-text"></pre><button class="action secondary" id="close-replay" type="button">返回辩论</button></div></div>
+  <script src="logic.js"></script>
+  <script>
+    (function () {
+      'use strict';
+      var latest = null;
+      var pendingCommit = false;
+      var replayOpen = false;
+      var busy = function (context) { return pendingCommit || Boolean(context && context.reading && (context.reading.loading || context.reading.typing || context.reading.paused)); };
+      var esc = function (value) { return String(value == null ? '' : value).replace(/[&<>"']/g, function (char) { return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char]; }); };
+      var byId = function (id) { return document.getElementById(id); };
+      var readText = function (context) {
+        var reading = context && context.reading || {};
+        if (typeof reading.displayedText === 'string' && reading.displayedText.trim()) return reading.displayedText;
+        var segment = Array.isArray(reading.segments) ? reading.segments[reading.index] : null;
+        if (typeof segment === 'string') return segment;
+        if (segment && typeof segment === 'object') return segment.text || segment.content || segment.displayedText || '';
+        return '';
+      };
+      var currentState = function () { return DebateRoom.createState(latest && latest.state); };
+      var update = function (next) {
+        if (!latest) return;
+        latest = Object.assign({}, latest, { state: next });
+        Eidos.setState(next);
+        render(latest);
+      };
+      var submit = function (action, next) {
+        if (!latest || busy(latest)) return;
+        latest = Object.assign({}, latest, { state: next });
+        Eidos.submit(action, next);
+        render(latest);
+      };
+      var setFeedback = function (result) {
+        if (result.outcome === 'resolved' || result.outcome === 'case-complete') {
+          if (result.state.demoMode) update(result.state);
+          else acceptResult(result, true);
+        }
+        else update(result.state);
+      };
+      var acceptResult = function (result, narrate) {
+        if (!latest || pendingCommit) return;
+        if (!Eidos.gameplay || result.state.demoMode) { if (narrate && !result.state.demoMode) submit(result.action, result.state); else update(result.state); return; }
+        var next = result.state;
+        var facts = { resolved: next.resolved || [], roundIndex: next.roundIndex, completed: next.completed, currentRound: DebateRoom.view(latest, next).current };
+        pendingCommit = true; render(latest);
+        Eidos.gameplay.commit({ summary: result.action || result.feedback || '玩法进度已确认', state: next, facts: facts, narrate: narrate }).then(function (receipt) {
+          latest = Object.assign({}, latest, { state: Object.assign({}, next, { _eidosGameplay: { revision: receipt.revision, facts: facts, last: receipt } }) });
+          pendingCommit = false; render(latest);
+          if (narrate && receipt.persistence === 'saved') return Eidos.gameplay.narrate(receipt.id);
+        }).catch(function (error) {
+          pendingCommit = false;
+          latest = Object.assign({}, latest, { state: Object.assign({}, latest.state, { feedback: error.message || '操作未确认，请重试。' }) });
+          render(latest);
+        });
+      };
+      var evidenceCard = function (item, selected) {
+        return '<button class="evidence" type="button" data-evidence="' + esc(item.id) + '" aria-pressed="' + (selected ? 'true' : 'false') + '"><strong>' + esc(item.name) + '</strong><span>' + esc(item.summary || '记录已收录，细节待核对。') + '</span></button>';
+      };
+      var bindDemoExit = function (board) {
+        var exit = board.querySelector('[data-exit-demo]');
+        if (exit) exit.addEventListener('click', function () { update(DebateRoom.endOfflineDemo(currentState())); });
+      };
+      function render(context) {
+        var state = DebateRoom.createState(context && context.state);
+        var view = DebateRoom.view(context, state);
+        var reading = context && context.reading || {};
+        var segments = Array.isArray(reading.segments) ? reading.segments : [];
+        byId('reading-text').textContent = readText(context) || '此处显示本世界已经读到的内容。';
+        byId('reading-meta').textContent = segments.length ? ('第 ' + (Number(reading.index || 0) + 1) + ' / ' + segments.length + ' 段') : (reading.complete ? '当前内容已读完' : '等待现场展开');
+        var last = context && context.state && context.state._eidosGameplay && context.state._eidosGameplay.last;
+        var pendingNarration = last && last.narration === 'pending' && Eidos.gameplay;
+        byId('advance-reading').hidden = reading.complete === true && !pendingNarration;
+        byId('advance-reading').disabled = Boolean(reading.loading || reading.typing);
+        byId('advance-reading').textContent = reading.complete && pendingNarration ? (reading.error ? '重试结果叙事' : '继续结果叙事') : '继续阅读下一段';
+        byId('reading-error').hidden = !reading.error;
+        byId('reading-error').textContent = typeof reading.error === 'string' ? reading.error : (reading.error ? '阅读遇到问题，请重试或继续行动。' : '');
+        byId('case-title').textContent = view.title;
+        byId('case-intro').textContent = view.intro;
+        byId('case-number').textContent = view.completed ? '已归档' : ('轮次 ' + view.progress.current);
+        byId('progress').innerHTML = '<b>' + String(view.progress.current).padStart(2, '0') + '<span style="font-size:13px;color:#718386"> / ' + String(view.progress.total).padStart(2, '0') + '</span></b><span>发言核验</span>';
+        byId('pause').textContent = view.paused ? '继续辩论' : '暂停辩论';
+        byId('pause').setAttribute('aria-pressed', view.paused ? 'true' : 'false');
+        byId('status').textContent = busy(context) ? '现场回应生成中…' : (view.paused ? '暂时停在当前发言' : '');
+        var board = byId('board');
+        if (view.completed) {
+          board.innerHTML = '<article class="panel done"><div class="done-mark" aria-hidden="true">✓</div><div class="eyebrow">CASE CLOSED</div><h3>本组发言已核对完毕</h3><p>' + esc(view.closing) + '</p><p>辩论记录已经与本案的事实对应。你仍可通过自由行动继续询问现场人物。</p>' + (view.demoMode ? '<button class="action secondary" type="button" data-exit-demo>结束离线演练</button>' : '') + '</article>';
+          bindDemoExit(board);
+          return;
+        }
+        if (!view.current) {
+          board.innerHTML = '<article class="panel done"><div class="eyebrow">CASE FILE</div><h3>还没有配置可玩的发言</h3><p>请在导出的 manifest.json 中编辑 data.case.rounds，加入具体发言、证据映射与支持/反驳关系。</p></article>';
+          return;
+        }
+        var evidenceMarkup = view.evidence.length
+          ? view.evidence.map(function (item) { return evidenceCard(item, item.id === view.selectedEvidenceId); }).join('')
+          : '<div class="empty"><strong>还没有可用于本轮的现场记录</strong>先从自由行动或下方调查入口寻找线索；发现后回到这里逐条核对。</div>';
+        var feedbackClass = state.feedback ? (state.roundIndex > Number(context && context.state && context.state.roundIndex || 0) ? 'good' : '') : '';
+        var panel = '<article class="panel"><div class="panel-head"><h3 class="panel-title">当前发言 · ' + esc(view.current.topic || '争议焦点') + '</h3><span class="tag">逐句核对</span></div><div class="statement"><span class="speaker">' + esc(view.current.statement.speaker) + '</span><blockquote>“' + esc(view.current.statement.text) + '”</blockquote><span class="subject">选择这句话，再用已发现记录回应</span></div>';
+        if (view.feedback) panel += '<div class="feedback ' + feedbackClass + '" role="status">' + esc(view.feedback) + '</div>';
+        panel += '<div class="actions"><button class="action primary" type="button" data-relation="rebut" ' + (!view.selectedEvidenceId || view.paused || busy(context) ? 'disabled' : '') + '>用证据反驳</button><button class="action" type="button" data-relation="support" ' + (!view.selectedEvidenceId || view.paused || busy(context) ? 'disabled' : '') + '>用证据支持</button></div></article>';
+        var demoControl = view.demoMode
+          ? '<button class="action secondary" type="button" data-demo-investigate ' + (!view.demoHasMore || view.paused ? 'disabled' : '') + '>' + (view.demoHasMore ? '检查下一处随案记录' : '示例记录已找齐') + '</button><button class="action ghost" type="button" data-exit-demo>结束离线演练</button>'
+          : '<button class="action secondary" type="button" data-offline-demo ' + (view.paused ? 'disabled' : '') + '>离线演练此原创案例</button><button class="action" type="button" data-investigate ' + (busy(context) || view.paused ? 'disabled' : '') + '>继续调查世界现场</button>';
+        var records = '<article class="panel"><div class="panel-head"><h3 class="panel-title">已发现记录</h3><span class="tag">' + view.evidence.length + ' 份可选</span></div><div class="evidence-list">' + evidenceMarkup + '</div><div class="actions">' + demoControl + '</div></article>';
+        board.innerHTML = panel + records;
+        if (view.paused) board.insertAdjacentHTML('afterbegin', '<div class="panel feedback" style="grid-column:1/-1;margin:0" role="status">辩论已暂停。你可以重读，也可以继续调查；恢复后再回应当前发言。</div>');
+        board.querySelectorAll('[data-evidence]').forEach(function (button) {
+          button.addEventListener('click', function () { update(DebateRoom.selectEvidence(latest, currentState(), button.getAttribute('data-evidence'))); });
+        });
+        board.querySelectorAll('[data-relation]').forEach(function (button) {
+          button.addEventListener('click', function () {
+            var now = DebateRoom.view(latest, currentState());
+            setFeedback(DebateRoom.respond(latest, currentState(), {
+              lineId: now.current.statement.id,
+              evidenceId: now.selectedEvidenceId,
+              relation: button.getAttribute('data-relation'),
+            }));
+          });
+        });
+        var investigate = board.querySelector('[data-investigate]');
+        if (investigate) investigate.addEventListener('click', function () {
+          submit('调查当前现场并寻找能核验本轮争议的记录；先叙述发现，不要预告答案。', currentState());
+        });
+        var offline = board.querySelector('[data-offline-demo]');
+        if (offline) offline.addEventListener('click', function () { update(DebateRoom.startOfflineDemo(currentState())); });
+        var demoInvestigate = board.querySelector('[data-demo-investigate]');
+        if (demoInvestigate) demoInvestigate.addEventListener('click', function () { update(DebateRoom.discoverDemoEvidence(latest, currentState()).state); });
+        bindDemoExit(board);
+      }
+      Eidos.onContext(function (context) {
+        latest = context;
+        render(context);
+        if (replayOpen) showReplay();
+      });
+      byId('pause').addEventListener('click', function () {
+        if (!latest) return;
+        var state = currentState();
+        update(DebateRoom.setPaused(state, !state.paused));
+      });
+      byId('advance-reading').addEventListener('click', function () {
+        if (!latest || pendingCommit) return;
+        var last = latest.state && latest.state._eidosGameplay && latest.state._eidosGameplay.last;
+        if (last && last.narration === 'pending' && Eidos.gameplay && latest.reading.complete && !busy(latest)) Eidos.gameplay.narrate(last.id).catch(function (error) { latest.state.feedback = error.message; render(latest); });
+        else if (typeof Eidos.advance === 'function') Eidos.advance();
+      });
+      function showReplay() {
+        byId('replay-text').textContent = DebateRoom.reread(latest, currentState()) || '现场目前没有可重读的文字。';
+        byId('replay').hidden = !replayOpen;
+      }
+      byId('reread').addEventListener('click', function () { if (!latest) return; replayOpen = true; showReplay(); });
+      byId('close-replay').addEventListener('click', function () { replayOpen = false; showReplay(); });
+      byId('replay').addEventListener('click', function (event) { if (event.target === byId('replay')) { replayOpen = false; showReplay(); } });
+    })();
+  </script>
+</body>
+</html>

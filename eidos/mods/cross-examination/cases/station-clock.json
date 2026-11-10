@@ -1,0 +1,32 @@
+{
+  "id": "station-cross-examination",
+  "name": "证词质询：站台时钟",
+  "data": {
+    "case": {
+      "title": "末班车的时钟证词",
+      "intro": "信封失踪后，值班员用一座停走的钟证明自己的时间。先追问，再核对修订证词。",
+      "clues": [
+        {
+          "id": "clock-repair",
+          "name": "停钟维修单",
+          "summary": "站台钟在18:40停走，直到次日才修复。"
+        }
+      ],
+      "demoDiscoveries": [
+        "clock-repair"
+      ],
+      "testimony": [
+        {
+          "id": "station-time",
+          "speaker": "值班员",
+          "original": "我记得信封被取走的准确时间。",
+          "revised": "我看的是站台钟，它当时指着18:40，所以取信也一定发生在18:40。",
+          "evidenceId": "clock-repair",
+          "prompt": "你用什么确定时间？"
+        }
+      ],
+      "closing": "停钟不能证明取信时刻；接下来仍需调查信封去向。"
+    }
+  },
+  "description": "围绕站台时钟的独立证词案件。听清证人补充的细节，再用已取得的记录核对时间与陈述，沿用原有正文和行动。"
+}

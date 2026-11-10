@@ -1,0 +1,50 @@
+{
+  "format": "eidos-gameplay-plugin",
+  "version": 1,
+  "id": "chinese-room",
+  "name": "文字地图与角色扮演",
+  "release": "0.4.1",
+  "stateVersion": 1,
+  "description": "在文字地图中走动、交谈、调查和前往其他地点。AI 可通过文件工具读取与更新布局，随剧情播放采用地图，沿用原有对话、背包、任务与存档。",
+  "tags": [
+    "文字地图",
+    "角色扮演",
+    "人物互动",
+    "地点探索"
+  ],
+  "prompts": {
+    "creation": "当前主世界将使用文字地图操作。沿用正常世界结构、NPC、物品、目标与地点连接，设计适合亲自走动、当面交谈和调查的日常空间。每处场景给出清楚的入口、可见人物和可调查对象。不设计短局肉鸽、行动点或单向闯关。",
+    "action": "玩家正在同一主世界的文字地图中操作，地图按钮产生的行动与玩家打字拥有相同效力。人物反应、物品增减、目标、时间、场景切换仍按正常世界更新。RPG 文案围绕眼前可感知对象：NPC每次回应当前问题并记住承诺；调查给出具体所见和可验证线索；取物、使用、交付体现物品去向与后续反应；回访体现此前选择。每段简洁自然，重要对话逐步展开，availableActions 提供少量具体可做的交谈、调查、帮助、使用物品或继续探索。通过地图出口请求前往地点时检查当前真实连接与阻挡条件。探索发现新地点时按正常 mapUpdates 公开地点和通路，主世界地图将据此增加出口。不要让NPC一次说尽所有信息，也不要替玩家决定。普通格内走路不推进时间、不调用叙事或生成世界线节点。 地图可以使用现有文件和命令输出流：目录 maps/<插件ID>/current.json 是当前公开场景 scene、布局 map 和坐标 player 的只读资料，需要空间信息时按真实路径/version 调用 files.read；不需要每轮读取，不把坐标或工具命令写入对白。日常交谈、普通走路不重画地图；只有开门、环境变化、布置物件或新地点确需表达时，按已有布局局部修改，保留地标、门和主角可站立位置。地图源文件不可覆写，可用 files.write/patch 在本轮 draftRoot 制作草稿，再通过正常 documents 发布：key 为 scene_map 或 scene_map_加字母数字后缀，format:text，content 为完整 JSON（或 artifactRef 指向实际草稿 path/version），segmentIndex 绑定环境变化发生的段落。无需在故事中展示文件链接或写制作说明。JSON 使用 {format:\"eidos-scene-map\",version:1,sceneId:真实地点ID,tiles:{单字:{name,walkable:boolean}},rows:[等宽地图行],entry:{x,y},entities:[{id,kind:\"npc\"|\"exit\"|\"object\"|\"action\",ref,name,glyph:单字,x,y}]}；沿用已读原图格式。npc/exit/object 引用当前公开 scene.npcs/exits/objects 的 id，action 引用真实 availableActions 原文。必须包含全部公开人物和出口；实体、入口互不重叠，主角位置仍可走，所有交互对象从入口可接近。没有可靠空间资料时沿用当前地图，不凭空捏造新 NPC 或通路。若确需新地点或人物，先通过主游戏正常状态协议公开；地图文件不能授予物品、开锁、移动 NPC 或改变世界事实。文件在行动接受且相应段落播放后才可采用，工具暂存成功不等于地图已生效。下一次需要修改时读取目录中的当前投影，或已生成地图文件，不重复输出无变化地图。",
+    "review": "文字地图只是主世界的操控呈现层，不拥有另一套背包、人物、任务或事件结果。核对真实场景连接、人物记忆与可知范围、物品去向、承诺和行动后果；新通路沿用现有地图更新协议，不通过舞台状态直接改写世界。 地图文件仅是当前分支的空间表现，检查实体引用和真实通路；不以 JSON 中的门或人物代替主世界状态更新。正常交谈没有地图产物是合理的。"
+  },
+  "rules": [],
+  "ui": {
+    "reading": "inherit",
+    "initialState": {},
+    "presentation": "scene-map"
+  },
+  "settings": [
+    {
+      "id": "auto_map",
+      "label": "自动绘制新地点地图",
+      "description": "缺少有效地图文件时调用分析模型补绘并计入用量；叙事文件已提供有效布局时直接复用。关闭后保留基础图与文件更新。",
+      "type": "boolean",
+      "default": true
+    },
+    {
+      "id": "map_style",
+      "label": "地图画面风格",
+      "description": "例如自然河岸、紧凑街巷或留白庭院；修改后重新绘制当前地点，使用分析模型并计入用量。",
+      "type": "string",
+      "default": ""
+    }
+  ],
+  "introduction": {
+    "impacts": [
+      "layout",
+      "narrative",
+      "tools"
+    ],
+    "images": []
+  }
+}

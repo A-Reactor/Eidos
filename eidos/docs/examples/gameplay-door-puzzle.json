@@ -1,0 +1,17 @@
+{
+  "format": "eidos-gameplay-plugin",
+  "version": 1,
+  "id": "door-puzzle",
+  "name": "门锁谜题",
+  "description": "观察记录取得钥匙，再用钥匙打开档案室。",
+  "tags": ["谜题", "探索"],
+  "prompts": {
+    "creation": "设计一条可达的取钥匙路径和一扇必须用钥匙打开的档案室门。把地点和钥匙信息写入 gameModeConfig。",
+    "action": "只有正文明确获得钥匙时才提议 find-key；只有已经取得钥匙且实际开门时才提议 open-door。不能凭空给予奖励或跳过前提。",
+    "review": "核查钥匙取得和开门是否有正文证据，是否遵守行动前插件状态。"
+  },
+  "rules": [
+    { "id": "find-key", "description": "玩家实际取得钥匙", "requires": {}, "sets": { "key": true }, "once": true },
+    { "id": "open-door", "description": "玩家用钥匙打开档案室", "requires": { "key": true }, "sets": { "door-open": true }, "once": true }
+  ]
+}

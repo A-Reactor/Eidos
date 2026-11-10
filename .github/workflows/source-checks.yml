@@ -1,0 +1,45 @@
+name: Source preview checks
+
+on: [push, pull_request]
+
+permissions:
+  contents: read
+
+jobs:
+  source-preview:
+    runs-on: ubuntu-latest
+    env:
+      NEXT_TELEMETRY_DISABLED: 1
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: eidos/package-lock.json
+      - name: Pack and verify source archive
+        working-directory: eidos
+        run: |
+          npm run pack:open-source
+          cd build/open-source
+          sha256sum -c eidos-source.tar.gz.sha256
+          tar -tzf eidos-source.tar.gz > "$RUNNER_TEMP/eidos-files.txt"
+          if grep -E '(^|/)(\.git|node_modules|\.next|\.DS_Store|\.env\.local)(/|$)|/public/generated/' "$RUNNER_TEMP/eidos-files.txt"; then
+            exit 1
+          fi
+          tar -xzf eidos-source.tar.gz -C "$RUNNER_TEMP"
+      - name: Install and audit production dependencies
+        working-directory: ${{ runner.temp }}/eidos-source/eidos
+        run: |
+          npm ci
+          npm audit --omit=dev --audit-level=high
+      - name: Lint, test and build the extracted preview
+        working-directory: ${{ runner.temp }}/eidos-source/eidos
+        run: |
+          npm run lint
+          npm test
+          npm run build
+          npm run pack:sdk
+          npm run demo:engine-game

@@ -1,0 +1,14 @@
+{
+  "format": "eidos-gameplay-plugin",
+  "version": 1,
+  "id": "maintenance-reader",
+  "name": "阅读器维护验证",
+  "description": "验证版本更新只维护进度格式，不新增故事经历。",
+  "tags": [],
+  "release": "2.0",
+  "stateVersion": 2,
+  "prompts": { "creation": "", "action": "", "review": "" },
+  "rules": [],
+  "ui": { "html": "<p>阅读器维护验证</p>", "reading": "inherit" },
+  "migrations": [{ "from": 1, "to": 2, "patches": [{ "op": "move", "from": "/state/page", "path": "/state/bookmark" }] }]
+}

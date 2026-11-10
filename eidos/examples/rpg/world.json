@@ -1,0 +1,20 @@
+{
+  "id": "portable-courtyard", "name": "庭院门", "subtitle": "RPG SDK 示例", "overview": "找到钥匙，打开门，进入庭院。",
+  "regions": { "courtyard": { "id": "courtyard", "name": "旧宅", "description": "两个相连的场景。", "scenes": {
+    "hall": { "id": "hall", "name": "门厅", "region": "courtyard", "initialDescription": "守门人站在铜门旁，长椅下落着一把钥匙。", "detailLevel": 10, "connections": ["garden"], "npcs": ["守门人"], "secrets": [], "discoveredSecrets": [] },
+    "garden": { "id": "garden", "name": "庭院", "region": "courtyard", "initialDescription": "树叶在晨风中轻响。", "detailLevel": 10, "connections": ["hall"], "npcs": [], "secrets": [], "discoveredSecrets": [] }
+  } } },
+  "mapRoutes": [{ "from": "hall", "to": "garden", "status": "blocked" }, { "from": "garden", "to": "hall", "status": "blocked" }],
+  "npcs": { "守门人": "照看旧宅的老人。" }, "contradictions": [], "history": [], "timeline": [], "clues": [],
+  "systemPromptBase": "", "identityPrompt": "", "isPlayerCreated": true, "createdAt": 0,
+  "gameplayPlugins": [{
+    "format": "eidos-gameplay-plugin", "version": 2, "id": "courtyard", "name": "庭院交互", "description": "钥匙、门锁与行走体力。", "tags": [],
+    "prompts": { "creation": "", "action": "", "review": "" },
+    "resources": { "keys": { "name": "钥匙", "min": 0, "max": 1, "initial": 0 }, "stamina": { "name": "体力", "min": 0, "max": 5, "initial": 5 } },
+    "rules": [
+      { "id": "pickup", "description": "捡起钥匙", "once": true, "sets": { "found": true }, "resourceChanges": { "keys": 1 } },
+      { "id": "unlock", "description": "打开铜门", "once": true, "resourceRequires": { "keys": { "min": 1 } }, "resourceChanges": { "keys": -1 }, "sets": { "open": true }, "effects": { "state": [{ "op": "add", "path": "/opened", "value": true }], "facts": [{ "op": "add", "path": "/door", "value": "open" }] } },
+      { "id": "travel", "description": "走过铜门", "requires": { "open": true }, "resourceRequires": { "stamina": { "min": 1 } }, "resourceChanges": { "stamina": -1 } }
+    ]
+  }]
+}

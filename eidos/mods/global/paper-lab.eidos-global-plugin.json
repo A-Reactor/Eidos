@@ -1,0 +1,38 @@
+{
+  "format": "eidos-global-plugin",
+  "version": 1,
+  "id": "paper-lab",
+  "name": "阅读排版与快捷指令",
+  "release": "1.1.0",
+  "author": "Eidos 示例",
+  "description": "保留 /环顾 快捷指令，默认沿用原版主题和排版；紧凑阅读与强调色只在插件设置中主动选择后生效。",
+  "settings": [
+    {
+      "id": "accent",
+      "label": "强调色",
+      "type": "select",
+      "default": "跟随主题",
+      "options": [
+        "跟随主题",
+        "青绿",
+        "靛蓝",
+        "朱红"
+      ]
+    },
+    {
+      "id": "compact-layout",
+      "label": "紧凑阅读排版",
+      "description": "主动开启后缩小阅读与设置页的部分留白；关闭即恢复原版。",
+      "type": "boolean",
+      "default": false
+    }
+  ],
+  "script": "const colors = { '青绿': '#24776d', '靛蓝': '#525da6', '朱红': '#a34238' };\nconst accent = colors[api.preferences.accent];\nif (accent) api.ui.addStyle(':root { --eidos-palette-accent: ' + accent + '; }');\napi.actions.beforeSubmit(input => input.trim() === '/环顾' ? '仔细观察当前环境，留意可见的人物、物品与出入口。' : input);\nif (api.preferences['compact-layout'] === true) api.ui.addStyle('.eidos-settings-row { padding-top: .6rem; padding-bottom: .6rem; } .eidos-record-scroll .eidos-story-paper { padding-top: 1.2rem; padding-bottom: 1.2rem; } .eidos-record-scroll [data-reading-text] { line-height: 1.75; } .eidos-archive-header h1 { letter-spacing: -.03em; }');\n",
+  "introduction": {
+    "impacts": [
+      "layout",
+      "tools"
+    ],
+    "images": []
+  }
+}

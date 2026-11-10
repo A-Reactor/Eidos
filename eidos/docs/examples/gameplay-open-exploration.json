@@ -1,0 +1,25 @@
+{
+  "format": "eidos-gameplay-plugin",
+  "version": 1,
+  "id": "open-exploration",
+  "name": "开放探索与提示",
+  "description": "提供可自由接近或忽略的探索灵感；仅用一个标记记录玩家是否找到了信号来源。",
+  "tags": ["探索", "自由叙事"],
+  "data": {
+    "inspiration": ["远处的陌生广播", "被遗忘的手稿", "与路人的偶遇"],
+    "approaches": { "signal": ["向人打听", "追踪声音", "寻找相关物品", "忽略它并探索别处"] },
+    "note": "这些内容是创作素材。融入当前世界，不指定唯一解法，也不以此代替玩家自己的目标。"
+  },
+  "prompts": {
+    "creation": "根据 data 提供的素材安排自然的探索机会。玩家可以走不同路径，也可以完全忽略信号。具体地点、人物和信号来源按世界设定创作，不安排强制的任务阶段。",
+    "action": "跟随玩家实际行动推进世界。仅当正文已确认玩家找到信号来源时提议 find-signal；其余探索照常叙述，无需触发规则。信号被找到后仍可继续探索，它不是结局条件。",
+    "review": "检查 find-signal 是否有正文事实支持。接受其他合理的探索方法，不要求遵循某个固定顺序，也不因玩家没有处理信号而判定行动失败。"
+  },
+  "rules": [
+    { "id": "find-signal", "description": "确认信号来源", "sets": { "signal-found": true } }
+  ],
+  "readouts": [
+    { "id": "signal", "text": "可探索陌生信号，也可另寻方向", "requires": { "signal-found": false }, "tone": "cyan" },
+    { "id": "continue", "text": "信号来源已知，探索仍可继续", "requires": { "signal-found": true }, "tone": "mint" }
+  ]
+}

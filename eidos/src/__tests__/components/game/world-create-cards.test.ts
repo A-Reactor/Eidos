@@ -1,0 +1,43 @@
+// @vitest-environment jsdom
+import 'fake-indexeddb/auto';
+import React from 'react';
+import { webcrypto } from 'node:crypto';
+import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { afterEach, expect, it, vi } from 'vitest';
+import { WorldCreateScreen } from '@/components/game/WorldCreateScreen';
+import { useGameStore } from '@/store/game-store';
+import { buildRiftCityStartState } from '@/lib/test/fixtures';
+import { loadFromDB } from '@/lib/game/storage';
+import type { WorldDefinition } from '@/lib/game/types';
+afterEach(() => { cleanup(); vi.unstubAllGlobals(); });
+it('sends the concept and original card together, then keeps the card binding in the generated world and saved preset', async () => {
+  vi.stubGlobal('crypto', webcrypto);
+  localStorage.clear();
+  useGameStore.setState({ ...useGameStore.getInitialState(), phase: 'world_create' });
+  const { world } = buildRiftCityStartState();
+  const requests: Array<{ url: string; body: Record<string, unknown> }> = [];
+  vi.stubGlobal('fetch', vi.fn(async (url, init) => {
+    const body = JSON.parse(init.body); requests.push({ url: String(url), body });
+    return new Response(`data: ${JSON.stringify({ type: 'done', world })}\n\n`, { headers: { 'Content-Type': 'text/event-stream' } });
+  }));
+  render(React.createElement(WorldCreateScreen));
+  await waitFor(() => expect(screen.getByRole('button', { name: '生成' }).hasAttribute('disabled')).toBe(false));
+  fireEvent.change(screen.getByLabelText('世界概述'), { target: { value: '一座失去指针的钟表城市' } });
+  fireEvent.click(screen.getByRole('button', { name: '酒馆卡' }));
+  const bytes = new TextEncoder().encode(JSON.stringify({ name: '旅人', description: '修复停摆钟表的旅行者', scenario: '河岸的钟楼' }));
+  const file = new File([bytes], '旅人.json', { type: 'application/json' });
+  Object.defineProperty(file, 'arrayBuffer', { value: async () => bytes.buffer });
+  fireEvent.change(screen.getByLabelText('选择酒馆卡生成素材'), { target: { files: [file] } });
+  await screen.findByText('旅人');
+  fireEvent.click(screen.getByRole('button', { name: '生成' }));
+  await screen.findByRole('region', { name: '生成结果内容' });
+  const request = requests.find(r => r.url === '/api/world/create/stream')!;
+  expect(request.body.concept).toContain('一座失去指针的钟表城市');
+  expect(request.body.concept).toContain('修复停摆钟表的旅行者');
+  const draft = await loadFromDB('world-creation-draft:main') as { world: WorldDefinition; cards: Array<{ assetId: string }> };
+  expect(draft.world.id).toBe(world.id);
+  expect(draft.world.cardBindings?.[0].assetId).toBe(draft.cards[0].assetId);
+  expect(draft.world.cardBindings?.[0].name).toBe('旅人');
+  expect(draft.world.timeline).toEqual(world.timeline);
+  expect(requests.map(request => request.url)).toEqual(['/api/world/create/stream']);
+});

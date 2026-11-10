@@ -1,0 +1,43 @@
+{
+  "format": "eidos-gameplay-plugin",
+  "version": 1,
+  "id": "cross-examination",
+  "name": "逐句追问与证据质询",
+  "description": "逐句听取和追问证词，再用已取得的证据核对补充后的陈述。错误尝试可重试，确认的结果随存档和分支保留。",
+  "tags": [
+    "推理",
+    "证词追问",
+    "证据质询"
+  ],
+  "prompts": {
+    "creation": "创建一个事实可核验的小型证词案件。证词要有可追问之处，追问后的限定陈述必须能由已有证据检验。案例数据中的正确证据和证词修订是作者判定依据，属于内部答案，不得直接展示给玩家。",
+    "action": "逐句质询由玩家通过正文、推荐行动或自由输入执行：先追问当前句，听取修订，再针对这条修订证词出示已发现证据。出示前须先取得证据并追问这一句；确定性规则核验证据关系，不由叙事模型另作判定。正确的证据对质之后，再让证人或现场人物自然回应。\n使用宿主原有正文、推荐行动和自由输入。没有独立面板、证据架、进度条或专用阅读界面。推荐操作与自由行动共用规则和正式事实；涉及已声明规则时只提议本轮实际满足前提的事件，不提前宣称结算成功。",
+    "review": "检查证词与已揭示线索是否一致。不得透露未发现证据、后续证词修订或本地判定答案。"
+  },
+  "rules": [],
+  "ui": {
+    "reading": "inherit",
+    "initialState": {
+      "currentIndex": 0,
+      "pressed": [],
+      "resolved": [],
+      "paused": false,
+      "completed": false,
+      "selectedEvidenceId": "",
+      "feedback": "",
+      "demoMode": false,
+      "offlineClueIndex": 0
+    },
+    "presentation": "native"
+  },
+  "release": "0.3.0",
+  "stateVersion": 1,
+  "introduction": {
+    "impacts": [
+      "gameplay",
+      "narrative",
+      "tools"
+    ],
+    "images": []
+  }
+}

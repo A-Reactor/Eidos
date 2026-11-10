@@ -1,0 +1,20 @@
+import { expect, it } from 'vitest';
+import { compileWorldCreation } from '@/lib/ai/world-creation-compiler';
+import { briefFromConcept } from '@/lib/game/world-creation-brief';
+import { createReconstructionArchive } from '@/lib/game/source-reconstruction/archive';
+import { createSourceCorpus } from '@/lib/ai/source-archive';
+import { sourceRuntimeContext, sourceDriftRules } from '@/lib/game/source-reconstruction/runtime';
+import type { WorldForm } from '@/lib/game/creation-materials';
+import type { SourceReconstructionArchive } from '@/lib/game/source-reconstruction/types';
+const brief = briefFromConcept({ form: { name: '雨港', overview: '', culture: '', regions: '', npcs: '', contradictions: '', history: '', clues: '', opening: '', narrativeStyle: 'balanced' } as WorldForm });
+brief.origin = 'source';
+const source: SourceReconstructionArchive = { schemaVersion: 2, sourceRevision: 'r', brief, digests: [], entityMap: {}, scope: '全部', dossier: { id: 'd', sourceRevision: 'r', summary: '雨港', blockIds: [], claims: [], entities: [], unresolved: [], styleCandidates: [], starts: [], issues: [], childRefs: [], coverage: { expected: [], completed: [], failed: [] } } };
+it('keeps raw source in portable archives but never sends it to the common compiler or runtime', () => {
+  const corpus = createSourceCorpus([{ content: 'RAW_PRIVATE_SOURCE' }]);
+  const archive = createReconstructionArchive(corpus, source);
+  expect(archive.corpus.documents[0].content).toBe('RAW_PRIVATE_SOURCE');
+  expect(archive.reconstruction).toEqual(source);
+  expect(JSON.stringify(compileWorldCreation({ brief, dossier: source.dossier }))).not.toContain('RAW_PRIVATE_SOURCE');
+  expect(sourceRuntimeContext(source)).toContain('已接受的行动结果');
+  expect(sourceDriftRules(source)).toContain('不得因玩家改变未来');
+});

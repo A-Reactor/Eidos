@@ -1,0 +1,43 @@
+# Keep internal material in the development repository. git archive produces the public source tree.
+/.agents export-ignore
+/AGENTS.md export-ignore
+/CLAUDE.md export-ignore
+/CHANGELOG.md export-ignore
+/docs export-ignore
+/eidos/.agents export-ignore
+/eidos/skills-lock.json export-ignore
+
+/eidos/docs/* export-ignore
+/eidos/docs/ai-configuration.md -export-ignore
+/eidos/docs/ai-configuration.en.md -export-ignore
+/eidos/docs/author-lab.md -export-ignore
+/eidos/docs/developer-engine.md -export-ignore
+/eidos/docs/developer-engine.en.md -export-ignore
+/eidos/docs/gameplay-plugins.md -export-ignore
+/eidos/docs/global-plugins.md -export-ignore
+/eidos/docs/modding.en.md -export-ignore
+/eidos/docs/restricted-rewind.md -export-ignore
+/eidos/docs/story-anchors.md -export-ignore
+/eidos/docs/examples -export-ignore
+
+/eidos/mods/*/development.md export-ignore
+/eidos/mods/*/author-workbench.md export-ignore
+/eidos/public/generated export-ignore
+/eidos/scripts/benchmark-worldline.mjs export-ignore
+/eidos/scripts/eidos-test.ts export-ignore
+/eidos/scripts/evaluation export-ignore
+/eidos/src/__tests__/lib/ai/source-reconstruction-live.test.ts export-ignore
+
+**/.DS_Store export-ignore
+**/.env* export-ignore
+/eidos/.env.example -export-ignore
+**/.agents export-ignore
+**/.claude export-ignore
+**/.codex export-ignore
+**/.next export-ignore
+**/node_modules export-ignore
+**/build export-ignore
+**/out export-ignore
+**/coverage export-ignore
+**/target export-ignore
+/backups export-ignore

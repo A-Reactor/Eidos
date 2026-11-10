@@ -1,0 +1,293 @@
+{
+  "data": {
+    "setting": {
+      "name": "雾灯宿舍",
+      "description": "建在潮汐灯塔背后的合住小楼。住客轮流做晚饭、修灯、照看夜班；窗台常年挂着潮湿的纸灯。"
+    },
+    "case": {
+      "title": "借来的回声",
+      "subtitle": "封灯室的火灾审判",
+      "victimName": "林杳",
+      "opening": "守灯人{victim}在封闭的灯室火灾中遇难。有人从一枚铜铃里听见一句像是遗言的话，宿舍很快把怀疑指向能听见物件余响的{echoist}。可铃声不等于时间，回声也不等于说话人的名字。",
+      "scene": "雾灯宿舍的公用封灯室。火灾后的残灯仍挂在门楣上，旧铃的尾音比钟慢了几分钟。"
+    },
+    "cast": [
+      {
+        "id": "echoist",
+        "name": "今汐",
+        "role": "住在隔壁的旧友",
+        "connection": "她总在晚饭时多放一副碗筷，说夜班回来的人不该吃冷饭。",
+        "daily": "林杳有一阵总把汤留到很晚。今汐从不追问缘由，只把炉火调小，等她下班回来。",
+        "ability": {
+          "name": "物件余响",
+          "description": "触摸一件刚被使用过的物品时，可能听到留在附近的一句短话。",
+          "limits": "余响不标记说话人，也没有准确时间；隔着封口的匣子听不到，句子还可能缺少前后文。"
+        }
+      },
+      {
+        "id": "keeper",
+        "name": "闻舟",
+        "role": "宿舍夜间值守人",
+        "connection": "他记得每个住客哪天值夜，也把备用钥匙挂在厨房门后。",
+        "daily": "闻舟巡楼时会顺手把窗栓扣好。林杳常把热茶放到门边，提醒他别在潮雾里站太久。",
+        "ability": {
+          "name": "门槛记忆",
+          "description": "手掌贴上门框，可以感到最近一次开合留下的震动。",
+          "limits": "只知道门动过，不知道是谁、从哪一侧进出，也无法给出分钟级时间。"
+        }
+      },
+      {
+        "id": "lampmaker",
+        "name": "青荻",
+        "role": "负责修灯的住客",
+        "connection": "她会把每个人用剩的灯芯收进纸盒，认为浪费一寸都可惜。",
+        "daily": "青荻修好楼梯口的纸灯后，总留一段干净灯芯给林杳。林杳习惯把最亮的那盏留给晚归的人。",
+        "ability": {
+          "name": "纸灯定形",
+          "description": "能让剪好的纸灯保持原来的折痕，不被风吹散。",
+          "limits": "不能操纵火焰，也不能远距离移动灯或其他物件；手艺会在结绳处留下三股交叠的压痕。"
+        }
+      }
+    ],
+    "privateLetter": {
+      "label": "林杳的离宿信",
+      "text": "信里写道：{victim}打算在冬潮前离开雾灯宿舍，去照看一位不愿让街坊议论的家人。她把这个决定只告诉了一位旧友，并请求不要公开原句。",
+      "anonymousFact": "封灯室附近的私信确实被人打开过；信的具体内容与定罪无关，可以不公开。"
+    },
+    "clues": [
+      {
+        "id": "soup-ledger",
+        "title": "漏写的一碗",
+        "place": "厨房桌边",
+        "detail": "晚饭簿上每天都记着谁替夜班留汤。火灾当晚，林杳那一格先被打了勾，后来又被人轻轻擦掉。这里有照料的痕迹，也提醒你：有人刻意让她像是很早就离开了。"
+      },
+      {
+        "id": "echo-test",
+        "title": "铜铃的复现",
+        "place": "旧铜铃旁",
+        "detail": "你把厨房里的一句话说在铃边，再让今汐触摸铃舌。回声只保留短句，没有声音特征和时间戳。它不能辨认说话人，也不能证明发生时间。"
+      },
+      {
+        "id": "wick-fiber",
+        "title": "三股压痕的灯芯",
+        "place": "封灯室残灯下",
+        "detail": "烧焦的灯芯上留着三股交叠压痕，和{lampmaker}的结法一致；尚未烧坏的接头蜡里还有她的拇指纹。维修签封记录这枚接头由她当晚新接，之后一直封在灯室。手艺习惯本身不能定罪，但指纹和当晚签封能核对她是否接触过这枚灯芯。"
+      },
+      {
+        "id": "bell-thread",
+        "title": "浸蜡的迟铃线",
+        "place": "门楣旧铃后",
+        "detail": "一根浸蜡引线从灯芯新接头连到可燃纸灯堆，尾段再牵到门楣铃柄。现场重建确认：点灯先沿引线引燃纸堆，尾段烧断才会扯响铃，因此铃声晚于起火。接头封签未被二次拆开，仍是{lampmaker}当晚签封的装置；这将接触记录与起火、迟铃的机制连在一起。"
+      }
+    ],
+    "testimonies": [
+      {
+        "id": "echo-origin",
+        "personId": "echoist",
+        "text": "我能听见铃里留下的那句话，所以我知道是谁在灯室里说的，也知道那是火灾前最后一刻。",
+        "challengeClue": "echo-test",
+        "challenge": "这项能力记录的是残留短句，不能辨认说话人，也不能证明发生时间。"
+      },
+      {
+        "id": "keeper-time",
+        "personId": "keeper",
+        "text": "门铃是在十点响的，所以火一定是十点才烧起来。",
+        "challengeClue": "bell-thread",
+        "challenge": "铃声由灯芯燃尽牵动，比起火时间晚；响铃时刻不能直接当成起火时刻。"
+      },
+      {
+        "id": "maker-denial",
+        "personId": "lampmaker",
+        "text": "我没有碰过封灯室的灯芯，更没有改过门铃。",
+        "challengeClue": "wick-fiber",
+        "challenge": "接头蜡中的拇指纹与当晚维修签封确认{lampmaker}接触过这枚灯芯，推翻了从未接触的否认。单凭结法不能定罪，还需核验引线如何引火并延迟铃声。"
+      }
+    ],
+    "resolution": {
+      "culpritId": "lampmaker",
+      "requiredEvidence": [
+        "wick-fiber",
+        "bell-thread"
+      ],
+      "requiredContradiction": "maker-denial",
+      "finding": "指纹和维修签封确认{lampmaker}安装了未经二次拆开的灯芯接头；现场重建确认这枚接头沿浸蜡引线引燃纸堆，再延迟扯响门铃。其从未接触灯芯的否认已被推翻，证据支持其安装的装置引发致命火灾。具体动机仍须继续询问，不能从私信内容推定。"
+    }
+  },
+  "prompts": {
+    "creation": "在雾灯宿舍这类紧密共同生活的场景中，先建立可触摸的日常互助与旧关系，再安排一场围绕封灯室火灾的审判。每个人都同时拥有关系、能力或普通技能、值得保护的私人边界。玩家尚未发现的线索与私信内容不得放入开场叙事；案例应允许玩家先做别的事。",
+    "action": "尊重玩家自由行动。让日常互动自然提供调查入口；能力结论必须受 data.cast 中明确的触发条件和限制约束。物件余响只传递片段，不能识别说话人或时间。线索须有可追溯的来源；传闻、秘密和嫌疑不能单独作为定罪依据。只有玩家明确调查、质询或提交的事实才可记录相应规则事件。",
+    "review": "审查行动前快照和证据来源。区分玩家怀疑的对象与可被定罪的人；定罪须同时有具体物证、对应证词矛盾和成立的因果链。证据不足、能力限制被忽略或隐私内容只靠传闻推断时，不得确认有罪，允许继续调查和修正判断。结案时优先使用匿名事实，不要复述私信原句，除非玩家明确选择公开。"
+  },
+  "rules": [
+    {
+      "id": "daily-routine-noticed",
+      "description": "玩家通过日常互动确认了人物之间的照料习惯；这只建立关系背景，不证明任何人有罪。",
+      "requires": {},
+      "sets": {
+        "daily-routine-known": true
+      }
+    },
+    {
+      "id": "echo-limit-tested",
+      "description": "玩家用物件复现确认余响不提供说话人身份或准确时间。",
+      "requires": {},
+      "sets": {
+        "echo-limit-known": true
+      }
+    },
+    {
+      "id": "trial-claim-tested",
+      "description": "玩家把已发现的具体物证用于一条具体证词，形成可复核的矛盾。",
+      "requires": {},
+      "sets": {
+        "trial-claim-tested": true
+      }
+    },
+    {
+      "id": "discover-soup-ledger",
+      "description": "调查厨房桌边，发现「漏写的一碗」：晚饭簿上每天都记着谁替夜班留汤。火灾当晚，林杳那一格先被打了勾，后来又被人轻轻擦掉。这里有照料的痕迹，也提醒你：有人刻意让她像是很早就离开了。",
+      "sets": {},
+      "effects": {
+        "state": [
+          {
+            "op": "add",
+            "path": "/foundClues/-",
+            "value": "soup-ledger"
+          }
+        ],
+        "facts": [
+          {
+            "op": "add",
+            "path": "/caseTitle",
+            "value": "借来的回声"
+          },
+          {
+            "op": "add",
+            "path": "/phase",
+            "value": "investigation"
+          },
+          {
+            "op": "add",
+            "path": "/evidence-soup-ledger",
+            "value": {
+              "id": "soup-ledger",
+              "title": "漏写的一碗",
+              "place": "厨房桌边",
+              "detail": "晚饭簿上每天都记着谁替夜班留汤。火灾当晚，林杳那一格先被打了勾，后来又被人轻轻擦掉。这里有照料的痕迹，也提醒你：有人刻意让她像是很早就离开了。"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "discover-echo-test",
+      "description": "调查旧铜铃旁，发现「铜铃的复现」：你把厨房里的一句话说在铃边，再让今汐触摸铃舌。回声只保留短句，没有声音特征和时间戳。它不能辨认说话人，也不能证明发生时间。",
+      "sets": {
+        "echo-limit-known": true
+      },
+      "effects": {
+        "state": [
+          {
+            "op": "add",
+            "path": "/foundClues/-",
+            "value": "echo-test"
+          }
+        ],
+        "facts": [
+          {
+            "op": "add",
+            "path": "/caseTitle",
+            "value": "借来的回声"
+          },
+          {
+            "op": "add",
+            "path": "/phase",
+            "value": "investigation"
+          },
+          {
+            "op": "add",
+            "path": "/evidence-echo-test",
+            "value": {
+              "id": "echo-test",
+              "title": "铜铃的复现",
+              "place": "旧铜铃旁",
+              "detail": "你把厨房里的一句话说在铃边，再让今汐触摸铃舌。回声只保留短句，没有声音特征和时间戳。它不能辨认说话人，也不能证明发生时间。"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "discover-wick-fiber",
+      "description": "调查封灯室残灯下，发现「三股压痕的灯芯」：烧焦的灯芯上留着三股交叠压痕，和{lampmaker}的结法一致；尚未烧坏的接头蜡里还有她的拇指纹。维修签封记录这枚接头由她当晚新接，之后一直封在灯室。手艺习惯本身不能定罪，但指纹和当晚签封能核对她是否接触过这枚灯芯。",
+      "sets": {},
+      "effects": {
+        "state": [
+          {
+            "op": "add",
+            "path": "/foundClues/-",
+            "value": "wick-fiber"
+          }
+        ],
+        "facts": [
+          {
+            "op": "add",
+            "path": "/caseTitle",
+            "value": "借来的回声"
+          },
+          {
+            "op": "add",
+            "path": "/phase",
+            "value": "investigation"
+          },
+          {
+            "op": "add",
+            "path": "/evidence-wick-fiber",
+            "value": {
+              "id": "wick-fiber",
+              "title": "三股压痕的灯芯",
+              "place": "封灯室残灯下",
+              "detail": "烧焦的灯芯上留着三股交叠压痕，和{lampmaker}的结法一致；尚未烧坏的接头蜡里还有她的拇指纹。维修签封记录这枚接头由她当晚新接，之后一直封在灯室。手艺习惯本身不能定罪，但指纹和当晚签封能核对她是否接触过这枚灯芯。"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "discover-bell-thread",
+      "description": "调查门楣旧铃后，发现「浸蜡的迟铃线」：一根浸蜡引线从灯芯新接头连到可燃纸灯堆，尾段再牵到门楣铃柄。现场重建确认：点灯先沿引线引燃纸堆，尾段烧断才会扯响铃，因此铃声晚于起火。接头封签未被二次拆开，仍是{lampmaker}当晚签封的装置；这将接触记录与起火、迟铃的机制连在一起。",
+      "sets": {},
+      "effects": {
+        "state": [
+          {
+            "op": "add",
+            "path": "/foundClues/-",
+            "value": "bell-thread"
+          }
+        ],
+        "facts": [
+          {
+            "op": "add",
+            "path": "/caseTitle",
+            "value": "借来的回声"
+          },
+          {
+            "op": "add",
+            "path": "/phase",
+            "value": "investigation"
+          },
+          {
+            "op": "add",
+            "path": "/evidence-bell-thread",
+            "value": {
+              "id": "bell-thread",
+              "title": "浸蜡的迟铃线",
+              "place": "门楣旧铃后",
+              "detail": "一根浸蜡引线从灯芯新接头连到可燃纸灯堆，尾段再牵到门楣铃柄。现场重建确认：点灯先沿引线引燃纸堆，尾段烧断才会扯响铃，因此铃声晚于起火。接头封签未被二次拆开，仍是{lampmaker}当晚签封的装置；这将接触记录与起火、迟铃的机制连在一起。"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

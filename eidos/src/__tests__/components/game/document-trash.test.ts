@@ -1,0 +1,46 @@
+// @vitest-environment jsdom
+import 'fake-indexeddb/auto';
+import React from 'react';
+import {afterEach,expect,it,vi} from 'vitest';
+import {cleanup,fireEvent,render,screen,waitFor,within} from '@testing-library/react';
+import {DocumentLibrary} from '@/components/game/DocumentLibrary';
+import {useGameStore} from '@/store/game-store';
+import {buildRiftCityStartState} from '@/lib/test/fixtures';
+import {currentDocumentScope} from '@/lib/game/model-documents';
+import {saveLocalDocument} from '@/lib/game/documents/ingest';
+import {readDocument} from '@/lib/game/documents/repository';
+afterEach(()=>{cleanup();vi.restoreAllMocks();});
+it('moves a document to trash, previews its preserved text, and restores it without calling the model',async()=>{
+ const {world}=buildRiftCityStartState();useGameStore.setState({...useGameStore.getInitialState(),currentWorld:world,currentPlaythroughId:crypto.randomUUID()});
+ const scope=currentDocumentScope(useGameStore.getState())!,doc=await saveLocalDocument(scope,{title:'报告',content:'不能丢失的原文'});
+ const fetcher=vi.spyOn(globalThis,'fetch');
+ render(React.createElement(DocumentLibrary,{scope,onReference(){}}));
+ await waitFor(()=>expect(within(screen.getByLabelText('已保存文档')).getAllByRole('button')).toHaveLength(1));
+ fireEvent.click(within(screen.getByLabelText('已保存文档')).getByRole('button'));
+ await screen.findByLabelText('文档正文');fireEvent.click(screen.getByRole('button',{name:'移入回收站'}));
+ await screen.findByText('还没有文档。');fireEvent.click(screen.getByRole('button',{name:'回收站'}));
+ fireEvent.click(within(screen.getByLabelText('回收站文档')).getByRole('button',{name:/报告.*字节/}));
+ await screen.findByLabelText('文档正文');expect(screen.getByLabelText('文档正文').textContent).toBe('不能丢失的原文');
+ expect(screen.queryByRole('button',{name:'编辑文档'})).toBeNull();
+ fireEvent.click(screen.getByRole('button',{name:'还原文档'}));
+ await screen.findByRole('button',{name:'编辑文档'});
+ expect((await readDocument(scope,doc)).resource.text).toBe('不能丢失的原文');expect(fetcher).not.toHaveBeenCalled();
+ expect(useGameStore.getState().history).toHaveLength(0);
+});
+it('cleans an old orphan through the capacity panel while preserving a trashed document',async()=>{
+ const {DocumentCapacity}=await import('@/components/game/DocumentCapacity');
+ const {storeResource}=await import('@/lib/game/workspace/resources');
+ const {loadMeta,saveMeta}=await import('@/lib/game/storage');
+ const {setDocumentTrashed}=await import('@/lib/game/documents/repository');
+ const {world}=buildRiftCityStartState();useGameStore.setState({...useGameStore.getInitialState(),currentWorld:world,currentPlaythroughId:crypto.randomUUID()});
+ const scope=currentDocumentScope(useGameStore.getState())!,doc=await saveLocalDocument(scope,{title:'回收站原文',content:'必须保留'});
+ await setDocumentTrashed(scope,doc,true);
+ const orphan=await storeResource({name:'orphan.txt',mimeType:'text/plain',text:'unused-from-ui'});
+ for(const id of [orphan.id,doc.revision])await saveMeta(id,{...await loadMeta<object>(id),lastStoredAt:Date.now()-8*24*60*60*1000});
+ render(React.createElement(DocumentCapacity,{scope}));
+ const details=screen.getByLabelText('文档容量管理');details.setAttribute('open','');
+ await screen.findByText(/回收站 1 份/);
+ fireEvent.click(screen.getByRole('button',{name:'清理本机未引用原件'}));
+ await screen.findByText(/已清理 1 份未引用原件/);
+ expect(await loadMeta(orphan.id)).toBeNull();expect(await loadMeta(doc.revision)).not.toBeNull();
+});

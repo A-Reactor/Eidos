@@ -1,0 +1,22 @@
+import 'fake-indexeddb/auto';
+import { expect, it, afterAll } from 'vitest';
+import { importCardAsset } from '@/lib/game/cards/storage';
+import { exportWorldCardFiles, restoreWorldCardFiles } from '@/lib/game/cards/transfer';
+import { mountCardWorld } from '@/lib/game/cards/binding';
+import { buildWorldOnlyExportPackage } from '@/lib/game/world-export';
+import { _resetDB } from '@/lib/game/storage';
+afterAll(_resetDB);
+it('exports exact source bytes with a verifiable manifest and rejects changed asset content', async () => {
+  const bytes = new TextEncoder().encode('{"name":"林","description":"甲\\n  乙"}\n');
+  const asset = await importCardAsset(bytes, 'card.json');
+  const world = mountCardWorld({ asset, role: 'world' });
+  const cardFiles = await exportWorldCardFiles(world);
+  const pkg = buildWorldOnlyExportPackage(world, { cardFiles });
+  const envelope = JSON.parse(cardFiles[0].content);
+  expect(Buffer.from(envelope.bytes, 'base64')).toEqual(Buffer.from(bytes));
+  const manifest = JSON.parse(pkg.files.find(f => f.path === 'manifest.json')!.content);
+  expect(manifest.files.some((f: { path: string }) => f.path === cardFiles[0].path)).toBe(true);
+  await restoreWorldCardFiles(pkg.files, world);
+  const changed = { ...envelope, bytes: Buffer.from('{"name":"林","description":"已改"}').toString('base64') };
+  await expect(restoreWorldCardFiles([{ path: cardFiles[0].path, content: JSON.stringify(changed) }], world)).rejects.toThrow(/哈希/);
+});

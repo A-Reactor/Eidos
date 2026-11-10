@@ -1,0 +1,43 @@
+{
+  "format": "eidos-gameplay-plugin",
+  "version": 1,
+  "id": "secrets-trial",
+  "name": "人物调查与秘密审判",
+  "description": "从人物日常和能力限制入手调查，收集物证、核对证词，在证据链成立后提出指控，并决定保护私信或明确公开原文。",
+  "tags": [
+    "人物调查",
+    "证据链",
+    "隐私选择"
+  ],
+  "prompts": {
+    "creation": "以所选案件内容建立可调查世界，保留证据因果与人物动机。",
+    "action": "本模组支持调查、证词核验与结案。已确认的本地结果由正式账本提供；自由行动发现案件证物时提议对应发现规则，和界面共享案卷。\n使用宿主原有正文、推荐行动和自由输入。没有独立面板、证据架、进度条或专用阅读界面。推荐操作与自由行动共用规则和正式事实；涉及已声明规则时只提议本轮实际满足前提的事件，不提前宣称结算成功。",
+    "review": "核对已揭示事实与明确规则，不把怀疑当判决。"
+  },
+  "rules": [],
+  "ui": {
+    "reading": "inherit",
+    "initialState": {
+      "screen": "scene",
+      "foundClues": [],
+      "selectedTestimony": "",
+      "challengedStatements": [],
+      "suspicion": "",
+      "verdict": "open",
+      "verdictFor": "",
+      "privacyChoice": "",
+      "bindings": {}
+    },
+    "presentation": "native"
+  },
+  "release": "0.3.0",
+  "stateVersion": 1,
+  "introduction": {
+    "impacts": [
+      "gameplay",
+      "narrative",
+      "tools"
+    ],
+    "images": []
+  }
+}

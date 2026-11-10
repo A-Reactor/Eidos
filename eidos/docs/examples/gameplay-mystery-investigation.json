@@ -1,0 +1,23 @@
+{
+  "format": "eidos-gameplay-plugin",
+  "version": 2,
+  "id": "mystery-investigation",
+  "name": "有限调查与证据链",
+  "description": "消耗调查精力确认现场与证词，取得两份独立证据后才能完成推理。",
+  "tags": ["侦探", "证据", "资源"],
+  "prompts": {
+    "creation": "设计一个小型案件，现场检验和证人访谈分别能得到一份独立证据。现场证据能帮助定位证人并提出具体问题。两份证据可相互印证得出一个有依据的结论。提供整理笔记与休息的机会，避免调查精力耗尽后永久卡住。证据具体真相只放世界内部设定，不提前放进推荐行动。",
+    "action": "inspect-scene 消耗1调查精力，确认一份现场证据；interview-witness 需要已确认现场证据，消耗1精力获得独立证词；compare-evidence 必须已确认两份证据并在正文比较，才能标记推理完成。重复检查同一来源不增加新证据或再次消耗一次性规则。rest-investigation 表示整理笔记并休息，恢复1精力，需要合理耗时。涉及规则的行动须返回相应 pluginEvents；资源数字不由你直接赋值。缺少证据时不要替玩家猜中真相。",
+    "review": "检查两份证据是否来自不同来源，访谈是否有已知现场线索支持，推理是否实际比较证据。不能把反复阅读当成新证据，不能通过一次性事件重复增加证据；不得泄露尚未发现的真相。完成标记仅表示案件推理进展，不自动替代世界结局。"
+  },
+  "resources": {
+    "attempts": { "name": "调查精力", "initial": 3, "min": 0, "max": 3, "unit": "点" },
+    "evidence": { "name": "已确认独立证据", "initial": 0, "min": 0, "max": 2, "unit": "条" }
+  },
+  "rules": [
+    { "id": "inspect-scene", "description": "确认现场证据", "resourceRequires": { "attempts": { "min": 1 }, "evidence": { "max": 1 } }, "resourceChanges": { "attempts": -1, "evidence": 1 }, "sets": { "scene-evidence": true } },
+    { "id": "interview-witness", "description": "确认独立证词", "requires": { "scene-evidence": true }, "resourceRequires": { "attempts": { "min": 1 }, "evidence": { "max": 1 } }, "resourceChanges": { "attempts": -1, "evidence": 1 }, "sets": { "witness-evidence": true } },
+    { "id": "compare-evidence", "description": "比较两份证据完成推理", "requires": { "scene-evidence": true, "witness-evidence": true }, "resourceRequires": { "evidence": { "min": 2 } }, "sets": { "solved": true } },
+    { "id": "rest-investigation", "description": "休息并整理笔记", "once": false, "resourceRequires": { "attempts": { "max": 2 } }, "resourceChanges": { "attempts": 1 } }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "format": "eidos-gameplay-plugin",
+  "version": 1,
+  "id": "debate-room",
+  "name": "证据对照与群体辩论",
+  "description": "逐条核对人物发言，调查并出示证据，选择反驳或支持。证据与发言的关系按案件事实核验，过程融入原有正文和行动。",
+  "tags": [
+    "推理",
+    "证据对照",
+    "群体辩论"
+  ],
+  "prompts": {
+    "creation": "创建一个事实可核验的小型调查场景。让不同角色提出具体、可对照的发言；不要让玩法界面替玩家判断动机。案例数据中的正确证据与关系是作者判定依据，属于内部答案，不得直接展示给玩家。",
+    "action": "辩论只允许使用玩家已经发现的证据。具体发言与证据的关系由声明规则按案例事实判定；不要让叙事模型重新投票或改写判定。正确的反驳或支持之后，可以让角色自然回应。\n使用宿主原有正文、推荐行动和自由输入。没有独立面板、证据架、进度条或专用阅读界面。推荐操作与自由行动共用规则和正式事实；涉及已声明规则时只提议本轮实际满足前提的事件，不提前宣称结算成功。",
+    "review": "审阅叙事与已经揭示的线索是否一致。不得透露未发现线索、尚未出场的证人发言或本地判定答案。"
+  },
+  "rules": [],
+  "data": {
+    "case": {
+      "title": "雾港档案室的蓝色封存袋",
+      "intro": "雾港档案室停电七分钟。一只蓝色封存袋不见了，两位值夜人对门是否开过、封存袋何时交接各执一词。请把每条发言与已发现记录对照。",
+      "clues": [
+        {
+          "id": "bell-ledger",
+          "name": "外廊巡铃簿",
+          "aliases": [
+            "巡铃簿",
+            "外廊铃记录"
+          ],
+          "summary": "20:17，西侧门铃留下了一次机械刻痕；检查确认记录只由门开启联动，手动摇铃不会写入。"
+        },
+        {
+          "id": "handover-slip",
+          "name": "夜班交接单",
+          "aliases": [
+            "交接单",
+            "夜班登记"
+          ],
+          "summary": "20:29，蓝色封存袋已交给接班员并签收；栖舟的离岗签名记录为20:32。"
+        },
+        {
+          "id": "salted-key",
+          "name": "盐渍钥匙",
+          "aliases": [
+            "盐渍钥匙",
+            "沾盐钥匙"
+          ],
+          "summary": "一把备用钥匙带着海盐与旧机油。"
+        }
+      ],
+      "demoDiscoveries": [
+        "bell-ledger",
+        "salted-key",
+        "handover-slip"
+      ],
+      "rounds": [
+        {
+          "id": "door-bell",
+          "relation": "rebut",
+          "evidenceId": "bell-ledger",
+          "statement": {
+            "id": "warden-door",
+            "speaker": "闻澜（守门人）",
+            "text": "20点以后，外廊的门一次也没有打开。"
+          },
+          "topic": "门是否开启",
+          "why": "巡铃簿记录的机械刻痕与这句绝对陈述直接冲突。"
+        },
+        {
+          "id": "bag-handover",
+          "relation": "support",
+          "evidenceId": "handover-slip",
+          "statement": {
+            "id": "archivist-handover",
+            "speaker": "栖舟（档案员）",
+            "text": "封存袋在我离岗前已经交给了接班人。"
+          },
+          "topic": "封存袋何时交接",
+          "why": "交接单给出了签收人和时间，支持这条陈述。"
+        }
+      ],
+      "closing": "巡铃记录与交接单将两段时间线接在了一起。"
+    }
+  },
+  "ui": {
+    "reading": "inherit",
+    "initialState": {
+      "roundIndex": 0,
+      "resolved": [],
+      "paused": false,
+      "completed": false,
+      "selectedEvidenceId": "",
+      "feedback": "",
+      "demoMode": false,
+      "offlineClueIndex": 0
+    },
+    "presentation": "native"
+  },
+  "release": "0.3.0",
+  "stateVersion": 1,
+  "introduction": {
+    "impacts": [
+      "gameplay",
+      "narrative",
+      "tools"
+    ],
+    "images": []
+  }
+}

@@ -1,0 +1,717 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Eidos · 连续小说</title>
+  <style>
+    :root { color-scheme: dark; font-family: "Songti SC", "Noto Serif CJK SC", "STSong", Georgia, serif; background: #09141d; color: #eee6d5; }
+    * { box-sizing: border-box; }
+    html, body { width: 100%; min-width: 280px; min-height: 100%; margin: 0; }
+    body { background: radial-gradient(ellipse at 50% -18%, #314c57 0, #142631 42%, #09141d 76%); }
+    button { font: inherit; }
+    .novel { height: 100vh; height: 100dvh; display: flex; flex-direction: column; overflow: hidden; }
+    .masthead { position: relative; flex-shrink: 0; padding: 20px clamp(18px, 5vw, 68px) 15px; border-bottom: 1px solid #b8aa8050; background: linear-gradient(180deg, #07101885, #07101822); }
+    .masthead::after { position: absolute; right: clamp(18px, 5vw, 68px); bottom: -1px; width: 62px; height: 1px; background: #d9bd78; content: ""; }
+    .eyebrow { margin: 0 0 8px; color: #d1b96f; font: 600 10px/1.4 ui-sans-serif, system-ui, sans-serif; letter-spacing: .24em; text-transform: uppercase; }
+    .title-row { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; }
+    h1 { margin: 0; color: #fff8e8; font-size: clamp(21px, 3vw, 31px); font-weight: 500; letter-spacing: .08em; }
+    .scene { margin: 8px 0 0; color: #b5c3c2; font: 12px/1.6 ui-sans-serif, system-ui, sans-serif; letter-spacing: .08em; }
+    .reader-status { flex: 0 0 auto; color: #b4c5c0; font: 11px/1.5 ui-sans-serif, system-ui, sans-serif; text-align: right; }
+    .reader-status[data-tone="choice"] { color: #e9ce84; }
+    .reader-status[data-tone="error"] { color: #f0a19a; }
+    .body-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(150px, 220px); gap: clamp(20px, 4vw, 56px); width: min(1120px, 100%); min-height: 0; flex: 1; margin: 0 auto; padding: 25px clamp(18px, 5vw, 68px) 30px; }
+    .story { min-width: 0; min-height: 0; height: 100%; overflow: auto; padding: 6px clamp(0px, 1.8vw, 22px) 26px 0; scrollbar-color: #aa965d88 #09141d55; scrollbar-width: thin; }
+    .story-page { padding: 0 0 28px; }
+    .story-page + .story-page { padding-top: 25px; border-top: 1px solid #c8b67630; }
+    .page-heading { margin: 0 0 15px; color: #b5a678; font: 10px/1.5 ui-sans-serif, system-ui, sans-serif; letter-spacing: .14em; }
+    .line { margin: 0 0 17px; color: #eee6d5; font-size: clamp(16px, 1.65vw, 19px); line-height: 2; white-space: pre-wrap; overflow-wrap: anywhere; }
+    .line[data-type="dialogue"] { color: #f5eddf; }
+    .speaker { display: inline; margin-right: .25em; color: #dbc779; font-size: .86em; letter-spacing: .04em; }
+    .decision-record { margin: 18px 0 0; padding: 10px 13px; border-left: 2px solid #d7bc71; color: #d9c98f; background: #c5a84c12; font: 12px/1.7 ui-sans-serif, system-ui, sans-serif; }
+    .empty { max-width: 36em; margin: 12vh auto 0; color: #c1c9c4; font-size: 16px; line-height: 1.9; text-align: center; }
+    .rail { align-self: start; max-height: 100%; overflow: auto; padding: 4px 0 0; }
+    .rail section { margin: 0 0 21px; padding: 0 0 16px; border-bottom: 1px solid #b8aa8038; }
+    .rail h2 { margin: 0 0 10px; color: #c7b77d; font: 600 10px/1.5 ui-sans-serif, system-ui, sans-serif; letter-spacing: .15em; }
+    .rail ul { display: grid; gap: 7px; margin: 0; padding: 0; list-style: none; }
+    .rail li { color: #c7d0ca; font: 12px/1.65 ui-sans-serif, system-ui, sans-serif; overflow-wrap: anywhere; }
+    .rail .muted { color: #829298; }
+    .controls { display: flex; flex-shrink: 0; flex-wrap: wrap; align-items: center; justify-content: center; gap: 9px; padding: 13px 18px max(14px, env(safe-area-inset-bottom)); border-top: 1px solid #b8aa8033; background: #07101880; }
+    .control { min-height: 38px; padding: 8px 15px; border: 1px solid #bba96e83; border-radius: 2px; color: #eee6d5; background: #11222b; cursor: pointer; font: 12px/1.35 ui-sans-serif, system-ui, sans-serif; transition: border-color .15s, background .15s, color .15s; }
+    .control:hover, .control:focus-visible { border-color: #e5ce83; outline: none; background: #1c3039; }
+    .control--accent { border-color: #d8bd72; color: #101820; background: #d8bd72; }
+    .control--accent:hover, .control--accent:focus-visible { background: #ebd58d; }
+    .control:disabled { cursor: default; opacity: .45; }
+    .choice-box { width: min(850px, 100%); padding: 5px 18px 20px; }
+    .choice-caption { margin: 0 0 11px; color: #e6d28d; font: 600 10px/1.5 ui-sans-serif, system-ui, sans-serif; letter-spacing: .17em; }
+    .choice-list, .action-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 9px; }
+    .choice-button { min-width: min(220px, 100%); max-width: 420px; flex: 1 1 190px; min-height: 48px; padding: 11px 15px; border: 1px solid #d1b96f80; color: #f5e6b5; background: #1b2c33; cursor: pointer; font-size: 14px; line-height: 1.6; text-align: left; }
+    .choice-button::before { margin-right: 9px; color: #d9bd78; content: "◇"; }
+    .choice-button:hover, .choice-button:focus-visible { border-color: #f0d782; outline: none; background: #293b3f; }
+    .action-area { width: min(850px, 100%); padding: 0 18px 10px; }
+    .action-caption { margin: 0 0 8px; color: #9cafad; font: 10px/1.4 ui-sans-serif, system-ui, sans-serif; letter-spacing: .11em; text-align: center; }
+    .small-note { width: 100%; margin: 0; color: #829298; font: 10px/1.5 ui-sans-serif, system-ui, sans-serif; text-align: center; }
+    [hidden] { display: none !important; }
+    @media (max-width: 700px) {
+      .body-grid { display: flex; flex-direction: column; gap: 4px; padding-top: 16px; }
+      .story { height: auto; min-height: 0; flex: 1; padding-right: 0; }
+      .rail { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; width: 100%; }
+      .rail section { min-width: 0; margin-bottom: 4px; }
+      .rail h2 { font-size: 9px; }
+      .rail li { font-size: 11px; }
+      .reader-status { max-width: 110px; }
+    }
+    @media (max-width: 390px) {
+      .masthead { padding-top: 15px; }
+      .body-grid { padding-top: 12px; }
+      .rail { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .controls { justify-content: stretch; }
+      .controls .control { flex: 1 1 auto; }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; } }
+  </style>
+</head>
+<body>
+  <div class="novel" data-novel-root>
+    <header class="masthead">
+      <p class="eyebrow">EIDOS · CONTINUOUS NOVEL</p>
+      <div class="title-row">
+        <h1 data-world-title>连续小说</h1>
+        <div class="reader-status" data-reader-status aria-live="polite">正在连接阅读流</div>
+      </div>
+      <p class="scene" data-scene></p>
+    </header>
+    <div class="body-grid">
+      <main class="story" data-story-text aria-label="已读正文" aria-live="off" tabindex="0"></main>
+      <aside class="rail" aria-label="当前世界资料">
+        <section data-characters-section hidden><h2>在场人物</h2><ul data-characters></ul></section>
+        <section data-clues-section hidden><h2>已发现线索</h2><ul data-clues></ul></section>
+        <section data-inventory-section hidden><h2>随身物品</h2><ul data-inventory></ul></section>
+      </aside>
+    </div>
+    <section class="choice-box" data-choice-box hidden aria-label="关键抉择">
+      <p class="choice-caption" data-choice-caption>故事在此分岔</p>
+      <div class="choice-list" data-choice-list></div>
+    </section>
+    <section class="action-area" data-action-area hidden>
+      <p class="action-caption">也可以沿着你自己的方向继续</p>
+      <div class="action-list" data-actions></div>
+    </section>
+    <div class="controls">
+      <button class="control" type="button" data-auto-toggle aria-pressed="false">暂停连读</button>
+      <button class="control" type="button" data-manual-advance hidden>继续下一段</button>
+      <button class="control control--accent" type="button" data-continue hidden>继续故事</button>
+      <button class="control" type="button" data-return hidden>回到主角</button>
+      <button class="control" type="button" data-backlog>回读前文</button>
+      <p class="small-note">异地镜头属于读者看到的故事。原有自由行动仍由主角执行。</p>
+    </div>
+  </div>
+  <script>
+    (function () {
+      "use strict";
+
+      var MAX_HISTORY_PAGES = 24;
+      var MAX_HISTORY_CHARS = 20000;
+      var sdk = window.Eidos;
+      var root = document.querySelector("[data-novel-root]");
+      var latest = null;
+      var timer = null;
+      var timerKey = "";
+      var lastAdvanceKey = "";
+      var lastAutoContinuation = "";
+
+      function isObject(value) {
+        return !!value && typeof value === "object" && !Array.isArray(value);
+      }
+
+      function asObject(value) {
+        return isObject(value) ? value : {};
+      }
+
+      function safeString(value) {
+        return typeof value === "string" ? value : "";
+      }
+
+      function currentState(context) {
+        return asObject(asObject(context).state);
+      }
+
+      function scopeOf(context) {
+        var value = safeString(asObject(context).scope);
+        if (value) return value.slice(0, 256);
+        var world = asObject(asObject(context).world);
+        return [safeString(world.id), safeString(world.sceneName)].join(":").slice(0, 256);
+      }
+
+      function choiceSettings(context) {
+        var data = asObject(asObject(asObject(context).plugin).data);
+        var settings = asObject(data.choiceMarker);
+        return {
+          open: safeString(settings.open) || "〔关键抉择：",
+          separator: safeString(settings.separator) || "｜",
+          close: safeString(settings.close) || "〕",
+          minimum: Math.max(2, Math.min(4, Number(settings.minimumOptions) || 2)),
+          maximum: Math.max(2, Math.min(4, Number(settings.maximumOptions) || 3)),
+        };
+      }
+
+      function hash(value) {
+        var result = 2166136261;
+        for (var index = 0; index < value.length; index += 1) {
+          result ^= value.charCodeAt(index);
+          result = Math.imul(result, 16777619);
+        }
+        return (result >>> 0).toString(36);
+      }
+
+      function parseChoiceMarker(text, settings, scope) {
+        var source = safeString(text);
+        if (!settings.open || !settings.close || !settings.separator) return null;
+        var start = source.indexOf(settings.open);
+        if (start < 0) {
+          // Typewriter frames can end halfway through the technical marker's opening text.
+          for (var length = settings.open.length - 1; length > 0; length -= 1) {
+            if (source.endsWith(settings.open.slice(0, length))) return { pending: true, start: source.length - length, end: source.length, options: [] };
+          }
+          return null;
+        }
+        var contentStart = start + settings.open.length;
+        var close = source.indexOf(settings.close, contentStart);
+        if (close < 0) return { pending: true, start: start, end: source.length, options: [] };
+        var raw = source.slice(contentStart, close);
+        var options = raw.split(settings.separator).map(function (option) { return option.trim(); });
+        if (options.length < settings.minimum || options.length > settings.maximum || options.some(function (option) { return !option; })) {
+          return { invalid: true, start: start, end: close + settings.close.length, options: [] };
+        }
+        var normalized = options.map(function (option) { return option.toLocaleLowerCase(); });
+        if (new Set(normalized).size !== normalized.length) {
+          return { invalid: true, start: start, end: close + settings.close.length, options: [] };
+        }
+        var end = close + settings.close.length;
+        var prefix = source.slice(Math.max(0, start - 180), start);
+        return {
+          pending: false,
+          invalid: false,
+          start: start,
+          end: end,
+          options: options,
+          signature: scope + ":" + hash(prefix + "\u0000" + source.slice(start, end)),
+        };
+      }
+
+      function visibleLines(context) {
+        var reading = asObject(asObject(context).reading);
+        var source = Array.isArray(reading.segments) ? reading.segments : [];
+        var index = Number.isInteger(reading.index) ? reading.index : 0;
+        var count = reading.complete === true ? source.length : Math.min(source.length, Math.max(0, index + 1));
+        var shown = source.slice(0, count);
+        return shown.map(function (segment, position) {
+          var line = asObject(segment);
+          var text = safeString(line.text);
+          if (reading.complete !== true && position === index && reading.typing === true) {
+            var displayed = safeString(reading.displayedText);
+            if (text.indexOf(displayed) === 0) text = displayed;
+          }
+          return { type: safeString(line.type) || "narration", text: text, speaker: safeString(line.speaker), view: line.view, choices: line.choices, beat: line.beat };
+        });
+      }
+
+      function project(context) {
+        var reading = asObject(asObject(context).reading);
+        var scope = scopeOf(context);
+        var state = currentState(context);
+        var settings = choiceSettings(context);
+        var lines = [];
+        var choice = null;
+        var choicePending = false;
+        var markerHidden = false;
+        var input = visibleLines(context);
+        var view = input.map(function (line) { return line.view; }).filter(isObject).pop() || { kind: "protagonist" };
+
+        for (var index = 0; index < input.length; index += 1) {
+          var line = input[index];
+          if (markerHidden) break;
+          if (Array.isArray(line.choices) && line.choices.length && reading.complete === true) {
+            var declared = line.choices.filter(function (item) { return item && safeString(item.id) && safeString(item.label); });
+            if (declared.length) {
+              lines.push(line);
+              var signature = scope + ":choice:" + hash(JSON.stringify(declared));
+              if (asObject(state.lastChoice).signature !== signature) choice = { options: declared.map(function (item) { return item.label; }), ids: declared.map(function (item) { return item.id; }), signature: signature };
+              markerHidden = true;
+              break;
+            }
+          }
+          var marker = parseChoiceMarker(line.text, settings, scope);
+          if (!marker || marker.invalid) {
+            lines.push(line);
+            continue;
+          }
+          var before = line.text.slice(0, marker.start);
+          if (before.trim()) lines.push({ type: line.type, text: before, speaker: line.speaker });
+          markerHidden = true;
+          if (marker.pending) {
+            choicePending = reading.typing === true || reading.loading === true;
+            break;
+          }
+          var resolved = asObject(state.lastChoice);
+          if (resolved.signature !== marker.signature) choice = marker;
+          break;
+        }
+
+        return {
+          view: view,
+          beat: input.map(function (line) { return line.beat; }).filter(isObject).pop() || {},
+          lines: lines,
+          choice: choice,
+          choicePending: choicePending,
+          reading: reading,
+          scope: scope,
+          markerHidden: markerHidden,
+        };
+      }
+
+      function viewLabel(view, playerName) {
+        if (view.kind !== "cutaway") return "主角视角" + (playerName ? " · " + playerName : "");
+        return ["幕间", safeString(view.actor) || "第三人称旁观", safeString(view.location), safeString(view.timeLabel)].filter(Boolean).join(" · ");
+      }
+
+      function lineText(line) {
+        var value = safeString(line.text).trim();
+        if (!value) return "";
+        return line.type === "dialogue" && line.speaker ? line.speaker + "：" + value : value;
+      }
+
+      function historyPages(state) {
+        var history = Array.isArray(state.readHistory) ? state.readHistory : [];
+        return history.filter(function (page) {
+          return isObject(page) && safeString(page.scope) && safeString(page.text);
+        }).map(function (page) {
+          return {
+            ...(isObject(page.view) ? { view: page.view } : {}),
+            ...(isObject(page.chapter) ? { chapter: page.chapter } : {}),
+            scope: safeString(page.scope).slice(0, 256),
+            scene: safeString(page.scene).slice(0, 120),
+            text: safeString(page.text),
+            decision: safeString(page.decision).slice(0, 160),
+          };
+        }).slice(-MAX_HISTORY_PAGES);
+      }
+
+      function historyPage(context, decision) {
+        var projection = project(context);
+        var text = projection.lines.map(lineText).filter(Boolean).join("\n\n");
+        if (!text && !decision) return null;
+        var world = asObject(asObject(context).world);
+        return {
+          ...(projection.view.kind === "cutaway" ? { view: projection.view } : {}),
+          ...(isObject(projection.beat.chapter) ? { chapter: projection.beat.chapter } : {}),
+          scope: projection.scope,
+          scene: safeString(world.sceneName).slice(0, 120),
+          text: text,
+          decision: safeString(decision).slice(0, 160),
+        };
+      }
+
+      function withArchivedPage(state, context, decision) {
+        var page = historyPage(context, decision);
+        var history = historyPages(state);
+        if (!page) return Object.assign({}, state, { readHistory: history });
+        var existing = history.findIndex(function (item) { return item.scope === page.scope; });
+        if (existing >= 0) {
+          // A node saves asynchronously: unrelated next prose must not replace its parent's page.
+          var previous = history[existing];
+          if (page.text.indexOf(previous.text) === 0) history[existing] = Object.assign({}, previous, { text: page.text }, page.chapter ? { chapter: page.chapter } : {});
+          if (decision) history[existing] = Object.assign({}, history[existing], { decision: page.decision });
+        } else {
+          history.push(page);
+        }
+        history = history.slice(-MAX_HISTORY_PAGES);
+        var total = history.reduce(function (sum, item) { return sum + item.text.length + item.decision.length; }, 0);
+        while (history.length && total > MAX_HISTORY_CHARS) {
+          var overflow = total - MAX_HISTORY_CHARS;
+          if (history[0].text.length <= overflow + 200) {
+            total -= history[0].text.length + history[0].decision.length;
+            history.shift();
+          } else {
+            history[0] = Object.assign({}, history[0], { text: history[0].text.slice(overflow) });
+            total = MAX_HISTORY_CHARS;
+          }
+        }
+        return Object.assign({}, state, { readHistory: history });
+      }
+
+      function hasSameWorld(left, right) {
+        var oldWorld = asObject(asObject(left).world);
+        var newWorld = asObject(asObject(right).world);
+        return safeString(oldWorld.id) === safeString(newWorld.id);
+      }
+
+      function stateWithContext(context, state) {
+        return Object.assign({}, context, { state: state });
+      }
+
+      function saveState(state, context) {
+        if (!sdk || typeof sdk.setState !== "function") return;
+        var updated = stateWithContext(context, state);
+        latest = updated;
+        sdk.setState(state);
+        render(updated);
+        scheduleAdvance(updated);
+      }
+
+      function normalizeContext(next) {
+        if (!isObject(next)) return null;
+        var context = next;
+        var scope = scopeOf(context);
+        var state = Object.assign({}, currentState(context));
+        var old = latest;
+        var oldScope = old ? scopeOf(old) : "";
+        var shouldArchive = old && oldScope && oldScope !== scope && hasSameWorld(old, context) && state.activeScope !== scope;
+
+        if (asObject(old?.world).nodeId && asObject(context.world).nodeId && asObject(context.world).parentNodeId !== asObject(old.world).nodeId) shouldArchive = false;
+        if (shouldArchive) state = withArchivedPage(state, old, "");
+        // The host recreates the iframe at each node, including actions from its free-input box.
+        // Persist already visible prose while reading rather than depending on our own buttons.
+        if (asObject(context.reading).loading !== true) state = withArchivedPage(state, context, "");
+        if (state.activeScope !== scope) state.activeScope = scope;
+        if (JSON.stringify(state) !== JSON.stringify(currentState(context))) {
+          context = stateWithContext(context, state);
+          if (sdk && typeof sdk.setState === "function") sdk.setState(state);
+        }
+        return context;
+      }
+
+      function element(selector) {
+        return root ? root.querySelector(selector) : null;
+      }
+
+      function setText(selector, value) {
+        var node = element(selector);
+        if (node) node.textContent = safeString(value);
+      }
+
+      function addParagraph(container, line) {
+        var text = safeString(line.text);
+        if (!text.trim()) return;
+        var paragraph = document.createElement("p");
+        paragraph.className = "line";
+        paragraph.dataset.type = line.type === "dialogue" ? "dialogue" : "narration";
+        if (line.type === "dialogue" && line.speaker) {
+          var speaker = document.createElement("span");
+          speaker.className = "speaker";
+          speaker.textContent = line.speaker + "：";
+          paragraph.appendChild(speaker);
+        }
+        paragraph.appendChild(document.createTextNode(text));
+        container.appendChild(paragraph);
+      }
+
+      function renderPages(context, projection) {
+        var story = element("[data-story-text]");
+        if (!story) return;
+        var atEnd = story.scrollHeight - story.scrollTop - story.clientHeight < 42;
+        var state = currentState(context);
+        var history = historyPages(state).filter(function (page) { return page.scope !== projection.scope; });
+        var fragment = document.createDocumentFragment();
+
+        history.forEach(function (page) {
+          var article = document.createElement("article");
+          article.className = "story-page";
+          article.dataset.readHistory = "true";
+          if (page.scene) {
+            var heading = document.createElement("p");
+            heading.className = "page-heading";
+            heading.textContent = [page.chapter?.title, page.view ? viewLabel(page.view, "") : page.scene].filter(Boolean).join("　/　");
+            article.appendChild(heading);
+          }
+          page.text.split(/\n\n+/).filter(Boolean).forEach(function (text) {
+            addParagraph(article, { type: "narration", text: text, speaker: "" });
+          });
+          if (page.decision) {
+            var decision = document.createElement("p");
+            decision.className = "decision-record";
+            decision.textContent = (page.view && page.view.actor ? page.view.actor + "的选择：" : "你的选择：") + page.decision;
+            article.appendChild(decision);
+          }
+          fragment.appendChild(article);
+        });
+
+        var current = document.createElement("article");
+        current.className = "story-page";
+        current.dataset.currentPage = "true";
+        if (projection.view.kind === "cutaway") {
+          var heading = document.createElement("p"); heading.className = "page-heading"; heading.textContent = viewLabel(projection.view, "") + " · 主角尚未知情"; current.appendChild(heading);
+        }
+        projection.lines.forEach(function (line) { addParagraph(current, line); });
+        fragment.appendChild(current);
+        if (!history.length && !projection.lines.some(function (line) { return line.text.trim(); })) {
+          var empty = document.createElement("p");
+          empty.className = "empty";
+          empty.textContent = "海雾还没有散开。正文会从 Eidos 当前世界实际生成并逐段显现；你也可以随时使用原有自由行动。";
+          fragment.appendChild(empty);
+        }
+        story.replaceChildren(fragment);
+        if (atEnd) story.scrollTop = story.scrollHeight;
+      }
+
+      function itemLabel(value) {
+        if (typeof value === "string") return value;
+        if (!isObject(value)) return "";
+        return safeString(value.name) || safeString(value.title) || safeString(value.label) || safeString(value.text) || safeString(value.description);
+      }
+
+      function renderList(values, sectionSelector, listSelector) {
+        var section = element(sectionSelector);
+        var list = element(listSelector);
+        if (!section || !list) return;
+        list.replaceChildren();
+        var entries = Array.isArray(values) ? values.map(itemLabel).filter(Boolean) : [];
+        entries.slice(0, 8).forEach(function (label) {
+          var item = document.createElement("li");
+          item.textContent = label;
+          list.appendChild(item);
+        });
+        section.hidden = entries.length === 0;
+      }
+
+      function isBusy(reading) {
+        return reading.loading === true || !!safeString(reading.error);
+      }
+
+      function addActionButton(container, label, kind, handler) {
+        var button = document.createElement("button");
+        button.type = "button";
+        button.className = kind === "choice" ? "choice-button" : "control";
+        button.textContent = label;
+        button.addEventListener("click", handler);
+        container.appendChild(button);
+        return button;
+      }
+
+      function normalState(context) {
+        var state = Object.assign({}, currentState(context));
+        state.autoRead = state.autoRead !== false;
+        state.activeScope = scopeOf(context);
+        return state;
+      }
+
+      function submitAction(context, action, nextState) {
+        var reading = asObject(asObject(context).reading);
+        if (isBusy(reading) || !sdk || typeof sdk.submit !== "function") return;
+        sdk.submit(action, nextState);
+      }
+
+      function narrate(context, request, state) {
+        if (isBusy(asObject(context.reading))) return;
+        if (sdk && typeof sdk.narrate === "function") sdk.narrate(request, state);
+        // Old hosts can still read the package, but cannot safely execute a cutaway choice.
+        else if (!request.frame || request.frame.kind !== "cutaway") submitAction(context, request.kind === "choice" ? "我选择“" + request.choice + "”。" : "继续故事。", state);
+      }
+
+      function renderChoices(context, projection) {
+        var box = element("[data-choice-box]");
+        var list = element("[data-choice-list]");
+        var actionsArea = element("[data-action-area]");
+        var actions = element("[data-actions]");
+        var continueButton = element("[data-continue]");
+        if (!box || !list || !actionsArea || !actions || !continueButton) return;
+        list.replaceChildren();
+        actions.replaceChildren();
+        box.hidden = true;
+        actionsArea.hidden = true;
+        continueButton.hidden = true;
+        var returnButton = element("[data-return]");
+        if (returnButton) {
+          returnButton.hidden = projection.view.kind !== "cutaway" || isBusy(projection.reading) || projection.reading.complete !== true;
+          returnButton.onclick = function () { narrate(context, { kind: "return" }, withArchivedPage(normalState(context), context, "")); };
+        }
+
+        var reading = projection.reading;
+        if (isBusy(reading)) return;
+
+        if (projection.choice) {
+          box.hidden = false;
+          setText("[data-choice-caption]", projection.view.kind === "cutaway" ? (projection.view.actor ? "此刻由你决定 · " + projection.view.actor : "旁观镜头没有指定决策者") : "故事在此分岔 · 你的选择");
+          projection.choice.options.forEach(function (label, optionIndex) {
+            var button = addActionButton(list, label, "choice", function () {
+              var state = withArchivedPage(normalState(context), context, label);
+              state.lastChoice = { scope: projection.scope, signature: projection.choice.signature, option: label.slice(0, 160) };
+              if (projection.view.kind === "cutaway" && !projection.view.actor) return;
+              narrate(context, { kind: "choice", frame: projection.view, choice: label, ...(projection.choice.ids ? { choiceId: projection.choice.ids[optionIndex] } : {}) }, state);
+            });
+            button.dataset.choice = "true";
+            button.disabled = projection.view.kind === "cutaway" && (!projection.view.actor || typeof sdk.narrate !== "function");
+          });
+          return;
+        }
+
+        if (projection.choicePending) {
+          box.hidden = false;
+          var waiting = document.createElement("p");
+          waiting.className = "choice-caption";
+          waiting.textContent = "一个重要选择正在显现……";
+          list.appendChild(waiting);
+          return;
+        }
+
+        if (reading.complete !== true) return;
+        var worldActions = Array.isArray(asObject(context).actions) ? asObject(context).actions : [];
+        var suggestions = (projection.view.kind === "cutaway" ? [] : worldActions).map(itemLabel).filter(Boolean).slice(0, 3);
+        if (suggestions.length) {
+          actionsArea.hidden = false;
+          suggestions.forEach(function (action) {
+            var button = addActionButton(actions, action, "action", function () { submitAction(context, action, withArchivedPage(normalState(context), context, "")); });
+            button.dataset.suggestion = "true";
+          });
+        }
+        continueButton.hidden = false;
+        continueButton.textContent = projection.beat.boundary === "ending" ? "续写尾声" : projection.beat.boundary === "chapter" ? "进入下一章" : "继续故事";
+        continueButton.onclick = function () {
+          var state = withArchivedPage(normalState(context), context, "");
+          narrate(context, { kind: "continue", ...(projection.view.kind === "cutaway" ? { frame: projection.view } : {}) }, state);
+        };
+      }
+
+      function render(context) {
+        if (!root || !context) return;
+        var projection = project(context);
+        var state = currentState(context);
+        var reading = projection.reading;
+        var world = asObject(context.world);
+        var plugin = asObject(context.plugin);
+        var demo = asObject(asObject(plugin.data).demo);
+        var title = safeString(world.name) || safeString(demo.title) || safeString(plugin.name) || "连续小说";
+        setText("[data-world-title]", title);
+        setText("[data-scene]", projection.view.kind === "cutaway" ? viewLabel(projection.view, "") : [safeString(world.sceneName), viewLabel(projection.view, safeString(world.playerName))].filter(Boolean).join("　/　"));
+        if (projection.beat.chapter?.title) setText("[data-scene]", projection.beat.chapter.title + "　/　" + element("[data-scene]").textContent);
+        var status = element("[data-reader-status]");
+        var statusText = "连读中";
+        var tone = "normal";
+        if (safeString(reading.error)) { statusText = "阅读出现问题"; tone = "error"; }
+        else if (reading.loading === true) statusText = "正在生成后续正文";
+        else if (reading.typing === true) statusText = "正文正在显现";
+        else if (projection.choice) { statusText = "命运在此分岔"; tone = "choice"; }
+        else if (projection.choicePending) { statusText = "抉择即将展开"; tone = "choice"; }
+        else if (reading.complete === true) statusText = projection.beat.boundary === "ending" ? "故事暂告一段落" : projection.beat.boundary === "chapter" ? "本章完" : "这一段已读完";
+        else if (reading.paused === true || state.autoRead === false) statusText = "连读已暂停";
+        if (status) { status.textContent = statusText; status.dataset.tone = tone; }
+
+        renderPages(context, projection);
+        renderList(projection.view.kind === "cutaway" ? (projection.view.actor ? [projection.view.actor] : []) : context.characters, "[data-characters-section]", "[data-characters]");
+        renderList(projection.view.kind === "cutaway" ? [] : context.clues, "[data-clues-section]", "[data-clues]");
+        renderList(projection.view.kind === "cutaway" ? [] : context.inventory, "[data-inventory-section]", "[data-inventory]");
+
+        var toggle = element("[data-auto-toggle]");
+        if (toggle) {
+          var autoRead = state.autoRead !== false;
+          toggle.textContent = autoRead ? "暂停连读" : "恢复连读";
+          toggle.setAttribute("aria-pressed", autoRead ? "false" : "true");
+          toggle.onclick = function () {
+            var next = Object.assign({}, normalState(context), { autoRead: !autoRead });
+            saveState(next, context);
+          };
+        }
+
+        var manual = element("[data-manual-advance]");
+        if (manual) {
+          var canManual = reading.complete !== true && reading.typing !== true && reading.loading !== true &&
+            reading.paused !== true && !safeString(reading.error) && !projection.choice && !projection.choicePending;
+          manual.hidden = autoReadEnabled(context) && reading.paused !== true;
+          manual.hidden = manual.hidden || !canManual;
+          manual.onclick = function () { if (sdk && typeof sdk.advance === "function") sdk.advance(); };
+        }
+        renderChoices(context, projection);
+      }
+
+      function autoReadEnabled(context) {
+        return currentState(context).autoRead !== false;
+      }
+
+      function scheduleAdvance(context) {
+        if (timer !== null) window.clearTimeout(timer);
+        timer = null;
+        timerKey = "";
+        if (!sdk || typeof sdk.advance !== "function") return;
+        var projection = project(context);
+        var reading = projection.reading;
+        if (reading.paused === true || asObject(context.surface).active === false) return;
+        if (reading.complete === true && projection.lines.some(function (line) { return line.text.trim(); }) && !projection.beat.boundary && autoReadEnabled(context) && asObject(context.settings).auto_continue === true &&
+            !isBusy(reading) && !safeString(reading.error) && !projection.choice && !projection.choicePending && lastAutoContinuation !== projection.scope) {
+          timer = window.setTimeout(function () {
+            timer = null;
+            if (!latest || scopeOf(latest) !== projection.scope || lastAutoContinuation === projection.scope) return;
+            var current = project(latest);
+            if (current.reading.paused === true || asObject(latest.surface).active === false || current.beat.boundary || !autoReadEnabled(latest) || asObject(latest.settings).auto_continue !== true || isBusy(current.reading) || current.choice || current.choicePending || safeString(current.reading.error)) return;
+            lastAutoContinuation = projection.scope;
+            narrate(latest, { kind: "continue", ...(current.view.kind === "cutaway" ? { frame: current.view } : {}) }, withArchivedPage(normalState(latest), latest, ""));
+          }, 5000);
+          return;
+        }
+        if (!autoReadEnabled(context) || reading.typing === true || reading.paused === true ||
+            reading.loading === true || reading.complete === true || safeString(reading.error) ||
+            projection.choice || projection.choicePending) return;
+        var key = projection.scope + ":" + String(reading.index) + ":" + hash(safeString(reading.displayedText));
+        if (key === lastAdvanceKey) return;
+        if (timer !== null && timerKey === key) return;
+        timerKey = key;
+        timer = window.setTimeout(function () {
+          timer = null;
+          timerKey = "";
+          if (!latest || scopeOf(latest) !== projection.scope || lastAdvanceKey === key) return;
+          var current = project(latest);
+          var now = current.reading;
+          if (autoReadEnabled(latest) && now.typing !== true && now.paused !== true && now.loading !== true &&
+              now.complete !== true && !safeString(now.error) && !current.choice && !current.choicePending) {
+            lastAdvanceKey = key;
+            sdk.advance();
+          }
+        }, 110);
+      }
+
+      function acceptContext(next) {
+        var context = normalizeContext(next);
+        if (!context) return;
+        if (latest && scopeOf(latest) !== scopeOf(context) && !hasSameWorld(latest, context)) {
+          lastAdvanceKey = "";
+          if (timer !== null) window.clearTimeout(timer);
+          timer = null;
+        }
+        latest = context;
+        render(context);
+        scheduleAdvance(context);
+      }
+
+      if (root && sdk && typeof sdk.onContext === "function") {
+        var backlog = element("[data-backlog]");
+        if (backlog) backlog.onclick = function () {
+          var story = element("[data-story-text]");
+          if (story) { story.scrollTop = 0; story.focus(); }
+          if (latest && autoReadEnabled(latest)) { var state = normalState(latest); state.autoRead = false; saveState(state, latest); }
+        };
+        root.addEventListener("keydown", function (event) {
+          if (event.target.closest("button,input,textarea,select")) return;
+          if (event.code === "Space" && latest) {
+            event.preventDefault();
+            var projection = project(latest);
+            if (projection.choice || projection.choicePending || isBusy(projection.reading)) return;
+            if (projection.reading.complete) element("[data-continue]")?.click(); else sdk.advance();
+          }
+        });
+        root.addEventListener("click", function (event) {
+          var target = event.target;
+          if (!target || typeof target.closest !== "function") return;
+          var choice = target.closest("[data-choice]");
+          if (choice && !latest) event.preventDefault();
+        });
+        sdk.onContext(acceptContext);
+      }
+
+      window.EidosContinuousNovel = Object.freeze({
+        parseChoiceMarker: parseChoiceMarker,
+        visibleLines: visibleLines,
+        project: project,
+      });
+    })();
+  </script>
+</body>
+</html>

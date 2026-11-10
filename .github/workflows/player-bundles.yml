@@ -1,0 +1,34 @@
+name: Player bundles
+
+on: workflow_dispatch
+
+permissions:
+  contents: read
+
+jobs:
+  portable:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - runner: macos-15
+            asset: Eidos-macOS-arm64
+          - runner: windows-2025
+            asset: Eidos-Windows-x64
+    runs-on: ${{ matrix.runner }}
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24.22.2'
+          cache: npm
+          cache-dependency-path: eidos/package-lock.json
+      - run: npm run pack:player
+        working-directory: eidos
+      - uses: actions/upload-artifact@v7
+        with:
+          name: ${{ matrix.asset }}
+          path: eidos/build/player/${{ matrix.asset }}.zip*
+          if-no-files-found: error

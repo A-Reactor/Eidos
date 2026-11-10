@@ -1,0 +1,25 @@
+{
+  "name": "@eidos/engine",
+  "version": "0.5.2",
+  "license": "MIT",
+  "private": true,
+  "description": "Portable game scenes, components, maps, state and program receipts for Eidos",
+  "type": "commonjs",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./rpg": {
+      "types": "./dist/rpg.d.ts",
+      "require": "./dist/rpg.js",
+      "default": "./dist/rpg.js"
+    }
+  },
+  "files": ["dist"],
+  "engines": { "node": ">=20" },
+  "scripts": { "build": "node ../scripts/sdk/build.mjs" }
+}

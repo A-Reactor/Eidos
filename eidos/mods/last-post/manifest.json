@@ -1,0 +1,38 @@
+{
+  "format": "eidos-gameplay-plugin",
+  "version": 1,
+  "id": "last-post",
+  "name": "预写剧情与 AI 即兴",
+  "release": "0.3.0",
+  "stateVersion": 1,
+  "description": "阅读作者写定的信件与对白，选择代寄或暂留；也可自由调查和行动，由 AI 承接人物反应。正文、决定和回溯使用原游戏流程。",
+  "tags": [
+    "预写剧情",
+    "分支选择",
+    "AI 即兴"
+  ],
+  "prompts": {
+    "creation": "玩家选择本包时采用 data.story 的原创旧港邮局素材，或将它自然适配到玩家已有世界。作者确定信件及人物过去，玩家身份和行动自由，不要求按按钮或固定步骤推进。",
+    "action": "承接 last-post 的正式 facts 和已经展示的作者正文。data.story.canon 是作者确定的过去，不得改写真相、原信或已接受决定；尚未公开的信息不是主角知识。玩家可以调查、离开或用自己的方法处理，不强拉回预定路线。按钮只结算已经提交的局部决定，自由输入仍按当前世界合理产生后果。补写请求负责人物反应与环境细节，不重写原句、不撤销决定、不重复寄信。没有结算的剧情允许即兴；不暗示本模组能保证模型每句话都遵循设定。\n使用宿主原有正文、推荐行动和自由输入。没有独立面板、证据架、进度条或专用阅读界面。推荐操作与自由行动共用规则和正式事实；涉及已声明规则时只提议本轮实际满足前提的事件，不提前宣称结算成功。",
+    "review": "核对作者确定过去、已经确认的 facts、玩家实际行动和已展示正文是否一致。未读信件不能成为主角已知内容。保留玩家偏离作者路线的空间，不要求把所有自由行动改为固定事件。"
+  },
+  "rules": [],
+  "ui": {
+    "reading": "inherit",
+    "initialState": {
+      "started": false,
+      "examined": false,
+      "passage": "arrival",
+      "resolution": null
+    },
+    "presentation": "native"
+  },
+  "introduction": {
+    "impacts": [
+      "gameplay",
+      "narrative",
+      "tools"
+    ],
+    "images": []
+  }
+}

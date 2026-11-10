@@ -1,0 +1,63 @@
+// @vitest-environment jsdom
+import React from 'react';
+import { afterEach, beforeEach, expect, it, vi } from 'vitest';
+import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { SettingsScreen } from '@/components/game/SettingsScreen';
+import { EidosShell } from '@/components/shell/EidosShell';
+import { useGameStore } from '@/store/game-store';
+import { clearActionDiagnostics, recordActionDiagnostics } from '@/lib/game/action-diagnostics';
+import { createStreamRequestScope } from '@/lib/game/stream-lifecycle';
+import { preparePromptBudget } from '@/lib/ai/prompt-budget';
+import { resolveAiRoleConfig } from '@/lib/ai/providers/config';
+import { buildRiftCityStartState } from '@/lib/test/fixtures';
+import { parsePluginFile } from '@/lib/game/plugins/manifest';
+import { NativeTextAuthorTools } from '@/components/game/settings/NativeTextAuthorTools';
+import { AuthorToolsPage } from '@/components/game/settings/AuthorToolsPage';
+import { readFileSync } from 'node:fs';
+beforeEach(() => { vi.stubGlobal('matchMedia', vi.fn(() => ({ matches: false, addEventListener: vi.fn(), removeEventListener: vi.fn() }))); });
+afterEach(() => { cleanup(); clearActionDiagnostics(); vi.unstubAllGlobals(); localStorage.clear(); });
+it('opens actual request evidence in Settings without model calls or private iframe changes', () => {
+  const { world } = buildRiftCityStartState(); useGameStore.setState(useGameStore.getInitialState()); useGameStore.setState({ currentWorld: world, currentPlaythroughId: 'author-test' });
+  const budget = preparePromptBudget({ config: resolveAiRoleConfig('alice'), maxTokens: 8000, systemPrompt: '固定规则与世界书', userMessage: '询问守卫' }).report;
+  recordActionDiagnostics(createStreamRequestScope(useGameStore.getState()), { status: 'accepted', input: '询问守卫', context: { budget, cards: { stablePrefix: '静态原文', dynamicSuffix: '条件已展开：愿意交谈', selected: [{ assetId: 'a', pointer: '/description', reason: '本轮核心', chars: 4 }], omitted: [{ assetId: 'a', pointer: '/entries/1', reason: '主关键词未命中', chars: 7 }] } }, usage: { model: 'alice', promptTokens: 10, completionTokens: 1, totalTokens: 11 } });
+  const network = vi.fn(); vi.stubGlobal('fetch', network);
+  render(React.createElement(EidosShell, null, React.createElement(SettingsScreen)));
+  fireEvent.click(screen.getByRole('button', { name: '作者工具' }));
+  expect(screen.getByText('完整请求预算')).toBeTruthy();
+  expect(screen.getByText('本轮核心')).toBeTruthy(); expect(screen.getByText('主关键词未命中')).toBeTruthy();
+  expect(screen.getByText(/条件已展开：愿意交谈/)).toBeTruthy();
+  expect(screen.getByText(/缓存统计未知/)).toBeTruthy(); expect(network).not.toHaveBeenCalled();
+});
+it('saves a custom context window only through the existing settings draft', () => {
+  useGameStore.setState(useGameStore.getInitialState());
+  render(React.createElement(EidosShell, null, React.createElement(SettingsScreen)));
+  fireEvent.click(screen.getByRole('button', { name: 'AI 接入' }));
+  fireEvent.change(screen.getByLabelText('ALICE 上下文窗口'), { target: { value: '32768' } });
+  expect(JSON.parse(localStorage.getItem('eidos_settings') ?? '{}').aliceContextWindowTokens).not.toBe(32768);
+  fireEvent.click(screen.getByRole('button', { name: '保存设置' }));
+  expect(JSON.parse(localStorage.getItem('eidos_settings')!).aliceContextWindowTokens).toBe(32768);
+});
+it('shows an incomplete file operation separately from an accepted story record', () => {
+  const { world } = buildRiftCityStartState();
+  useGameStore.setState({ ...useGameStore.getInitialState(), currentWorld: world, currentPlaythroughId: 'failed-files' });
+  recordActionDiagnostics(createStreamRequestScope(useGameStore.getState()), { status: 'accepted', input: '追加粥米建议', fileOutcome: 'failed', selectedFileEffects: [] });
+  render(React.createElement(AuthorToolsPage));
+  expect(screen.getByText('已接受')).toBeTruthy();
+  expect(screen.getByText(/文件操作未完成/)).toBeTruthy();
+  expect(screen.getByText(/终局选择.*0/)).toBeTruthy();
+});
+it('loads the live workbench only when explicitly opened in author tools', async () => {
+  const { world } = buildRiftCityStartState();
+  const plugin = parsePluginFile(JSON.parse(readFileSync('mods/dist/palimpsest-stage.eidos-plugin.json', 'utf8')))[0];
+  useGameStore.setState({ ...useGameStore.getInitialState(), currentWorld: { ...world, gameplayPlugins: [plugin] } });
+  const network = vi.fn(); vi.stubGlobal('fetch', network);
+  const { container } = render(React.createElement(NativeTextAuthorTools));
+  expect(container.querySelector('iframe')).toBeNull();
+  fireEvent.click(screen.getByText('文字插件作者工作台'));
+  const frame = await screen.findByTitle(plugin.name) as HTMLIFrameElement;
+  expect(frame.srcdoc).toContain('请模型写新剧本');
+  expect(frame.srcdoc).not.toContain('离线实验室不调用模型');
+  expect(network).not.toHaveBeenCalled();
+  fireEvent.click(screen.getByText('文字插件作者工作台'));
+  await waitFor(() => expect(container.querySelector('iframe')).toBeNull());
+});

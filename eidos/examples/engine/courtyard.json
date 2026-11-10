@@ -1,0 +1,27 @@
+{
+  "id": "courtyard",
+  "name": "锁门与庭院",
+  "currentSceneId": "hall",
+  "state": { "keys": 1, "health": 100 },
+  "scenes": {
+    "hall": { "id": "hall", "name": "门厅", "description": "一道锁着的门通往庭院。", "state": {} },
+    "garden": { "id": "garden", "name": "庭院", "description": "院子里有一棵树。", "state": {} }
+  },
+  "components": {
+    "door": { "id": "door", "kind": "door", "name": "庭院门", "sceneId": "hall", "state": { "open": false } },
+    "guide": { "id": "guide", "kind": "npc", "name": "向导", "sceneId": "hall", "state": {} },
+    "tree": { "id": "tree", "kind": "object", "name": "树", "sceneId": "garden", "state": {} },
+    "player": { "id": "player", "kind": "actor", "name": "玩家", "state": { "position": { "x": 0, "y": 0 } } }
+  },
+  "map": {
+    "nodes": {
+      "entrance": { "id": "entrance", "sceneId": "hall", "name": "门厅", "position": { "x": 0, "y": 0 }, "state": {} },
+      "yard": { "id": "yard", "sceneId": "garden", "name": "庭院", "position": { "x": 10, "y": 0 }, "state": {} }
+    },
+    "edges": { "path": { "id": "path", "from": "entrance", "to": "yard", "blocked": true, "bidirectional": true, "state": {} } }
+  },
+  "commands": {
+    "unlock": { "id": "unlock", "name": "开门", "description": "游戏程序检查铜钥匙并解锁通路。", "target": { "kind": "component", "id": "door" }, "parameters": { "type": "object", "properties": { "key": { "type": "string" } }, "required": ["key"] } },
+    "travel": { "id": "travel", "name": "前往庭院", "target": { "kind": "mapEdge", "id": "path" } }
+  }
+}

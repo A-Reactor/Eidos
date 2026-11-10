@@ -1,0 +1,97 @@
+{
+  "data": {
+    "case": {
+      "title": "雾港灯塔的停电证词",
+      "intro": "蓝色封存袋失踪后，守灯人闻澜声称自己亲眼看见引导灯亮着。逐条听取证词：追问会让她补足时间与观察细节，随后才可以针对修改后的句子出示调查记录。",
+      "clues": [
+        {
+          "id": "breaker-card",
+          "name": "断路巡检卡",
+          "aliases": [
+            "巡检卡",
+            "断路记录"
+          ],
+          "summary": "引导灯主闸在20:08前已被拆下，值班签名确认复核。"
+        },
+        {
+          "id": "handover-slip",
+          "name": "夜班交接单",
+          "aliases": [
+            "交接单",
+            "夜班登记"
+          ],
+          "summary": "同编号蓝色封存袋20:29至20:40由接班员连续保管，双方签名确认期间未归还抽屉。"
+        },
+        {
+          "id": "salted-key",
+          "name": "盐渍钥匙",
+          "aliases": [
+            "盐渍钥匙",
+            "沾盐钥匙"
+          ],
+          "summary": "一把备用钥匙带着海盐与旧机油。"
+        }
+      ],
+      "demoDiscoveries": [
+        "salted-key",
+        "breaker-card",
+        "handover-slip"
+      ],
+      "testimony": [
+        {
+          "id": "lamp-time",
+          "speaker": "闻澜（守灯人）",
+          "original": "我亲眼看见引导灯在夜里亮着。",
+          "revised": "我确认是在20:10，而且光是从引导灯镜片内部透出来的。",
+          "evidenceId": "breaker-card",
+          "prompt": "请说清楚你看到的时间和光源位置。"
+        },
+        {
+          "id": "bag-time",
+          "speaker": "栖舟（档案员）",
+          "original": "我离开时，蓝色封存袋还在抽屉里。",
+          "revised": "更准确地说，20:35我仍确认同编号封存袋留在抽屉中。",
+          "evidenceId": "handover-slip",
+          "prompt": "你最后一次确认抽屉里的物品是在几点？"
+        }
+      ],
+      "closing": "巡检卡和交接单分别钉住了灯光与封存袋的时间。",
+      "exitRule": "leave-hearing"
+    }
+  },
+  "id": "harbor-hearing",
+  "name": "剧情触发与证词质询：雾港",
+  "activation": {
+    "requires": {
+      "hearing": true
+    }
+  },
+  "rules": [
+    {
+      "id": "enter-hearing",
+      "description": "玩家要求开始或恢复雾港灯塔案的证词质询时进入质询席",
+      "requires": {
+        "hearing": false
+      },
+      "sets": {
+        "hearing": true
+      },
+      "once": false
+    },
+    {
+      "id": "leave-hearing",
+      "description": "玩家要求休庭、暂停质询或回到连续阅读时归还舞台",
+      "requires": {
+        "hearing": true
+      },
+      "sets": {
+        "hearing": false
+      },
+      "once": false
+    }
+  ],
+  "prompts": {
+    "action": "当前是雾港案质询。玩家希望休庭时提议 leave-hearing，恢复正文阅读；不要强制继续质询。"
+  },
+  "description": "随剧情进入雾港灯塔案的证词质询，逐句追问并出示证据；可暂离或恢复调查，继续在原有界面自由行动。"
+}

@@ -1,0 +1,111 @@
+/* Text is resolved per painted surface, not by the light/dark mode label.
+   Keep these scoped to host UI: authored iframe stages and image art own their colors. */
+html[data-palette][data-theme] {
+  --eidos-text: var(--eidos-palette-ink);
+  --eidos-text-muted: var(--eidos-palette-muted);
+  --eidos-text-accent: var(--eidos-palette-accentText);
+  --eidos-text-on-accent: var(--eidos-palette-onAccent);
+}
+
+html[data-palette][data-theme] :is(.eidos-refined-screen, .eidos-refined-dialog, .eidos-game-frame, .eidos-dossier-screen, .eidos-worldline, .eidos-screen, .eidos-title-stage) {
+  --eidos-text: var(--eidos-palette-ink);
+  --eidos-text-muted: var(--eidos-palette-muted);
+  --eidos-text-accent: var(--eidos-palette-accentText);
+  --eidos-text-on-accent: var(--eidos-palette-onAccent);
+  --eidos-archive-ink: var(--eidos-text);
+  --eidos-archive-muted: var(--eidos-text-muted);
+  --eidos-ink: var(--eidos-text);
+  --eidos-accent: var(--eidos-text-accent);
+  color: var(--eidos-text);
+}
+
+/* Pair surface ink with surface fill, including custom palettes of opposite polarities. */
+html[data-palette][data-theme] :is(.eidos-refined-dialog, .eidos-story-paper, .eidos-record-page, .eidos-paper, .eidos-glass, .eidos-card, .eidos-console-drawer, .eidos-nativebar, .eidos-inputglass, .eidos-dialogue-readout, .eidos-dossier-card, .eidos-archive-stat, .eidos-map-summary, .eidos-micro-action, .eidos-field,
+  .eidos-archive-button, .eidos-dossier-action, .eidos-worldline-fit, .eidos-worldline-rail,
+  .eidos-reading-excerpt, .eidos-terminal-panel, .eidos-npc-note,
+  .eidos-world-create__input, .eidos-world-create__primary, .eidos-world-create__ghost,
+  .eidos-world-create__choice, .eidos-world-create__style, .eidos-world-create__summary,
+  .eidos-identity-card, .eidos-identity-form, .eidos-identity-description,
+  .eidos-map-inspector, .eidos-map-zoom, .eidos-audio-model, .eidos-audio-progress,
+  .eidos-quick-tools, .eidos-page-organizer__trigger, [data-text-surface="surface"]) {
+  --eidos-text: var(--eidos-palette-surfaceInk);
+  --eidos-text-muted: var(--eidos-palette-surfaceMuted);
+  --eidos-text-accent: var(--eidos-palette-surfaceAccentText);
+  --eidos-text-on-accent: var(--eidos-palette-onSurfaceAccent);
+  --eidos-archive-ink: var(--eidos-text);
+  --eidos-archive-muted: var(--eidos-text-muted);
+  --eidos-ink: var(--eidos-text);
+  --eidos-accent: var(--eidos-text-accent);
+  background: var(--eidos-palette-surface);
+  color: var(--eidos-text);
+}
+html[data-palette][data-theme] :is(.eidos-title-stage, .eidos-dossier-screen) { background: var(--eidos-palette-background); }
+html[data-palette][data-theme] .eidos-settings-sample small { color: var(--sample-muted); opacity: 1; }
+
+/* Compatibility for neutral utilities in existing host components. New code uses
+   eidos-text-primary / eidos-text-muted instead of translucent black or white. */
+html[data-palette][data-theme] :is(.eidos-refined-screen, .eidos-refined-dialog, .eidos-console-drawer, .eidos-story-paper, .eidos-dossier-screen, .eidos-screen, .eidos-title-stage) :is([class~="text-black"], [class~="text-white"], [class*="text-zinc-100"], [class*="text-zinc-200"], [class*="text-zinc-300"], [class*="text-zinc-700"], [class*="text-zinc-800"], [class*="text-zinc-900"]) {
+  color: var(--eidos-text);
+}
+html[data-palette][data-theme] :is(.eidos-refined-screen, .eidos-refined-dialog, .eidos-console-drawer, .eidos-story-paper, .eidos-dossier-screen, .eidos-screen, .eidos-title-stage) :is([class*="text-black/"], [class*="text-white/"], [class*="text-zinc-400"], [class*="text-zinc-500"], [class*="text-zinc-600"]) {
+  color: var(--eidos-text-muted);
+}
+html[data-palette][data-theme] .eidos-text-primary { color: var(--eidos-text); }
+html[data-palette][data-theme] .eidos-text-muted { color: var(--eidos-text-muted); }
+html[data-palette][data-theme] .eidos-text-accent { color: var(--eidos-text-accent); }
+
+html[data-palette][data-theme] :is(.eidos-refined-screen, .eidos-refined-dialog, .eidos-console-drawer, .eidos-dossier-screen) :is(input:not([type="color"]):not([type="range"]):not([type="checkbox"]), textarea, select) {
+  color: var(--eidos-palette-surfaceInk);
+  background-color: var(--eidos-palette-surface);
+  caret-color: var(--eidos-palette-surfaceInk);
+}
+html[data-palette][data-theme] :is(input, textarea)::placeholder { color: var(--eidos-palette-surfaceMuted); opacity: 1; }
+html[data-palette][data-theme] :is(input, select, textarea) option { color: var(--eidos-palette-surfaceInk); background: var(--eidos-palette-surface); }
+
+/* Legacy archive chrome contains fixed black text even without utility classes. */
+html[data-palette][data-theme] :is(.eidos-archive-stat b, .eidos-archive-stat small, .eidos-archive-stat span, .eidos-map-summary h3, .eidos-map-summary p, .eidos-map-summary__routes, .eidos-dossier-action, .eidos-console-tab, .eidos-console-close, .eidos-engine-title) {
+  color: var(--eidos-text);
+}
+html[data-palette][data-theme] :is(.eidos-archive-stat small, .eidos-map-summary p, .eidos-map-summary__routes > span:first-child, .eidos-console-close) { color: var(--eidos-text-muted); }
+html[data-palette][data-theme] .eidos-archive-stat::after { color: var(--eidos-text-muted); }
+html[data-palette][data-theme] :is(.eidos-console-drawer, .eidos-refined-dialog) [class*="bg-white/"] { background-color: var(--eidos-palette-surface); }
+html[data-palette][data-theme] .eidos-dossier-action { background: var(--eidos-palette-surface); border-color: var(--eidos-archive-line); }
+html[data-palette][data-theme] :is(.eidos-archive-stat small, .eidos-map-summary p, .eidos-map-summary__routes > span:first-child) { opacity: 1; }
+html[data-palette][data-theme] :is(.eidos-refined-screen, .eidos-refined-dialog, .eidos-console-drawer) :is(p, span, small, label):is([class~="opacity-50"], [class~="opacity-55"], [class~="opacity-60"], [class~="opacity-65"], [class~="opacity-70"]) { opacity: 1; color: var(--eidos-text-muted); }
+html[data-palette][data-theme] .eidos-archive-stat--parallel { background: transparent; }
+html[data-palette][data-theme] .eidos-archive-stat--parallel::before { background: var(--eidos-palette-surface); border-color: var(--eidos-archive-line); }
+html[data-palette][data-theme] .eidos-archive-stat--parallel.is-accent::before { background: var(--eidos-text-accent); }
+html[data-palette][data-theme] .eidos-archive-stat--parallel.is-dark::before { background: #202328; }
+html[data-palette][data-theme] .eidos-console-tab > span { opacity: 1; }
+html[data-palette][data-theme] .eidos-settings-category[aria-pressed="true"] { color: var(--eidos-text); }
+
+/* Accent fills need their own foreground; background ink is not always suitable. */
+html[data-palette][data-theme] :is(.eidos-action-button[data-variant="primary"], .eidos-archive-button[data-variant="primary"], .eidos-world-create__primary:not(:disabled), .eidos-identity-action.is-primary, .eidos-title-primary, .eidos-plugin-primary, .eidos-archive-stat.is-accent, .eidos-console-tab[data-active="true"], [class*="bg-[color:var(--eidos-accent)]"], [class*="bg-[var(--eidos-accent)]"]) {
+  --eidos-text: var(--eidos-text-on-accent);
+  --eidos-text-muted: var(--eidos-text-on-accent);
+  color: var(--eidos-text-on-accent);
+  background: var(--eidos-text-accent);
+}
+html[data-palette][data-theme] :is(.eidos-archive-stat.is-accent, .eidos-archive-stat.is-dark) :is(b, small, span) { color: var(--eidos-text); }
+html[data-palette][data-theme] :is(.eidos-archive-stat.is-dark, .eidos-archive-cover) {
+  --eidos-text: #eeeeee;
+  --eidos-text-muted: #bdbdbd;
+  --eidos-ink: var(--eidos-text);
+  --eidos-archive-ink: var(--eidos-text);
+  --eidos-archive-muted: var(--eidos-text-muted);
+  color: var(--eidos-text);
+  background: #202328;
+}
+
+/* Intentional fixed-color controls opt into an explicit foreground. */
+html[data-palette][data-theme] [data-text-surface="light"] { --eidos-text: #191919; --eidos-text-muted: #555555; --eidos-ink: var(--eidos-text); --eidos-archive-ink: var(--eidos-text); --eidos-archive-muted: var(--eidos-text-muted); color: var(--eidos-text); }
+html[data-palette][data-theme] [data-text-surface="dark"] { --eidos-text: #eeeeee; --eidos-text-muted: #bbbbbb; --eidos-ink: var(--eidos-text); --eidos-archive-ink: var(--eidos-text); --eidos-archive-muted: var(--eidos-text-muted); color: var(--eidos-text); }
+
+html[data-theme="dark"] .eidos-game-frame .eidos-tool-rail button:is(:hover, :focus-visible) { color: #fff; }
+html[data-theme="dark"] .eidos-game-frame .eidos-console-drawer :is(.eidos-console-tab, .eidos-archive-stat):is(:hover, :focus-visible) {
+  --eidos-text: #fff;
+  --eidos-text-muted: #fff;
+  color: #fff;
+}
+html[data-theme="dark"] .eidos-game-frame .eidos-console-drawer :is(.eidos-console-tab, .eidos-archive-stat):is(:hover, :focus-visible) :is(b, span, small) { color: #fff; }
+html[data-theme="light"] .eidos-game-frame .eidos-dialogue-readout__label { color: #808080; }

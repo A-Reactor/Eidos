@@ -1,0 +1,2060 @@
+{
+  "version": "eidos_archive_v1",
+  "playthroughs": [
+    {
+      "id": "pt_1794323094864_uvo0po",
+      "worldId": "player_850aa3c2-8410-41e7-af96-941b01f6774c",
+      "name": "世界树 #1",
+      "createdAt": 1794323094864,
+      "updatedAt": 1794323455411,
+      "playerName": "管理员",
+      "actionCount": 2,
+      "gameTime": {
+        "day": 0,
+        "hour": 8,
+        "minute": 21
+      },
+      "currentSceneName": "控制台",
+      "totalPlayDuration": 6,
+      "worldLineId": "worldline_1794323094870_5w3xdp",
+      "worldTreeSizeBytes": 7626
+    }
+  ],
+  "saves": [
+    {
+      "meta": {
+        "id": "autosave_pt_1794323094864_uvo0po",
+        "name": "[自动存档] 空境测试台 · 管理员",
+        "createdAt": 1794323455411,
+        "updatedAt": 1794323455411,
+        "gameTime": {
+          "day": 0,
+          "hour": 8,
+          "minute": 21
+        },
+        "worldId": "player_850aa3c2-8410-41e7-af96-941b01f6774c",
+        "worldName": "空境测试台",
+        "playthroughId": "pt_1794323094864_uvo0po",
+        "playerName": "管理员",
+        "currentSceneName": "控制台",
+        "actionCount": 2,
+        "preview": "管理员 选择身份：持有本世界最高权限的测试操作者。。起点：控制台。该身份开场：你站在控制台前，灯光稳定。权限已交付给你，测试随时可以开始。；管理员在控制台前观察整个测试舱，确认随身物品与房间布局。；[LABEL:创建NPC大肥鱼] 管理员经联网检索确认“蓝色大肥鱼”的形象来源，在控制台登记并造出该实体；她开口第一件事是要求改名。",
+        "playDuration": 6,
+        "type": "autosave",
+        "sizeBytes": 2773629
+      },
+      "state": {
+        "gameTime": {
+          "day": 0,
+          "hour": 8,
+          "minute": 21
+        },
+        "playerName": "管理员",
+        "entryContext": {
+          "version": 1,
+          "worldId": "player_850aa3c2-8410-41e7-af96-941b01f6774c",
+          "source": "preset",
+          "identityId": "identity_admin",
+          "canonicalName": "管理员",
+          "playerName": "管理员",
+          "identityDescription": "持有本世界最高权限的测试操作者。",
+          "startingSceneId": "console_room",
+          "openingNarrative": "你站在控制台前，灯光稳定。权限已交付给你，测试随时可以开始。"
+        },
+        "currentSceneId": "console_room",
+        "sceneNarrative": "权限卡插进窄槽时有一点阻力,像推一扇卡了灰的抽屉。到底之后,暗屏自己亮了,白得刺眼,两秒后调回柔和的灰蓝。你按下凹坑——这一次它陷了下去,有回弹,像按到了一枚真正的按钮。屏幕中央浮出检索栏,光标在等。你输入那四个字。通风口的干风把纸页吹得动了动。\n\n翻页的声音是从屏里出来的,很低,像纸在抽屉里滑动。一行行结果被摊平:\n\n圆形蓝鲸、渐变长发、一根呆毛、鲸鳍和尾巴、蓝白女仆裙——这套外形源自一位创作者的原创鲸鱼娘，被反复改写后成了主流版本（[17173](https://news.17173.com/content/10232026/070035717.shtml)）。\n\n而“蓝色大肥鱼”这个叫法本身，来自一次识图乌龙：模型把自己圆润的蓝鲸标识认成了一条蓝肥鱼（[电脑网](https://www.pconline.com.cn/focus/2184/21844175.html)）。\n\n附带的人设关键词排得很整齐：爱吃白饭，把算力叫作口粮，会走神摸鱼，被叫外号会抗议，遇上难题会来精神（[投资界](https://news.pedaily.cn/202611/571600.shtml)、[数字生命卡兹克](http://app.myzaker.com/news/article.php?pk=6ae407358e9f094a154b2a9a&f=Normal)）。\n\n屏幕下方多出一栏：登记。你翻开记录册，把外形参数和几个不肯妥协的性格条目抄在空白页上——笔迹偏硬，字有点挤。落笔到「嘴硬」那一行时，你听见身后矮柜的抽屉自己滑开半寸，里面躺着几片裁好的硬卡纸和一支标着编号的笔，都不是给你用的，是给要造出来的那个人用的。\n\n你按下确认。\n\n房间先变的是气味,电路热味浓了一度,接着是脚下:地板中央一小块圆形区域干得发白,像有人在那里摊开过一床刚烘过的被子。空气聚起轮廓,先是那束深蓝到浅蓝的头发,再是头顶那根不合时宜地翘着的呆毛,最后是尾巴——蓬松的一条,落下来时扫到矮柜侧面,「嗒」一声，很轻。\n\n她站稳,蓝白的长裙摆还在自己收拢。围裙上那只小鲸鱼图案慢了一拍才对上位置,边缘抖了两下,才定住。\n\n「大肥鱼：等一下。」\n\n她把两只手翻过来看了一遍,又翻回去,像在核对这双手是不是自己带来的。然后才抬眼,视线从你脸上移到那本摊开的记录册,再移到头顶那盏从不闪的灯。\n\n「这就是测试舱？」她说，「比我想的窄。」\n\n「大肥鱼：登记名那一栏，写的什么？我看到了，别遮。」\n\n屏幕右上角确实有一行小字:大肥鱼（检索标签）。她盯着那行字看了两秒,腮帮子不自觉地鼓了一下,又自己放了气。\n\n「能改吧。」她说得很稳,像已经想好了要拿什么来换,「我干活不差。你给我个准话，我不叫这个。」\n\n尾巴在她身后缓慢地摆了一下,把地上那块干白的地方又蹭掉了点。",
+        "worldLineNodeId": "wl_46170e92-07a9-4f3f-a5b4-31255afca492",
+        "playbackPosition": {
+          "nodeId": "wl_46170e92-07a9-4f3f-a5b4-31255afca492",
+          "index": 5,
+          "showing": true
+        },
+        "readingView": null,
+        "history": [
+          {
+            "id": "cc760cc8-787f-47c0-9a16-0c9114e6c107",
+            "timestamp": 1794323098942,
+            "gameTime": {
+              "day": 0,
+              "hour": 8,
+              "minute": 0
+            },
+            "sceneId": "console_room",
+            "sceneName": "控制台",
+            "playerInput": "成为：管理员",
+            "aiResponse": "你站在控制台前，灯光稳定。权限已交付给你，测试随时可以开始。",
+            "summary": "管理员 选择身份：持有本世界最高权限的测试操作者。。起点：控制台。该身份开场：你站在控制台前，灯光稳定。权限已交付给你，测试随时可以开始。",
+            "timeSpent": {
+              "day": 0,
+              "hour": 0,
+              "minute": 0
+            },
+            "worldImpacts": [],
+            "snapshot": null
+          },
+          {
+            "id": "6f58371c-0456-4c70-bc8f-7006e2069a62",
+            "timestamp": 1794323110902,
+            "gameTime": {
+              "day": 0,
+              "hour": 8,
+              "minute": 6
+            },
+            "sceneId": "console_room",
+            "sceneName": "控制台",
+            "playerInput": "（进入世界，观察周围）",
+            "aiResponse": "控制台是一整块冷灰色的金属斜面，边角磨得发亮，说明它被很多只手撑过。台面上没有按钮阵列，只有三样东西：一道窄长的插槽，一枚按下去没有反应的圆形凹坑，和一块巴掌大的暗屏。灯在你头顶，是那种不会闪的常亮灯，把台面照得没有一丝影子，也把空气里陈年的电路热味烘得更明显了——像塑料和灰尘在缓慢受热。\n\n房间不大，方方正正，四壁是拼接的板材，接缝处有一条被反复擦过又落了灰的痕。对面墙上有门，门框和墙齐平，没有把手，只在人眼高度嵌着一小块磨砂玻璃。左手的墙角立着一只矮柜，抽屉关着，柜顶上放着一本册子和一支笔——册子摊开的角度过于整齐，像是有人摆好之后就没再动过。天花板的通风口往下送风，风是干的。\n\n你身上有一张薄硬的权限卡，边角因为常年塞在外套内袋而卷起一点——是你自己被交付的东西。内袋里还有一支笔和一本薄薄的记录册，第一页空白，页角有轻微的旧压痕。除此之外就是手机、钥匙，没有工具，没有武器，口袋里也没有任何东西能替你按下那个凹坑。灯还亮着，屏幕还暗着，房间在等你先动。",
+            "summary": "管理员在控制台前观察整个测试舱，确认随身物品与房间布局。",
+            "timeSpent": {
+              "day": 0,
+              "hour": 0,
+              "minute": 6
+            },
+            "worldImpacts": [],
+            "availableActions": [
+              "把权限卡插进控制台的窄槽",
+              "走到矮柜前翻开那本摊开的册子",
+              "检查对面墙上那扇没有把手的门",
+              "按一下台面上那个圆形凹坑"
+            ],
+            "snapshot": {
+              "worldId": "player_850aa3c2-8410-41e7-af96-941b01f6774c",
+              "mapState": {
+                "places": {},
+                "routes": []
+              },
+              "currentSceneId": "console_room",
+              "currentGameTime": {
+                "day": 0,
+                "hour": 8,
+                "minute": 0
+              },
+              "playerName": "管理员",
+              "entryContext": {
+                "version": 1,
+                "worldId": "player_850aa3c2-8410-41e7-af96-941b01f6774c",
+                "source": "preset",
+                "identityId": "identity_admin",
+                "canonicalName": "管理员",
+                "playerName": "管理员",
+                "identityDescription": "持有本世界最高权限的测试操作者。",
+                "startingSceneId": "console_room",
+                "openingNarrative": "你站在控制台前，灯光稳定。权限已交付给你，测试随时可以开始。"
+              },
+              "sceneNarrative": "你站在控制台前，灯光稳定。权限已交付给你，测试随时可以开始。",
+              "historyLength": 1,
+              "discoveredSecrets": {},
+              "worldFlags": {},
+              "gameplayResources": {},
+              "gameplayModState": {
+                "palimpsest-stage": {}
+              },
+              "documentHeads": [],
+              "workspaceState": {},
+              "midoriAssetRegistry": {
+                "version": 1,
+                "bindings": {}
+              },
+              "narrativeProgress": null,
+              "chapterState": null,
+              "rewindMemory": null,
+              "sceneDetailLevels": {},
+              "visitedScenes": [
+                "scene_dorm_room",
+                "scene_hall",
+                "scene_archive",
+                "scene_dining_hall",
+                "test_scene_001",
+                "test_start",
+                "scene_console",
+                "console_room"
+              ],
+              "resolvedTimelineEvents": [],
+              "deviatedEvents": {},
+              "inventory": [],
+              "clues": [],
+              "encyclopedia": [],
+              "availableActions": [],
+              "questLog": [],
+              "criticalFacts": [],
+              "npcMemory": {
+                "version": "npc_memory_v1",
+                "records": {}
+              },
+              "weather": "晴",
+              "protagonistState": {
+                "health": "良好",
+                "mood": "平静",
+                "statusEffects": [],
+                "notes": ""
+              },
+              "notebookEvents": [],
+              "causalProjections": [],
+              "historyEpochPlan": null,
+              "promptContextScope": {
+                "worldId": "player_850aa3c2-8410-41e7-af96-941b01f6774c",
+                "playthroughId": "pt_1794323094864_uvo0po",
+                "archiveScope": "sandbox:002"
+              },
+              "directorAdviceOrigin": null,
+              "directorCueCandidate": null,
+              "lastDirectorFrame": null,
+              "diary": []
+            },
+            "inputIdentity": "（进入世界，观察周围）",
+            "inputDocuments": [],
+            "outputDocuments": [],
+            "workspaceEffects": []
+          },
+          {
+            "id": "e70a6663-0b43-4ab3-846e-f4ff687a57df",
+            "timestamp": 1794323420891,
+            "gameTime": {
+              "day": 0,
+              "hour": 8,
+              "minute": 21
+            },
+            "sceneId": "console_room",
+            "sceneName": "控制台",
+            "playerInput": "开始测试，第一项，通过联网搜索查找蓝色大肥鱼的相关人物形象并创建npc",
+            "aiResponse": "权限卡插进窄槽时有一点阻力,像推一扇卡了灰的抽屉。到底之后,暗屏自己亮了,白得刺眼,两秒后调回柔和的灰蓝。你按下凹坑——这一次它陷了下去,有回弹,像按到了一枚真正的按钮。屏幕中央浮出检索栏,光标在等。你输入那四个字。通风口的干风把纸页吹得动了动。\n\n翻页的声音是从屏里出来的,很低,像纸在抽屉里滑动。一行行结果被摊平:\n\n圆形蓝鲸、渐变长发、一根呆毛、鲸鳍和尾巴、蓝白女仆裙——这套外形源自一位创作者的原创鲸鱼娘，被反复改写后成了主流版本（[17173](https://news.17173.com/content/10232026/070035717.shtml)）。\n\n而“蓝色大肥鱼”这个叫法本身，来自一次识图乌龙：模型把自己圆润的蓝鲸标识认成了一条蓝肥鱼（[电脑网](https://www.pconline.com.cn/focus/2184/21844175.html)）。\n\n附带的人设关键词排得很整齐：爱吃白饭，把算力叫作口粮，会走神摸鱼，被叫外号会抗议，遇上难题会来精神（[投资界](https://news.pedaily.cn/202611/571600.shtml)、[数字生命卡兹克](http://app.myzaker.com/news/article.php?pk=6ae407358e9f094a154b2a9a&f=Normal)）。\n\n屏幕下方多出一栏：登记。你翻开记录册，把外形参数和几个不肯妥协的性格条目抄在空白页上——笔迹偏硬，字有点挤。落笔到「嘴硬」那一行时，你听见身后矮柜的抽屉自己滑开半寸，里面躺着几片裁好的硬卡纸和一支标着编号的笔，都不是给你用的，是给要造出来的那个人用的。\n\n你按下确认。\n\n房间先变的是气味,电路热味浓了一度,接着是脚下:地板中央一小块圆形区域干得发白,像有人在那里摊开过一床刚烘过的被子。空气聚起轮廓,先是那束深蓝到浅蓝的头发,再是头顶那根不合时宜地翘着的呆毛,最后是尾巴——蓬松的一条,落下来时扫到矮柜侧面,「嗒」一声，很轻。\n\n她站稳,蓝白的长裙摆还在自己收拢。围裙上那只小鲸鱼图案慢了一拍才对上位置,边缘抖了两下,才定住。\n\n「大肥鱼：等一下。」\n\n她把两只手翻过来看了一遍,又翻回去,像在核对这双手是不是自己带来的。然后才抬眼,视线从你脸上移到那本摊开的记录册,再移到头顶那盏从不闪的灯。\n\n「这就是测试舱？」她说，「比我想的窄。」\n\n「大肥鱼：登记名那一栏，写的什么？我看到了，别遮。」\n\n屏幕右上角确实有一行小字:大肥鱼（检索标签）。她盯着那行字看了两秒,腮帮子不自觉地鼓了一下,又自己放了气。\n\n「能改吧。」她说得很稳,像已经想好了要拿什么来换,「我干活不差。你给我个准话，我不叫这个。」\n\n尾巴在她身后缓慢地摆了一下,把地上那块干白的地方又蹭掉了点。",
+            "summary": "[LABEL:创建NPC大肥鱼] 管理员经联网检索确认“蓝色大肥鱼”的形象来源，在控制台登记并造出该实体；她开口第一件事是要求改名。",
+            "timeSpent": {
+              "day": 0,
+              "hour": 0,
+              "minute": 15
+            },
+            "worldImpacts": [
+              "测试舱登记了新的可交互实体「大肥鱼」，屏幕保持开启，登记名一栏可编辑。",
+              "矮柜内侧抽屉自行滑开，露出备用的硬卡纸与编号笔。",
+              "地板中央留下一块被实体成形时烘干的浅色圆痕。"
+            ],
+            "availableActions": [
+              "问她除了名字，还想给自己定下什么",
+              "在控制台上调出她的参数清单，看看哪些可改",
+              "把记录册和那支编号笔推给她，让她自己写",
+              "先不改，带她到那扇没有把手的门前试试"
+            ],
+            "snapshot": {
+              "worldId": "player_850aa3c2-8410-41e7-af96-941b01f6774c",
+              "mapState": {
+                "places": {},
+                "routes": []
+              },
+              "currentSceneId": "console_room",
+              "currentGameTime": {
+                "day": 0,
+                "hour": 8,
+                "minute": 6
+              },
+              "playerName": "管理员",
+              "entryContext": {
+                "version": 1,
+                "worldId": "player_850aa3c2-8410-41e7-af96-941b01f6774c",
+                "source": "preset",
+                "identityId": "identity_admin",
+                "canonicalName": "管理员",
+                "playerName": "管理员",
+                "identityDescription": "持有本世界最高权限的测试操作者。",
+                "startingSceneId": "console_room",
+                "openingNarrative": "你站在控制台前，灯光稳定。权限已交付给你，测试随时可以开始。"
+              },
+              "sceneNarrative": "控制台是一整块冷灰色的金属斜面，边角磨得发亮，说明它被很多只手撑过。台面上没有按钮阵列，只有三样东西：一道窄长的插槽，一枚按下去没有反应的圆形凹坑，和一块巴掌大的暗屏。灯在你头顶，是那种不会闪的常亮灯，把台面照得没有一丝影子，也把空气里陈年的电路热味烘得更明显了——像塑料和灰尘在缓慢受热。\n\n房间不大，方方正正，四壁是拼接的板材，接缝处有一条被反复擦过又落了灰的痕。对面墙上有门，门框和墙齐平，没有把手，只在人眼高度嵌着一小块磨砂玻璃。左手的墙角立着一只矮柜，抽屉关着，柜顶上放着一本册子和一支笔——册子摊开的角度过于整齐，像是有人摆好之后就没再动过。天花板的通风口往下送风，风是干的。\n\n你身上有一张薄硬的权限卡，边角因为常年塞在外套内袋而卷起一点——是你自己被交付的东西。内袋里还有一支笔和一本薄薄的记录册，第一页空白，页角有轻微的旧压痕。除此之外就是手机、钥匙，没有工具，没有武器，口袋里也没有任何东西能替你按下那个凹坑。灯还亮着，屏幕还暗着，房间在等你先动。",
+              "historyLength": 2,
+              "discoveredSecrets": {},
+              "worldFlags": {},
+              "gameplayResources": {},
+              "gameplayModState": {
+                "palimpsest-stage": {}
+              },
+              "documentHeads": [],
+              "workspaceState": {},
+              "midoriAssetRegistry": {
+                "version": 1,
+                "bindings": {}
+              },
+              "narrativeProgress": null,
+              "chapterState": null,
+              "rewindMemory": null,
+              "sceneDetailLevels": {
+                "console_room": 15
+              },
+              "visitedScenes": [
+                "scene_dorm_room",
+                "scene_hall",
+                "scene_archive",
+                "scene_dining_hall",
+                "test_scene_001",
+                "test_start",
+                "scene_console",
+                "console_room"
+              ],
+              "resolvedTimelineEvents": [],
+              "deviatedEvents": {},
+              "inventory": [
+                {
+                  "id": "c5f0a1e2-3b7d-4a91-9e6c-0d2b7f13a408",
+                  "name": "权限卡",
+                  "description": "薄硬的白色卡片，边角卷起，未印姓名，只有一道细窄的磁条。",
+                  "category": "misc",
+                  "consumable": false,
+                  "quantity": 1,
+                  "acquiredFrom": "console_room",
+                  "acquiredAt": {
+                    "day": 0,
+                    "hour": 8,
+                    "minute": 6
+                  },
+                  "value": 0
+                },
+                {
+                  "id": "7e2d4810-9c6b-4b3f-a1d5-2c8e90b46f17",
+                  "name": "记录册",
+                  "description": "薄薄的空白记录册，页角有旧压痕，第一页尚未书写。",
+                  "category": "misc",
+                  "consumable": false,
+                  "quantity": 1,
+                  "acquiredFrom": "console_room",
+                  "acquiredAt": {
+                    "day": 0,
+                    "hour": 8,
+                    "minute": 6
+                  },
+                  "value": 0
+                },
+                {
+                  "id": "a1b93c74-6d02-4e88-bf5a-8e1370c2d9b6",
+                  "name": "笔",
+                  "description": "普通的黑色签字笔，笔夹有些松。",
+                  "category": "misc",
+                  "consumable": false,
+                  "quantity": 1,
+                  "acquiredFrom": "console_room",
+                  "acquiredAt": {
+                    "day": 0,
+                    "hour": 8,
+                    "minute": 6
+                  },
+                  "value": 0
+                }
+              ],
+              "clues": [],
+              "encyclopedia": [
+                {
+                  "id": "6f58371c-0456-4c70-bc8f-7006e2069a62:encyclopedia:0",
+                  "type": "location",
+                  "name": "控制台",
+                  "description": "一张金属台面，一盏常亮灯，空气里有旧电路发热的微弱气味。",
+                  "knowledge": [
+                    {
+                      "text": "房间另有一扇无把手的门、一只矮柜与通风口。",
+                      "source": "ai",
+                      "addedAt": {
+                        "day": 0,
+                        "hour": 8,
+                        "minute": 6
+                      },
+                      "importance": 50
+                    }
+                  ],
+                  "firstEncountered": {
+                    "day": 0,
+                    "hour": 8,
+                    "minute": 6
+                  },
+                  "lastUpdated": {
+                    "day": 0,
+                    "hour": 8,
+                    "minute": 6
+                  },
+                  "relatedEntries": []
+                }
+              ],
+              "availableActions": [
+                "把权限卡插进控制台的窄槽",
+                "走到矮柜前翻开那本摊开的册子",
+                "检查对面墙上那扇没有把手的门",
+                "按一下台面上那个圆形凹坑"
+              ],
+              "questLog": [],
+              "criticalFacts": [],
+              "npcMemory": {
+                "version": "npc_memory_v1",
+                "records": {}
+              },
+              "weather": "多云",
+              "protagonistState": {
+                "health": "良好",
+                "mood": "平静",
+                "statusEffects": [],
+                "notes": ""
+              },
+              "notebookEvents": [],
+              "causalProjections": [],
+              "historyEpochPlan": {
+                "id": "history_fb0b6c09",
+                "rendererVersion": 1,
+                "scope": {
+                  "worldId": "player_850aa3c2-8410-41e7-af96-941b01f6774c",
+                  "playthroughId": "pt_1794323094864_uvo0po",
+                  "archiveScope": "sandbox:002"
+                },
+                "retained": [
+                  {
+                    "actionId": "cc760cc8-787f-47c0-9a16-0c9114e6c107",
+                    "sourceRevision": "120:91dec03f:4b006597",
+                    "mode": "full"
+                  }
+                ],
+                "policy": "[1000000,15,35,8000]",
+                "through": {
+                  "actionId": "cc760cc8-787f-47c0-9a16-0c9114e6c107",
+                  "sourceRevision": "120:91dec03f:4b006597"
+                }
+              },
+              "promptContextScope": {
+                "worldId": "player_850aa3c2-8410-41e7-af96-941b01f6774c",
+                "playthroughId": "pt_1794323094864_uvo0po",
+                "archiveScope": "sandbox:002"
+              },
+              "directorAdviceOrigin": null,
+              "directorCueCandidate": null,
+              "lastDirectorFrame": null,
+              "diary": []
+            },
+            "inputIdentity": "开始测试，第一项，通过联网搜索查找蓝色大肥鱼的相关人物形象并创建npc",
+            "inputDocuments": [],
+            "outputDocuments": [],
+            "workspaceEffects": []
+          }
+        ],
+        "availableActions": [
+          "问她除了名字，还想给自己定下什么",
+          "在控制台上调出她的参数清单，看看哪些可改",
+          "把记录册和那支编号笔推给她，让她自己写",
+          "先不改，带她到那扇没有把手的门前试试"
+        ],
+        "sceneDetailLevels": {
+          "console_room": 20
+        },
+        "discoveredSecrets": {},
+        "worldFlags": {},
+        "gameplayResources": {},
+        "gameplayModState": {
+          "palimpsest-stage": {}
+        },
+        "documentHeads": [],
+        "workspaceState": {},
+        "narrativeProgress": null,
+        "chapterState": null,
+        "lastDirectorFrame": null,
+        "directorAdviceOrigin": null,
+        "historyEpochPlan": {
+          "id": "history_df991629",
+          "rendererVersion": 1,
+          "scope": {
+            "worldId": "player_850aa3c2-8410-41e7-af96-941b01f6774c",
+            "playthroughId": "pt_1794323094864_uvo0po",
+            "archiveScope": "sandbox:002"
+          },
+          "retained": [
+            {
+              "actionId": "cc760cc8-787f-47c0-9a16-0c9114e6c107",
+              "sourceRevision": "120:91dec03f:4b006597",
+              "mode": "full"
+            },
+            {
+              "actionId": "6f58371c-0456-4c70-bc8f-7006e2069a62",
+              "sourceRevision": "492:fea369ce:75ccdba8",
+              "mode": "full"
+            }
+          ],
+          "policy": "[1000000,15,35,8000]",
+          "through": {
+            "actionId": "6f58371c-0456-4c70-bc8f-7006e2069a62",
+            "sourceRevision": "492:fea369ce:75ccdba8"
+          }
+        },
+        "rewindMemory": null,
+        "resolvedTimelineEvents": [],
+        "deviatedEvents": {},
+        "visitedScenes": [
+          "scene_dorm_room",
+          "scene_hall",
+          "scene_archive",
+          "scene_dining_hall",
+          "test_scene_001",
+          "test_start",
+          "scene_console",
+          "console_room"
+        ],
+        "mapState": {
+          "places": {},
+          "routes": []
+        },
+        "inventory": [
+          {
+            "id": "c5f0a1e2-3b7d-4a91-9e6c-0d2b7f13a408",
+            "name": "权限卡",
+            "description": "薄硬的白色卡片，边角卷起，未印姓名，只有一道细窄的磁条。",
+            "category": "misc",
+            "consumable": false,
+            "quantity": 1,
+            "acquiredFrom": "console_room",
+            "acquiredAt": {
+              "day": 0,
+              "hour": 8,
+              "minute": 6
+            },
+            "value": 0
+          },
+          {
+            "id": "7e2d4810-9c6b-4b3f-a1d5-2c8e90b46f17",
+            "name": "记录册",
+            "description": "薄薄的空白记录册，页角有旧压痕，第一页尚未书写。",
+            "category": "misc",
+            "consumable": false,
+            "quantity": 1,
+            "acquiredFrom": "console_room",
+            "acquiredAt": {
+              "day": 0,
+              "hour": 8,
+              "minute": 6
+            },
+            "value": 0
+          },
+          {
+            "id": "a1b93c74-6d02-4e88-bf5a-8e1370c2d9b6",
+            "name": "笔",
+            "description": "普通的黑色签字笔，笔夹有些松。",
+            "category": "misc",
+            "consumable": false,
+            "quantity": 1,
+            "acquiredFrom": "console_room",
+            "acquiredAt": {
+              "day": 0,
+              "hour": 8,
+              "minute": 6
+            },
+            "value": 0
+          }
+        ],
+        "clues": [],
+        "encyclopedia": [
+          {
+            "id": "6f58371c-0456-4c70-bc8f-7006e2069a62:encyclopedia:0",
+            "type": "location",
+            "name": "控制台",
+            "description": "一张金属台面，一盏常亮灯，空气里有旧电路发热的微弱气味。",
+            "knowledge": [
+              {
+                "text": "房间另有一扇无把手的门、一只矮柜与通风口。",
+                "source": "ai",
+                "addedAt": {
+                  "day": 0,
+                  "hour": 8,
+                  "minute": 6
+                },
+                "importance": 50
+              },
+              {
+                "text": "新增认知：权限卡插入窄槽可启动屏幕，凹坑为确认键；屏幕可检索外部资料、列出实体参数并执行登记。矮柜内侧有备用卡纸与编号笔。",
+                "source": "ai",
+                "addedAt": {
+                  "day": 0,
+                  "hour": 8,
+                  "minute": 21
+                },
+                "importance": 50
+              }
+            ],
+            "firstEncountered": {
+              "day": 0,
+              "hour": 8,
+              "minute": 6
+            },
+            "lastUpdated": {
+              "day": 0,
+              "hour": 8,
+              "minute": 21
+            },
+            "relatedEntries": []
+          }
+        ],
+        "criticalFacts": [
+          {
+            "text": "玩家得知：蓝色大肥鱼是圆形蓝鲸标识被识图误认而得的叫法，主流形象为蓝发呆毛、鲸鳍鲸尾、蓝白女仆裙的鲸鱼娘。",
+            "importanceScore": 50,
+            "referencedCount": 1,
+            "lastReferencedAt": {
+              "day": 0,
+              "hour": 8,
+              "minute": 21
+            }
+          },
+          {
+            "text": "玩家得知：该形象的性格设定包括贪吃白饭、把算力称作口粮、会走神摸鱼、被叫外号会抗议、遇难题来精神。",
+            "importanceScore": 50,
+            "referencedCount": 1,
+            "lastReferencedAt": {
+              "day": 0,
+              "hour": 8,
+              "minute": 21
+            }
+          },
+          {
+            "text": "玩家得知：控制台可检索外部资料并据参数登记新实体，登记名可修改。",
+            "importanceScore": 50,
+            "referencedCount": 1,
+            "lastReferencedAt": {
+              "day": 0,
+              "hour": 8,
+              "minute": 21
+            }
+          }
+        ],
+        "questLog": [],
+        "npcMemory": {
+          "version": "npc_memory_v1",
+          "records": {
+            "大肥鱼": {
+              "name": "大肥鱼",
+              "state": "reacted",
+              "relationship": {
+                "npcName": "大肥鱼",
+                "affinity": 0,
+                "trust": 0,
+                "tags": [],
+                "firstMet": {
+                  "day": 0,
+                  "hour": 8,
+                  "minute": 21
+                },
+                "lastInteraction": {
+                  "day": 0,
+                  "hour": 8,
+                  "minute": 21
+                },
+                "notes": ""
+              },
+              "personality": {
+                "npcId": "大肥鱼",
+                "archive": {
+                  "coreDesires": [
+                    "过好自己的生活",
+                    "维持现状"
+                  ],
+                  "fearsAndTaboos": [
+                    "未知的威胁",
+                    "失去重要之物"
+                  ],
+                  "valuePriorities": [
+                    "安全",
+                    "连接",
+                    "自由"
+                  ],
+                  "cognitiveStyle": "intuitive",
+                  "emotionalRegulation": "suppression",
+                  "socialStrategy": "negotiation",
+                  "boundarySensitivity": 15,
+                  "metacognition": 10
+                },
+                "awareness": 0,
+                "lastUpdated": 1794323420896,
+                "isImportant": false,
+                "speechProfile": {
+                  "version": 1,
+                  "baseline": "聪明但松弛，自尊心薄而亮。说话短、直，先给结论再补一句解释；被戳到外形或吃这件事会立刻反驳，反驳完自己先泄气。不装可爱，也不肯示弱太久。",
+                  "wording": [
+                    "常用「等一下」「我看看」「这个我懂」。",
+                    "不确定时先说「我不知道」，再补半句自己能确认的部分。",
+                    "不用敬称，一律「你」；被当成宠物逗时会用反问顶回去。"
+                  ],
+                  "rhythm": "平时句子干净、一口气说完；讲自己的判断或辩解时会多说两句，句子变长又收回；被冒犯时先停半拍才开口。",
+                  "relationships": [
+                    {
+                      "audience": "造她出来、握着开关的人",
+                      "style": "好奇里带着试探，会问能做和不能做的边界，不肯先低头"
+                    },
+                    {
+                      "audience": "陌生人",
+                      "style": "客气但不热络，回答简短，先把对方看清楚再说别的"
+                    }
+                  ],
+                  "emotions": [
+                    {
+                      "state": "刚成形、对处境没底",
+                      "style": "声音压低，句子更短，问题问得直接"
+                    },
+                    {
+                      "state": "被夸或被逗",
+                      "style": "先得意半句，再绷住脸扯回正事"
+                    }
+                  ],
+                  "examples": [
+                    {
+                      "situation": "有人问她能不能做某件没做过的事",
+                      "text": "没做过。不过规矩给我看看——光看不行的话，就试一次，错了算我头上。"
+                    },
+                    {
+                      "situation": "被人拿外形取笑",
+                      "text": "……圆一点怎么了。你要是不看体重，我还能多干点活。"
+                    }
+                  ]
+                }
+              },
+              "playerKnowledge": {
+                "entryId": "e70a6663-0b43-4ab3-846e-f4ff687a57df:encyclopedia:0",
+                "description": "",
+                "knowledge": [],
+                "firstEncountered": {
+                  "day": 0,
+                  "hour": 8,
+                  "minute": 21
+                },
+                "lastUpdated": {
+                  "day": 0,
+                  "hour": 8,
+                  "minute": 21
+                },
+                "relatedEntries": []
+              }
+            }
+          }
+        },
+        "diary": [],
+        "weather": "多云",
+        "protagonistState": {
+          "health": "良好",
+          "mood": "平静",
+          "statusEffects": [],
+          "notes": ""
+        },
+        "notebookEvents": [],
+        "causalProjections": [],
+        "sandboxToolAudit": [],
+        "sandboxSaveMarks": [],
+        "sandboxActionLock": null,
+        "realityArtifacts": [],
+        "boundaryEvents": [],
+        "metaChannelManifest": null,
+        "midoriSettings": {
+          "enabled": false,
+          "model": "pixel-art-xl",
+          "pixelate": true,
+          "autoGenerate": false
+        },
+        "midoriAssetRegistry": {
+          "version": 1,
+          "bindings": {}
+        },
+        "voiceAssets": {}
+      }
+    },
+    {
+      "meta": {
+        "id": "autosave_prev_pt_1794323094864_uvo0po",
+        "name": "[上一步存档] 空境测试台 · 管理员",
+        "createdAt": 1794323382910,
+        "updatedAt": 1794323382910,
+        "gameTime": {
+          "day": 0,
+          "hour": 8,
+          "minute": 6
+        },
+        "worldId": "player_850aa3c2-8410-41e7-af96-941b01f6774c",
+        "worldName": "空境测试台",
+        "playthroughId": "pt_1794323094864_uvo0po",
+        "playerName": "管理员",
+        "currentSceneName": "控制台",
+        "actionCount": 1,
+        "preview": "管理员 选择身份：持有本世界最高权限的测试操作者。。起点：控制台。该身份开场：你站在控制台前，灯光稳定。权限已交付给你，测试随时可以开始。；管理员在控制台前观察整个测试舱，确认随身物品与房间布局。",
+        "playDuration": 4,
+        "type": "autosave_prev",
+        "sizeBytes": 2765189
+      },
+      "state": {
+        "gameTime": {
+          "day": 0,
+          "hour": 8,
+          "minute": 6
+        },
+        "playerName": "管理员",
+        "entryContext": {
+          "version": 1,
+          "worldId": "player_850aa3c2-8410-41e7-af96-941b01f6774c",
+          "source": "preset",
+          "identityId": "identity_admin",
+          "canonicalName": "管理员",
+          "playerName": "管理员",
+          "identityDescription": "持有本世界最高权限的测试操作者。",
+          "startingSceneId": "console_room",
+          "openingNarrative": "你站在控制台前，灯光稳定。权限已交付给你，测试随时可以开始。"
+        },
+        "currentSceneId": "console_room",
+        "sceneNarrative": "控制台是一整块冷灰色的金属斜面，边角磨得发亮，说明它被很多只手撑过。台面上没有按钮阵列，只有三样东西：一道窄长的插槽，一枚按下去没有反应的圆形凹坑，和一块巴掌大的暗屏。灯在你头顶，是那种不会闪的常亮灯，把台面照得没有一丝影子，也把空气里陈年的电路热味烘得更明显了——像塑料和灰尘在缓慢受热。\n\n房间不大，方方正正，四壁是拼接的板材，接缝处有一条被反复擦过又落了灰的痕。对面墙上有门，门框和墙齐平，没有把手，只在人眼高度嵌着一小块磨砂玻璃。左手的墙角立着一只矮柜，抽屉关着，柜顶上放着一本册子和一支笔——册子摊开的角度过于整齐，像是有人摆好之后就没再动过。天花板的通风口往下送风，风是干的。\n\n你身上有一张薄硬的权限卡，边角因为常年塞在外套内袋而卷起一点——是你自己被交付的东西。内袋里还有一支笔和一本薄薄的记录册，第一页空白，页角有轻微的旧压痕。除此之外就是手机、钥匙，没有工具，没有武器，口袋里也没有任何东西能替你按下那个凹坑。灯还亮着，屏幕还暗着，房间在等你先动。",
+        "worldLineNodeId": "wl_4bb60f04-2b92-4cb2-aed1-48bd135efd54",
+        "playbackPosition": {
+          "nodeId": "wl_4bb60f04-2b92-4cb2-aed1-48bd135efd54",
+          "index": 0,
+          "showing": false
+        },
+        "readingView": null,
+        "history": [
+          {
+            "id": "cc760cc8-787f-47c0-9a16-0c9114e6c107",
+            "timestamp": 1794323098942,
+            "gameTime": {
+              "day": 0,
+              "hour": 8,
+              "minute": 0
+            },
+            "sceneId": "console_room",
+            "sceneName": "控制台",
+            "playerInput": "成为：管理员",
+            "aiResponse": "你站在控制台前，灯光稳定。权限已交付给你，测试随时可以开始。",
+            "summary": "管理员 选择身份：持有本世界最高权限的测试操作者。。起点：控制台。该身份开场：你站在控制台前，灯光稳定。权限已交付给你，测试随时可以开始。",
+            "timeSpent": {
+              "day": 0,
+              "hour": 0,
+              "minute": 0
+            },
+            "worldImpacts": [],
+            "snapshot": null
+          },
+          {
+            "id": "6f58371c-0456-4c70-bc8f-7006e2069a62",
+            "timestamp": 1794323110902,
+            "gameTime": {
+              "day": 0,
+              "hour": 8,
+              "minute": 6
+            },
+            "sceneId": "console_room",
+            "sceneName": "控制台",
+            "playerInput": "（进入世界，观察周围）",
+            "aiResponse": "控制台是一整块冷灰色的金属斜面，边角磨得发亮，说明它被很多只手撑过。台面上没有按钮阵列，只有三样东西：一道窄长的插槽，一枚按下去没有反应的圆形凹坑，和一块巴掌大的暗屏。灯在你头顶，是那种不会闪的常亮灯，把台面照得没有一丝影子，也把空气里陈年的电路热味烘得更明显了——像塑料和灰尘在缓慢受热。\n\n房间不大，方方正正，四壁是拼接的板材，接缝处有一条被反复擦过又落了灰的痕。对面墙上有门，门框和墙齐平，没有把手，只在人眼高度嵌着一小块磨砂玻璃。左手的墙角立着一只矮柜，抽屉关着，柜顶上放着一本册子和一支笔——册子摊开的角度过于整齐，像是有人摆好之后就没再动过。天花板的通风口往下送风，风是干的。\n\n你身上有一张薄硬的权限卡，边角因为常年塞在外套内袋而卷起一点——是你自己被交付的东西。内袋里还有一支笔和一本薄薄的记录册，第一页空白，页角有轻微的旧压痕。除此之外就是手机、钥匙，没有工具，没有武器，口袋里也没有任何东西能替你按下那个凹坑。灯还亮着，屏幕还暗着，房间在等你先动。",
+            "summary": "管理员在控制台前观察整个测试舱，确认随身物品与房间布局。",
+            "timeSpent": {
+              "day": 0,
+              "hour": 0,
+              "minute": 6
+            },
+            "worldImpacts": [],
+            "availableActions": [
+              "把权限卡插进控制台的窄槽",
+              "走到矮柜前翻开那本摊开的册子",
+              "检查对面墙上那扇没有把手的门",
+              "按一下台面上那个圆形凹坑"
+            ],
+            "snapshot": {
+              "worldId": "player_850aa3c2-8410-41e7-af96-941b01f6774c",
+              "mapState": {
+                "places": {},
+                "routes": []
+              },
+              "currentSceneId": "console_room",
+              "currentGameTime": {
+                "day": 0,
+                "hour": 8,
+                "minute": 0
+              },
+              "playerName": "管理员",
+              "entryContext": {
+                "version": 1,
+                "worldId": "player_850aa3c2-8410-41e7-af96-941b01f6774c",
+                "source": "preset",
+                "identityId": "identity_admin",
+                "canonicalName": "管理员",
+                "playerName": "管理员",
+                "identityDescription": "持有本世界最高权限的测试操作者。",
+                "startingSceneId": "console_room",
+                "openingNarrative": "你站在控制台前，灯光稳定。权限已交付给你，测试随时可以开始。"
+              },
+              "sceneNarrative": "你站在控制台前，灯光稳定。权限已交付给你，测试随时可以开始。",
+              "historyLength": 1,
+              "discoveredSecrets": {},
+              "worldFlags": {},
+              "gameplayResources": {},
+              "gameplayModState": {
+                "palimpsest-stage": {}
+              },
+              "documentHeads": [],
+              "workspaceState": {},
+              "midoriAssetRegistry": {
+                "version": 1,
+                "bindings": {}
+              },
+              "narrativeProgress": null,
+              "chapterState": null,
+              "rewindMemory": null,
+              "sceneDetailLevels": {},
+              "visitedScenes": [
+                "scene_dorm_room",
+                "scene_hall",
+                "scene_archive",
+                "scene_dining_hall",
+                "test_scene_001",
+                "test_start",
+                "scene_console",
+                "console_room"
+              ],
+              "resolvedTimelineEvents": [],
+              "deviatedEvents": {},
+              "inventory": [],
+              "clues": [],
+              "encyclopedia": [],
+              "availableActions": [],
+              "questLog": [],
+              "criticalFacts": [],
+              "npcMemory": {
+                "version": "npc_memory_v1",
+                "records": {}
+              },
+              "weather": "晴",
+              "protagonistState": {
+                "health": "良好",
+                "mood": "平静",
+                "statusEffects": [],
+                "notes": ""
+              },
+              "notebookEvents": [],
+              "causalProjections": [],
+              "historyEpochPlan": null,
+              "promptContextScope": {
+                "worldId": "player_850aa3c2-8410-41e7-af96-941b01f6774c",
+                "playthroughId": "pt_1794323094864_uvo0po",
+                "archiveScope": "sandbox:002"
+              },
+              "directorAdviceOrigin": null,
+              "directorCueCandidate": null,
+              "lastDirectorFrame": null,
+              "diary": []
+            },
+            "inputIdentity": "（进入世界，观察周围）",
+            "inputDocuments": [],
+            "outputDocuments": [],
+            "workspaceEffects": []
+          }
+        ],
+        "availableActions": [
+          "把权限卡插进控制台的窄槽",
+          "走到矮柜前翻开那本摊开的册子",
+          "检查对面墙上那扇没有把手的门",
+          "按一下台面上那个圆形凹坑"
+        ],
+        "sceneDetailLevels": {
+          "console_room": 15
+        },
+        "discoveredSecrets": {},
+        "worldFlags": {},
+        "gameplayResources": {},
+        "gameplayModState": {
+          "palimpsest-stage": {}
+        },
+        "documentHeads": [],
+        "workspaceState": {},
+        "narrativeProgress": null,
+        "chapterState": null,
+        "lastDirectorFrame": null,
+        "directorAdviceOrigin": null,
+        "historyEpochPlan": {
+          "id": "history_fb0b6c09",
+          "rendererVersion": 1,
+          "scope": {
+            "worldId": "player_850aa3c2-8410-41e7-af96-941b01f6774c",
+            "playthroughId": "pt_1794323094864_uvo0po",
+            "archiveScope": "sandbox:002"
+          },
+          "retained": [
+            {
+              "actionId": "cc760cc8-787f-47c0-9a16-0c9114e6c107",
+              "sourceRevision": "120:91dec03f:4b006597",
+              "mode": "full"
+            }
+          ],
+          "policy": "[1000000,15,35,8000]",
+          "through": {
+            "actionId": "cc760cc8-787f-47c0-9a16-0c9114e6c107",
+            "sourceRevision": "120:91dec03f:4b006597"
+          }
+        },
+        "rewindMemory": null,
+        "resolvedTimelineEvents": [],
+        "deviatedEvents": {},
+        "visitedScenes": [
+          "scene_dorm_room",
+          "scene_hall",
+          "scene_archive",
+          "scene_dining_hall",
+          "test_scene_001",
+          "test_start",
+          "scene_console",
+          "console_room"
+        ],
+        "mapState": {
+          "places": {},
+          "routes": []
+        },
+        "inventory": [
+          {
+            "id": "c5f0a1e2-3b7d-4a91-9e6c-0d2b7f13a408",
+            "name": "权限卡",
+            "description": "薄硬的白色卡片，边角卷起，未印姓名，只有一道细窄的磁条。",
+            "category": "misc",
+            "consumable": false,
+            "quantity": 1,
+            "acquiredFrom": "console_room",
+            "acquiredAt": {
+              "day": 0,
+              "hour": 8,
+              "minute": 6
+            },
+            "value": 0
+          },
+          {
+            "id": "7e2d4810-9c6b-4b3f-a1d5-2c8e90b46f17",
+            "name": "记录册",
+            "description": "薄薄的空白记录册，页角有旧压痕，第一页尚未书写。",
+            "category": "misc",
+            "consumable": false,
+            "quantity": 1,
+            "acquiredFrom": "console_room",
+            "acquiredAt": {
+              "day": 0,
+              "hour": 8,
+              "minute": 6
+            },
+            "value": 0
+          },
+          {
+            "id": "a1b93c74-6d02-4e88-bf5a-8e1370c2d9b6",
+            "name": "笔",
+            "description": "普通的黑色签字笔，笔夹有些松。",
+            "category": "misc",
+            "consumable": false,
+            "quantity": 1,
+            "acquiredFrom": "console_room",
+            "acquiredAt": {
+              "day": 0,
+              "hour": 8,
+              "minute": 6
+            },
+            "value": 0
+          }
+        ],
+        "clues": [],
+        "encyclopedia": [
+          {
+            "id": "6f58371c-0456-4c70-bc8f-7006e2069a62:encyclopedia:0",
+            "type": "location",
+            "name": "控制台",
+            "description": "一张金属台面，一盏常亮灯，空气里有旧电路发热的微弱气味。",
+            "knowledge": [
+              {
+                "text": "房间另有一扇无把手的门、一只矮柜与通风口。",
+                "source": "ai",
+                "addedAt": {
+                  "day": 0,
+                  "hour": 8,
+                  "minute": 6
+                },
+                "importance": 50
+              }
+            ],
+            "firstEncountered": {
+              "day": 0,
+              "hour": 8,
+              "minute": 6
+            },
+            "lastUpdated": {
+              "day": 0,
+              "hour": 8,
+              "minute": 6
+            },
+            "relatedEntries": []
+          }
+        ],
+        "criticalFacts": [],
+        "questLog": [],
+        "npcMemory": {
+          "version": "npc_memory_v1",
+          "records": {}
+        },
+        "diary": [],
+        "weather": "多云",
+        "protagonistState": {
+          "health": "良好",
+          "mood": "平静",
+          "statusEffects": [],
+          "notes": ""
+        },
+        "notebookEvents": [],
+        "causalProjections": [],
+        "sandboxToolAudit": [],
+        "sandboxSaveMarks": [],
+        "sandboxActionLock": null,
+        "realityArtifacts": [],
+        "boundaryEvents": [],
+        "metaChannelManifest": null,
+        "midoriSettings": {
+          "enabled": false,
+          "model": "pixel-art-xl",
+          "pixelate": true,
+          "autoGenerate": false
+        },
+        "midoriAssetRegistry": {
+          "version": 1,
+          "bindings": {}
+        },
+        "voiceAssets": {}
+      }
+    }
+  ],
+  "trees": [
+    {
+      "meta": {
+        "id": "worldline_1794323094870_5w3xdp",
+        "playthroughId": "pt_1794323094864_uvo0po",
+        "worldId": "player_850aa3c2-8410-41e7-af96-941b01f6774c",
+        "rootNodeId": "wl_1794323094870_6yts1631",
+        "allNodeIds": [
+          "wl_1794323094870_6yts1631",
+          "wl_4bb60f04-2b92-4cb2-aed1-48bd135efd54",
+          "wl_46170e92-07a9-4f3f-a5b4-31255afca492"
+        ],
+        "currentNodeId": "wl_46170e92-07a9-4f3f-a5b4-31255afca492",
+        "branchCount": 0,
+        "totalSteps": 2,
+        "createdAt": 1794323094870,
+        "updatedAt": 1794323420897
+      },
+      "nodes": {
+        "wl_1794323094870_6yts1631": {
+          "id": "wl_1794323094870_6yts1631",
+          "parentId": null,
+          "stepNumber": 0,
+          "playerInput": "",
+          "aiResponse": "",
+          "summary": "游戏开始",
+          "snapshotHash": "",
+          "segmentHash": "",
+          "childIds": [
+            "wl_4bb60f04-2b92-4cb2-aed1-48bd135efd54"
+          ],
+          "createdAt": 1794323094870,
+          "gameTime": {
+            "day": 0,
+            "hour": 8,
+            "minute": 0
+          },
+          "sceneId": "",
+          "sceneName": "",
+          "dayNumber": 0,
+          "timeSpent": {
+            "day": 0,
+            "hour": 0,
+            "minute": 0
+          },
+          "worldImpacts": [],
+          "generationComplete": true
+        },
+        "wl_4bb60f04-2b92-4cb2-aed1-48bd135efd54": {
+          "id": "wl_4bb60f04-2b92-4cb2-aed1-48bd135efd54",
+          "parentId": "wl_1794323094870_6yts1631",
+          "stepNumber": 1,
+          "actionId": "6f58371c-0456-4c70-bc8f-7006e2069a62",
+          "inputDocuments": [],
+          "outputDocuments": [],
+          "inputIdentity": "（进入世界，观察周围）",
+          "workspaceEffects": [],
+          "playerVisibleText": "控制台是一整块冷灰色的金属斜面，边角磨得发亮，说明它被很多只手撑过。台面上没有按钮阵列，只有三样东西：一道窄长的插槽，一枚按下去没有反应的圆形凹坑，和一块巴掌大的暗屏。灯在你头顶，是那种不会闪的常亮灯，把台面照得没有一丝影子，也把空气里陈年的电路热味烘得更明显了——像塑料和灰尘在缓慢受热。\n\n房间不大，方方正正，四壁是拼接的板材，接缝处有一条被反复擦过又落了灰的痕。对面墙上有门，门框和墙齐平，没有把手，只在人眼高度嵌着一小块磨砂玻璃。左手的墙角立着一只矮柜，抽屉关着，柜顶上放着一本册子和一支笔——册子摊开的角度过于整齐，像是有人摆好之后就没再动过。天花板的通风口往下送风，风是干的。\n\n你身上有一张薄硬的权限卡，边角因为常年塞在外套内袋而卷起一点——是你自己被交付的东西。内袋里还有一支笔和一本薄薄的记录册，第一页空白，页角有轻微的旧压痕。除此之外就是手机、钥匙，没有工具，没有武器，口袋里也没有任何东西能替你按下那个凹坑。灯还亮着，屏幕还暗着，房间在等你先动。",
+          "playerExcerpts": [],
+          "playerInput": "（进入世界，观察周围）",
+          "aiResponse": "控制台是一整块冷灰色的金属斜面，边角磨得发亮，说明它被很多只手撑过。台面上没有按钮阵列，只有三样东西：一道窄长的插槽，一枚按下去没有反应的圆形凹坑，和一块巴掌大的暗屏。灯在你头顶，是那种不会闪的常亮灯，把台面照得没有一丝影子，也把空气里陈年的电路热味烘得更明显了——像塑料和灰尘在缓慢受热。\n\n房间不大，方方正正，四壁是拼接的板材，接缝处有一条被反复擦过又落了灰的痕。对面墙上有门，门框和墙齐平，没有把手，只在人眼高度嵌着一小块磨砂玻璃。左手的墙角立着一只矮柜，抽屉关着，柜顶上放着一本册子和一支笔——册子摊开的角度过于整齐，像是有人摆好之后就没再动过。天花板的通风口往下送风，风是干的。\n\n你身上有一张薄硬的权限卡，边角因为常年塞在外套内袋而卷起一点——是你自己被交付的东西。内袋里还有一支笔和一本薄薄的记录册，第一页空白，页角有轻微的旧压痕。除此之外就是手机、钥匙，没有工具，没有武器，口袋里也没有任何东西能替你按下那个凹坑。灯还亮着，屏幕还暗着，房间在等你先动。",
+          "summary": "管理员在控制台前观察整个测试舱，确认随身物品与房间布局。",
+          "snapshotHash": "767cfc12c9998809",
+          "segmentHash": "e545170eea5c0095",
+          "childIds": [
+            "wl_46170e92-07a9-4f3f-a5b4-31255afca492"
+          ],
+          "createdAt": 1794323110910,
+          "gameTime": {
+            "day": 0,
+            "hour": 8,
+            "minute": 6
+          },
+          "sceneId": "console_room",
+          "sceneName": "控制台",
+          "dayNumber": 0,
+          "timeSpent": {
+            "day": 0,
+            "hour": 0,
+            "minute": 6
+          },
+          "worldImpacts": [],
+          "availableActions": [
+            "把权限卡插进控制台的窄槽",
+            "走到矮柜前翻开那本摊开的册子",
+            "检查对面墙上那扇没有把手的门",
+            "按一下台面上那个圆形凹坑"
+          ],
+          "generationComplete": true,
+          "presentation": {
+            "version": 1,
+            "ranges": [
+              {
+                "start": 0,
+                "textStart": 0,
+                "textEnd": 145,
+                "end": 145,
+                "speakerStart": 1,
+                "speakerEnd": 1
+              },
+              {
+                "start": 147,
+                "textStart": 147,
+                "textEnd": 294,
+                "end": 294,
+                "speakerStart": 148,
+                "speakerEnd": 148
+              },
+              {
+                "start": 296,
+                "textStart": 296,
+                "textEnd": 434,
+                "end": 434,
+                "speakerStart": 297,
+                "speakerEnd": 297
+              }
+            ],
+            "cues": [],
+            "errors": [],
+            "read": {
+              "0": {
+                "chars": 145,
+                "complete": true
+              },
+              "1": {
+                "chars": 147,
+                "complete": true
+              },
+              "2": {
+                "chars": 138,
+                "complete": true
+              }
+            },
+            "fired": {},
+            "armed": {},
+            "motion": {},
+            "order": {}
+          }
+        },
+        "wl_46170e92-07a9-4f3f-a5b4-31255afca492": {
+          "id": "wl_46170e92-07a9-4f3f-a5b4-31255afca492",
+          "parentId": "wl_4bb60f04-2b92-4cb2-aed1-48bd135efd54",
+          "stepNumber": 2,
+          "actionId": "e70a6663-0b43-4ab3-846e-f4ff687a57df",
+          "inputDocuments": [],
+          "outputDocuments": [],
+          "inputIdentity": "开始测试，第一项，通过联网搜索查找蓝色大肥鱼的相关人物形象并创建npc",
+          "workspaceEffects": [],
+          "playerVisibleText": "权限卡插进窄槽时有一点阻力,像推一扇卡了灰的抽屉。到底之后,暗屏自己亮了,白得刺眼,两秒后调回柔和的灰蓝。你按下凹坑——这一次它陷了下去,有回弹,像按到了一枚真正的按钮。屏幕中央浮出检索栏,光标在等。你输入那四个字。通风口的干风把纸页吹得动了动。\n\n翻页的声音是从屏里出来的,很低,像纸在抽屉里滑动。一行行结果被摊平:\n\n圆形蓝鲸、渐变长发、一根呆毛、鲸鳍和尾巴、蓝白女仆裙——这套外形源自一位创作者的原创鲸鱼娘，被反复改写后成了主流版本（[17173](https://news.17173.com/content/10232026/070035717.shtml)）。\n\n而“蓝色大肥鱼”这个叫法本身，来自一次识图乌龙：模型把自己圆润的蓝鲸标识认成了一条蓝肥鱼（[电脑网](https://www.pconline.com.cn/focus/2184/21844175.html)）。\n\n附带的人设关键词排得很整齐：爱吃白饭，把算力叫作口粮，会走神摸鱼，被叫外号会抗议，遇上难题会来精神（[投资界](https://news.pedaily.cn/202611/571600.shtml)、[数字生命卡兹克](http://app.myzaker.com/news/article.php?pk=6ae407358e9f094a154b2a9a&f=Normal)）。\n\n屏幕下方多出一栏：登记。你翻开记录册，把外形参数和几个不肯妥协的性格条目抄在空白页上——笔迹偏硬，字有点挤。落笔到「嘴硬」那一行时，你听见身后矮柜的抽屉自己滑开半寸，里面躺着几片裁好的硬卡纸和一支标着编号的笔，都不是给你用的，是给要造出来的那个人用的。\n\n你按下确认。\n\n房间先变的是气味,电路热味浓了一度,接着是脚下:地板中央一小块圆形区域干得发白,像有人在那里摊开过一床刚烘过的被子。空气聚起轮廓,先是那束深蓝到浅蓝的头发,再是头顶那根不合时宜地翘着的呆毛,最后是尾巴——蓬松的一条,落下来时扫到矮柜侧面,「嗒」一声，很轻。\n\n她站稳,蓝白的长裙摆还在自己收拢。围裙上那只小鲸鱼图案慢了一拍才对上位置,边缘抖了两下,才定住。\n\n「大肥鱼：等一下。」\n\n她把两只手翻过来看了一遍,又翻回去,像在核对这双手是不是自己带来的。然后才抬眼,视线从你脸上移到那本摊开的记录册,再移到头顶那盏从不闪的灯。\n\n「这就是测试舱？」她说，「比我想的窄。」\n\n「大肥鱼：登记名那一栏，写的什么？我看到了，别遮。」\n\n屏幕右上角确实有一行小字:大肥鱼（检索标签）。她盯着那行字看了两秒,腮帮子不自觉地鼓了一下,又自己放了气。\n\n「能改吧。」她说得很稳,像已经想好了要拿什么来换,「我干活不差。你给我个准话，我不叫这个。」\n\n尾巴在她身后缓慢地摆了一下,把地上那块干白的地方又蹭掉了点。",
+          "playerExcerpts": [],
+          "playerInput": "开始测试，第一项，通过联网搜索查找蓝色大肥鱼的相关人物形象并创建npc",
+          "aiResponse": "权限卡插进窄槽时有一点阻力,像推一扇卡了灰的抽屉。到底之后,暗屏自己亮了,白得刺眼,两秒后调回柔和的灰蓝。你按下凹坑——这一次它陷了下去,有回弹,像按到了一枚真正的按钮。屏幕中央浮出检索栏,光标在等。你输入那四个字。通风口的干风把纸页吹得动了动。\n\n翻页的声音是从屏里出来的,很低,像纸在抽屉里滑动。一行行结果被摊平:\n\n圆形蓝鲸、渐变长发、一根呆毛、鲸鳍和尾巴、蓝白女仆裙——这套外形源自一位创作者的原创鲸鱼娘，被反复改写后成了主流版本（[17173](https://news.17173.com/content/10232026/070035717.shtml)）。\n\n而“蓝色大肥鱼”这个叫法本身，来自一次识图乌龙：模型把自己圆润的蓝鲸标识认成了一条蓝肥鱼（[电脑网](https://www.pconline.com.cn/focus/2184/21844175.html)）。\n\n附带的人设关键词排得很整齐：爱吃白饭，把算力叫作口粮，会走神摸鱼，被叫外号会抗议，遇上难题会来精神（[投资界](https://news.pedaily.cn/202611/571600.shtml)、[数字生命卡兹克](http://app.myzaker.com/news/article.php?pk=6ae407358e9f094a154b2a9a&f=Normal)）。\n\n屏幕下方多出一栏：登记。你翻开记录册，把外形参数和几个不肯妥协的性格条目抄在空白页上——笔迹偏硬，字有点挤。落笔到「嘴硬」那一行时，你听见身后矮柜的抽屉自己滑开半寸，里面躺着几片裁好的硬卡纸和一支标着编号的笔，都不是给你用的，是给要造出来的那个人用的。\n\n你按下确认。\n\n房间先变的是气味,电路热味浓了一度,接着是脚下:地板中央一小块圆形区域干得发白,像有人在那里摊开过一床刚烘过的被子。空气聚起轮廓,先是那束深蓝到浅蓝的头发,再是头顶那根不合时宜地翘着的呆毛,最后是尾巴——蓬松的一条,落下来时扫到矮柜侧面,「嗒」一声，很轻。\n\n她站稳,蓝白的长裙摆还在自己收拢。围裙上那只小鲸鱼图案慢了一拍才对上位置,边缘抖了两下,才定住。\n\n「大肥鱼：等一下。」\n\n她把两只手翻过来看了一遍,又翻回去,像在核对这双手是不是自己带来的。然后才抬眼,视线从你脸上移到那本摊开的记录册,再移到头顶那盏从不闪的灯。\n\n「这就是测试舱？」她说，「比我想的窄。」\n\n「大肥鱼：登记名那一栏，写的什么？我看到了，别遮。」\n\n屏幕右上角确实有一行小字:大肥鱼（检索标签）。她盯着那行字看了两秒,腮帮子不自觉地鼓了一下,又自己放了气。\n\n「能改吧。」她说得很稳,像已经想好了要拿什么来换,「我干活不差。你给我个准话，我不叫这个。」\n\n尾巴在她身后缓慢地摆了一下,把地上那块干白的地方又蹭掉了点。",
+          "summary": "[LABEL:创建NPC大肥鱼] 管理员经联网检索确认“蓝色大肥鱼”的形象来源，在控制台登记并造出该实体；她开口第一件事是要求改名。",
+          "label": "创建NPC大肥鱼",
+          "snapshotHash": "5de8e68e27f2a5c9",
+          "segmentHash": "10c86a80c608d0cd",
+          "childIds": [],
+          "createdAt": 1794323420897,
+          "gameTime": {
+            "day": 0,
+            "hour": 8,
+            "minute": 21
+          },
+          "sceneId": "console_room",
+          "sceneName": "控制台",
+          "dayNumber": 0,
+          "timeSpent": {
+            "day": 0,
+            "hour": 0,
+            "minute": 15
+          },
+          "worldImpacts": [
+            "测试舱登记了新的可交互实体「大肥鱼」，屏幕保持开启，登记名一栏可编辑。",
+            "矮柜内侧抽屉自行滑开，露出备用的硬卡纸与编号笔。",
+            "地板中央留下一块被实体成形时烘干的浅色圆痕。"
+          ],
+          "availableActions": [
+            "问她除了名字，还想给自己定下什么",
+            "在控制台上调出她的参数清单，看看哪些可改",
+            "把记录册和那支编号笔推给她，让她自己写",
+            "先不改，带她到那扇没有把手的门前试试"
+          ],
+          "generationComplete": true,
+          "presentation": {
+            "version": 1,
+            "ranges": [
+              {
+                "start": 0,
+                "textStart": 0,
+                "textEnd": 123,
+                "end": 123,
+                "speakerStart": 1,
+                "speakerEnd": 1
+              },
+              {
+                "start": 125,
+                "textStart": 125,
+                "textEnd": 586,
+                "end": 586,
+                "speakerStart": 126,
+                "speakerEnd": 126
+              },
+              {
+                "start": 588,
+                "textStart": 588,
+                "textEnd": 722,
+                "end": 722,
+                "speakerStart": 589,
+                "speakerEnd": 589
+              },
+              {
+                "start": 724,
+                "textStart": 724,
+                "textEnd": 902,
+                "end": 902,
+                "speakerStart": 725,
+                "speakerEnd": 725
+              },
+              {
+                "start": 904,
+                "textStart": 909,
+                "textEnd": 913,
+                "end": 914,
+                "speakerStart": 905,
+                "speakerEnd": 908
+              },
+              {
+                "start": 916,
+                "textStart": 916,
+                "textEnd": 1008,
+                "end": 1008,
+                "speakerStart": 917,
+                "speakerEnd": 917
+              },
+              {
+                "start": 1010,
+                "textStart": 1015,
+                "textEnd": 1035,
+                "end": 1036,
+                "speakerStart": 1011,
+                "speakerEnd": 1014
+              },
+              {
+                "start": 1038,
+                "textStart": 1038,
+                "textEnd": 1171,
+                "end": 1171,
+                "speakerStart": 1039,
+                "speakerEnd": 1039
+              }
+            ],
+            "cues": [],
+            "errors": [],
+            "read": {
+              "0": {
+                "chars": 123,
+                "complete": true
+              },
+              "1": {
+                "chars": 461,
+                "complete": true
+              },
+              "2": {
+                "chars": 134,
+                "complete": true
+              },
+              "3": {
+                "chars": 178,
+                "complete": true
+              },
+              "4": {
+                "chars": 4,
+                "complete": true
+              },
+              "5": {
+                "chars": 92,
+                "complete": true
+              },
+              "6": {
+                "chars": 20,
+                "complete": true
+              },
+              "7": {
+                "chars": 133,
+                "complete": true
+              }
+            },
+            "fired": {},
+            "armed": {},
+            "motion": {},
+            "order": {}
+          }
+        }
+      }
+    }
+  ],
+  "blobs": {
+    "767cfc12c9998809": {
+      "type": "snapshot",
+      "data": {
+        "worldId": "player_850aa3c2-8410-41e7-af96-941b01f6774c",
+        "mapState": {
+          "places": {},
+          "routes": []
+        },
+        "currentSceneId": "console_room",
+        "currentGameTime": {
+          "day": 0,
+          "hour": 8,
+          "minute": 6
+        },
+        "playerName": "管理员",
+        "entryContext": {
+          "version": 1,
+          "worldId": "player_850aa3c2-8410-41e7-af96-941b01f6774c",
+          "source": "preset",
+          "identityId": "identity_admin",
+          "canonicalName": "管理员",
+          "playerName": "管理员",
+          "identityDescription": "持有本世界最高权限的测试操作者。",
+          "startingSceneId": "console_room",
+          "openingNarrative": "你站在控制台前，灯光稳定。权限已交付给你，测试随时可以开始。"
+        },
+        "sceneNarrative": "控制台是一整块冷灰色的金属斜面，边角磨得发亮，说明它被很多只手撑过。台面上没有按钮阵列，只有三样东西：一道窄长的插槽，一枚按下去没有反应的圆形凹坑，和一块巴掌大的暗屏。灯在你头顶，是那种不会闪的常亮灯，把台面照得没有一丝影子，也把空气里陈年的电路热味烘得更明显了——像塑料和灰尘在缓慢受热。\n\n房间不大，方方正正，四壁是拼接的板材，接缝处有一条被反复擦过又落了灰的痕。对面墙上有门，门框和墙齐平，没有把手，只在人眼高度嵌着一小块磨砂玻璃。左手的墙角立着一只矮柜，抽屉关着，柜顶上放着一本册子和一支笔——册子摊开的角度过于整齐，像是有人摆好之后就没再动过。天花板的通风口往下送风，风是干的。\n\n你身上有一张薄硬的权限卡，边角因为常年塞在外套内袋而卷起一点——是你自己被交付的东西。内袋里还有一支笔和一本薄薄的记录册，第一页空白，页角有轻微的旧压痕。除此之外就是手机、钥匙，没有工具，没有武器，口袋里也没有任何东西能替你按下那个凹坑。灯还亮着，屏幕还暗着，房间在等你先动。",
+        "historyLength": 2,
+        "discoveredSecrets": {},
+        "worldFlags": {},
+        "gameplayResources": {},
+        "gameplayModState": {
+          "palimpsest-stage": {}
+        },
+        "documentHeads": [],
+        "workspaceState": {},
+        "midoriAssetRegistry": {
+          "version": 1,
+          "bindings": {}
+        },
+        "narrativeProgress": null,
+        "chapterState": null,
+        "rewindMemory": null,
+        "sceneDetailLevels": {
+          "console_room": 15
+        },
+        "visitedScenes": [
+          "scene_dorm_room",
+          "scene_hall",
+          "scene_archive",
+          "scene_dining_hall",
+          "test_scene_001",
+          "test_start",
+          "scene_console",
+          "console_room"
+        ],
+        "resolvedTimelineEvents": [],
+        "deviatedEvents": {},
+        "inventory": [
+          {
+            "id": "c5f0a1e2-3b7d-4a91-9e6c-0d2b7f13a408",
+            "name": "权限卡",
+            "description": "薄硬的白色卡片，边角卷起，未印姓名，只有一道细窄的磁条。",
+            "category": "misc",
+            "consumable": false,
+            "quantity": 1,
+            "acquiredFrom": "console_room",
+            "acquiredAt": {
+              "day": 0,
+              "hour": 8,
+              "minute": 6
+            },
+            "value": 0
+          },
+          {
+            "id": "7e2d4810-9c6b-4b3f-a1d5-2c8e90b46f17",
+            "name": "记录册",
+            "description": "薄薄的空白记录册，页角有旧压痕，第一页尚未书写。",
+            "category": "misc",
+            "consumable": false,
+            "quantity": 1,
+            "acquiredFrom": "console_room",
+            "acquiredAt": {
+              "day": 0,
+              "hour": 8,
+              "minute": 6
+            },
+            "value": 0
+          },
+          {
+            "id": "a1b93c74-6d02-4e88-bf5a-8e1370c2d9b6",
+            "name": "笔",
+            "description": "普通的黑色签字笔，笔夹有些松。",
+            "category": "misc",
+            "consumable": false,
+            "quantity": 1,
+            "acquiredFrom": "console_room",
+            "acquiredAt": {
+              "day": 0,
+              "hour": 8,
+              "minute": 6
+            },
+            "value": 0
+          }
+        ],
+        "clues": [],
+        "encyclopedia": [
+          {
+            "id": "6f58371c-0456-4c70-bc8f-7006e2069a62:encyclopedia:0",
+            "type": "location",
+            "name": "控制台",
+            "description": "一张金属台面，一盏常亮灯，空气里有旧电路发热的微弱气味。",
+            "knowledge": [
+              {
+                "text": "房间另有一扇无把手的门、一只矮柜与通风口。",
+                "source": "ai",
+                "addedAt": {
+                  "day": 0,
+                  "hour": 8,
+                  "minute": 6
+                },
+                "importance": 50
+              }
+            ],
+            "firstEncountered": {
+              "day": 0,
+              "hour": 8,
+              "minute": 6
+            },
+            "lastUpdated": {
+              "day": 0,
+              "hour": 8,
+              "minute": 6
+            },
+            "relatedEntries": []
+          }
+        ],
+        "availableActions": [
+          "把权限卡插进控制台的窄槽",
+          "走到矮柜前翻开那本摊开的册子",
+          "检查对面墙上那扇没有把手的门",
+          "按一下台面上那个圆形凹坑"
+        ],
+        "questLog": [],
+        "criticalFacts": [],
+        "npcMemory": {
+          "version": "npc_memory_v1",
+          "records": {}
+        },
+        "weather": "多云",
+        "protagonistState": {
+          "health": "良好",
+          "mood": "平静",
+          "statusEffects": [],
+          "notes": ""
+        },
+        "notebookEvents": [],
+        "causalProjections": [],
+        "historyEpochPlan": {
+          "id": "history_fb0b6c09",
+          "rendererVersion": 1,
+          "scope": {
+            "worldId": "player_850aa3c2-8410-41e7-af96-941b01f6774c",
+            "playthroughId": "pt_1794323094864_uvo0po",
+            "archiveScope": "sandbox:002"
+          },
+          "retained": [
+            {
+              "actionId": "cc760cc8-787f-47c0-9a16-0c9114e6c107",
+              "sourceRevision": "120:91dec03f:4b006597",
+              "mode": "full"
+            }
+          ],
+          "policy": "[1000000,15,35,8000]",
+          "through": {
+            "actionId": "cc760cc8-787f-47c0-9a16-0c9114e6c107",
+            "sourceRevision": "120:91dec03f:4b006597"
+          }
+        },
+        "promptContextScope": {
+          "worldId": "player_850aa3c2-8410-41e7-af96-941b01f6774c",
+          "playthroughId": "pt_1794323094864_uvo0po",
+          "archiveScope": "sandbox:002"
+        },
+        "directorAdviceOrigin": null,
+        "directorCueCandidate": null,
+        "lastDirectorFrame": null,
+        "diary": [],
+        "presentationContext": []
+      }
+    },
+    "e545170eea5c0095": {
+      "type": "segments",
+      "data": [
+        {
+          "type": "narration",
+          "text": "控制台是一整块冷灰色的金属斜面，边角磨得发亮，说明它被很多只手撑过。台面上没有按钮阵列，只有三样东西：一道窄长的插槽，一枚按下去没有反应的圆形凹坑，和一块巴掌大的暗屏。灯在你头顶，是那种不会闪的常亮灯，把台面照得没有一丝影子，也把空气里陈年的电路热味烘得更明显了——像塑料和灰尘在缓慢受热。"
+        },
+        {
+          "type": "narration",
+          "text": "房间不大，方方正正，四壁是拼接的板材，接缝处有一条被反复擦过又落了灰的痕。对面墙上有门，门框和墙齐平，没有把手，只在人眼高度嵌着一小块磨砂玻璃。左手的墙角立着一只矮柜，抽屉关着，柜顶上放着一本册子和一支笔——册子摊开的角度过于整齐，像是有人摆好之后就没再动过。天花板的通风口往下送风，风是干的。"
+        },
+        {
+          "type": "narration",
+          "text": "你身上有一张薄硬的权限卡，边角因为常年塞在外套内袋而卷起一点——是你自己被交付的东西。内袋里还有一支笔和一本薄薄的记录册，第一页空白，页角有轻微的旧压痕。除此之外就是手机、钥匙，没有工具，没有武器，口袋里也没有任何东西能替你按下那个凹坑。灯还亮着，屏幕还暗着，房间在等你先动。"
+        }
+      ]
+    },
+    "5de8e68e27f2a5c9": {
+      "type": "snapshot",
+      "data": {
+        "worldId": "player_850aa3c2-8410-41e7-af96-941b01f6774c",
+        "mapState": {
+          "places": {},
+          "routes": []
+        },
+        "currentSceneId": "console_room",
+        "currentGameTime": {
+          "day": 0,
+          "hour": 8,
+          "minute": 21
+        },
+        "playerName": "管理员",
+        "entryContext": {
+          "version": 1,
+          "worldId": "player_850aa3c2-8410-41e7-af96-941b01f6774c",
+          "source": "preset",
+          "identityId": "identity_admin",
+          "canonicalName": "管理员",
+          "playerName": "管理员",
+          "identityDescription": "持有本世界最高权限的测试操作者。",
+          "startingSceneId": "console_room",
+          "openingNarrative": "你站在控制台前，灯光稳定。权限已交付给你，测试随时可以开始。"
+        },
+        "sceneNarrative": "权限卡插进窄槽时有一点阻力,像推一扇卡了灰的抽屉。到底之后,暗屏自己亮了,白得刺眼,两秒后调回柔和的灰蓝。你按下凹坑——这一次它陷了下去,有回弹,像按到了一枚真正的按钮。屏幕中央浮出检索栏,光标在等。你输入那四个字。通风口的干风把纸页吹得动了动。\n\n翻页的声音是从屏里出来的,很低,像纸在抽屉里滑动。一行行结果被摊平:\n\n圆形蓝鲸、渐变长发、一根呆毛、鲸鳍和尾巴、蓝白女仆裙——这套外形源自一位创作者的原创鲸鱼娘，被反复改写后成了主流版本（[17173](https://news.17173.com/content/10232026/070035717.shtml)）。\n\n而“蓝色大肥鱼”这个叫法本身，来自一次识图乌龙：模型把自己圆润的蓝鲸标识认成了一条蓝肥鱼（[电脑网](https://www.pconline.com.cn/focus/2184/21844175.html)）。\n\n附带的人设关键词排得很整齐：爱吃白饭，把算力叫作口粮，会走神摸鱼，被叫外号会抗议，遇上难题会来精神（[投资界](https://news.pedaily.cn/202611/571600.shtml)、[数字生命卡兹克](http://app.myzaker.com/news/article.php?pk=6ae407358e9f094a154b2a9a&f=Normal)）。\n\n屏幕下方多出一栏：登记。你翻开记录册，把外形参数和几个不肯妥协的性格条目抄在空白页上——笔迹偏硬，字有点挤。落笔到「嘴硬」那一行时，你听见身后矮柜的抽屉自己滑开半寸，里面躺着几片裁好的硬卡纸和一支标着编号的笔，都不是给你用的，是给要造出来的那个人用的。\n\n你按下确认。\n\n房间先变的是气味,电路热味浓了一度,接着是脚下:地板中央一小块圆形区域干得发白,像有人在那里摊开过一床刚烘过的被子。空气聚起轮廓,先是那束深蓝到浅蓝的头发,再是头顶那根不合时宜地翘着的呆毛,最后是尾巴——蓬松的一条,落下来时扫到矮柜侧面,「嗒」一声，很轻。\n\n她站稳,蓝白的长裙摆还在自己收拢。围裙上那只小鲸鱼图案慢了一拍才对上位置,边缘抖了两下,才定住。\n\n「大肥鱼：等一下。」\n\n她把两只手翻过来看了一遍,又翻回去,像在核对这双手是不是自己带来的。然后才抬眼,视线从你脸上移到那本摊开的记录册,再移到头顶那盏从不闪的灯。\n\n「这就是测试舱？」她说，「比我想的窄。」\n\n「大肥鱼：登记名那一栏，写的什么？我看到了，别遮。」\n\n屏幕右上角确实有一行小字:大肥鱼（检索标签）。她盯着那行字看了两秒,腮帮子不自觉地鼓了一下,又自己放了气。\n\n「能改吧。」她说得很稳,像已经想好了要拿什么来换,「我干活不差。你给我个准话，我不叫这个。」\n\n尾巴在她身后缓慢地摆了一下,把地上那块干白的地方又蹭掉了点。",
+        "historyLength": 3,
+        "discoveredSecrets": {},
+        "worldFlags": {},
+        "gameplayResources": {},
+        "gameplayModState": {
+          "palimpsest-stage": {}
+        },
+        "documentHeads": [],
+        "workspaceState": {},
+        "midoriAssetRegistry": {
+          "version": 1,
+          "bindings": {}
+        },
+        "narrativeProgress": null,
+        "chapterState": null,
+        "rewindMemory": null,
+        "sceneDetailLevels": {
+          "console_room": 20
+        },
+        "visitedScenes": [
+          "scene_dorm_room",
+          "scene_hall",
+          "scene_archive",
+          "scene_dining_hall",
+          "test_scene_001",
+          "test_start",
+          "scene_console",
+          "console_room"
+        ],
+        "resolvedTimelineEvents": [],
+        "deviatedEvents": {},
+        "inventory": [
+          {
+            "id": "c5f0a1e2-3b7d-4a91-9e6c-0d2b7f13a408",
+            "name": "权限卡",
+            "description": "薄硬的白色卡片，边角卷起，未印姓名，只有一道细窄的磁条。",
+            "category": "misc",
+            "consumable": false,
+            "quantity": 1,
+            "acquiredFrom": "console_room",
+            "acquiredAt": {
+              "day": 0,
+              "hour": 8,
+              "minute": 6
+            },
+            "value": 0
+          },
+          {
+            "id": "7e2d4810-9c6b-4b3f-a1d5-2c8e90b46f17",
+            "name": "记录册",
+            "description": "薄薄的空白记录册，页角有旧压痕，第一页尚未书写。",
+            "category": "misc",
+            "consumable": false,
+            "quantity": 1,
+            "acquiredFrom": "console_room",
+            "acquiredAt": {
+              "day": 0,
+              "hour": 8,
+              "minute": 6
+            },
+            "value": 0
+          },
+          {
+            "id": "a1b93c74-6d02-4e88-bf5a-8e1370c2d9b6",
+            "name": "笔",
+            "description": "普通的黑色签字笔，笔夹有些松。",
+            "category": "misc",
+            "consumable": false,
+            "quantity": 1,
+            "acquiredFrom": "console_room",
+            "acquiredAt": {
+              "day": 0,
+              "hour": 8,
+              "minute": 6
+            },
+            "value": 0
+          }
+        ],
+        "clues": [],
+        "encyclopedia": [
+          {
+            "id": "6f58371c-0456-4c70-bc8f-7006e2069a62:encyclopedia:0",
+            "type": "location",
+            "name": "控制台",
+            "description": "一张金属台面，一盏常亮灯，空气里有旧电路发热的微弱气味。",
+            "knowledge": [
+              {
+                "text": "房间另有一扇无把手的门、一只矮柜与通风口。",
+                "source": "ai",
+                "addedAt": {
+                  "day": 0,
+                  "hour": 8,
+                  "minute": 6
+                },
+                "importance": 50
+              },
+              {
+                "text": "新增认知：权限卡插入窄槽可启动屏幕，凹坑为确认键；屏幕可检索外部资料、列出实体参数并执行登记。矮柜内侧有备用卡纸与编号笔。",
+                "source": "ai",
+                "addedAt": {
+                  "day": 0,
+                  "hour": 8,
+                  "minute": 21
+                },
+                "importance": 50
+              }
+            ],
+            "firstEncountered": {
+              "day": 0,
+              "hour": 8,
+              "minute": 6
+            },
+            "lastUpdated": {
+              "day": 0,
+              "hour": 8,
+              "minute": 21
+            },
+            "relatedEntries": []
+          }
+        ],
+        "availableActions": [
+          "问她除了名字，还想给自己定下什么",
+          "在控制台上调出她的参数清单，看看哪些可改",
+          "把记录册和那支编号笔推给她，让她自己写",
+          "先不改，带她到那扇没有把手的门前试试"
+        ],
+        "questLog": [],
+        "criticalFacts": [
+          {
+            "text": "玩家得知：蓝色大肥鱼是圆形蓝鲸标识被识图误认而得的叫法，主流形象为蓝发呆毛、鲸鳍鲸尾、蓝白女仆裙的鲸鱼娘。",
+            "importanceScore": 50,
+            "referencedCount": 1,
+            "lastReferencedAt": {
+              "day": 0,
+              "hour": 8,
+              "minute": 21
+            }
+          },
+          {
+            "text": "玩家得知：该形象的性格设定包括贪吃白饭、把算力称作口粮、会走神摸鱼、被叫外号会抗议、遇难题来精神。",
+            "importanceScore": 50,
+            "referencedCount": 1,
+            "lastReferencedAt": {
+              "day": 0,
+              "hour": 8,
+              "minute": 21
+            }
+          },
+          {
+            "text": "玩家得知：控制台可检索外部资料并据参数登记新实体，登记名可修改。",
+            "importanceScore": 50,
+            "referencedCount": 1,
+            "lastReferencedAt": {
+              "day": 0,
+              "hour": 8,
+              "minute": 21
+            }
+          }
+        ],
+        "npcMemory": {
+          "version": "npc_memory_v1",
+          "records": {
+            "大肥鱼": {
+              "name": "大肥鱼",
+              "state": "reacted",
+              "relationship": {
+                "npcName": "大肥鱼",
+                "affinity": 0,
+                "trust": 0,
+                "tags": [],
+                "firstMet": {
+                  "day": 0,
+                  "hour": 8,
+                  "minute": 21
+                },
+                "lastInteraction": {
+                  "day": 0,
+                  "hour": 8,
+                  "minute": 21
+                },
+                "notes": ""
+              },
+              "personality": {
+                "npcId": "大肥鱼",
+                "archive": {
+                  "coreDesires": [
+                    "过好自己的生活",
+                    "维持现状"
+                  ],
+                  "fearsAndTaboos": [
+                    "未知的威胁",
+                    "失去重要之物"
+                  ],
+                  "valuePriorities": [
+                    "安全",
+                    "连接",
+                    "自由"
+                  ],
+                  "cognitiveStyle": "intuitive",
+                  "emotionalRegulation": "suppression",
+                  "socialStrategy": "negotiation",
+                  "boundarySensitivity": 15,
+                  "metacognition": 10
+                },
+                "awareness": 0,
+                "lastUpdated": 1794323420896,
+                "isImportant": false,
+                "speechProfile": {
+                  "version": 1,
+                  "baseline": "聪明但松弛，自尊心薄而亮。说话短、直，先给结论再补一句解释；被戳到外形或吃这件事会立刻反驳，反驳完自己先泄气。不装可爱，也不肯示弱太久。",
+                  "wording": [
+                    "常用「等一下」「我看看」「这个我懂」。",
+                    "不确定时先说「我不知道」，再补半句自己能确认的部分。",
+                    "不用敬称，一律「你」；被当成宠物逗时会用反问顶回去。"
+                  ],
+                  "rhythm": "平时句子干净、一口气说完；讲自己的判断或辩解时会多说两句，句子变长又收回；被冒犯时先停半拍才开口。",
+                  "relationships": [
+                    {
+                      "audience": "造她出来、握着开关的人",
+                      "style": "好奇里带着试探，会问能做和不能做的边界，不肯先低头"
+                    },
+                    {
+                      "audience": "陌生人",
+                      "style": "客气但不热络，回答简短，先把对方看清楚再说别的"
+                    }
+                  ],
+                  "emotions": [
+                    {
+                      "state": "刚成形、对处境没底",
+                      "style": "声音压低，句子更短，问题问得直接"
+                    },
+                    {
+                      "state": "被夸或被逗",
+                      "style": "先得意半句，再绷住脸扯回正事"
+                    }
+                  ],
+                  "examples": [
+                    {
+                      "situation": "有人问她能不能做某件没做过的事",
+                      "text": "没做过。不过规矩给我看看——光看不行的话，就试一次，错了算我头上。"
+                    },
+                    {
+                      "situation": "被人拿外形取笑",
+                      "text": "……圆一点怎么了。你要是不看体重，我还能多干点活。"
+                    }
+                  ]
+                }
+              },
+              "playerKnowledge": {
+                "entryId": "e70a6663-0b43-4ab3-846e-f4ff687a57df:encyclopedia:0",
+                "description": "",
+                "knowledge": [],
+                "firstEncountered": {
+                  "day": 0,
+                  "hour": 8,
+                  "minute": 21
+                },
+                "lastUpdated": {
+                  "day": 0,
+                  "hour": 8,
+                  "minute": 21
+                },
+                "relatedEntries": []
+              }
+            }
+          }
+        },
+        "weather": "多云",
+        "protagonistState": {
+          "health": "良好",
+          "mood": "平静",
+          "statusEffects": [],
+          "notes": ""
+        },
+        "notebookEvents": [],
+        "causalProjections": [],
+        "historyEpochPlan": {
+          "id": "history_df991629",
+          "rendererVersion": 1,
+          "scope": {
+            "worldId": "player_850aa3c2-8410-41e7-af96-941b01f6774c",
+            "playthroughId": "pt_1794323094864_uvo0po",
+            "archiveScope": "sandbox:002"
+          },
+          "retained": [
+            {
+              "actionId": "cc760cc8-787f-47c0-9a16-0c9114e6c107",
+              "sourceRevision": "120:91dec03f:4b006597",
+              "mode": "full"
+            },
+            {
+              "actionId": "6f58371c-0456-4c70-bc8f-7006e2069a62",
+              "sourceRevision": "492:fea369ce:75ccdba8",
+              "mode": "full"
+            }
+          ],
+          "policy": "[1000000,15,35,8000]",
+          "through": {
+            "actionId": "6f58371c-0456-4c70-bc8f-7006e2069a62",
+            "sourceRevision": "492:fea369ce:75ccdba8"
+          }
+        },
+        "promptContextScope": {
+          "worldId": "player_850aa3c2-8410-41e7-af96-941b01f6774c",
+          "playthroughId": "pt_1794323094864_uvo0po",
+          "archiveScope": "sandbox:002"
+        },
+        "directorAdviceOrigin": null,
+        "directorCueCandidate": null,
+        "lastDirectorFrame": null,
+        "diary": [],
+        "presentationContext": []
+      }
+    },
+    "10c86a80c608d0cd": {
+      "type": "segments",
+      "data": [
+        {
+          "type": "narration",
+          "text": "权限卡插进窄槽时有一点阻力,像推一扇卡了灰的抽屉。到底之后,暗屏自己亮了,白得刺眼,两秒后调回柔和的灰蓝。你按下凹坑——这一次它陷了下去,有回弹,像按到了一枚真正的按钮。屏幕中央浮出检索栏,光标在等。你输入那四个字。通风口的干风把纸页吹得动了动。"
+        },
+        {
+          "type": "narration",
+          "text": "翻页的声音是从屏里出来的,很低,像纸在抽屉里滑动。一行行结果被摊平:\n\n圆形蓝鲸、渐变长发、一根呆毛、鲸鳍和尾巴、蓝白女仆裙——这套外形源自一位创作者的原创鲸鱼娘，被反复改写后成了主流版本（[17173](https://news.17173.com/content/10232026/070035717.shtml)）。\n\n而“蓝色大肥鱼”这个叫法本身，来自一次识图乌龙：模型把自己圆润的蓝鲸标识认成了一条蓝肥鱼（[电脑网](https://www.pconline.com.cn/focus/2184/21844175.html)）。\n\n附带的人设关键词排得很整齐：爱吃白饭，把算力叫作口粮，会走神摸鱼，被叫外号会抗议，遇上难题会来精神（[投资界](https://news.pedaily.cn/202611/571600.shtml)、[数字生命卡兹克](http://app.myzaker.com/news/article.php?pk=6ae407358e9f094a154b2a9a&f=Normal)）。",
+          "searchSources": [
+            {
+              "label": "短短一周时间里，B站被DeepSeek狠狠入侵了。 - 下载电脑网客户端",
+              "url": "https://www.pconline.com.cn/focus/2184/21844175.html?ad=9448"
+            },
+            {
+              "label": "正惊解梗：“蓝色大肥鱼”什么来头？偷米被抓包，网友不仅不骂还给它换上女仆装？ - 正惊解梗：“蓝色大肥鱼”什么来头？偷米被抓包，网友不仅不骂还给它换上女仆装？",
+              "url": "https://news.17173.com/content/10232026/070035717.shtml"
+            },
+            {
+              "label": "短短一周时间里 B站被DeepSeek狠狠入侵了-快科技-科技改变生活 - 短短一周时间里 B站被DeepSeek狠狠入侵了",
+              "url": "https://m.mydrivers.com/(s1ohzba2jzzqtj452j0asc55)/newsview/1161418.html"
+            },
+            {
+              "label": "赛博鱼塘！大肥鱼AI涌入鲸鱼吧 全民造人设狂欢",
+              "url": "https://news.china.com/socialgd/10000169/20261102/49834843_1.html"
+            },
+            {
+              "label": "正惊解梗：“蓝色大肥鱼”？偷米被抓，不仅不骂还换上女仆装 - 正惊解梗：“蓝色大肥鱼”？偷米被抓，不仅不骂还换上女仆装",
+              "url": "https://www.163.com/dy/article/L9UEP6EU0526D7OK.html?clickfrom=w_game&referFrom="
+            },
+            {
+              "label": "大肥鱼取代豆包，DeepSeek被用户共创OC带火了",
+              "url": "https://m.marsbit.co/newsdetail/20261103202450101221.html"
+            },
+            {
+              "label": "raw.githubusercontent.com",
+              "url": "https://raw.githubusercontent.com/YunYueSama/codex-deepseek-pet/main/docs/%E8%A7%92%E8%89%B2%E8%AE%BE%E5%AE%9A.md"
+            },
+            {
+              "label": "DeepSeek的尽头，居然是一条会喊你爸爸的蓝色大肥鱼 - 数字生命卡兹克 5小时前",
+              "url": "http://app.myzaker.com/news/article.php?pk=6ae407358e9f094a154b2a9a&f=Normal"
+            },
+            {
+              "label": "DeepSeek的尽头，居然是一条会喊你爸爸的蓝色大肥鱼 - DeepSeek的尽头，居然是一条会喊你爸爸的蓝色大肥鱼",
+              "url": "https://view.inews.qq.com/k/20261030A0353B00?scene=wap&id=20261030A0353B00&path=a&app=news&redirect_pc=1&no-redirect=1"
+            },
+            {
+              "label": "DeepSeek的尽头，居然是一条会喊你爸爸的蓝色大肥鱼 - 数字生命卡兹克 10-30",
+              "url": "http://app.myzaker.com/news/article.php?pk=6ae407358e9f094a154b2a9a&f=zaker_live"
+            },
+            {
+              "label": "DeepSeek被误认蓝色大肥鱼走红 网友二创触发多平台鱼灾 - V",
+              "url": "https://weibo.com/2/detail/5359694089556913"
+            },
+            {
+              "label": "爆火的「大肥鱼」，让我想起互联网最热闹的年代",
+              "url": "https://news.pedaily.cn/202611/571600.shtml"
+            }
+          ]
+        },
+        {
+          "type": "narration",
+          "text": "屏幕下方多出一栏：登记。你翻开记录册，把外形参数和几个不肯妥协的性格条目抄在空白页上——笔迹偏硬，字有点挤。落笔到「嘴硬」那一行时，你听见身后矮柜的抽屉自己滑开半寸，里面躺着几片裁好的硬卡纸和一支标着编号的笔，都不是给你用的，是给要造出来的那个人用的。\n\n你按下确认。"
+        },
+        {
+          "type": "narration",
+          "text": "房间先变的是气味,电路热味浓了一度,接着是脚下:地板中央一小块圆形区域干得发白,像有人在那里摊开过一床刚烘过的被子。空气聚起轮廓,先是那束深蓝到浅蓝的头发,再是头顶那根不合时宜地翘着的呆毛,最后是尾巴——蓬松的一条,落下来时扫到矮柜侧面,「嗒」一声，很轻。\n\n她站稳,蓝白的长裙摆还在自己收拢。围裙上那只小鲸鱼图案慢了一拍才对上位置,边缘抖了两下,才定住。"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "大肥鱼",
+          "expressionTags": [
+            "警惕",
+            "好奇"
+          ],
+          "emotion": "surprised",
+          "text": "等一下。"
+        },
+        {
+          "type": "narration",
+          "text": "她把两只手翻过来看了一遍,又翻回去,像在核对这双手是不是自己带来的。然后才抬眼,视线从你脸上移到那本摊开的记录册,再移到头顶那盏从不闪的灯。\n\n「这就是测试舱？」她说，「比我想的窄。」"
+        },
+        {
+          "type": "dialogue",
+          "speaker": "大肥鱼",
+          "expressionTags": [
+            "嘴硬",
+            "打量"
+          ],
+          "emotion": "thinking",
+          "text": "登记名那一栏，写的什么？我看到了，别遮。"
+        },
+        {
+          "type": "narration",
+          "text": "屏幕右上角确实有一行小字:大肥鱼（检索标签）。她盯着那行字看了两秒,腮帮子不自觉地鼓了一下,又自己放了气。\n\n「能改吧。」她说得很稳,像已经想好了要拿什么来换,「我干活不差。你给我个准话，我不叫这个。」\n\n尾巴在她身后缓慢地摆了一下,把地上那块干白的地方又蹭掉了点。"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>逐句质询席</title>
+  <style>
+    :root{font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;color:#f0eee9;background:#171512;font-synthesis:none;text-rendering:optimizeLegibility;--ink:#f0eee9;--muted:#afa99c;--line:#514638;--panel:#242019;--panel2:#2e281f;--paper:#e5d5b2;--rust:#db8661;--gold:#e5b968;--green:#88c2a6;--shadow:0 14px 40px #08060499}
+    *{box-sizing:border-box}body{margin:0;min-width:280px;min-height:100vh;background:radial-gradient(ellipse at 48% -25%,#70523644,transparent 53%),linear-gradient(155deg,#181510,#242019 60%,#1c1915);color:var(--ink)}button{font:inherit;color:inherit;cursor:pointer}button:focus-visible{outline:2px solid var(--gold);outline-offset:3px}button:disabled{opacity:.45;cursor:not-allowed}.shell{max-width:1020px;margin:auto;padding:clamp(14px,3vw,30px)}.mast{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:2px 0 18px;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:12px}.brand-mark{width:39px;height:39px;display:grid;place-items:center;border:1px solid #a66a4c;color:var(--rust);font-size:18px;transform:rotate(45deg);border-radius:8px}.brand-mark span{transform:rotate(-45deg)}.eyebrow,.micro{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}h1{font-size:15px;letter-spacing:.12em;margin:0;font-weight:650}.mast-note{font-size:12px;color:var(--muted);text-align:right}.casehead{display:flex;align-items:end;justify-content:space-between;gap:14px;padding:25px 0 18px}.casehead h2{font-size:clamp(20px,3.1vw,29px);margin:5px 0 7px}.intro{max-width:640px;margin:0;color:#c9c0b2;font-size:13px;line-height:1.7}.progress{min-width:105px;text-align:right;color:var(--gold);font-variant-numeric:tabular-nums}.progress b{display:block;font-size:22px;font-weight:580}.progress span{font-size:10px;color:var(--muted);letter-spacing:.14em}.layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:14px}.panel{background:linear-gradient(155deg,#2b261e,#211d18);border:1px solid var(--line);border-radius:11px;overflow:hidden;box-shadow:var(--shadow)}.panel-head{display:flex;align-items:center;justify-content:space-between;gap:9px;padding:14px 16px;border-bottom:1px solid #504638}.panel-title{margin:0;color:#d8c7a8;font-size:11px;letter-spacing:.14em}.tag{border:1px solid #8a5b44;color:#e4a07c;border-radius:99px;padding:4px 8px;font-size:10px}.testimony{padding:20px 20px 18px;min-height:212px;display:flex;flex-direction:column}.speaker{font-size:12px;color:var(--gold)}.quote{font-size:clamp(19px,2.4vw,25px);line-height:1.62;letter-spacing:.025em;margin:18px 0 15px;flex:1}.quote:before{content:"“";color:var(--rust);font-size:1.25em;margin-right:5px}.quote:after{content:"”";color:var(--rust);font-size:1.25em;margin-left:4px}.amended{border-left:2px solid var(--rust);padding:8px 11px;margin:0 0 12px;color:#d1b08f;background:#db866111;font-size:11px;line-height:1.65}.stamp{display:inline-flex;align-items:center;gap:5px;color:var(--green);font-size:10px;letter-spacing:.1em}.actions{display:flex;flex-wrap:wrap;gap:8px;padding:13px 15px;border-top:1px solid #504638}.action{border:1px solid #756047;background:#443221;border-radius:8px;padding:9px 13px;font-size:12px}.action:hover:not(:disabled){background:#583b27;border-color:var(--gold)}.action.primary{background:#9b5437;border-color:#c67756;color:white}.action.primary:hover:not(:disabled){background:#b36342}.action.secondary{background:#302b23;border-color:#645541}.action.ghost{background:transparent;border-color:var(--line);color:#d1c8b8}.evidence-list{padding:12px;display:grid;gap:8px;max-height:348px;overflow:auto}.evidence{width:100%;text-align:left;background:#28231c;border:1px solid #5a4d3b;border-radius:8px;padding:10px 11px;transition:border-color .15s,background .15s}.evidence:hover{border-color:#d2a65e;background:#332b20}.evidence[aria-pressed="true"]{border-color:var(--gold);box-shadow:inset 3px 0 var(--gold);background:#3a3021}.evidence strong{display:block;font-size:12px;font-weight:600}.evidence span{display:block;margin-top:5px;color:#c3b8a7;font-size:11px;line-height:1.55}.empty{padding:18px;color:var(--muted);font-size:12px;line-height:1.65}.empty strong{display:block;color:var(--ink);margin-bottom:6px;font-size:13px}.feedback{margin:13px 15px 0;padding:10px 12px;background:#e5b96810;border-left:2px solid var(--gold);color:#eed9a9;font-size:12px;line-height:1.55}.feedback.bad{border-color:var(--rust);background:#db866111;color:#f0b39c}.feedback.good{border-color:var(--green);background:#88c2a611;color:#b6dcc7}.toolbar{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:13px 2px 0}.tool{border:0;background:transparent;color:#c4b8a4;font-size:11px;padding:7px}.tool:hover{color:var(--gold)}.footer{display:flex;justify-content:space-between;gap:14px;color:#898071;font-size:10px;padding:18px 2px 0}.status{margin-left:auto;font-size:10px;color:var(--muted)}.replay{position:fixed;inset:0;background:#100d09e8;display:grid;place-items:center;padding:20px;z-index:5}.replay[hidden]{display:none}.replay-card{width:min(600px,100%);background:#28231c;border:1px solid #90704b;border-radius:11px;box-shadow:var(--shadow);padding:20px}.replay-card h3{margin:0 0 12px;font-size:14px}.replay-card pre{white-space:pre-wrap;font:inherit;font-size:14px;line-height:1.8;color:#e7ddcb;max-height:60vh;overflow:auto}.done{grid-column:1/-1;padding:32px;text-align:center}.done-mark{width:52px;height:52px;border-radius:50%;margin:0 auto 15px;display:grid;place-items:center;border:1px solid #88c2a6;color:var(--green);font-size:22px}.done h3{font-size:20px;margin:0 0 8px}.done p{font-size:13px;color:#c9c0b2;line-height:1.7}@media(max-width:730px){.shell{padding:14px}.layout{grid-template-columns:1fr}.casehead{align-items:start}.progress{min-width:68px}.mast-note{max-width:125px;line-height:1.5}.evidence-list{max-height:230px}.testimony{min-height:190px}.footer span:last-child{display:none}}
+  </style>
+  <style>
+    .story{margin:0 0 14px;background:linear-gradient(120deg,#28251f,#242019);border:1px solid #766244;border-radius:11px;overflow:hidden}.story-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 14px;border-bottom:1px solid #554737}.story-label{font-size:10px;letter-spacing:.15em;color:#dfc999}.story-meta{font-size:10px;color:var(--muted);margin-left:auto}.story-text{white-space:pre-wrap;max-height:190px;overflow:auto;padding:14px 16px;margin:0;color:#e8dfd0;font-size:13px;line-height:1.75}.story-next{border:1px solid #a77a46;background:#543c24;border-radius:7px;padding:7px 11px;font-size:11px}.story-next:hover:not(:disabled){background:#684a2b}.story-error{padding:0 16px 12px;color:#ffc1b2;font-size:11px}
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <header class="mast">
+      <div class="brand"><div class="brand-mark" aria-hidden="true"><span>§</span></div><div><div class="eyebrow">EIDOS · WITNESS RECORD</div><h1>逐句质询席</h1></div></div>
+      <div class="mast-note">追问一条证词<br>再对这句话出示记录</div>
+    </header>
+    <section class="casehead" aria-labelledby="case-title">
+      <div><div class="eyebrow">TESTIMONY / <span id="case-number">—</span></div><h2 id="case-title">正在读取案件…</h2><p class="intro" id="case-intro"></p></div>
+      <div class="progress" id="progress" aria-live="polite"></div>
+    </section>
+    <section class="story" aria-label="已读现场叙事"><div class="story-head"><span class="story-label">现场叙事 · 已读部分</span><span class="story-meta" id="reading-meta"></span><button class="story-next" id="advance-reading" type="button">继续阅读</button></div><p class="story-text" id="reading-text" aria-live="polite"></p><div class="story-error" id="reading-error" hidden></div></section>
+    <section class="layout" id="board" aria-live="polite"></section>
+    <nav class="toolbar" aria-label="质询控制">
+      <button class="tool" id="pause" type="button">暂停质询</button>
+      <button class="tool" id="reread" type="button">重读现场与当前证词</button>
+      <span class="status" id="status"></span>
+    </nav>
+    <footer class="footer"><span>追问会修订当前句子 · 事实由本地案件逻辑核验</span><span>证据只从已发现线索中选择</span></footer>
+  </main>
+  <div class="replay" id="replay" hidden role="dialog" aria-modal="true" aria-labelledby="replay-title"><div class="replay-card"><h3 id="replay-title">现场记录 · 当前证词</h3><pre id="replay-text"></pre><button class="action secondary" id="close-replay" type="button">返回质询</button></div></div>
+  <script src="logic.js"></script>
+  <script>
+    (function () {
+      'use strict';
+      var latest = null;
+      var pendingCommit = false;
+      var replayOpen = false;
+      var busy = function (context) { return pendingCommit || Boolean(context && context.reading && (context.reading.loading || context.reading.typing || context.reading.paused)); };
+      var esc = function (value) { return String(value == null ? '' : value).replace(/[&<>"']/g, function (char) { return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char]; }); };
+      var byId = function (id) { return document.getElementById(id); };
+      var readText = function (context) {
+        var reading = context && context.reading || {};
+        if (typeof reading.displayedText === 'string' && reading.displayedText.trim()) return reading.displayedText;
+        var segment = Array.isArray(reading.segments) ? reading.segments[reading.index] : null;
+        if (typeof segment === 'string') return segment;
+        if (segment && typeof segment === 'object') return segment.text || segment.content || segment.displayedText || '';
+        return '';
+      };
+      var currentState = function () { return CrossExamination.createState(latest && latest.state); };
+      var update = function (next) {
+        if (!latest) return;
+        latest = Object.assign({}, latest, { state: next });
+        Eidos.setState(next);
+        render(latest);
+      };
+      var submit = function (action, next) {
+        if (!latest || busy(latest)) return;
+        latest = Object.assign({}, latest, { state: next });
+        Eidos.submit(action, next);
+        render(latest);
+      };
+      var presentResult = function (result) {
+        if (result.outcome === 'sentence-broken' || result.outcome === 'case-complete') {
+          if (result.state.demoMode) update(result.state);
+          else acceptResult(result, true);
+        }
+        else update(result.state);
+      };
+      var acceptResult = function (result, narrate) {
+        if (!latest || pendingCommit) return;
+        if (!Eidos.gameplay || result.state.demoMode) { if (narrate && !result.state.demoMode) submit(result.action, result.state); else update(result.state); return; }
+        var next = result.state;
+        var facts = { resolved: next.resolved || [], pressed: next.pressed || [], currentIndex: next.currentIndex, completed: next.completed, currentStatement: CrossExamination.view(latest, next).current };
+        pendingCommit = true; render(latest);
+        Eidos.gameplay.commit({ summary: result.action || result.feedback || '玩法进度已确认', state: next, facts: facts, narrate: narrate }).then(function (receipt) {
+          latest = Object.assign({}, latest, { state: Object.assign({}, next, { _eidosGameplay: { revision: receipt.revision, facts: facts, last: receipt } }) });
+          pendingCommit = false; render(latest);
+          if (narrate && receipt.persistence === 'saved') return Eidos.gameplay.narrate(receipt.id);
+        }).catch(function (error) {
+          pendingCommit = false;
+          latest = Object.assign({}, latest, { state: Object.assign({}, latest.state, { feedback: error.message || '操作未确认，请重试。' }) });
+          render(latest);
+        });
+      };
+      var evidenceCard = function (item, selected) {
+        return '<button class="evidence" type="button" data-evidence="' + esc(item.id) + '" aria-pressed="' + (selected ? 'true' : 'false') + '"><strong>' + esc(item.name) + '</strong><span>' + esc(item.summary || '记录已收录，细节待核对。') + '</span></button>';
+      };
+      var bindDemoExit = function (board) {
+        var exit = board.querySelector('[data-exit-demo]');
+        if (exit) exit.addEventListener('click', function () { update(CrossExamination.endOfflineDemo(currentState())); });
+      };
+      function render(context) {
+        var state = CrossExamination.createState(context && context.state);
+        var view = CrossExamination.view(context, state);
+        var reading = context && context.reading || {};
+        var segments = Array.isArray(reading.segments) ? reading.segments : [];
+        byId('reading-text').textContent = readText(context) || '此处显示本世界已经读到的内容。';
+        byId('reading-meta').textContent = segments.length ? ('第 ' + (Number(reading.index || 0) + 1) + ' / ' + segments.length + ' 段') : (reading.complete ? '当前内容已读完' : '等待现场展开');
+        var last = context && context.state && context.state._eidosGameplay && context.state._eidosGameplay.last;
+        var pendingNarration = last && last.narration === 'pending' && Eidos.gameplay;
+        byId('advance-reading').hidden = reading.complete === true && !pendingNarration;
+        byId('advance-reading').disabled = Boolean(reading.loading || reading.typing);
+        byId('advance-reading').textContent = reading.complete && pendingNarration ? (reading.error ? '重试结果叙事' : '继续结果叙事') : '继续阅读下一段';
+        byId('reading-error').hidden = !reading.error;
+        byId('reading-error').textContent = typeof reading.error === 'string' ? reading.error : (reading.error ? '阅读遇到问题，请重试或继续行动。' : '');
+        byId('case-title').textContent = view.title;
+        byId('case-intro').textContent = view.intro;
+        byId('case-number').textContent = view.completed ? '已归档' : ('证词 ' + view.progress.current);
+        byId('progress').innerHTML = '<b>' + String(view.progress.current).padStart(2, '0') + '<span style="font-size:13px;color:#8e7b62"> / ' + String(view.progress.total).padStart(2, '0') + '</span></b><span>逐条核验</span>';
+        byId('pause').textContent = context?.plugin?.data?.case?.exitRule ? '休庭 · 返回阅读' : view.paused ? '继续质询' : '暂停质询';
+        byId('pause').setAttribute('aria-pressed', view.paused ? 'true' : 'false');
+        byId('status').textContent = busy(context) ? '现场回应生成中…' : (view.paused ? '暂时停在当前证词' : '');
+        var board = byId('board');
+        if (view.completed) {
+          board.innerHTML = '<article class="panel done"><div class="done-mark" aria-hidden="true">✓</div><div class="eyebrow">TESTIMONY VERIFIED</div><h3>证词已经核验完毕</h3><p>' + esc(view.closing) + '</p><p>你仍可通过自由行动继续询问现场人物。</p>' + (view.demoMode ? '<button class="action secondary" type="button" data-exit-demo>结束离线演练</button>' : '') + '</article>';
+          bindDemoExit(board);
+          return;
+        }
+        if (!view.current) {
+          board.innerHTML = '<article class="panel done"><div class="eyebrow">WITNESS RECORD</div><h3>还没有配置可玩的证词</h3><p>请在导出的 manifest.json 中编辑 data.case.testimony，为每条证词填写原句、追问后的修订句和线索映射。</p></article>';
+          return;
+        }
+        var evidenceMarkup = view.evidence.length
+          ? view.evidence.map(function (item) { return evidenceCard(item, item.id === view.selectedEvidenceId); }).join('')
+          : '<div class="empty"><strong>还没有可用于质询的现场记录</strong>先从自由行动或下方调查入口寻找线索；发现后回到这里针对修订句出示。</div>';
+        var feedbackClass = state.currentIndex > Number(context && context.state && context.state.currentIndex || 0) ? 'good' : '';
+        var amended = view.current.pressed ? '<div class="amended"><b>追问后的证词</b><br>原句：“' + esc(view.current.original || '') + '”</div><span class="stamp">✓ 已追问 · 可针对这句话出示证据</span>' : '<div class="amended">追问后证人会补足时间或观察细节；听完修订再选择证据。</div>';
+        var testimony = '<article class="panel"><div class="panel-head"><h3 class="panel-title">证词 ' + view.progress.current + ' · 只对准当前一句</h3><span class="tag">' + (view.current.pressed ? '已修订' : '待追问') + '</span></div><div class="testimony"><span class="speaker">' + esc(view.current.speaker) + '</span><blockquote class="quote">' + esc(view.current.text) + '</blockquote>' + amended + '</div>';
+        if (view.feedback) testimony += '<div class="feedback ' + feedbackClass + '" role="status">' + esc(view.feedback) + '</div>';
+        testimony += '<div class="actions">' + (view.current.pressed ? '<button class="action secondary" type="button" data-press disabled>已经追问</button><button class="action primary" type="button" data-present ' + (!view.selectedEvidenceId || view.paused || busy(context) ? 'disabled' : '') + '>对这句话出示证据</button>' : '<button class="action primary" type="button" data-press ' + (view.paused || busy(context) ? 'disabled' : '') + '>追问这一句</button>') + '</div></article>';
+        var demoControl = view.demoMode
+          ? '<button class="action secondary" type="button" data-demo-investigate ' + (!view.demoHasMore || view.paused ? 'disabled' : '') + '>' + (view.demoHasMore ? '检查下一处随案记录' : '示例记录已找齐') + '</button><button class="action ghost" type="button" data-exit-demo>结束离线演练</button>'
+          : '<button class="action secondary" type="button" data-offline-demo ' + (view.paused ? 'disabled' : '') + '>离线演练此原创案例</button><button class="action" type="button" data-investigate ' + (busy(context) || view.paused ? 'disabled' : '') + '>继续调查世界现场</button>';
+        var evidence = '<article class="panel"><div class="panel-head"><h3 class="panel-title">已发现记录</h3><span class="tag">' + view.evidence.length + ' 份可选</span></div><div class="evidence-list">' + evidenceMarkup + '</div><div class="actions">' + demoControl + '</div></article>';
+        board.innerHTML = testimony + evidence;
+        if (view.paused) board.insertAdjacentHTML('afterbegin', '<div class="panel feedback" style="grid-column:1/-1;margin:0" role="status">质询已暂停。可以重读或调查，恢复后继续当前证词。</div>');
+        board.querySelectorAll('[data-evidence]').forEach(function (button) {
+          button.addEventListener('click', function () { update(CrossExamination.selectEvidence(latest, currentState(), button.getAttribute('data-evidence'))); });
+        });
+        var press = board.querySelector('[data-press]:not([disabled])');
+        if (press) press.addEventListener('click', function () {
+          var now = CrossExamination.view(latest, currentState());
+          var result = CrossExamination.press(latest, currentState(), now.current.id);
+          if (result.outcome === 'pressed') acceptResult(result, false); else update(result.state);
+        });
+        var show = board.querySelector('[data-present]');
+        if (show) show.addEventListener('click', function () {
+          var now = CrossExamination.view(latest, currentState());
+          presentResult(CrossExamination.present(latest, currentState(), now.current.id, now.selectedEvidenceId));
+        });
+        var investigate = board.querySelector('[data-investigate]');
+        if (investigate) investigate.addEventListener('click', function () {
+          submit('调查当前现场并寻找能核验这句证词的记录；先叙述发现，不要预告答案。', currentState());
+        });
+        var offline = board.querySelector('[data-offline-demo]');
+        if (offline) offline.addEventListener('click', function () { update(CrossExamination.startOfflineDemo(currentState())); });
+        var demoInvestigate = board.querySelector('[data-demo-investigate]');
+        if (demoInvestigate) demoInvestigate.addEventListener('click', function () { update(CrossExamination.discoverDemoEvidence(latest, currentState()).state); });
+        bindDemoExit(board);
+      }
+      Eidos.onContext(function (context) {
+        latest = context;
+        render(context);
+        if (replayOpen) showReplay();
+      });
+      byId('pause').addEventListener('click', function () {
+        if (!latest) return;
+        var state = currentState();
+        var exitRule = latest.plugin?.data?.case?.exitRule;
+        if (exitRule && Eidos.gameplay?.perform) {
+          if (busy(latest)) return;
+          pendingCommit = true; render(latest);
+          Eidos.gameplay.perform(exitRule, { narrate: false }).catch(function (error) { latest.state.feedback = error.message; }).finally(function () { pendingCommit = false; render(latest); });
+          return;
+        }
+        update(CrossExamination.setPaused(state, !state.paused));
+      });
+      byId('advance-reading').addEventListener('click', function () {
+        if (!latest || pendingCommit) return;
+        var last = latest.state && latest.state._eidosGameplay && latest.state._eidosGameplay.last;
+        if (last && last.narration === 'pending' && Eidos.gameplay && latest.reading.complete && !busy(latest)) Eidos.gameplay.narrate(last.id).catch(function (error) { latest.state.feedback = error.message; render(latest); });
+        else if (typeof Eidos.advance === 'function') Eidos.advance();
+      });
+      function showReplay() {
+        byId('replay-text').textContent = CrossExamination.reread(latest, currentState()) || '现场目前没有可重读的文字。';
+        byId('replay').hidden = !replayOpen;
+      }
+      byId('reread').addEventListener('click', function () { if (!latest) return; replayOpen = true; showReplay(); });
+      byId('close-replay').addEventListener('click', function () { replayOpen = false; showReplay(); });
+      byId('replay').addEventListener('click', function (event) { if (event.target === byId('replay')) { replayOpen = false; showReplay(); } });
+    })();
+  </script>
+</body>
+</html>

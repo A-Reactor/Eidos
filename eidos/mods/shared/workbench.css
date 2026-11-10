@@ -1,0 +1,77 @@
+/* Shared author/tool presentation. The host supplies these tokens in either theme. */
+html[data-eidos-workbench] {
+  --wb-paper: var(--eidos-paper, #faf9f6);
+  --wb-surface: var(--eidos-surface, #ffffff);
+  --wb-ink: var(--eidos-ink, #202124);
+  --wb-accent: var(--eidos-accent, #9e0000);
+  --wb-muted: color-mix(in srgb, var(--wb-ink) 65%, var(--wb-paper));
+  --wb-line: color-mix(in srgb, var(--wb-ink) 16%, var(--wb-paper));
+  --wb-quiet: color-mix(in srgb, var(--wb-ink) 3%, var(--wb-paper));
+  --wb-highlight: color-mix(in srgb, var(--wb-accent) 7%, var(--wb-paper));
+  --bg: var(--wb-paper); --panel: var(--wb-surface); --panel2: var(--wb-quiet);
+  --paper: var(--wb-paper); --ink: var(--wb-ink); --accent: var(--wb-accent);
+  --muted: var(--wb-muted); --line: var(--wb-line); --quiet: var(--wb-quiet);
+  --highlight: var(--wb-highlight); --sea: var(--wb-accent); --amber: var(--wb-accent); --red: var(--wb-accent); --shadow: none;
+  color-scheme: light dark; color: var(--wb-ink); background: var(--wb-paper);
+  font-family: var(--font-geist-sans, ui-sans-serif, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif);
+  font-size: 14px; line-height: 1.8; font-synthesis: none;
+}
+html[data-eidos-workbench] body { min-width: 0; margin: 0; background: var(--wb-paper); color: var(--wb-ink); font: inherit; }
+html[data-eidos-workbench] :is(main, .shell, #mod-root) { width: 100%; max-width: 1080px; margin-inline: auto; padding: 24px clamp(18px, 3vw, 32px) 32px; }
+html[data-eidos-workbench] #mod-root { --ink: var(--wb-ink); --paper: var(--wb-paper); --muted: var(--wb-muted); --line: var(--wb-line); }
+html[data-eidos-workbench] :is(header, .mast, .masthead) { background: transparent; border-color: var(--wb-line); box-shadow: none; padding: 0 0 18px; gap: 18px; }
+html[data-eidos-workbench] :is(h1, h2, h3, h4) { color: var(--wb-ink); font-family: inherit; letter-spacing: -.015em; font-weight: 600; overflow-wrap: anywhere; }
+html[data-eidos-workbench] h1 { font-size: 22px; line-height: 1.4; margin: 0 0 8px; }
+html[data-eidos-workbench] h2 { font-size: 18px; line-height: 1.5; }
+html[data-eidos-workbench] h3 { font-size: 15px; }
+html[data-eidos-workbench] :is(p, blockquote, pre) { overflow-wrap: anywhere; }
+html[data-eidos-workbench] :is(.intro, .subtitle, .scene, .hint, .micro, .eyebrow, .small-note, .mast-note, .footer, footer, small, label, .subject, .story-meta, .reader-status, .action-caption, .choice-caption, .world-mark, .person p, .person-row p) { color: var(--wb-muted); font-family: inherit; font-size: 12px; line-height: 1.8; letter-spacing: .02em; }
+html[data-eidos-workbench] :is(.brand-mark, .done-mark) { display: none; }
+html[data-eidos-workbench] :is(.layout, .columns) { gap: 24px; grid-template-columns: minmax(0, 1.3fr) minmax(250px, 1fr); align-items: start; }
+html[data-eidos-workbench] :is(.layout, .columns, .body-grid) > * { min-width: 0; }
+html[data-eidos-workbench] :is(.panel, .card, .story:not(main), .replay-card, .rail, .choice-box, .action-area) { background: var(--wb-surface); color: var(--wb-ink); border: 1px solid var(--wb-line); border-radius: 4px; box-shadow: none; }
+html[data-eidos-workbench] :is(.panel-head, .story-head, .actions, .columns > section, .person, .log p, .evidence-item, footer, #world) { border-color: var(--wb-line); }
+html[data-eidos-workbench] :is(.panel-title, .story-label, .world-mark strong, .speaker, .progress, #ending) { color: var(--wb-accent); }
+html[data-eidos-workbench] :is(.world-mark, .tag) { background: transparent; border-color: var(--wb-line); border-radius: 3px; }
+html[data-eidos-workbench] :is(.statement blockquote, .testimony-text, .stage-line, .story p, #passage p, #continuation p) { color: var(--wb-ink); font-size: 16px; line-height: 1.95; letter-spacing: 0; }
+html[data-eidos-workbench] :is(.story-text, .reading-strip p, .replay-card pre, .evidence span, .empty, .empty strong, .done p, .status, .narration, .log) { color: var(--wb-ink); font-size: 13px; line-height: 1.85; }
+html[data-eidos-workbench] .reading-strip { background: var(--wb-quiet); border-color: var(--wb-accent); }
+html[data-eidos-workbench] .log { max-height: 22rem; }
+html[data-eidos-workbench] button { min-height: 36px; max-width: 100%; padding: 8px 12px; border: 1px solid var(--wb-line); border-radius: 3px; background: var(--wb-surface); color: var(--wb-ink); font-size: 13px; font-weight: 500; line-height: 1.6; font-family: inherit; letter-spacing: 0; white-space: normal; text-align: start; box-shadow: none; transition: background-color .15s, border-color .15s; }
+html[data-eidos-workbench] button:hover:not(:disabled) { background: var(--wb-highlight); color: var(--wb-ink); border-color: var(--wb-accent); transform: none; }
+html[data-eidos-workbench] :is(button.primary, .action.primary, .control--accent, [aria-pressed="true"], [aria-current="page"]) { color: var(--wb-accent); background: var(--wb-highlight); border-color: var(--wb-accent); box-shadow: none; }
+html[data-eidos-workbench] button:disabled { opacity: .45; cursor: default; }
+html[data-eidos-workbench] :is(button, input, select, textarea, summary):focus-visible { outline: 2px solid var(--wb-accent); outline-offset: 3px; }
+html[data-eidos-workbench] :is(input:not([type="checkbox"]):not([type="file"]), select, textarea) { min-width: 0; max-width: 100%; background: var(--wb-paper); color: var(--wb-ink); border: 1px solid var(--wb-line); border-radius: 3px; padding: 9px 11px; font: inherit; }
+html[data-eidos-workbench] textarea { line-height: 1.8; min-height: 120px; resize: vertical; }
+html[data-eidos-workbench] .row { flex-wrap: wrap; }
+html[data-eidos-workbench] :is(.evidence, .testimony, .clue-card, .person-card, .person-row) { background: var(--wb-quiet); color: var(--wb-ink); border-color: var(--wb-line); border-radius: 3px; box-shadow: none; }
+html[data-eidos-workbench] :is(.feedback, .feedback.good, .feedback.bad, #confirm, .confirm) { color: var(--wb-ink); background: var(--wb-quiet); border-color: var(--wb-accent); }
+html[data-eidos-workbench] :is([role="alert"], .story-error, #error, [data-error]) { color: var(--wb-accent); }
+html[data-eidos-workbench] :is(.replay, .modal) { background: color-mix(in srgb, var(--wb-ink) 24%, transparent); }
+html[data-eidos-workbench] .controls { background: var(--wb-paper); border-color: var(--wb-line); }
+html[data-eidos-workbench] .novel { padding: 24px clamp(18px, 3vw, 32px); gap: 16px; }
+html[data-eidos-workbench] .novel main.story { margin: 0; padding: 8px 18px; }
+html[data-eidos-workbench] details { border-color: var(--wb-line); }
+html[data-eidos-workbench] summary { color: var(--wb-muted); font-size: 13px; }
+html[data-eidos-workbench] [hidden] { display: none !important; }
+@media (max-width: 900px) { html[data-eidos-workbench] :is(.layout, .columns, .body-grid) { grid-template-columns: minmax(0, 1fr); } }
+@media (prefers-reduced-motion: reduce) { html[data-eidos-workbench] button { transition: none; } }
+
+html[data-eidos-workbench] :is(.character-card, .ability-card, .clue-item, .testimony-card, .result-card, .callout, .status-line, .decision-record, .private-reveal, .scene-intro) { background: var(--wb-quiet); color: var(--wb-ink); border-color: var(--wb-line); border-radius: 3px; box-shadow: none; }
+html[data-eidos-workbench] :is(.scene-intro p, .scene-copy, .character-card p, .ability-card p, .testimony-card blockquote, .clue-item strong, .clue-item .detail, .result-card p, .person-line strong, .line, .line[data-type="dialogue"], .rail li) { color: var(--wb-ink); font-family: inherit; font-size: 14px; line-height: 1.9; }
+html[data-eidos-workbench] :is(.page-heading, .section-label, .character-card .role, .character-card .daily, .testimony-card .challenge-note, .evidence-count, .clue-item small, .binding-row, .footnote, .empty-note, .rail .muted) { color: var(--wb-muted); font-size: 12px; line-height: 1.8; }
+html[data-eidos-workbench] .ability-label { color: var(--wb-accent) !important; }
+html[data-eidos-workbench] .private-reveal { color: var(--wb-ink) !important; }
+html[data-eidos-workbench] :is(.panel-head h2, .panel-head h3, .result-card h3, .character-card h4, .ability-card h4, .rail h2) { color: var(--wb-ink); font-family: inherit; font-weight: 600; letter-spacing: 0; }
+html[data-eidos-workbench] .choice-button::before { content: none; }
+html[data-eidos-workbench] .stage-line.size-small { font-size: 13px; }
+html[data-eidos-workbench] .stage-line.size-large { font-size: 22px; }
+html[data-eidos-workbench] .stage-line.size-huge { font-size: 28px; }
+html[data-eidos-workbench] .stage-line.color-accent { color: var(--wb-accent); }
+html[data-eidos-workbench] .stage-line.color-muted { color: var(--wb-muted); }
+html[data-eidos-workbench] .stage-line.color-ink { color: var(--wb-ink); }
+html[data-eidos-workbench] .stage-line.color-blood { color: color-mix(in srgb, var(--wb-accent) 70%, #a22d36); }
+
+html[data-eidos-workbench] .masthead::after { display: none; }
+html[data-eidos-workbench] .actions button { flex: 0 1 auto; }

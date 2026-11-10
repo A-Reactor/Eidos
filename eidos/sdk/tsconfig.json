@@ -1,0 +1,6 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": { "noEmit": true, "incremental": false },
+  "include": ["../src/lib/engine/**/*.ts", "./rpg.ts"],
+  "exclude": ["dist", "node_modules"]
+}
