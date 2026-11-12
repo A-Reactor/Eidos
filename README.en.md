@@ -2,7 +2,7 @@
 
 [简体中文](README.md)
 
-Eidos is a text-based AI role-playing game. Write what you say or do, then see how the world responds. Follow a lead, negotiate with a character, or return to an earlier point and try a different choice.
+Eidos is an open-source AI role-playing game that mainly uses text. The story progresses based on your actions. You can investigate clues, talk to characters, or even jump back to a point in the timeline to make a different choice, potentially affecting other timelines.
 
 **[Download and play](#download-and-play)** · [How to play](#how-to-play) · [For developers](#for-developers)
 
@@ -17,7 +17,7 @@ Download the portable ZIP below, extract the full archive, then double-click the
 | Computer | Download | Double-click |
 | --- | --- | --- |
 | Apple silicon Mac with macOS 13.5 or later | [Eidos-macOS-arm64.zip](https://github.com/A-Reactor/Eidos/releases/latest/download/Eidos-macOS-arm64.zip) | **Eidos.app** |
-| 64-bit Intel or AMD Windows PC | `Eidos-Windows-x64.zip`, when listed | **Start Eidos.cmd** |
+| 64-bit Intel or AMD Windows PC | [Eidos-Windows-x64.zip](https://github.com/A-Reactor/Eidos/releases/latest/download/Eidos-Windows-x64.zip) | **Start Eidos.cmd** |
 
 The portable build includes its runtime. Keep the launcher running while you play, and use the same browser to return to your saves. On Windows, keep the launch window open. macOS may ask you to confirm the preview app the first time you open it. [Apple's opening instructions](https://support.apple.com/102445)
 
