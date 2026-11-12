@@ -2,9 +2,9 @@
 
 [English](README.en.md)
 
-Eidos 是一个用文字玩的 AI 角色扮演游戏。写下你想说的话或想做的事，故事会随你的行动继续。你可以追查线索、和角色谈判，也可以回到故事的某一步，试试另一种选择。
+Eidos 是一个以文字为主要载体的开源 AI 角色扮演游戏。游戏故事会随你的行动继续。你可以追查线索、和角色对话，也可以在时间线上跳转回到故事的某一步，做出另一种选择，有机会对其他时间线产生影响。
 
-**[下载开玩](#下载开玩)** · [看看怎么玩](#怎么玩) · [开发者入口](#开发者入口)
+**[下载](#下载开玩)** · [玩法](#怎么玩) · [开发者入口](#开发者入口)
 
 ![游玩画面，悬钟塔场景的右侧显示开场叙事和推荐行动，底部是行动输入框](media/rift-city-opening.png)
 
@@ -17,7 +17,7 @@ Eidos 是一个用文字玩的 AI 角色扮演游戏。写下你想说的话或�
 | 电脑 | 下载文件 | 解压后双击 |
 | --- | --- | --- |
 | Apple 芯片 Mac（macOS 13.5 或更新） | [Eidos-macOS-arm64.zip](https://github.com/A-Reactor/Eidos/releases/latest/download/Eidos-macOS-arm64.zip) | **Eidos.app** |
-| 64 位 Windows PC（Intel 或 AMD） | `Eidos-Windows-x64.zip`（发布页列出时） | **Start Eidos.cmd** |
+| 64 位 Windows PC（Intel 或 AMD） | [Eidos-Windows-x64.zip](https://github.com/A-Reactor/Eidos/releases/latest/download/Eidos-Windows-x64.zip) | **Start Eidos.cmd** |
 
 便携包自带运行环境。游玩时保留 Eidos 启动程序，Windows 上会有一个启动窗口。下次用同一个浏览器打开，就能继续原来的存档。macOS 预览包首次打开可能需要系统确认。 [Apple 的打开说明](https://support.apple.com/102445)
 
@@ -76,7 +76,7 @@ npm run dev:engine-game
 
 ## 后续开发
 
-原生桌面端仍在开发中。当前便携包通过浏览器游玩，Tauri 源码可用于开发调试。 [桌面开发说明](eidos/README.md#桌面端开发中)
+原生桌面端和手机端仍在开发中。当前便携包通过浏览器游玩，Tauri 源码可用于开发调试。 [桌面开发说明](eidos/README.md#桌面端开发中)
 
 ## 反馈与贡献
 
